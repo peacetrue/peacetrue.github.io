@@ -1,0 +1,162 @@
+//tag::article[]
+= Asciidoctor用户手册
+//end::article[]
+安宁 <xiayouxue@hotmail.com>
+v1.0, 2019-08-19: SNAPSHOT
+:doctype: book
+:toc: left
+:numbered:
+
+//tag::article[]
+选择性翻译 https://asciidoctor.org/docs/user-manual[asciidoctor用户手册^]的内容。
+
+:sectnums!:
+== Asciidoctor简介
+
+:sectnums:
+== Asciidoctor是什么
+Asciidoctor是一个快速文本处理器和发布工具链，用于将AsciiDoc内容转换为HTML5，EPUB3，PDF，DocBook 5（或4.5）幻灯片和其他格式
+
+
+=== 一张大图
+Asciidoctor读取以纯文本编写的内容，如下图中左侧的面板所示，并将其转换为HTML5，如右侧面板中所示。如图所示，Asciidoctor在HTML5文档中添加了一个默认样式表，以提供愉快的开箱即用体验。
+
+image::https://d33wubrfki0l68.cloudfront.net/a31b2120480bc9f89c3e2a22306b5a3961375ec2/af4ef/images/zen-screenshot.png[]
+
+=== 在JVM上使用Asciidoctor
+=== Asciidoctor.js
+Asciidoctor可以在JavaScript中使用。 Opal用于将代码从Ruby转换为JavaScript以生成Asciidoctor.js，可以在JavaScript运行的任何地方使用，例如在Web浏览器或Node.js上。
+
+=== Asciidoctor最显著的好处
+==== AsciiDoc语法处理
+Asciidoctor读取并解析用AsciiDoc语法编写的文本，然后将解析树提供给一组内置模板，以生成HTML5，PDF，DocBook 5等。您可以选择编写自己的转换器或提供Tilt支持的模板自定义生成的输出或生成替代格式。
+
+NOTE: Asciidoctor是原始AsciiDoc Python处理器（asciidoc.py）的直接替代品。 Asciidoctor测试套件具有> 1,500个测试，以确保与AsciiDoc语法的兼容性。
+
+=== 和Markdown的比较
+
+:sectnums!:
+== 快速入门
+
+:sectnums:
+== 使用命令行接口
+== 使用Ruby接口
+
+:sectnums!:
+== 正式入门
+
+:sectnums:
+== 系统要求
+== 安装Asciidoctor Ruby Gem
+=== 通过gem安装
+=== 通过Bundler安装
+=== 在Fedora上安装
+=== 在Debian或者Ubuntu上安装
+=== 在Alpine Linux上安装
+== 更新Asciidoctor Ruby Gem
+== 扩展和集成
+:sectnums!:
+== 术语和概念
+
+
+:sectnums:
+== 元素
+== 格式化标记
+== 属性
+
+:sectnums!:
+== 编写文档
+
+
+:sectnums:
+== 文本编辑器
+== 文档类型
+=== 行内文档类型
+== 基本文档结构
+== 标题
+== 序文
+
+== 章节
+=== 文章的标题渲染为HTML的标题
+=== 自动生成标识
+默认会为章节标题生成一个标识，用于锚链。
+
+``:sectids!:``：取消自动生成标识
+``:idprefix:``：设置标识前缀，默认为**下划线**
+``:idseparator:``：设置标识之间的分隔符，如果标题包含空格，会被替换为分隔符，默认为**下划线**
+
+=== 自定义标识
+=== 多个锚
+一个锚不就够了么，为什么需要多个锚呢？不懂。
+=== 链接
+默认章节标题不可以点，添加链接后可以点。
+
+=== 锚
+默认章节标题不显示锚标记，设置``sectanchors``属性后，会在章节标题前显示锚标记，并且可以链接。
+
+=== 序号
+
+=== 离散标题（浮动表头？）
+没看懂
+
+=== 章节样式
+
+=== 章节摘要
+
+== 块
+=== 标题
+=== 元信息
+=== 定界块
+==== 定界行
+==== 定界符
+==== 伪装块
+==== 嵌套块
+==== 块摘要
+== 段落
+=== 换行
+=== 领导风格
+
+== 文本格式
+== 无序列表
+== 有序列表
+== 描述列表
+== 表格
+== 水平规则
+
+== 分页
+== 链接
+== 交叉参考
+=== 自动的锚
+=== 定义的锚
+=== 文章内交叉参考
+=== 验证交叉参考
+=== 自定义交叉参考文本
+=== 文档内交叉参考
+==== 在源文件之间导航
+
+
+
+
+== 文档类型
+文章（关键字：article）::
+默认的文档类型。在DocBook中，包括附录，摘要，参考书目，术语表和索引部分。
+
+从上到下，应该是索引、摘要、术语、参考书目、附录。
+
+书籍 (关键字: book)::
+建立在文章doctype上，具有使用顶级标题作为部分标题的附加功能，包括附录，献词，前言，参考书目，词汇表，索引和版权。还有一个多部分书籍的概念，但与常规书籍的区别取决于内容。一本书只有章节和特殊部分，而多部分书籍除以每个部分，每个部分包含一个或多个章节或特殊部分。
+
+手册页 (keyword: manpage)::
+用于为Unix和类Unix操作系统生成roff或HTML格式的手册页（手册页的简称）。此doctype指示解析器识别特殊文档标题和节命名约定，以将AsciiDoc内容组织为手册页。有关如何为此目的撰写AsciiDoc的详细信息，请参阅手册页。
+
+内联 (keyword: inline)::
+只是Asciidoctor。在某些情况下，您可能只想将内联的AsciiDoc格式应用于输入文本而不将其包含在块元素中。例如，在Asciidoclet项目（Javadoc中的AsciiDoc）中，Javadoc标记中的文本只需要内联格式。
+* 只允许出现一个段落
+* 解析时使用内联格式
+* 输出不会包含在一个正常的段落标记中
+
+
+== 疑问
+=== 一本书的内容如何通过链接分开组织？
+
+//end::article[]
