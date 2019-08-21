@@ -1,9 +1,9 @@
 = 关于本网站
 :imagesdir: ../assets/images
 
-本网站的静态文件由 https://antora.org/[antora] 生成，
-存储在 https://github.com/peacetrue/peacetrue.github.io/master/site[peacetrue.github.io/site^]。
-您当前所阅读项目的源文件存储在 https://github.com/peacetrue/peacetrue.github.io/master/docs[peacetrue.github.io/docs^]。
+本网站的静态文件由 https://antora.org/[antora^] 生成，
+存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/site[peacetrue.github.io/site^]。
+您当前所阅读项目的源文件存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/docs[peacetrue.github.io/docs^]。
 
 antora 是一个基于AsciiDoc的多资源库的文档站点生成器。
 它会从多个资源库中获取源文件，以资源库的维度切割成不同的文档。
