@@ -1,9 +1,12 @@
 site:
-  title: 安宁的项目集
+  title: 真实安宁
   url: https://peacetrue.github.io
-  start_page: learn-antora::index.adoc
+  start_page: the-site::site.adoc
 content:
   sources:
+  - url: https://github.com/peacetrue/peacetrue.github.io.git
+    branches: master
+    start_path: docs
   - url: https://github.com/peacetrue/learn-antora.git
     branches: master
     start_path: docs

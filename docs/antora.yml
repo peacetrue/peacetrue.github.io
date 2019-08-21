@@ -1,5 +1,6 @@
 name: the-site
 title: Hi！你好
 version: master
+start_page: ROOT:site.adoc
 nav:
   - modules/ROOT/nav.adoc

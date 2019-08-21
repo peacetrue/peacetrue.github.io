@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://peacetrue.github.io/learn-antora/index.html</loc>
-<lastmod>2019-08-20T15:31:09.856Z</lastmod>
-</url>
-<url>
-<loc>https://peacetrue.github.io/learn-antora/question.html</loc>
-<lastmod>2019-08-20T15:31:09.856Z</lastmod>
-</url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://peacetrue.github.io/sitemap-learn-antora.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://peacetrue.github.io/sitemap-the-site.xml</loc>
+</sitemap>
+</sitemapindex>
