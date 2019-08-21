@@ -1,0 +1,7 @@
+= GitHub Pages
+:includedir: docs/modules/ROOT/
+:relfileprefix: {includedir}pages/
+
+include::{includedir}nav.adoc[]
+
+
