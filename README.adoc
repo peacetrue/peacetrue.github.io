@@ -1,7 +1,3 @@
-= GitHub Pages
-:includedir: docs/modules/ROOT/
-:relfileprefix: {includedir}pages/
+= Peacetrue Project Site
 
-include::{includedir}nav.adoc[]
-
-
+Introduce the peacetrue repository.

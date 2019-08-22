@@ -1,7 +1,7 @@
-= 关于本网站
+= 关于网站
 :imagesdir: ../assets/images
 
-本网站的静态文件由 https://antora.org/[antora^] 生成，
+网站的静态文件由 https://antora.org/[antora^] 生成，
 存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/site[peacetrue.github.io/site^]。
 您当前所阅读项目的源文件存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/docs[peacetrue.github.io/docs^]。
 

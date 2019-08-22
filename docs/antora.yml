@@ -1,5 +1,5 @@
 name: the-site
-title: Hi！你好
+title: 网站相关
 version: master
 start_page: ROOT:site.adoc
 nav:
