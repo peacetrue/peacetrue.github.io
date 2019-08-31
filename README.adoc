@@ -1,3 +1,6 @@
-= Peacetrue Project Site
+= 真实安宁的网站
 
-Introduce the peacetrue repository.
+记录在开发过程中遇到的各种问题，提供一套成熟通用的解决方案。
+
+
+
