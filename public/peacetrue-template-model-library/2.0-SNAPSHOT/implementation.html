@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>具体实现 :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template-model-library/2.0-SNAPSHOT/implementation.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-template-model-library" data-version="2.0-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="introduction.html">模型类库模板</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="function.html">功能</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="interface.html">接口-待完善</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="implementation.html">具体实现</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="sample.html">样章</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="usage.html">用法</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">模型类库模板</span>
+    <span class="version">2.0-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">学习 spring-framework</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-spring-framework/event.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">本网站相关</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../the-site/site.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">模型类库模板</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="introduction.html">2.0-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../the-site/site.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="introduction.html">模型类库模板</a></li>
+    <li><a href="implementation.html">具体实现</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/xiayx/Documents/Projects/peacetrue-template-model-library/docs/antora/modules/ROOT/pages/implementation.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">具体实现</h1>
+<div class="sect1">
+<h2 id="_运行环境"><a class="anchor" href="#_运行环境"></a>运行环境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>java:8</p>
+</li>
+<li>
+<p>gradle:5.4</p>
+</li>
+<li>
+<p>spring-boot:1.5</p>
+</li>
+<li>
+<p>mybatis:3.6</p>
+</li>
+<li>
+<p>vue:2.6</p>
+</li>
+<li>
+<p>iview:3.4</p>
+</li>
+<li>
+<p>webpack:4.34</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_模块结构"><a class="anchor" href="#_模块结构"></a>模块结构</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/structure.png" alt="structure">
+</div>
+</div>
+<div class="paragraph">
+<p>目前数据访问层使用mybatis实现，如有需要可以添加其他orm框架的实现。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_目录结构"><a class="anchor" href="#_目录结构"></a>目录结构</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>com</p>
+<div class="ulist">
+<ul>
+<li>
+<p>github</p>
+<div class="ulist">
+<ul>
+<li>
+<p>peacetrue</p>
+<div class="ulist">
+<ul>
+<li>
+<p>demo</p>
+<div class="ulist">
+<ul>
+<li>
+<p>controller：控制器</p>
+</li>
+<li>
+<p>service：服务接口和实现</p>
+</li>
+<li>
+<p>type：数据类型</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>com.github.peacetrue: 根据实际公司或组织名变化</p>
+</li>
+<li>
+<p>demo：根据实际模块名变化</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_命名规范"><a class="anchor" href="#_命名规范"></a>命名规范</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">peacetrue-demo-controller</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Properties：ControllerDemoProperties</p>
+</li>
+<li>
+<p>AutoConfiguration：ControllerDemoAutoConfiguration</p>
+</li>
+<li>
+<p>Controller：DemoController</p>
+</li>
+<li>
+<p>application.properties：application-demo-controller.properties</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">peacetrue-demo-service-api</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Service：DemoService</p>
+</li>
+<li>
+<p>Add：DemoAdd</p>
+</li>
+<li>
+<p>Query：DemoQuery</p>
+</li>
+<li>
+<p>Get：DemoGet</p>
+</li>
+<li>
+<p>Modify：DemoModify</p>
+</li>
+<li>
+<p>Delete：DemoDelete</p>
+</li>
+<li>
+<p>VO：DemoVO</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">peacetrue-demo-service-mybatis</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Properties：ServiceDemoProperties</p>
+</li>
+<li>
+<p>AutoConfiguration：ServiceDemoAutoConfiguration</p>
+</li>
+<li>
+<p>ServiceImpl：DemoServiceImpl</p>
+</li>
+<li>
+<p>application.properties：application-demo-service.properties</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">peacetrue-demo-type</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Properties：TypeDemoProperties</p>
+</li>
+<li>
+<p>AutoConfiguration：TypeDemoAutoConfiguration</p>
+</li>
+<li>
+<p>application.properties：application-demo-type.properties</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
