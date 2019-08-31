@@ -8,14 +8,16 @@ content:
   branches: master
   sources:
   - url: ./
-    start_path: docs
+    start_path: antora/docs
   - url: ../learn-antora
-    start_path: docs
+    start_path: docs/antora
+  - url: ../learn-spring-framework
+    start_path: docs/antora
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
-  supplemental_files: ./supplemental-ui
+  supplemental_files: ./antora/supplemental-ui
 output:
   clean: true
   dir: ./public

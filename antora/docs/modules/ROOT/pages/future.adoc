@@ -1,0 +1,33 @@
+= 关于未来
+
+以后呢，还是要多写点东西，茫茫然然地活着，也不知道自己做了些什么，年龄却越来越大了。
+努力往架构师的方向发展吧，了解软件开发的整个生命周期。
+
+
+== 常用工具梳理
+* 制定计划：OmniPlan
+* 需求分析：UML
+* 模型设计：PowerDesigner
+* 原型设计：axure、OmniGraffle
+* 概要设计：
+* 详细设计：
+* 编码：Intellij Idea、生成器
+* 编程语言：Java、Python、SQL、Shell、JavaScript
+* 开发框架：Spring、Spring-Boot、Spring-Cloud、Hibernate、Mybatis、Dubbo、Vue、React
+* 开发套件：Rabbitmq、Quartz、Redis、Nginx
+* 接口：swagger ui
+* 测试：Postman、Jmeter、docker、kibana、Jenkins、portainer
+
+////
+写了这么多年的代码，老是弄重复的东西也没什么意思。
+业务呢、功能呢，了解清楚，抽象出一定的模型，后续不断更新改进归档；
+然后呢，再去做另一个业务另一个功能，不断的积累。
+////
+
+
+== 写作
+写作是基本功，介于本人写作能力比较弱，不得不找个好点的写作工具。
+主要用 https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc^] 写文档，
+然后用基于 AsciiDoc 的 https://antora.org/[antora^] 生成了此网站。
+
+
