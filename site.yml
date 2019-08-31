@@ -9,9 +9,10 @@ content:
   sources:
   - url: ./
     start_path: antora/docs
-  - url: ../learn-antora
-    start_path: docs/antora
+#  - url: ../learn-antora
+#    start_path: docs/antora
   - url: ../learn-spring-framework
+    branches: master
     start_path: docs/antora
 ui:
   bundle:
