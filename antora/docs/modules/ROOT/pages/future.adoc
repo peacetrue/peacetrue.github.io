@@ -29,4 +29,5 @@
 主要用 https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc^] 写文档，
 然后用基于 AsciiDoc 的 https://antora.org/[antora^] 生成了此网站。
 
+== gradle中类似maven-archetype的功能
 
