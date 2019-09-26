@@ -1,0 +1,58 @@
+= 签名认证
+include::./attributes.adoc[]
+
+客户端调用接口时，需要提供两个额外参数：应用标识和签名，
+服务端会校验签名参数是否正确，
+正确视为认证通过，否则视为认证失败。
+
+签名过程中会涉及到应用标识和应用秘钥，
+应用标识用于区分不同的客户端，
+应用秘钥用于认证身份。
+
+== 签名逻辑
+
+=== 生成签名值
+image::{_imagesdir}/generate-sign-value.png[]
+
+=== 常规签名
+image::{_imagesdir}/sign.png[]
+
+=== JSON签名
+image::{_imagesdir}/json-sign.png[]
+
+== 请求方式
+得到签名后参数，需要使用``raw``方式发送请求。
+
+使用 postman 发送请求的示例：
+
+image::{_imagesdir}/postman-raw.png[]
+
+使用 Spring RestTemplate 发送请求的示例：
+[source%nowrap,java]
+----
+HttpHeaders headers = new HttpHeaders();
+headers.setContentType(MediaType.APPLICATION_JSON);
+String params = "{\"data\":\"{\\\"c\\\":\\\"3\\\",\\\"b\\\":\\\"2\\\",\\\"a\\\":\\\"1\\\"}\",\"appId\":\"demo\",\"sign\":\"102A7048CAF22B9AA877B6D2FA7DCF58\"}";
+HttpEntity<String> entity = new HttpEntity<>(params, headers);
+this.restTemplate.postForObject("/requestBody", entity, String.class);
+----
+
+== 接口参数
+在声明接口参数时，只需要声明原始参数，
+不需要声明签名后参数，签名后参数的结构都是相同的：
+[source%nowrap,json]
+----
+{
+"data":"{原始参数}",
+"appId":"{应用标识}",
+"sign":"{签名值}"
+}
+----
+签名后参数仅用于认证，认证通过后只需要使用原始参数。
+
+
+
+
+
+
+

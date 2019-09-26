@@ -1,0 +1,6 @@
+name: the-site
+title: 网站相关
+version: master
+start_page: index.adoc
+nav:
+  - modules/ROOT/nav.adoc

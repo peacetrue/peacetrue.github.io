@@ -1,0 +1,17 @@
+= 网站建设
+
+本网站的静态文件由 https://antora.org/[antora^] 生成，
+存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/public[peacetrue.github.io/public^]。
+您当前所阅读项目的源文件存储在 https://github.com/peacetrue/peacetrue.github.io/tree/master/antora/docs[peacetrue.github.io/antora/docs^]。
+
+antora 是一个基于AsciiDoc的多资源库的文档站点生成器。
+它会从多个资源库中获取源文件，以资源库的维度切割成不同的文档。
+
+当您访问 https://peacetrue.github.io 时，会自动重定向到本网站，
+您可以在右下角切换到本网站的其他文档。
+//
+//.点击master
+//image::WX20190821-090430.png[]
+
+//.展示所有文档
+//image::WX20190821-085803.png[]

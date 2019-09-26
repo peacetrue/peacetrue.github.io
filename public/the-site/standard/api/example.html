@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快递系统接口文档 :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/the-site/standard/api/example.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="the-site" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">网站相关</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">接口规范</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="document-structure.html">文档结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="authentication.html">接口认证</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authentication-login.html">登录认证</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authentication-sign.html">签名认证</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="data-type.html">数据类型</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="data-structure.html">数据结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="param-structure.html">参数</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="response-status.html">响应状态</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="example.html">示例</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="download.html">下载</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../about.html">关于网站</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">网站相关</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">网站相关</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">网站相关</a></li>
+    <li><a href="index.html">接口规范</a></li>
+    <li><a href="example.html">示例</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/xiayx/Documents/Projects/peacetrue.github.io/docs/antora/modules/ROOT/pages/standard/api/example.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">快递系统接口文档</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>快递系统用于管理快递信息。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/standard/api/express-flow.png" alt="express flow">
+</div>
+<div class="title">Figure 1. 快递流程</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_认证方式"><a class="anchor" href="#_认证方式"></a>认证方式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用 <a href="authentication-sign.html#_json签名" class="page">JSON签名认证</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_数据类型"><a class="anchor" href="#_数据类型"></a>数据类型</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>参考 <a href="data-type.html" class="page">数据类型</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_数据结构"><a class="anchor" href="#_数据结构"></a>数据结构</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>参考 <a href="data-structure.html" class="page">数据结构</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参数"><a class="anchor" href="#_参数"></a>参数</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>参考 <a href="param-structure.html" class="page">参数</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_响应状态"><a class="anchor" href="#_响应状态"></a>响应状态</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>参考 <a href="response-status.html" class="page">响应状态</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_接口定义"><a class="anchor" href="#_接口定义"></a>接口定义</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_创建快递订单"><a class="anchor" href="#_创建快递订单"></a>创建快递订单</h3>
+<div class="paragraph">
+<p>创建快递订单</p>
+</div>
+<div class="sect3">
+<h4 id="_地址"><a class="anchor" href="#_地址"></a>地址</h4>
+<div class="paragraph">
+<p>POST /order/add</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_参数_2"><a class="anchor" href="#_参数_2"></a>参数</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">默认值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">应用标识</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人姓名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderCompany</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人公司</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderMobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人手机号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人地址</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sendTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上门取件时间</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_日期" class="page">日期</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">当前时间+1小时</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">保价金额</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_小数" class="page">小数</a>(10,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_返回结果"><a class="anchor" href="#_返回结果"></a>返回结果</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">成功</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">快递单号</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">您的预约超出今日营业时间，无法上门收件</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_分页查询快递订单"><a class="anchor" href="#_分页查询快递订单"></a>分页查询快递订单</h3>
+<div class="paragraph">
+<p>分页查询快递订单，默认按创建时间倒序排列。</p>
+</div>
+<div class="sect3">
+<h4 id="_请求地址"><a class="anchor" href="#_请求地址"></a>请求地址</h4>
+<div class="paragraph">
+<p>GET /order/query</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_参数_3"><a class="anchor" href="#_参数_3"></a>参数</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">可空</th>
+<th class="tableblock halign-left valign-top">默认值</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expressCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">快递单号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">模糊匹配</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建时间范围</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="param-structure.html#范围" class="page">范围</a>&lt;<a href="data-type.html#_日期" class="page">日期</a>&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建时间在指定范围内</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">排序</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>集合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdTime desc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可排序属性包括：createdTime、modifiedTime</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>组合 <a href="param-structure.html#_分页参数" class="page">分页参数</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_返回结果_2"><a class="anchor" href="#_返回结果_2"></a>返回结果</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作成功</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-structure.html#_分页对象" class="page">分页对象</a>&lt;<a href="#快递订单">快递订单</a>&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table id="快递订单" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 快递订单</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">应用标识</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人姓名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderCompany</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人公司</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderMobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人手机号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senderAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">寄件人地址</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sendTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上门取件时间</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_日期" class="page">日期</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">保价金额</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_小数" class="page">小数</a>(10,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">courierCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">收派员工号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(31)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">派件成功后有值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">courierMobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">收派员手机号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(31)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">派件成功后有值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">carriageFee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">物流费</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_小数" class="page">小数</a>(8,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">物流中有值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insuranceFee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">保价费</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_小数" class="page">小数</a>(8,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">物流中有值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nodeCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">流程节点编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(31)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参考<a href="#快递订单节点编码">快递订单节点编码</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stateCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">节点状态编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(15)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参考<a href="#时态">时态</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">finishCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最终状态编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(31)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参考<a href="#终态">终态</a></p></td>
+</tr>
+</tbody>
+</table>
+<table id="快递订单节点编码" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. 快递订单节点编码</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">编码</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新增</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dispatch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">派件</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deliver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">取件</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">物流</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">send</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">派送</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cancel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">取消</p></td>
+</tr>
+</tbody>
+</table>
+<table id="时态" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. 时态</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">编码</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">todo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">待执行</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">进行中</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已完成</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已失败</p></td>
+</tr>
+</tbody>
+</table>
+<table id="终态" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. 终态</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">编码</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">doing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">进行中</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已完成</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已关闭</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_获取快递订单详情"><a class="anchor" href="#_获取快递订单详情"></a>获取快递订单详情</h3>
+<div class="paragraph">
+<p>获取快递订单详情。</p>
+</div>
+<div class="sect3">
+<h4 id="_地址_2"><a class="anchor" href="#_地址_2"></a>地址</h4>
+<div class="paragraph">
+<p>POST /order/get</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_参数_4"><a class="anchor" href="#_参数_4"></a>参数</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">默认值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expressCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">快递单号</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="data-type.html#_字符串" class="page">字符串</a>(255)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_返回结果_3"><a class="anchor" href="#_返回结果_3"></a>返回结果</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可空</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">成功</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#快递订单">快递订单</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

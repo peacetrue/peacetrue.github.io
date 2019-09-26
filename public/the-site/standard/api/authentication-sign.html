@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>签名认证 :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/the-site/standard/api/authentication-sign.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="the-site" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">网站相关</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">接口规范</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="document-structure.html">文档结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="authentication.html">接口认证</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authentication-login.html">登录认证</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="authentication-sign.html">签名认证</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="data-type.html">数据类型</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="data-structure.html">数据结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="param-structure.html">参数</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="response-status.html">响应状态</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="example.html">示例</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="download.html">下载</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../about.html">关于网站</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">网站相关</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">网站相关</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">网站相关</a></li>
+    <li><a href="index.html">接口规范</a></li>
+    <li><a href="authentication.html">接口认证</a></li>
+    <li><a href="authentication-sign.html">签名认证</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/xiayx/Documents/Projects/peacetrue.github.io/docs/antora/modules/ROOT/pages/standard/api/authentication-sign.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">签名认证</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>客户端调用接口时，需要提供两个额外参数：应用标识和签名，
+服务端会校验签名参数是否正确，
+正确视为认证通过，否则视为认证失败。</p>
+</div>
+<div class="paragraph">
+<p>签名过程中会涉及到应用标识和应用秘钥，
+应用标识用于区分不同的客户端，
+应用秘钥用于认证身份。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_签名逻辑"><a class="anchor" href="#_签名逻辑"></a>签名逻辑</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_生成签名值"><a class="anchor" href="#_生成签名值"></a>生成签名值</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/standard/api/generate-sign-value.png" alt="generate sign value">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_常规签名"><a class="anchor" href="#_常规签名"></a>常规签名</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/standard/api/sign.png" alt="sign">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json签名"><a class="anchor" href="#_json签名"></a>JSON签名</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/standard/api/json-sign.png" alt="json sign">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_请求方式"><a class="anchor" href="#_请求方式"></a>请求方式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>得到签名后参数，需要使用<code>raw</code>方式发送请求。</p>
+</div>
+<div class="paragraph">
+<p>使用 postman 发送请求的示例：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/standard/api/postman-raw.png" alt="postman raw">
+</div>
+</div>
+<div class="paragraph">
+<p>使用 Spring RestTemplate 发送请求的示例：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">HttpHeaders headers = new HttpHeaders();
+headers.setContentType(MediaType.APPLICATION_JSON);
+String params = "{\"data\":\"{\\\"c\\\":\\\"3\\\",\\\"b\\\":\\\"2\\\",\\\"a\\\":\\\"1\\\"}\",\"appId\":\"demo\",\"sign\":\"102A7048CAF22B9AA877B6D2FA7DCF58\"}";
+HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(params, headers);
+this.restTemplate.postForObject("/requestBody", entity, String.class);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_接口参数"><a class="anchor" href="#_接口参数"></a>接口参数</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在声明接口参数时，只需要声明原始参数，
+不需要声明签名后参数，签名后参数的结构都是相同的：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+"data":"{原始参数}",
+"appId":"{应用标识}",
+"sign":"{签名值}"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>签名后参数仅用于认证，认证通过后只需要使用原始参数。</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

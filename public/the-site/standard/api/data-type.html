@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据类型 :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/the-site/standard/api/data-type.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="the-site" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">网站相关</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">接口规范</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="document-structure.html">文档结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="authentication.html">接口认证</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authentication-login.html">登录认证</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authentication-sign.html">签名认证</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="data-type.html">数据类型</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="data-structure.html">数据结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="param-structure.html">参数</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="response-status.html">响应状态</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="example.html">示例</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="download.html">下载</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../about.html">关于网站</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">网站相关</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">网站相关</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">网站相关</a></li>
+    <li><a href="index.html">接口规范</a></li>
+    <li><a href="data-type.html">数据类型</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/xiayx/Documents/Projects/peacetrue.github.io/docs/antora/modules/ROOT/pages/standard/api/data-type.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">数据类型</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>在描述接口时需要使用到数据类型，数据类型包括以下有效值：</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基础类型"><a class="anchor" href="#_基础类型"></a>基础类型</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_整数"><a class="anchor" href="#_整数"></a>整数</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">不带范围</dt>
+<dd>
+<p>直接使用 <em>整数</em></p>
+</dd>
+<dt class="hdlist1">带范围</dt>
+<dd>
+<p>整数(<em>min</em>,<em>max</em>)：min表示最小值、max表示最大值；</p>
+<div class="ulist">
+<ul>
+<li>
+<p>不确定最小值：整数(,<em>max</em>)</p>
+</li>
+<li>
+<p>不确定最大值：整数(<em>min</em>)</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_小数"><a class="anchor" href="#_小数"></a>小数</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">不带范围</dt>
+<dd>
+<p>直接使用 <em>小数</em></p>
+</dd>
+<dt class="hdlist1">带范围</dt>
+<dd>
+<p>小数(<em>M</em>,<em>D</em>)：M 标度，表示小数总位数，D 精度，表示小数部分位数</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_字符串"><a class="anchor" href="#_字符串"></a>字符串</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">不带范围</dt>
+<dd>
+<p>直接使用 <em>字符串</em></p>
+</dd>
+<dt class="hdlist1">带范围</dt>
+<dd>
+<p>字符串(<em>size</em>)：size表示字符串的最大长度</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_布尔值"><a class="anchor" href="#_布尔值"></a>布尔值</h3>
+<div class="paragraph">
+<p>布尔值作为参数时，默认接收以下有效值：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>true/false</p>
+</li>
+<li>
+<p>1/0</p>
+</li>
+<li>
+<p>on/off</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_日期"><a class="anchor" href="#_日期"></a>日期</h3>
+<div class="paragraph">
+<p>日期作为参数时，默认接收以下有效格式：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>yyyy-MM-dd</p>
+</li>
+<li>
+<p>yyyy-MM-dd HH:mm:ss</p>
+</li>
+<li>
+<p>整形毫秒数</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>日期作为返回数据时，默认输出以下格式：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>yyyy-MM-dd HH:mm:ss</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_集合"><a class="anchor" href="#_集合"></a>集合</h3>
+<div class="paragraph">
+<p>串联其他类型一起使用，例如：整数集合、字符串集合等等</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_自定义类型"><a class="anchor" href="#_自定义类型"></a>自定义类型</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用 <a href="data-structure.html#_数据结构格式" class="page">数据结构格式</a> 声明的类型</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_任意类型"><a class="anchor" href="#_任意类型"></a>任意类型</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>包含以上所有类型</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_类型的表述"><a class="anchor" href="#_类型的表述"></a>类型的表述</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>可以使用一个具体的类型，例如：整数；</p>
+</li>
+<li>
+<p>可以使用一个泛化类型，例如：基础类型、任意类型；</p>
+</li>
+<li>
+<p>可以使用多个类型，例如：整数/字符串。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+# antora generate --clean --to-dir public playbook.yml
+runtime:
+  cache_dir: ~/.cache/antora
+site:
+  title: 真实安宁
+  url: https://peacetrue.github.io
+  start_page: the-site::index.adoc
+content:
+  branches: master
+  sources:
+  - url: ./
+    start_path: ./docs/antora
+#  - url: ../learn-antora
+#    start_path: docs/antora
+#  - url: ../learn-spring-framework
+#    branches: master
+#    start_path: docs/antora
+#  - url: ../peacetrue-template-model-library
+#    branches: snapshot/2.0
+#    start_path: docs/antora
+#  - url: ../peacetrue-validation
+#    branches: master
+#    start_path: docs/antora
+#  - url: ../peacetrue-result
+#    branches: master
+#    start_path: docs/antora
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./docs/supplemental-ui
+output:
+  clean: true
+  dir: ./public
+#  destinations:
+#    - provider: archive
