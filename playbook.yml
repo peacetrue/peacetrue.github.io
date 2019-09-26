@@ -8,8 +8,9 @@ site:
 content:
   branches: master
   sources:
-  - url: ./
-    start_path: ./docs/antora
+#  - url: ./
+  - url: https://github.com/peacetrue/peacetrue.github.io
+    start_path: docs/antora
 #  - url: ../learn-antora
 #    start_path: docs/antora
 #  - url: ../learn-spring-framework
