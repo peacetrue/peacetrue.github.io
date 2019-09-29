@@ -1,6 +1,7 @@
 = 资源库梳理
 
 == 模板相关
+
 .资源库说明
 * peacetrue-template-gradle：提供基于Gradle的开发环境
 * peacetrue-template-model-structure：提供模型结构，作为生成器生成代码的容器
@@ -11,7 +12,15 @@
 * 模型类库：是指基于模型的类库，类库可用于被其他类库或项目依赖；
 * 模型项目：是指基于模型的项目，项目对应实际的业务场景，不会被依赖。
 
+== 第三方扩展
+
+== 自研组件
+
+=== peacetrue-core
+
+提供基础数据结构、异常、工具类，查看 https://github.com/peacetrue/peacetrue-core[github^]地址
 
 == 样章
+
 * peacetrue-sample：聚合所有组件提供一套完整服务
 

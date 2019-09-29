@@ -11,6 +11,8 @@ content:
 #  - url: ./
   - url: https://github.com/peacetrue/peacetrue.github.io
     start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-core
+    start_path: docs/antora
 #  - url: ../learn-antora
 #    start_path: docs/antora
 #  - url: ../learn-spring-framework
