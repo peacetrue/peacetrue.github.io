@@ -1,5 +1,5 @@
-name: the-site
-title: 网站相关
+name: overview
+title: 概述
 version: master
 start_page: index.adoc
 nav:

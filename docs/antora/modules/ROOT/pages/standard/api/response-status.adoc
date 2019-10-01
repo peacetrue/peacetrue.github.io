@@ -25,49 +25,49 @@ include::./attributes.adoc[]
 |根据实际情况决定
 |通用的成功状态
 
-|sign_error
+|[[sign_error,签名错误]]sign_error
 |签名错误
 |{签名后参数}
 |否
 |
 
-|parameter_missing
+|[[parameter_missing,缺少参数]]parameter_missing
 |缺失必须的参数'\{name}'
 |{参数}
 |否
 |
 
-|parameter_format_error
+|[[parameter_format_error,参数格式错误]]parameter_format_error
 |参数'\{name}'的值'\{value}'的格式错误
 |{参数}
 |否
 |
 
-|parameter_range_error
+|[[parameter_range_error,参数范围错误]]parameter_range_error
 |参数'\{name}'的值'\{value}'的范围错误
 |{参数}
 |否
 |
 
-|record_absent
+|[[record_absent,记录不存在]]record_absent
 |参数'\{name}'指定的记录'\{value}'不存在
 |{参数}
 |否
 |
 
-|record_exist
+|[[record_exist,记录已存在]]record_exist
 |参数'\{name}'指定的记录'\{value}'已存在
 |{参数}
 |否
 |
 
-|record_unowned
+|[[record_unowned,记录不被拥有]]record_unowned
 |参数'\{name}'指定的记录'\{value}'不被拥有
 |{参数}
 |否
 |
 
-|failure
+|[[failure,操作失败]]failure
 |操作失败
 |字符串
 |是

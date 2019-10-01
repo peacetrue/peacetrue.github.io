@@ -4,7 +4,7 @@ runtime:
 site:
   title: 真实安宁
   url: https://peacetrue.github.io
-  start_page: the-site::index.adoc
+  start_page: overview::index.adoc
 content:
   branches: master
   sources:
