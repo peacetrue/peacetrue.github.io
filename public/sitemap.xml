@@ -4,6 +4,9 @@
 <loc>https://peacetrue.github.io/sitemap-peacetrue-core.xml</loc>
 </sitemap>
 <sitemap>
+<loc>https://peacetrue.github.io/sitemap-peacetrue-template-gradle.xml</loc>
+</sitemap>
+<sitemap>
 <loc>https://peacetrue.github.io/sitemap-the-site.xml</loc>
 </sitemap>
 </sitemapindex>
