@@ -1,10 +1,11 @@
 :page-partial:
 :_imagesdir: standard/api
+:module: master@overview::
 
-:接口认证: xref:standard/api/authentication.adoc[接口认证]
-:JSON签名认证: xref:standard/api/authentication-sign.adoc#_json签名[JSON签名认证]
+:接口认证: xref:{module}standard/api/authentication.adoc[接口认证]
+:JSON签名认证: xref:{module}standard/api/authentication-sign.adoc#_json签名[JSON签名认证]
 
-:data_structure_adoc: xref:standard/api/data-structure.adoc
+:data_structure_adoc: xref:{module}standard/api/data-structure.adoc
 :数据结构: {data_structure_adoc}[数据结构]
 :数据结构格式: {data_structure_adoc}#_数据结构格式[数据结构格式]
 :通用数据结构: {data_structure_adoc}#_通用数据结构[通用数据结构]
@@ -14,14 +15,14 @@
 :签名后参数: {data_structure_adoc}#_签名后参数[签名后参数]
 :分页对象: {data_structure_adoc}#_分页对象[分页对象]
 
-:param_doc: xref:standard/api/param-structure.adoc
+:param_doc: xref:{module}standard/api/param-structure.adoc
 :参数结构: {param_doc}[参数]
 :参数格式: {param_doc}#_参数格式[参数格式]
 :通用参数: {param_doc}#_通用参数[通用参数]
 :范围: {param_doc}#范围[范围]
 :分页参数: {param_doc}#_分页参数[分页参数]
 
-:type_doc: xref:standard/api/data-type.adoc
+:type_doc: xref:{module}standard/api/data-type.adoc
 :数据类型: {type_doc}[数据类型]
 :整数: {type_doc}#_整数[整数]
 :小数: {type_doc}#_小数[小数]
@@ -30,7 +31,7 @@
 :日期: {type_doc}#_日期[日期]
 :任意类型: {type_doc}#_任意类型[任意类型]
 
-:status_doc: xref:standard/api/response-status.adoc
+:status_doc: xref:{module}standard/api/response-status.adoc
 :响应状态: {status_doc}[响应状态]
 :响应状态格式: {status_doc}#_响应状态格式[响应状态格式]
 :通用响应状态: {status_doc}#_通用响应状态[通用响应状态]
