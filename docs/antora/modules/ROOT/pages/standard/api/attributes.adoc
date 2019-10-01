@@ -35,3 +35,11 @@
 :响应状态: {status_doc}[响应状态]
 :响应状态格式: {status_doc}#_响应状态格式[响应状态格式]
 :通用响应状态: {status_doc}#_通用响应状态[通用响应状态]
+:sign_error: {status_doc}#sign_error
+:parameter_missing: {status_doc}#parameter_missing[缺少参数]
+:parameter_format_error: {status_doc}#parameter_format_error[参数格式错误]
+:parameter_range_error: {status_doc}#parameter_range_error[参数范围错误]
+:record_absent: {status_doc}#record_absent[记录不存在]
+:record_exist: {status_doc}#record_exist[记录已存在]
+:record_unowned: {status_doc}#record_unowned[记录不被拥有]
+:failure: {status_doc}#failure[操作失败]
