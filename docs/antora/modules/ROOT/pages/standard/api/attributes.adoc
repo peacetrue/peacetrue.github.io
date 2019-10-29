@@ -1,6 +1,6 @@
 :page-partial:
 :_imagesdir: standard/api
-:module: master@overview::
+:module: master@overview::page$
 
 :接口认证: xref:{module}standard/api/authentication.adoc[接口认证]
 :JSON签名认证: xref:{module}standard/api/authentication-sign.adoc#_json签名[JSON签名认证]
@@ -13,7 +13,7 @@
 :负载数据: {data_structure_adoc}#负载数据[负载数据]
 :参数: {data_structure_adoc}#_参数[参数]
 :签名后参数: {data_structure_adoc}#_签名后参数[签名后参数]
-:分页对象: {data_structure_adoc}#_分页对象[分页对象]
+:分页对象: {data_structure_adoc}#分页对象[分页对象]
 
 :param_doc: xref:{module}standard/api/param-structure.adoc
 :参数结构: {param_doc}[参数]
