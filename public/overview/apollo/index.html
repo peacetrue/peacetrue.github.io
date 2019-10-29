@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Apollo（阿波罗） :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/overview/apollo/index.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="overview" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">概览</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../standard/api/index.html">接口规范</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/document-structure.html">文档结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../standard/api/authentication.html">接口认证</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../standard/api/authentication-login.html">登录认证</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../standard/api/authentication-sign.html">签名认证</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/data-type.html">数据类型</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/data-structure.html">数据结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/param-structure.html">参数</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/response-status.html">响应状态</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/example.html">示例</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/download.html">下载</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">携程阿波罗配置中心</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">关于网站</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">概览</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">概览</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">概览</a></li>
+    <li><a href="index.html">携程阿波罗配置中心</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/apollo/index.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">Apollo（阿波罗）</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>官网地址： <a href="https://github.com/ctripcorp/apollo" class="bare">https://github.com/ctripcorp/apollo</a></p>
+</div>
+<div class="paragraph">
+<p>本文档仅对官方文档做简要概述，详情信息请以官网文档为准。</p>
+</div>
+<div class="paragraph">
+<p>Apollo（阿波罗）是携程框架部门研发的分布式配置中心， 能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端， 并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景。</p>
+</div>
+<div class="ulist">
+<div class="title">配置涉及维度</div>
+<ul>
+<li>
+<p>不同项目</p>
+</li>
+<li>
+<p>不同环境</p>
+</li>
+<li>
+<p>不同命名空间</p>
+</li>
+<li>
+<p>不同集群</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_检出项目"><a class="anchor" href="#_检出项目"></a>检出项目</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>git clone <a href="https://github.com/ctripcorp/apollo" class="bare">https://github.com/ctripcorp/apollo</a></code></p>
+</div>
+<div class="paragraph">
+<p>此操作较为耗时，检出完成后，项目结构如下：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/folde-structure.png" alt="folde structure" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>服务端部署主要用到以下3个项目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>apollo-configservice：用于向客户端提供接口</p>
+</li>
+<li>
+<p>apollo-adminservice：用于向 apollo-portal 提供接口</p>
+</li>
+<li>
+<p>apollo-portal：用于提供界面管理</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_初始化数据库"><a class="anchor" href="#_初始化数据库"></a>初始化数据库</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>apollo-configservice 和 apollo-adminservice 共同使用 ApolloConfigDB 数据库。 运行初始化脚本【scripts/db/migration/configdb/V1.0.0__initialization.sql】创建 ApolloConfigDB 数据库。</p>
+</div>
+<div class="paragraph">
+<p>apollo-portal 使用 ApolloPortalDB 数据库。 运行初始化脚本【scripts/db/migration/portaldb/V1.0.0__initialization.sql】创建 ApolloPortalDB 数据库。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_配置数据原"><a class="anchor" href="#_配置数据原"></a>配置数据原</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>检出的代码里面没有配置数据源，需要自己添加，为了不影响原项目内容，单独添加一个配置文件：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/application-local.png" alt="application local" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>application-local.yml 内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ApolloConfigDB?useSSL=false&amp;characterEncoding=utf8
+    username: root
+    password: '[password]'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>用户名和密码根据实际情况更改</p>
+</div>
+<div class="paragraph">
+<p>然后在运行项目时激活 local 配置：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/active-local.png" alt="active local" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>apollo-adminservice 和 apollo-portal 同以上配置</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_配置注册中心地址"><a class="anchor" href="#_配置注册中心地址"></a>配置注册中心地址</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>apollo-configservice 除了为客户端提供接口外，还作为注册中心。</p>
+</div>
+<div class="paragraph">
+<p>apollo-portal 还需要额外添加 apollo-env.properties 文件，
+以配置不同环境下注册中心的地址：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/apollo-env.png" alt="apollo env" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>apollo-env.properties 内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>dev.meta=http://localhost:8080 <i class="conum" data-value="1"></i><b>(1)</b>
+fat.meta=http://localhost:8050  <i class="conum" data-value="2"></i><b>(2)</b>
+uat.meta=http://localhost:8040 <i class="conum" data-value="3"></i><b>(3)</b>
+pro.meta=http://localhost:8030 <i class="conum" data-value="4"></i><b>(4)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>开发环境 apollo-configservice 的地址</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>测试环境 apollo-configservice 的地址（未考证）</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>准生产环境 apollo-configservice 的地址（未考证）</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>生产环境 apollo-configservice 的地址</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_运行项目"><a class="anchor" href="#_运行项目"></a>运行项目</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>依次启动：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>apollo-configservice</p>
+</li>
+<li>
+<p>apollo-adminservice（也会注册到 apollo-configservice）</p>
+</li>
+<li>
+<p>apollo-portal</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>启动完成后，打开 <a href="http://localhost:8070" class="bare" target="_blank" rel="noopener">http://localhost:8070</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_配置身份认证"><a class="anchor" href="#_配置身份认证"></a>配置身份认证</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>默认没有启用身份认证，可以激活 auth 后，启用身份认证：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/auth.png" alt="auth" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>超级管理员账号为： apollo/admin</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_创建项目"><a class="anchor" href="#_创建项目"></a>创建项目</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>创建项目界面如下：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/create-project.png" alt="create project" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>其中，涉及到部门和应用负责人的选择，具体选项配置如下：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/config-org.png" alt="config org">
+</div>
+<div class="title">Figure 1. 部门配置</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/config-user.png" alt="config user">
+</div>
+<div class="title">Figure 2. 用户配置</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_创建命名空间"><a class="anchor" href="#_创建命名空间"></a>创建命名空间</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一个项目中有多个模块，每个模块使用不同的命名空间，根据当前项目结构：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/namespaces.png" alt="namespaces" width="300" height="400">
+</div>
+</div>
+<div class="paragraph">
+<p>暂拟定4个对应的命名空间：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>dubbo</p>
+</li>
+<li>
+<p>admin</p>
+</li>
+<li>
+<p>http</p>
+</li>
+<li>
+<p>task</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_使用多环境"><a class="anchor" href="#_使用多环境"></a>使用多环境</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>修改数据库配置，添加新的环境，假设添加一个 pro 环境：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/multiple-env.png" alt="multiple env">
+</div>
+</div>
+<div class="paragraph">
+<p>重新创建一个 ApolloConfigDBPro 数据库，修改注册地址：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/registry.png" alt="registry">
+</div>
+</div>
+<div class="paragraph">
+<p>修改 apollo-configservice 的端口为 8030 后启动，
+修改 apollo-adminservice 的端口为 8031 后启动。</p>
+</div>
+<div class="paragraph">
+<p>重新访问管理界面，可以看见出现多个环境：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/multi-env-ui.png" alt="multi env ui">
+</div>
+</div>
+<div class="paragraph">
+<p>最终运行情况：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/multi-env-run.png" alt="multi env run">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>管理后台：PortalApplication：8070</p>
+</li>
+<li>
+<p>开发环境（dev）：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ConfigServiceApplication：8090</p>
+</li>
+<li>
+<p>AdminServiceApplication：8080</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>生产环境（pro）：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ConfigServiceApplicationPro：8030</p>
+</li>
+<li>
+<p>AdminServiceApplicationPro：8031</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_使用客户端"><a class="anchor" href="#_使用客户端"></a>使用客户端</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>添加客户端依赖：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;com.ctrip.framework.apollo&lt;/groupId&gt;
+    &lt;artifactId&gt;apollo-client&lt;/artifactId&gt;
+    &lt;version&gt;1.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>修改客户端配置文件：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/client-config.png" alt="client config">
+</div>
+</div>
+<div class="paragraph">
+<p>新增如下配置：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">app.id=aum-detection <i class="conum" data-value="1"></i><b>(1)</b>
+apollo.meta=http://localhost:8080 <i class="conum" data-value="2"></i><b>(2)</b>
+apollo.bootstrap.enabled = true   <i class="conum" data-value="3"></i><b>(3)</b>
+//apollo.bootstrap.eagerLoad.enabled=true
+apollo.bootstrap.namespaces=admin <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>配置应用标识</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>配置注册中心地址（apollo-configservice的地址）</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>启用 spring bootstrap</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>指定使用的命名空间</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>拷贝注释部分的配置到注册中心（粘贴到文本栏内）：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apollo/namespace-text.png" alt="namespace text">
+</div>
+</div>
+<div class="paragraph">
+<p>然后发布配置。</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
