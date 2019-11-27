@@ -1,6 +1,6 @@
 = Apollo（阿波罗）
 
-官网地址： https://github.com/ctripcorp/apollo
+官网地址： https://github.com/ctripcorp/apollo[^]
 
 本文档仅对官方文档做简要概述，详情信息请以官网文档为准。
 

@@ -1,0 +1,68 @@
+= 黄金管家阿波罗项目改造梳理
+
+== 非application配置标准化
+配置文件统一使用 application.properties，
+外围配置使用 application-default.properties。
+目前商户系统、顺丰系统、短信系统、AI系统、检测系统均使用此模式，
+非此模式项目需要调整，涉及相关项目负责人以及运维。
+
+== 命名空间规范
+多数项目都含以下模块：
+
+* dubbo
+* admin
+* http
+* task
+
+如果一个项目含以上模块，则统一使用以上命名空间。
+例外的模块根据实际情况调整。
+
+== 商户系统
+.应用名
+* store
+
+.模块及其对应命名空间
+* aum-store-service-provider：dubbo
+* aum-store-admin：admin
+* aum-store-chan：chan
+* aum-store-task：task
+* aum-store-merchant：http
+
+== 短信系统
+.应用名
+* sms
+
+.模块及其对应命名空间
+* aum-sms-app-dubbo：dubbo
+* aum-sms-app-admin：admin
+
+== 顺丰系统
+.应用名
+* sf
+
+.模块及其对应命名空间
+* aum-sf-app-admin：admin
+* aum-sf-app-http：http
+* aum-sf-app-dubbo：dubbo
+* aum-sf-app-task：task
+
+== AI系统
+.应用名
+* ai
+
+.模块及其对应命名空间
+* aum-ai-app-admin：admin
+* aum-ai-app-http：http
+* aum-ai-app-dubbo：dubbo
+* aum-ai-app-task：task
+
+== 检测系统
+.应用名
+* detection
+
+.模块及其对应命名空间
+* aum-detection-app-admin：admin
+* aum-detection-app-http：http
+* aum-detection-app-dubbo：dubbo
+* aum-detection-app-task：task
+
