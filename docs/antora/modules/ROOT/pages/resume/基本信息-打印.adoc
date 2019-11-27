@@ -9,7 +9,7 @@
 == 个人信息
 
 . 夏幼学/男/1989
-. 大专/北极大学计算机系
+. 大专/计算机科学与技术
 . 工作年限：9年
 . 技术博客：https://peacetrue.github.io
 . Github：http://github.com/peacetrue
