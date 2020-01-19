@@ -4,7 +4,7 @@
 
 . 手机：18618262909
 . Email：xiayouxue@hotmail.com
-. 微信号：xiayouxue2
+. 微信号：18618262909
 
 == 个人信息
 
@@ -13,10 +13,14 @@
 . 工作年限：9年
 . 技术博客：https://peacetrue.github.io
 . Github：http://github.com/peacetrue
+. Stack：https://stackoverflow.com/users/5969163/xiayouxue
 
-. 期望职位：中高级 Web 前端开发工程师
-. 期望薪资：税前月薪25k~30K，特别喜欢的公司可例外
+. 期望职位：高级java开发工程师
+. 期望薪资：税前月薪25K~30K
 . 期望城市：北京
+
+单身未婚无女友，喜欢编码喜欢设计喜欢学习新技术， +
+可加班可探讨可研究，付出青春与热血希望有所积累所有沉淀。
 
 == 工作经历
 
@@ -26,6 +30,8 @@
 个人主要完成以下工作：构建业务系统(商户系统)与基础系统(短信系统，快递系统，检测系统，人脸识别系统)， +
 系统间使用dubbo和rabbitmq通讯。 +
 编写基本组件包括代码生成器、代码生成器maven插件、日志组件，标准响应数据组件，分布式锁组件，导出组件，签名组件等等。
+
+技术栈包括： spring-boot、spring-cloud、hibernate、mybatis、dubbo、rabbitmq、redis、xxl-job、vue、iview等
 
 ==== 存金通商户系统
 
@@ -138,13 +144,13 @@
 
 主要记录在开发过程中遇到的各种问题，以及为其提供的解决办法。
 
-==== https://github.com/peacetrue/peacetrue-validation[验证扩展^]
+==== 验证扩展
 
 从逻辑上总结了验证的原理。 +
 从后台的角度提供基于 hibernate-validation 的扩展， +
 从前端的角度提供基于 async-validator 的扩展。
 
-==== https://github.com/peacetrue/peacetrue-result[标准响应数据^]
+==== 标准响应数据
 
 统一前后端交互的数据格式。 +
 从后端的角度， 基于 spring 捕获所有异常并转换为标准响应数据格式， +
@@ -159,7 +165,7 @@
 
 === 演讲和讲义
 
-. https://peacetrue.github.io/public/overview/apollo/index.html[接口规范^]
+. https://peacetrue.github.io/public/overview/standard/api/index.html[接口规范^]
 . https://peacetrue.github.io/public/overview/apollo/index.html[携程阿波罗配置中心^]
 
 == 技能清单
@@ -169,8 +175,10 @@
 . Web开发：Java/JSP/Servlet
 . Web框架：Spring/Dubbo/Hibernate/Mybatis/xxl-job/rabbitmq/redis
 . 前端开发：HTML5/CSS3/ES6
-. 前端框架：Bootstrap/jQuery/requirejs/Vue/iview/React/Ant Design
-. 前端工具：Bower/Gulp/SaSS/LeSS/Webpack
+//. 前端框架：Bootstrap/jQuery/requirejs/Vue/iview/React/Ant Design
+. 前端框架：Bootstrap/jQuery/requirejs/Vue/iview
+//. 前端工具：Bower/Gulp/SaSS/LeSS/Webpack
+. 前端工具：Webpack
 . 数据库相关：MySQL
 . 版本管理、文档和自动化部署工具：Svn/Git/Adoc/Antora
 //. 单元测试：PHPUnit/SimpleTest/Qunit

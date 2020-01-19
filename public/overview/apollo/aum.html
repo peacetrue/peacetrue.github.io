@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>黄金管家阿波罗项目改造梳理 :: 真实安宁</title>
+    <link rel="canonical" href="https://peacetrue.github.io/overview/apollo/aum.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">真实安宁</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="overview" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">概览</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../standard/api/index.html">接口规范</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/document-structure.html">文档结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../standard/api/authentication.html">接口认证</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../standard/api/authentication-login.html">登录认证</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../standard/api/authentication-sign.html">签名认证</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/data-type.html">数据类型</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/data-structure.html">数据结构</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/param-structure.html">参数</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/response-status.html">响应状态</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/example.html">示例</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../standard/api/download.html">下载</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">携程阿波罗配置中心</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../about.html">关于网站</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../resume/基本信息.html">我的简历</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">概览</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">概览</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">概览</a></li>
+    <li><a href="aum.html">黄金管家阿波罗项目改造梳理</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/apollo/aum.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">黄金管家阿波罗项目改造梳理</h1>
+<div class="sect1">
+<h2 id="_非application配置标准化"><a class="anchor" href="#_非application配置标准化"></a>非application配置标准化</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>配置文件统一使用 application.properties，
+外围配置使用 application-default.properties。
+目前商户系统、顺丰系统、短信系统、AI系统、检测系统均使用此模式，
+非此模式项目需要调整，涉及相关项目负责人以及运维。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_命名空间规范"><a class="anchor" href="#_命名空间规范"></a>命名空间规范</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>多数项目都含以下模块：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>dubbo</p>
+</li>
+<li>
+<p>admin</p>
+</li>
+<li>
+<p>http</p>
+</li>
+<li>
+<p>task</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果一个项目含以上模块，则统一使用以上命名空间。
+例外的模块根据实际情况调整。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_商户系统"><a class="anchor" href="#_商户系统"></a>商户系统</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">应用名</div>
+<ul>
+<li>
+<p>store</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">模块及其对应命名空间</div>
+<ul>
+<li>
+<p>aum-store-service-provider：dubbo</p>
+</li>
+<li>
+<p>aum-store-admin：admin</p>
+</li>
+<li>
+<p>aum-store-chan：chan</p>
+</li>
+<li>
+<p>aum-store-task：task</p>
+</li>
+<li>
+<p>aum-store-merchant：http</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_短信系统"><a class="anchor" href="#_短信系统"></a>短信系统</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">应用名</div>
+<ul>
+<li>
+<p>sms</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">模块及其对应命名空间</div>
+<ul>
+<li>
+<p>aum-sms-app-dubbo：dubbo</p>
+</li>
+<li>
+<p>aum-sms-app-admin：admin</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_顺丰系统"><a class="anchor" href="#_顺丰系统"></a>顺丰系统</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">应用名</div>
+<ul>
+<li>
+<p>sf</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">模块及其对应命名空间</div>
+<ul>
+<li>
+<p>aum-sf-app-admin：admin</p>
+</li>
+<li>
+<p>aum-sf-app-http：http</p>
+</li>
+<li>
+<p>aum-sf-app-dubbo：dubbo</p>
+</li>
+<li>
+<p>aum-sf-app-task：task</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ai系统"><a class="anchor" href="#_ai系统"></a>AI系统</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">应用名</div>
+<ul>
+<li>
+<p>ai</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">模块及其对应命名空间</div>
+<ul>
+<li>
+<p>aum-ai-app-admin：admin</p>
+</li>
+<li>
+<p>aum-ai-app-http：http</p>
+</li>
+<li>
+<p>aum-ai-app-dubbo：dubbo</p>
+</li>
+<li>
+<p>aum-ai-app-task：task</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_检测系统"><a class="anchor" href="#_检测系统"></a>检测系统</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">应用名</div>
+<ul>
+<li>
+<p>detection</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">模块及其对应命名空间</div>
+<ul>
+<li>
+<p>aum-detection-app-admin：admin</p>
+</li>
+<li>
+<p>aum-detection-app-http：http</p>
+</li>
+<li>
+<p>aum-detection-app-dubbo：dubbo</p>
+</li>
+<li>
+<p>aum-detection-app-task：task</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
