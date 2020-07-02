@@ -2,9 +2,9 @@
 runtime:
   cache_dir: ~/.cache/antora
 site:
-  title: 安宁的总结
-  url: https://peacetrue.cn/summarize
-  start_page: learn-jmeter::jmeter使用总结.adoc
+  title: 安宁的网络日志
+  url: https://peacetrue.cn/summarize/index.html
+  start_page: learn-jmeter::index.adoc
 content:
   branches: master
   sources:
