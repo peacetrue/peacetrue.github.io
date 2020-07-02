@@ -2,15 +2,15 @@
 runtime:
   cache_dir: ~/.cache/antora
 site:
-  title: 真实安宁
-  url: https://peacetrue.github.io
-  start_page: overview::index.adoc
+  title: 安宁的总结
+  url: https://peacetrue.cn/summarize
+  start_page: learn-jmeter::jmeter使用总结.adoc
 content:
   branches: master
   sources:
 #  - url: ./
-  - url: https://github.com/peacetrue/peacetrue.github.io
-    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue.github.io
+#    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-template-gradle
 #    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
@@ -29,6 +29,9 @@ content:
 #  - url: ../peacetrue-result
 #    branches: master
 #    start_path: docs/antora
+  - url: https://github.com/peacetrue/learn-jmeter
+    branches: master
+    start_path: docs/antora
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
