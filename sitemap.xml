@@ -6,4 +6,7 @@
 <sitemap>
 <loc>https://peacetrue.github.io/sitemap-peacetrue-validation.xml</loc>
 </sitemap>
+<sitemap>
+<loc>https://peacetrue.github.io/sitemap-repository.xml</loc>
+</sitemap>
 </sitemapindex>
