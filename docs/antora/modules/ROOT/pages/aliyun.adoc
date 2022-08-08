@@ -1,7 +1,0 @@
-= 阿里云
-
-介绍阿里云网站的基本情况。
-
-* 阿里云：https://www.aliyun.com/
-* 阿里云*开发者社区：https://developer.aliyun.com/
-* 阿里云*开发者社区*技术与产品*人工智能：https://developer.aliyun.com/group/ai?spm=a2c6h.12883283.1364563.5.5f1f201cVqsDmL#/?_k=zmvp3a

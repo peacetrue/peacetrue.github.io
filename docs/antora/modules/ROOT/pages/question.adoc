@@ -1,5 +1,0 @@
-= 常见问题
-
-== gradle中类似maven-archetype的功能
-
-== github template 支持多分支

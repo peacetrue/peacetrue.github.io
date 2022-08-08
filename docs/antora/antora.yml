@@ -1,6 +1,0 @@
-name: overview
-title: 概览
-version: master
-start_page: index.adoc
-nav:
-  - modules/ROOT/nav.adoc
