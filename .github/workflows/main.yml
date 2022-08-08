@@ -1,0 +1,64 @@
+name: Antora Site
+
+on:
+  push:
+    branches: [ master ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  SITE_DIR: '/build/site'
+  BRANCH: 'gh-pages'
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Generate
+      uses: kameshsampath/antora-site-action@v0.2.4
+      with:
+        antora_playbook: playbook.yml
+#        site_sources_path: docs/antora
+    - name: Check
+      run: ls -la build/site
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.4.0
+      with:
+        folder: "${{ github.workspace }}${{ env.SITE_DIR }}"
+        branch: "${{ env.BRANCH }}"
+        force: true
+#        target-folder: "${{ github.workspace }}${{ env.SITE_DIR }}"
+  deploy:
+    needs: [build]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: "${{ env.BRANCH }}"
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main

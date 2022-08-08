@@ -1,0 +1,10 @@
+name: repository
+title: 知识库
+version: master
+asciidoc:
+  attributes:
+    numbered: '@'
+    app-name: peacetrue.github.io
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc

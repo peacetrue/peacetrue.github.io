@@ -1,0 +1,45 @@
+# antora generate --clean --to-dir public playbook.yml
+# antora generate playbook.yml
+# ln -s ../../../../../README.adoc index.adoc
+site:
+  title: 安宁的知识库
+  url: https://peacetrue.github.io
+  start_page: repository::index.adoc
+content:
+  branches: master
+  sources:
+  - url: ./
+    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue.github.io
+#    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue-template-gradle
+#    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue-core
+#    start_path: docs/antora
+#  - url: https://github.com/peacetrue/learn-antora
+#    start_path: docs/antora
+#  - url: https://github.com/peacetrue/learn-spring-framework
+#    branches: master
+#    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue-template-model-library
+#    branches: snapshot/2.0
+#    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-validation.git
+    branches: master
+    start_path: docs/antora
+#  - url: https://github.com/peacetrue/peacetrue-result
+#    branches: master
+#    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-result.git
+    branches: master
+    start_path: docs/antora
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: supplemental-ui
+#output:
+#  clean: true
+#  dir: ./site
+#  destinations:
+#    - provider: archive

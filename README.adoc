@@ -1,0 +1,25 @@
+= 简介
+:app-name: peacetrue.github.io
+
+image:https://github.com/peacetrue/{app-name}/actions/workflows/main.yml/badge.svg["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions/workflows/main.yml"]
+
+https://peacetrue.github.io/[安宁的知识库] 是一个使用 https://antora.org[Antora^] 构建，基于 https://pages.github.com/[GitHub Pages^] 运行的静态站点，汇集了笔者所有 GitHub 仓库中的文档信息。
+
+== 站点分支
+
+master::
+master 分支存放静态站点构建脚本，用于生成静态站点资源文件。
+gh-pages::
+gh-pages 分支存放静态站点资源文件，用于部署到 GitHub Pages 服务器。
+
+== 工作流程
+
+. 本地修改后，推送到远程 master 分支
+. 触发 https://docs.github.com/en/actions[GitHub Actions^]
+.. 基于 master 分支，使用 https://antora.org[Antora^] 生成资源文件，然后推送到 gh-pages 分支
+.. 基于 gh-pages 分支，部署到 GitHub Pages 服务器
+
+相关配置：
+
+* master 分支中，Antora 生成的资源文件所在目录为 build/site（相对于资源库）
+* gh-pages 分支中，资源文件所在目录为 `/`（相对于资源库）
