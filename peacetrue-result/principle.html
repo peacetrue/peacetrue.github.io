@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>核心原理 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/principle.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-result" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">响应结果组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quick-start.html">快速上手</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-manual.html">用户手册</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="principle.html">核心原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本说明</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">响应结果组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">响应结果组件</a></li>
+    <li><a href="principle.html">核心原理</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/principle.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">核心原理</h1>
+<div class="sect1">
+<h2 id="_工作流程"><a class="anchor" href="#_工作流程"></a>1. 工作流程</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-06-07-04-28-317.png" alt="image 2022 04 06 07 04 28 317">
+</div>
+<div class="title">Figure 1. 组件工作流程</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_数据结构"><a class="anchor" href="#_数据结构"></a>2. 数据结构</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>响应结果数据结构如下：</p>
+</div>
+<table id="Result" class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 1. 响应结果</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">编码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">指示响应状态，调用者可根据此字段做业务逻辑判断，进而决定下一动作</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作失败时，调用者能够根据此字段准确定位失败原因</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不限</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">成功时为实际业务数据；失败时可以为空或者异常堆栈信息或者描述模板参数</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="_images/result.png" alt="result">
+</div>
+<div class="title">Figure 2. 响应结果体系结构</div>
+</div>
+<div class="paragraph">
+<p>请求参数数据结构如下：</p>
+</div>
+<table id="Parameter" class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 2. 请求参数</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数的名称</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不限</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">接口实际需要的类型</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不限</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">调用接口时，传入的参数值</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_异常转换体系"><a class="anchor" href="#_异常转换体系"></a>3. 异常转换体系</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>组件包含一套异常转换体系，用于将异常转换为响应结果，整体结构与 Spring 的转换体系类似。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/exception-convert-system.png" alt="exception convert system">
+</div>
+<div class="title">Figure 3. 异常转换体系抽象结构</div>
+</div>
+<div class="paragraph">
+<p>与 Spring 转换体系对比：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ExceptionConvertService 对应 Spring 中 ConversionService</p>
+</li>
+<li>
+<p>ExceptionConverter 对应 Spring 中 Converter</p>
+</li>
+<li>
+<p>ConditionalExceptionConverter 对应 Spring 中 ConditionalGenericConverter</p>
+</li>
+<li>
+<p>FallbackExceptionConverter 用于兜底，避免存在无法转换的情况，直接返回 <strong>操作失败</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>异常转换器命名规范：推荐使用 <strong>异常类名</strong> + <strong>Converter</strong>。
+自定义异常转换器可参考 <a href="user-manual.html#custom-exception-converter" class="page">用户手册</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="result_type"><a class="anchor" href="#result_type"></a>4. 响应结果类型</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 25%;">
+<col style="width: 10%;">
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">编码</th>
+<th class="tableblock halign-left valign-top">通用描述</th>
+<th class="tableblock halign-left valign-top">描述模板</th>
+<th class="tableblock halign-left valign-top">描述模板参数类型</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作成功</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作成功</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">无描述模板参数</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resource_not_found</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求资源不存在</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求资源'{0}'不存在</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数组</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数组第一个元素为资源路径</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作失败</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作失败</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不确定具体失败原因时使用</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">多项错误</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共'#{#root.size()}'项错误</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Result">响应结果</a> 集合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上层指示错误数，具体错误在数据中</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数错误</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数错误</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不确定参数错误的具体原因时使用</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_missing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">缺少参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">缺少必须的参数'#{name}'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Parameter">请求参数</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求时没有传入必须的参数</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_invalid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数无效</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数'#{name}'的值'#{value}'不是'#{type}'类型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Parameter">请求参数</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求时传入的参数无法转换成接口需要的类型，比如：传入的字符 'h' 无法被转换为数值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_illegal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数非法</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数'#{name}'的值'#{value}'非法</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Parameter">请求参数</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求时传入的参数不满足校验规则，比如：传入的数字 '10' 不在要求的 [0,3] 之间</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">server_error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服务端内部错误</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不应该出现的、可以避免的、由于开发者疏忽导致的服务端错误，无法从客户度解决，需要服务端修正程序</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>描述模板支持使用 <strong>索引占位符</strong> 和 <strong>SpEL 表达式</strong>。</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+以上描述模板仅供参考，可能与实际情况存在差异。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_编码分类体系"><a class="anchor" href="#_编码分类体系"></a>5. 编码分类体系</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>响应结果编码可以非常具体，定位到某个异常；也可以非常抽象，仅表达出大致状态。如何定义，取决于具体的使用场景。</p>
+</div>
+<div class="paragraph">
+<p>通常情况下，客户端取得响应结果后，会按如下流程处理业务逻辑：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-06-07-05-33-679.png" alt="image 2022 04 06 07 05 33 679">
+</div>
+<div class="title">Figure 4. 客户端响应结果处理流程</div>
+</div>
+<div class="paragraph">
+<p>除了特定的几个响应结果状态，一般只需要判断是否成功，失败时给予提示，根据提示修正错误。
+提供过多的响应结果编码而实际基本使用不到会给客户端造成困扰。
+如果不需要给出具体的响应结果编码，可以将其分类到上层响应结果编码下：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 3. 编码分类表</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">上层编码</th>
+<th class="tableblock halign-left valign-top">底层编码</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bind</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_missing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MissingServletRequestParameter、HttpMessageNotReadable</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameter_invalid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MethodArgumentTypeMismatch、TypeMismatch、JsonParse、InvalidFormat</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">server_error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MissingPathVariable、MethodArgumentConversionNotSupported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>通常情况下，上层编码为<a href="#result_type">响应结果类型</a>中定义的编码，下层编码为具体的异常名称。</p>
+</div>
+<div class="paragraph">
+<p>以上编码分类表仅供参考，实际情况可查阅日志：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">2022-04-06 07:19:14.678 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: unique &lt;- [SQL_23000]
+2022-04-06 07:19:15.360 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_invalid &lt;- [JsonParse]
+2022-04-06 07:19:15.361 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_invalid &lt;- [InvalidFormat]
+2022-04-06 07:19:15.361 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_missing &lt;- [MissingServletRequestParameter]
+2022-04-06 07:19:15.361 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: server_error &lt;- [MissingPathVariable]
+2022-04-06 07:19:15.361 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: server_error &lt;- [MethodArgumentConversionNotSupported]
+2022-04-06 07:19:15.361 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_invalid &lt;- [MethodArgumentTypeMismatch]
+2022-04-06 07:19:15.362 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: errors &lt;- [Bind]
+2022-04-06 07:19:15.362 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_missing &lt;- [HttpMessageNotReadable]
+2022-04-06 07:19:15.362 DEBUG 35687 --- [    Test worker] c.g.p.r.e.ConfiguredResultCodeClassifier : register classified Result.code: parameter_illegal &lt;- [EntityNotFound]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

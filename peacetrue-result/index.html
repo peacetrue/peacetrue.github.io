@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>简介 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/index.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-result" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">响应结果组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quick-start.html">快速上手</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="principle.html">核心原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本说明</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">响应结果组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link is-current"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">响应结果组件</a></li>
+    <li><a href="index.html">简介</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">简介</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>peacetrue-result</strong>（响应结果组件）是一个处理接口返回数据的组件。</p>
+</div>
+<div class="paragraph">
+<p>服务端接口返回数据时，往往需要提供一些属性，指示服务端对此次请求的处理状态（响应状态）。
+如果处理成功，客户端可以正常执行接下来的业务；
+如果处理失败，则需要根据失败原因针对性处理。</p>
+</div>
+<div class="paragraph">
+<p>假设，服务端需要返回如下格式的用户数据：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+    "id": 1,
+    "name": "张三"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>封装响应状态之后，返回的数据如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+    "code": "success",<i class="conum" data-value="1"></i><b>(1)</b>
+    "message": "操作成功",<i class="conum" data-value="2"></i><b>(2)</b>
+    "data": { <i class="conum" data-value="3"></i><b>(3)</b>
+      "id": 1,
+      "name": "张三"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>编码：指示响应状态的唯一标志</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>描述：用于操作失败时分析具体原因</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>数据：存放实际需要返回的数据</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>响应结果组件提供了标准的数据结构，
+封装了成功时的数据和失败时的异常，
+优化了失败时的提示信息，使调用者可以快速定位原因。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特性说明"><a class="anchor" href="#_特性说明"></a>1. 特性说明</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>优化响应结果编码体系</p>
+</li>
+<li>
+<p>人性化响应结果描述</p>
+</li>
+<li>
+<p>国际化响应结果描述</p>
+</li>
+<li>
+<p>自动装配成功响应结果</p>
+</li>
+<li>
+<p>自动装配异常响应结果</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_运行环境"><a class="anchor" href="#_运行环境"></a>2. 运行环境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>JDK 1.8 及以上</p>
+</li>
+<li>
+<p>Spring Boot 1 系列最高版本 1.5.22.RELEASE，对应组件 1 系列版本</p>
+</li>
+<li>
+<p>Spring Boot 2 系列最低版本 &nbsp;&nbsp;2.0.0.RELEASE，对应组件 2 系列版本</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_类库说明"><a class="anchor" href="#_类库说明"></a>3. 类库说明</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">核心类库，提供响应结果的数据结构和常用类型。</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-core&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">构建类库，构造响应结果描述信息，支持国际化</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-builder&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">成功类库，封装成功时返回的数据</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-success&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">异常类库，封装异常时返回的数据，提供抽象的异常转换体系</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-exception&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">异常支持类库，实现具体异常的转换</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-exception-support&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

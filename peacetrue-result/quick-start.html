@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速上手 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/quick-start.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-result" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">响应结果组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="quick-start.html">快速上手</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="principle.html">核心原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本说明</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">响应结果组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">响应结果组件</a></li>
+    <li><a href="quick-start.html">快速上手</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/quick-start.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">快速上手</h1>
+<div class="sect1">
+<h2 id="_引入类库"><a class="anchor" href="#_引入类库"></a>1. 引入类库</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">成功类库，封装成功时返回的数据</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-success&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">异常支持类库，实现具体异常的转换</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-exception-support&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_开工"><a class="anchor" href="#_开工"></a>2. 开工</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>编写一个常规的控制层方法，这里以用户为例说明：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @GetMapping("/users")
+    public UserVO getUser(@RequestParam Long id) {<i class="conum" data-value="1"></i><b>(1)</b>
+        User user = userRepository.getOne(id);
+        return BeanUtils.convert(user, UserVO.class);
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/users</strong>，传入有效的参数 <code>id=1</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void success() {
+        Result result = this.restTemplate.getForObject("/users?id={0}", GenericDataResult.class, "1");
+        generateDocument("success", result);
+        Assertions.assertTrue(ResultTypes.isSuccess(result.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回经过<strong>响应结果</strong>封装后的数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "success",
+  "message" : "操作成功",
+  "data" : {
+    "id" : 1,
+    "name" : "test"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_自动异常处理"><a class="anchor" href="#_自动异常处理"></a>3. 自动异常处理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>组件会自动处理一些常规异常，详情可参考 <a href="user-manual.html#ExceptionConvert" class="page">自动装配异常响应结果</a>。</p>
+</div>
+<div class="sect2">
+<h3 id="_请求资源不存在"><a class="anchor" href="#_请求资源不存在"></a>3.1. 请求资源不存在</h3>
+<div class="paragraph">
+<p>请求不存在的资源 <strong>/resource_not_found</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void resourceNotFound() {
+        Result result = this.restTemplate.getForObject("/resourceNotFound", ResultImpl.class);
+        generateDocument("resourceNotFound", result);
+        Assertions.assertEquals(ResultTypes.RESOURCE_NOT_FOUND.getCode(), result.getCode());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "resource_not_found",
+  "message" : "找不到请求资源'/resourceNotFound'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_参数缺失"><a class="anchor" href="#_参数缺失"></a>3.2. 参数缺失</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/users</strong>，不传入参数 <code>id</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void missingServletRequestParameter() {
+        Result result = this.restTemplate.getForObject("/users", ResultImpl.class);
+        generateDocument("missingServletRequestParameter", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_MISSING.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing.id",
+  "message" : "缺少必须的请求参数'id'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_参数无效"><a class="anchor" href="#_参数无效"></a>3.3. 参数无效</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/users</strong>，传入类型错误的参数 <code>id=test</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void methodArgumentTypeMismatch() {
+        Result result = this.restTemplate.getForObject("/users?id=test", ResultImpl.class);
+        generateDocument("methodArgumentTypeMismatch", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_INVALID.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid.id",
+  "message" : "参数'id'的值'test'不是（无法转换为）'数值'类型"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_记录不存在"><a class="anchor" href="#_记录不存在"></a>3.4. 记录不存在</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/users</strong>，传入不存在的用户主键 <code>id=0</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void entityNotFound() {
+        long idNotExists = 0L;
+        Result result = this.restTemplate.getForObject("/users?id={0}", ResultImpl.class, idNotExists);
+        generateDocument("entityNotFound", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_ILLEGAL.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_illegal.User",
+  "message" : "用户'0'不存在"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_业务异常处理"><a class="anchor" href="#_业务异常处理"></a>4. 业务异常处理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在实际业务中，如果需要处理异常场景，可以使用 <code>ResultExceptionThrowService</code>。以登录时<strong>用户不存在或密码错误</strong>为例说明：</p>
+</div>
+<div class="paragraph">
+<p>首先，确定响应结果编码，假设为 <strong>user_not_exist</strong>；然后，在 <strong>messages.properties</strong> 中配置描述模板：</p>
+</div>
+<div class="listingblock">
+<div class="title">messages.properties</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Result.user_not_exist=用户'#{name}'不存在或密码错误</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>描述模板支持使用 SpEL 表达式，可以从异常时的上下文信息中获取变量值。</p>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/login/result-exception</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Autowired
+    private ResultExceptionThrowService resultExceptionThrowService;
+
+    @RequestMapping("/login/result-exception")
+    public void loginWithResultException(UserDTO params) {
+        User user = BeanUtils.convert(params, User.class);
+        Optional&lt;User&gt; optional = userRepository.findOne(Example.of(user));
+        if (!optional.isPresent()) {
+            resultExceptionThrowService.throwDataResultException("user_not_exist", user);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入错误的密码 <code>password=test</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">UserTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void login() {
+        Result result = this.restTemplate.getForObject("/login/result-exception?name={0}&amp;password={1}", ResultImpl.class, "test", "test");
+        generateDocument("result-exception", result);
+        Assertions.assertEquals("user_not_exist", result.getCode());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "user_not_exist",
+  "message" : "用户'test'不存在或密码错误"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

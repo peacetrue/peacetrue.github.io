@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用户手册 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/user-manual.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-result" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">响应结果组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quick-start.html">快速上手</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="user-manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="principle.html">核心原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本说明</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">响应结果组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">响应结果组件</a></li>
+    <li><a href="user-manual.html">用户手册</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/user-manual.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">用户手册</h1>
+<div class="sect1">
+<h2 id="_自动装配成功响应结果"><a class="anchor" href="#_自动装配成功响应结果"></a>1. 自动装配成功响应结果</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>自动将返回数据转换成响应结果格式，无需手动封装。</p>
+</div>
+<div class="paragraph">
+<p>添加如下依赖：</p>
+</div>
+<div class="listingblock">
+<div class="title">peacetrue-result-success</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-success&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/enableSuccessAutowire</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">SuccessResultTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** 启用成功自动封装 */
+    @ResponseBody
+    @RequestMapping(value = "/enableSuccessAutowire", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String enableSuccessAutowire(String input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入参数 <code>input=test</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+    "code": "success",
+    "message": "操作成功",
+    "data": "test"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ExceptionConvert"><a class="anchor" href="#ExceptionConvert"></a>2. 自动装配异常响应结果</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>发生异常时，自动捕获异常，并将异常转换成响应结果。</p>
+</div>
+<div class="paragraph">
+<p>添加如下依赖：</p>
+</div>
+<div class="listingblock">
+<div class="title">peacetrue-result-exception-support</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+  &lt;groupId&gt;com.github.peacetrue.result&lt;/groupId&gt;
+  &lt;artifactId&gt;peacetrue-result-exception-support&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以下详细介绍目前支持的异常。</p>
+</div>
+<div class="sect2">
+<h3 id="_请求资源不存在"><a class="anchor" href="#_请求资源不存在"></a>2.1. 请求资源不存在</h3>
+<div class="paragraph">
+<p>请求不存在的资源 <strong>/resource_not_found</strong>，
+触发 <code>HttpStatus.NOT_FOUND</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "resource_not_found",
+  "message" : "找不到请求资源'/resourceNotFound'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_缺少必须的请求参数"><a class="anchor" href="#_缺少必须的请求参数"></a>2.2. 缺少必须的请求参数</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/missingServletRequestParameter</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @RequestMapping("/missingServletRequestParameter")
+    public String missingServletRequestParameter(@RequestParam String input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>不传入 <code>input</code> 参数，触发 <code>MissingServletRequestParameterException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing.input",
+  "message" : "缺少必须的请求参数'input'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_缺少路径变量"><a class="anchor" href="#_缺少路径变量"></a>2.3. 缺少路径变量</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/missingPathVariable</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** 路径中未包含 {input}，服务端异常 */
+    @RequestMapping("/missingPathVariable")
+    public String missingPathVariable(@PathVariable String input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>MissingPathVariableException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "server_error.input",
+  "message" : "缺少路径变量'input'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_方法参数转换不支持"><a class="anchor" href="#_方法参数转换不支持"></a>2.4. 方法参数转换不支持</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/methodArgumentConversionNotSupported</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** 不支持转换 TestBean，服务端异常 */
+    @RequestMapping("/methodArgumentConversionNotSupported")
+    public TestBean methodArgumentConversionNotSupported(@RequestParam TestBean input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入参数 <code>input=test</code>，触发 <code>MethodArgumentConversionNotSupportedException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "server_error.input",
+  "message" : "参数'input'的值'test'不支持转换为'TestBean'"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_方法参数类型不匹配"><a class="anchor" href="#_方法参数类型不匹配"></a>2.5. 方法参数类型不匹配</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/methodArgumentTypeMismatch</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @RequestMapping("/methodArgumentTypeMismatch")
+    public Integer methodArgumentTypeMismatch(@RequestParam Integer input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入参数 <code>input=test</code>，触发 <code>MethodArgumentTypeMismatchException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid.input",
+  "message" : "参数'input'的值'test'不是（无法转换为）'整数'类型"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bean_验证失败表单"><a class="anchor" href="#_bean_验证失败表单"></a>2.6. Bean 验证失败(表单)</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/bind</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/bind")
+    public TestBean bind(@Validated TestBean bean) {
+        return bean;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bean 验证规则如下：</p>
+</div>
+<div id="TestBeanRules" class="listingblock">
+<div class="title">TestBean</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">@Data
+public class TestBean {
+
+    @AssertFalse
+    private Boolean assertFalse;
+    @AssertTrue
+    private Boolean assertTrue;
+    @DecimalMin("0.0")
+    private BigDecimal decimalMin;
+    @DecimalMax("0.0")
+    private BigDecimal decimalMax;
+    @Digits(integer = 1, fraction = 1)
+    private BigDecimal digits;
+    @Email
+    private String email;
+    @Future
+    private Date future;
+    @FutureOrPresent
+    private Date futureOrPresent;
+    @Min(0)
+    private Integer min;
+    @Max(0)
+    private Integer max;
+    @Negative()
+    private Integer negative;
+    @NegativeOrZero()
+    private Integer negativeOrZero;
+    @NotBlank()
+    private String notBlank;
+    @NotEmpty()
+    private String notEmpty;
+    @NotNull()
+    private Integer notNull;
+    @Null
+    private Integer nulls;
+    @Past
+    private Date past;
+    @PastOrPresent
+    private Date pastOrPresent;
+    @Pattern(regexp = "\\w")
+    private String pattern;
+    @Positive
+    private Integer positive;
+    @PositiveOrZero
+    private Integer positiveOrZero;
+    @Size(max = 1)
+    private String size;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入违反上述规则的参数：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void bind() {
+        MultiValueMap&lt;String, String&gt; params = new LinkedMultiValueMap&lt;&gt;();
+        params.add("assertFalse", "true");
+        params.add("assertTrue", "false");
+        params.add("decimalMin", "-1.0");
+        params.add("decimalMax", "1.0");
+        params.add("digits", "10.01");
+        params.add("email", "test.com");
+        params.add("future", String.valueOf(System.currentTimeMillis()));
+        params.add("futureOrPresent", String.valueOf(System.currentTimeMillis() - 1));
+        params.add("min", "-1");
+        params.add("max", "1");
+        params.add("negative", "0");
+        params.add("negativeOrZero", "1");
+        params.add("notBlank", " ");
+        params.add("notEmpty", "");
+        params.add("notNull", null);
+        params.add("nulls", "0");
+        params.add("past", String.valueOf(System.currentTimeMillis() + 1000 * 1000));
+        params.add("pastOrPresent", String.valueOf(System.currentTimeMillis() + 1000 * 1000));
+        params.add("pattern", "00");
+        params.add("positive", "0");
+        params.add("positiveOrZero", "-1");
+        params.add("size", "00");
+        GenericDataResult result = this.restTemplate.postForObject("/bind", params, GenericDataResult.class);
+        generateDocument("bind", result);
+
+        Assertions.assertEquals(ResultTypes.ERRORS.getCode(), result.getCode());
+        Assertions.assertTrue(result.getData() instanceof List);
+        Assertions.assertEquals(params.size(), ((List&lt;?&gt;) result.getData()).size());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>BindException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "errors",
+  "message" : "共'22'项错误",
+  "data" : [ {
+    "code" : "AssertTrue.assertTrue",
+    "message" : "参数'assertTrue'只能为true"
+  }, {
+    "code" : "Pattern.pattern",
+    "message" : "参数'pattern'需要匹配正则表达式\"\\w\""
+  }, {
+    "code" : "Email.email",
+    "message" : "参数'email'不是一个合法的电子邮件地址"
+  }, {
+    "code" : "Min.min",
+    "message" : "参数'min'最小不能小于0"
+  }, {
+    "code" : "DecimalMax.decimalMax",
+    "message" : "参数'decimalMax'必须小于或等于0.0"
+  }, {
+    "code" : "Null.nulls",
+    "message" : "参数'nulls'必须为null"
+  }, {
+    "code" : "Negative.negative",
+    "message" : "参数'negative'必须是负数"
+  }, {
+    "code" : "Digits.digits",
+    "message" : "参数'digits'数字的值超出了允许范围(只允许在1位整数和1位小数范围内)"
+  }, {
+    "code" : "PositiveOrZero.positiveOrZero",
+    "message" : "参数'positiveOrZero'必须是正数或零"
+  }, {
+    "code" : "Max.max",
+    "message" : "参数'max'最大不能超过0"
+  }, {
+    "code" : "Future.future",
+    "message" : "参数'future'需要是一个将来的时间"
+  }, {
+    "code" : "NotEmpty.notEmpty",
+    "message" : "参数'notEmpty'不能为空"
+  }, {
+    "code" : "Past.past",
+    "message" : "参数'past'需要是一个过去的时间"
+  }, {
+    "code" : "PastOrPresent.pastOrPresent",
+    "message" : "参数'pastOrPresent'需要是一个过去或现在的时间"
+  }, {
+    "code" : "Size.size",
+    "message" : "参数'size'个数必须在0和1之间"
+  }, {
+    "code" : "Positive.positive",
+    "message" : "参数'positive'必须是正数"
+  }, {
+    "code" : "NotNull.notNull",
+    "message" : "参数'notNull'不能为null"
+  }, {
+    "code" : "NegativeOrZero.negativeOrZero",
+    "message" : "参数'negativeOrZero'必须是负数或零"
+  }, {
+    "code" : "FutureOrPresent.futureOrPresent",
+    "message" : "参数'futureOrPresent'需要是一个将来或现在的时间"
+  }, {
+    "code" : "DecimalMin.decimalMin",
+    "message" : "参数'decimalMin'必须大于或等于0.0"
+  }, {
+    "code" : "AssertFalse.assertFalse",
+    "message" : "参数'assertFalse'只能为false"
+  }, {
+    "code" : "NotBlank.notBlank",
+    "message" : "参数'notBlank'不能为空"
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_请求体缺失"><a class="anchor" href="#_请求体缺失"></a>2.7. 请求体缺失</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/httpMessageNotReadable</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/httpMessageNotReadable")
+    public TestBean httpMessageNotReadable(@RequestBody TestBean bean) {
+        return bean;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入空的请求体：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void requestBodyMissing() {
+        //Required request body is missing: public com.github.peacetrue.result.exception.TestBean com.github.peacetrue.result.exception.ExceptionConvertTestController.httpMessageNotReadable(com.github.peacetrue.result.exception.TestBean)
+        String emptyRequestBody = "";
+        HttpEntity&lt;String&gt; requestEntity = new HttpEntity&lt;&gt;(emptyRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        Result result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyMissing", result);
+        Assertions.assertEquals(ResultTypes.PARAMETER_MISSING.getCode(), result.getCode());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>HttpMessageNotReadableException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing",
+  "message" : "缺少必须的请求体"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_请求体无效"><a class="anchor" href="#_请求体无效"></a>2.8. 请求体无效</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/httpMessageNotReadable</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/httpMessageNotReadable")
+    public TestBean httpMessageNotReadable(@RequestBody TestBean bean) {
+        return bean;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入无效的请求体：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void requestBodyJsonInvalid() {
+        //org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('?' (code 63)): expected a valid value (number, String, array, object, 'true', 'false' or 'null'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('?' (code 63)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+        //Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character ('?' (code 63)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+        String invalidRequestBody = "??";
+        HttpEntity&lt;String&gt; requestEntity = new HttpEntity&lt;&gt;(invalidRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        Result result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyJsonInvalid", result);
+        Assertions.assertEquals(ResultTypes.PARAMETER_INVALID.getCode(), result.getCode());
+
+        //org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input in field name; nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input in field name
+        //Caused by: com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input in field name
+        invalidRequestBody = "{\"name}";
+        requestEntity = new HttpEntity&lt;&gt;(invalidRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyJsonInvalidEOF", result);
+        Assertions.assertEquals(ResultTypes.PARAMETER_INVALID.getCode(), result.getCode());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>HttpMessageNotReadableException</code>、<code>JsonParseException</code>、<code>JsonEOFException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid",
+  "message" : "请求体不是有效的 JSON 字符串"
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+理想情况下，期望能拿到整个请求体的内容，错误的字符、位置及其原因；
+目前，无法获取到完整的请求体内容，所以只提示了一个大概的错误。
+如果想要准确定位该问题，客户端需要记录请求体的内容，
+将请求体内容拷贝到一个 json 文件，IDE 会提示存在的语法错误。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_请求体格式无效"><a class="anchor" href="#_请求体格式无效"></a>2.9. 请求体格式无效</h3>
+<div class="paragraph">
+<p>请求体中包含无法转换的属性。</p>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/httpMessageNotReadable</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/httpMessageNotReadable")
+    public TestBean httpMessageNotReadable(@RequestBody TestBean bean) {
+        return bean;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入格式无效的请求体：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void requestBodyJsonFormatInvalid() {
+        //InvalidFormatException
+        //org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "?": not a valid representation (error: Failed to parse Date value '?': Cannot parse date "?": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSZ", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "?": not a valid representation (error: Failed to parse Date value '?': Cannot parse date "?": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSZ", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+        //Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "?": not a valid representation (error: Failed to parse Date value '?': Cannot parse date "?": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSZ", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+        String formatInvalidRequestBody = "{\"future\": \"?\"}";
+        HttpEntity&lt;String&gt; requestEntity = new HttpEntity&lt;&gt;(formatInvalidRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        Result result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyJsonFormatInvalid", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_INVALID.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>HttpMessageNotReadableException</code>、<code>InvalidFormatException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid.future",
+  "message" : "参数'future'的值'?'不是（无法转换为）'日期'类型"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bean_验证失败请求体"><a class="anchor" href="#_bean_验证失败请求体"></a>2.10. Bean 验证失败(请求体)</h3>
+<div class="paragraph">
+<p>请求接口 <strong>/methodArgumentNotValid</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/methodArgumentNotValid")
+    public TestBean methodArgumentNotValid(@Validated @RequestBody TestBean bean) {
+        return bean;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入违反上述规则的参数，触发 <code>MethodArgumentNotValidException</code>。
+该异常与 <a href="#_bean_验证失败表单">Bean 验证失败(表单)</a> 类似，区别在于一个是表单参数，一个是请求体参数。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_记录不存在"><a class="anchor" href="#_记录不存在"></a>2.11. 记录不存在</h3>
+<div class="paragraph">
+<p>根据唯一标志，查询记录时，记录不存在。</p>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/entityNotFound</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/entityNotFound")
+    public void entityNotFound(@RequestParam Long id) {
+        testService.entityNotFound(id);
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入不存在的主键值 <code>id=0</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void entityNotFound() {
+        long idNotExists = 0L;
+        Result result = this.restTemplate.getForObject("/entityNotFound?id={0}", ResultImpl.class, idNotExists);
+        generateDocument("entityNotFound", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_ILLEGAL.getCode()));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>EntityNotFoundException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_illegal.TestEntity",
+  "message" : "测试实体'0'不存在"
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>EntityNotFoundException</code> 是 JPA 中的异常，其他 ORM 框架，有待进一步支持。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_属性值唯一"><a class="anchor" href="#_属性值唯一"></a>2.12. 属性值唯一</h3>
+<div class="paragraph">
+<p>在数据库建立唯一索引：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-04-11-54-56-647.png" alt="image 2022 04 04 11 54 56 647">
+</div>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/duplicate</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/duplicate")
+    public void duplicate(TestEntity entity) {
+        testService.duplicate(entity);
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>传入已存在的名称 <code>name=test</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTest</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+    void duplicate() {
+        //javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+        //Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+        //Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test' for key 'test_entity.uk_name'
+        String existName = "test";
+        Result result = this.restTemplate.postForObject("/duplicate?name={0}", HttpMethod.POST, ResultImpl.class, existName);
+        generateDocument("duplicate", result);
+        Assertions.assertTrue(result.getCode().startsWith("unique"));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>SQLException</code>，SQLState 为 23000，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "unique.name",
+  "message" : "参数'name'必须是唯一的，值'test'已存在"
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+目前，仅在 MySQL 数据库中测试，其他数据库需要进一步观察。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_业务异常处理"><a class="anchor" href="#_业务异常处理"></a>3. 业务异常处理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在实际业务中，如果需要处理异常场景，可以使用 <code>ResultExceptionThrowService</code>。</p>
+</div>
+<div class="paragraph">
+<p>首先，确定响应结果编码，假设为 <strong>user_disabled</strong>；
+然后，在 <strong>messages.properties</strong> 中配置描述模板：</p>
+</div>
+<div class="listingblock">
+<div class="title">messages.properties</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Result.user_disabled=用户''{0}''已被禁用</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>请求接口 <strong>/userDisabled</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">ExceptionConvertTestController</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @ResponseBody
+    @RequestMapping("/userDisabled")
+    public void userDisabled() {
+        exceptionThrowService.throwDataResultException("user_disabled", new Object[]{1L});
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>触发 <code>ResultException</code>，返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "user_disabled",
+  "message" : "用户'1'已被禁用"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_配置说明"><a class="anchor" href="#_配置说明"></a>4. 配置说明</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_禁用成功特性"><a class="anchor" href="#_禁用成功特性"></a>4.1. 禁用成功特性</h3>
+<div class="paragraph">
+<p>引入 <strong>peacetrue-result-success</strong> 类库，会自动启用<strong>成功响应结果封装</strong>特性。</p>
+</div>
+<div class="paragraph">
+<p>该特性在新项目中比较友好；如果是已存在的项目，有些接口自行处理了响应结果，不需要使用该特性。
+该如何禁用呢？共有 3 种方法：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>使用配置 <code>peacetrue.result.success.result-types</code></p>
+</li>
+<li>
+<p>使用配置 <code>peacetrue.result.success.disabled-methods</code></p>
+</li>
+<li>
+<p>使用注解 <code>SuccessAutowire</code></p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">application.yml</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-yml hljs" data-lang="yml">peacetrue:
+    result:
+        success:
+            result-types:
+            - com.github.peacetrue.result.Result <i class="conum" data-value="1"></i><b>(1)</b>
+            disabled-methods:
+            - com.github.peacetrue.result.success.SuccessAutowireController.disableSuccessAutowireByConfiguration <i class="conum" data-value="2"></i><b>(2)</b>
+            - com.github.peacetrue.result.success.SuccessAutowireController <i class="conum" data-value="3"></i><b>(3)</b>
+            - com.github.peacetrue.result.success <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>默认设置该类型为响应结果类型，返回该类型的子类都不会再自动封装响应结果</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>定位到方法名，禁用该方法，无法区分重载方法</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>定位到类名，禁用该类下的所有方法</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>定位到包名，禁用该包下的所有方法</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>如果配置不能满足，可以使用注解 <code>SuccessAutowire</code>：</p>
+</div>
+<div class="listingblock">
+<div class="title">SuccessResultTestController.java</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** 通过注解禁用成功自动封装 */
+    @SuccessAutowire(disabled = true)
+    @ResponseBody
+    @RequestMapping(value = "/disableSuccessAutowireByAnnotation")
+    public String disableSuccessAutowireByAnnotation(String input) {
+        return input;
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_messages_not_found"><a class="anchor" href="#_messages_not_found"></a>4.2. messages not found</h3>
+<div class="paragraph">
+<p>如果在控制台发现如下日志：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">2022-03-17 05:31:10.902  WARN 5731 --- [    Test worker] o.s.c.s.ResourceBundleMessageSource      : ResourceBundle [messages] not found for MessageSource: Can't find bundle for base name messages, locale en</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>可通过以下配置解决：</p>
+</div>
+<div class="listingblock">
+<div class="title">application.yml</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-yml hljs" data-lang="yml">spring:
+    messages:
+        basename: ''</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_自定义描述"><a class="anchor" href="#_自定义描述"></a>5. 自定义描述</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>组件中包含以下 i18n 配置文件：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>peacetrue-result-builder.properties</p>
+</li>
+<li>
+<p>peacetrue-result-success.properties</p>
+</li>
+<li>
+<p>peacetrue-result-exception.properties</p>
+</li>
+<li>
+<p>peacetrue-result-exception-support.properties</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>支持中文和英文，默认为中文（非英文全部使用中文）。
+如果想要修改默认的描述模板，可以在 i18n 配置文件中修改。
+下面以修改成功响应结果描述为例说明。</p>
+</div>
+<div class="paragraph">
+<p>指定 i18n 配置文件的名称：</p>
+</div>
+<div class="listingblock">
+<div class="title">application.yml</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-yml hljs" data-lang="yml">spring:
+  messages:
+    basename: 'custom-messages'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在 i18n 配置文件中添加成功描述：</p>
+</div>
+<div class="listingblock">
+<div class="title">custom-messages.properties（中文）</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">Result.success=操作成功，这是自定义的</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">custom-messages_en.properties（英文）</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">Result.success=The operation succeeded with custom change</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Result</strong> 前缀是固定的，用于区分不同类型的配置。
+<strong>success</strong> 是此次操作响应结果描述模板配置键。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom-exception-converter"><a class="anchor" href="#custom-exception-converter"></a>6. 自定义异常转换器</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>目前，组件支持的异常转换器还极其有限，大多数场景需要自定义异常转换器。
+可以通过实现接口 <code>ExceptionConverter</code> 或 <code>ConditionalExceptionConverter</code> 实现自定义异常转换器。</p>
+</div>
+<div class="paragraph">
+<p>下面，以 <code>MissingServletRequestParameterException</code> 为例说明：</p>
+</div>
+<div class="listingblock">
+<div class="title">实现 <code>ExceptionConverter</code> 接口</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class MissingServletRequestParameterExceptionConverter
+        implements ExceptionConverter&lt;MissingServletRequestParameterException&gt; {
+    @Override
+    public Result convert(MissingServletRequestParameterException exception) {
+        return new ResultImpl(
+                "parameter_missing", //确定一个响应结果编码
+                "缺少必须的请求参数'" + exception.getParameterName() + "'" //给出一个响应结果描述
+        );
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">实现 <code>ConditionalExceptionConverter</code> 接口</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class MissingServletRequestParameterConditionalExceptionConverter
+        implements ConditionalExceptionConverter {
+
+    @Override
+    public boolean supports(Throwable exception) {
+        return exception instanceof MissingServletRequestParameterException;
+    }
+
+    @Override
+    public Result convert(Throwable exception) {
+        MissingServletRequestParameterException localException = (MissingServletRequestParameterException) exception;
+        return new ResultImpl(
+                "parameter_missing",
+                "缺少必须的请求参数'" + localException.getParameterName() + "'"
+        );
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing",
+  "message" : "缺少必须的请求参数'xxxxx'"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以上写法不支持响应结果描述的国际化，如果需要支持国际化，可以使用 <code>ResultMessageBuilder</code>：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class MissingServletRequestParameterExceptionConverter1
+        implements ExceptionConverter&lt;MissingServletRequestParameterException&gt; {
+
+    private ResultMessageBuilder resultMessageBuilder;
+
+    @Override
+    public Result convert(MissingServletRequestParameterException exception) {
+        String message = resultMessageBuilder.build(
+                // 确定一个[响应结果描述模板配置键](简称[描述模板配置键])
+                "MissingServletRequestParameter",
+                // 使用对象作为[描述模板参数]
+                new Parameter&lt;&gt;(exception.getParameterName(), exception.getParameterType(), null)
+                // 使用数组作为[描述模板参数]
+                //new Object[]{exception.getParameterName()}
+        );
+        return new ResultImpl(
+                // 确定一个[响应结果编码](简称[编码])
+                "parameter_missing",
+                // [响应结果描述]，由[描述模板配置值]渲染[描述模板参数]后得到
+                message
+        );
+    }
+
+    @Autowired
+    public void setResultMessageBuilder(ResultMessageBuilder resultMessageBuilder) {
+        this.resultMessageBuilder = resultMessageBuilder;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在 <strong>messages.properties</strong> 中配置描述模板：</p>
+</div>
+<div class="listingblock">
+<div class="title">messages.properties</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">#描述模板配置键 -&gt; 描述模板配置值
+#使用对象作为描述模板参数，占位符使用 SpEL 表达式
+Result.MissingServletRequestParameter=缺少必须的请求参数'#{name}'
+#使用数组作为描述模板参数，占位符使用数组下标
+#Result.MissingServletRequestParameter=缺少必须的请求参数''{0}''</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>也可以直接继承 <code>AbstractExceptionConverter</code>，该类封装了一些通用逻辑：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>支持（且必须使用）国际化响应结果描述</p>
+</li>
+<li>
+<p>使用异常名称（删除结尾的 Exception）作为"响应结果编码"和"描述模板配置键"</p>
+</li>
+<li>
+<p>如果"描述模板参数"实现了 <code>NameCapable</code> 接口，则响应结果编码后追加参数名</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>剩下的就是实现 <code>resolveArgs</code> 方法，构建"描述模板参数"：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class MissingServletRequestParameterExceptionConverter2
+        extends AbstractExceptionConverter&lt;MissingServletRequestParameterException&gt; {
+
+    @Override
+    protected Parameter&lt;String, Object&gt; resolveArgs(MissingServletRequestParameterException exception) {
+        return new Parameter&lt;&gt;(
+                exception.getParameterName(), exception.getParameterType(), null
+        );
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "MissingServletRequestParameter.xxxxx",
+  "message" : "缺少必须的请求参数'xxxxx'"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果响应结果编码 <strong>MissingServletRequestParameter</strong> 不合适，
+可实现接口 <code>ClassifiedResultCode</code>，更换响应结果编码：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class MissingServletRequestParameterExceptionConverter3
+        extends AbstractExceptionConverter&lt;MissingServletRequestParameterException&gt;
+        implements ClassifiedResultCode {
+
+    @Override
+    public String getSupperCode() {
+        return "parameter_missing";
+    }
+
+    @Override
+    protected Parameter&lt;String, Object&gt; resolveArgs(MissingServletRequestParameterException exception) {
+        return new Parameter&lt;&gt;(
+                exception.getParameterName(), exception.getParameterType(), null
+        );
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>返回数据：</p>
+</div>
+<div class="listingblock">
+<div class="title">响应结果</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing.xxxxx",
+  "message" : "缺少必须的请求参数'xxxxx'"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_自定义响应结果"><a class="anchor" href="#_自定义响应结果"></a>7. 自定义响应结果</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>组件返回的响应结果，固定使用 <code>code</code>、<code>message</code>、<code>data</code> 三个属性。
+可能不满足需求，比如需要修改属性名、添加额外属性；
+此时，可以实现 <code>ResultCustomizer</code> 接口，自定义响应结果：</p>
+</div>
+<div class="listingblock">
+<div class="title">ResultCustomizerImpl</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">public class ResultCustomizerImpl implements ResultCustomizer {
+    @Override
+    public Object customize(Result result) {
+        boolean isDataResult = result instanceof DataResult;
+        Map&lt;String, Object&gt; values = new LinkedHashMap&lt;&gt;(isDataResult ? 5 : 4);
+        values.put("requestId", UUID.randomUUID().toString());//添加 requestId 属性
+        values.put("success", ResultTypes.isSuccess(result.getCode()));// 添加 success 属性
+        values.put("code", result.getCode());
+        values.put("msg", result.getMessage()); // message 改为 msg
+        if (isDataResult) values.put("data", ((DataResult&lt;?&gt;) result).getData());
+        return values;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
