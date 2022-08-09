@@ -36,7 +36,7 @@ jobs:
     - name: Generate
       run: antora generate playbook.yml
     - name: Check
-      run: "ls -la ${{ env.SITE_DIR }}"
+      run: "ls -la ${{ github.workspace }}${{ env.SITE_DIR }}"
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.4.0
       with:
