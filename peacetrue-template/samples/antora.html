@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Antora 目录模板 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/samples/antora.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
     <script>var uiRootPath = '../../_'</script>
@@ -298,7 +298,24 @@
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/samples/antora.adoc - include::example$peacetrue-template-engine/src/test/java/com/github/peacetrue/template/DirectoryTemplateEngineImplTest.java[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** Antora 目录模板 */
+    @Test
+    void antora() throws IOException {
+        DirectoryTemplateEngine templateEngine = VelocityTemplateEngine.buildVelocityDirectoryTemplateEngine();
+        String projectAbsolutePath = SourcePathUtils.getProjectAbsolutePath();
+        String templateDir = String.format("file:%s/../docs/antora/modules/ROOT/examples/templates/antora", projectAbsolutePath);
+        String resultDir = String.format("%s/../docs/antora/modules/ROOT/examples/results/learn", projectAbsolutePath);
+        templateEngine.evaluate(
+                templateDir,
+                ImmutableMap.&lt;String, Object&gt;builder()
+                        .put("repository", ImmutableMap.of("name", "learn", "description", "记录学习过程"))
+                        .put("antora", ImmutableMap.of("name", "learn", "title", "记录学习过程", "version", "master"))
+                        .build(),
+                new Options(),
+                resultDir
+        );
+        Assertions.assertTrue(Files.exists(Paths.get(resultDir)));
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">

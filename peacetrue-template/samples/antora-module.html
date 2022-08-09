@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Antora 模块目录模板 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/samples/antora-module.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
     <script>var uiRootPath = '../../_'</script>
@@ -136,7 +136,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antora 模块目录模板</strong>用于在 <strong>Antora 资源库</strong>中创建一个模块。
-<strong>Antora 资源库</strong>是基于 <a href="antora.html" class="page">Antora 目录模板</a> 创建的资源库。</p>
+<strong>Antora 资源库</strong>是基于 <a href="antora.html" class="xref page">Antora 目录模板</a> 创建的资源库。</p>
 </div>
 </div>
 </div>
@@ -213,7 +213,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">repository</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">仓库属性</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="antora.html#Repository" class="page">Repository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="antora.html#Repository" class="xref page">Repository</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -268,7 +268,28 @@
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/samples/antora-module.adoc - include::example$peacetrue-template-engine/src/test/java/com/github/peacetrue/template/DirectoryTemplateEngineImplTest.java[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** Antora 模块目录模板 */
+    @Test
+    void antoraModule() throws IOException {
+        DirectoryTemplateEngineImpl templateEngine = new DirectoryTemplateEngineImpl();
+        templateEngine.setResourcesLoader(ConditionalResourcesLoader.DEFAULT);
+        templateEngine.setTemplatePredicate(VelocityTemplateEngine.VELOCITY_TEMPLATE_PREDICATE);
+        templateEngine.setResultPathResolver(VelocityTemplateEngine.VELOCITY_RESULT_PATH_RESOLVER);
+        templateEngine.setTemplateEngine(new VelocityTemplateEngine(new VelocityEngine()));
+        String projectAbsolutePath = SourcePathUtils.getProjectAbsolutePath();
+        String templateDir = String.format("file:%s/../docs/antora/modules/ROOT/examples/templates/antora-module", projectAbsolutePath);
+        String resultDir = String.format("%s/../docs/antora/modules/ROOT/examples/results/learn-redis", projectAbsolutePath);
+        templateEngine.evaluate(
+                templateDir,
+                ImmutableMap.&lt;String, Object&gt;builder()
+                        .put("repository", ImmutableMap.of("name", "Learn", "directoryName", "learn", "description", "记录学习过程", "packageName", "com.github.peacetrue.learn"))
+                        .put("module", ImmutableMap.of("name", "Redis", "directoryName", "learn-redis", "description", "学习 Redis"))
+                        .build(),
+                Options.builder().evaluateTemplatePath(true).build(),//渲染模板路径
+                resultDir
+        );
+        Assertions.assertTrue(Files.exists(Paths.get(resultDir)));
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -331,7 +352,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>在 <a href="antora.html" class="page">Antora 目录模板</a> 的例子中，只渲染了模板内容，模板路径也可以被渲染，如果是路径格式，会创建多个目录。
+<p>在 <a href="antora.html" class="xref page">Antora 目录模板</a> 的例子中，只渲染了模板内容，模板路径也可以被渲染，如果是路径格式，会创建多个目录。
 文件内容的对比，就不详细说明了。</p>
 </div>
 </div>

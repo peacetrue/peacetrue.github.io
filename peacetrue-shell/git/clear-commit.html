@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>清除提交记录 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/git/clear-commit.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
     <script>var uiRootPath = '../../_'</script>
@@ -34,7 +34,7 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#index.adoc">index.adoc</a>
+    <a class="nav-link" href="../index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
@@ -151,7 +151,27 @@ git push -f origin master</code></pre>
 <div class="listingblock">
 <div class="title">git-clear-commit</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">Unresolved include directive in modules/ROOT/pages/git/clear-commit.adoc - include::attachment$git/git-clear-commit[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#!/bin/bash
+
+#参数 1：分支名
+branch=${1-master}
+#参数 2：提交信息
+message=${2-'init commit.'}
+
+echo "branch: $branch, message: $message"
+
+# 创建一个临时孤儿分支，孤儿分支不包含历史提交记录
+git checkout --orphan "tmp-$branch"
+# 添加所有文件
+git add -A
+# 提交所有文件
+git commit -m "$message"
+# 删除本地 master 分支
+git branch -D "$branch"
+# 将 tmp-master 分支改名为 master
+git branch -m "$branch"
+# 强制将本地 master 分支推送到远程
+git push -f origin "$branch"</code></pre>
 </div>
 </div>
 <div class="paragraph">

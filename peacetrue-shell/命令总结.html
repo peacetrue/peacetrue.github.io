@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>命令总结 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/命令总结.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
     <script>var uiRootPath = '../_'</script>
@@ -34,7 +34,7 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="#index.adoc">index.adoc</a>
+    <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
@@ -268,7 +268,7 @@ find . -name *.iml -o -name *.ipr -o -name *.iws <i class="conum" data-value="2"
 <div class="listingblock">
 <div class="title">mac</div>
 <div class="content">
-<pre class="highlightjs highlight"><code># 在当前目录及子目录下查找包含 static 的文件
+<pre class="highlightjs highlight"><code class="language-none hljs"># 在当前目录及子目录下查找包含 static 的文件
 $ grep static -rl . <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
@@ -286,7 +286,7 @@ $ grep static -rl . <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 <div class="listingblock">
 <div class="title">mac 测试</div>
 <div class="content">
-<pre class="highlightjs highlight"><code># 替换文件中所有的 static/ 为 jcjstatic/
+<pre class="highlightjs highlight"><code class="language-none hljs"># 替换文件中所有的 static/ 为 jcjstatic/
 $ sed -i "" 's|static/|jcjstatic/|g' **/*.{js,html,map,css}
 # 替换文件中所有的 "/api 为 "/jcjapi
 $ sed -i "" 's|"/api|"/jcjapi|g' **/*.js</code></pre>
@@ -295,7 +295,7 @@ $ sed -i "" 's|"/api|"/jcjapi|g' **/*.js</code></pre>
 <div class="listingblock">
 <div class="title">linux 测试</div>
 <div class="content">
-<pre class="highlightjs highlight"><code># 替换文件中所有的 static/ 为 jcjstatic/
+<pre class="highlightjs highlight"><code class="language-none hljs"># 替换文件中所有的 static/ 为 jcjstatic/
 $ sed -i 's|static/|jcjstatic/|g' **/*.{js,html,map} <i class="conum" data-value="1"></i><b>(1)</b>
 # 替换文件中所有的 "/api 为 "/jcjapi
 $ sed -i 's|"/api|"/jcjapi|g' **/*.js
@@ -361,7 +361,7 @@ sed -i "" "s|console.info(`invoke ${params.apiName} return(decoded):`, res);|ale
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code># 持续监听不断输出
+<pre class="highlightjs highlight"><code class="language-none hljs"># 持续监听不断输出
 $ tcpdump
 
 # -D：打印出系统中所有可以用 tcpdump 截包的网络接口
@@ -383,7 +383,7 @@ $ tcpdump -D
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>01:08:26.672787 IP6 localhost.37450 &gt; localhost.distinct: Flags [S], seq 2691960457, win 43690, options [mss 65476,sackOK,TS val 2722329 ecr 0,nop,wscale 7], length 0
+<pre class="highlightjs highlight"><code class="language-none hljs">01:08:26.672787 IP6 localhost.37450 &gt; localhost.distinct: Flags [S], seq 2691960457, win 43690, options [mss 65476,sackOK,TS val 2722329 ecr 0,nop,wscale 7], length 0
 01:08:26.672837 IP6 localhost.distinct &gt; localhost.37450: Flags [S.], seq 684685777, ack 2691960458, win 43690, options [mss 65476,sackOK,TS val 2722330 ecr 2722329,nop,wscale 7], length 0
 01:08:26.672850 IP6 localhost.37450 &gt; localhost.distinct: Flags [.], ack 1, win 342, options [nop,nop,TS val 2722330 ecr 2722330], length 0</code></pre>
 </div>
