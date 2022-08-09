@@ -4,13 +4,11 @@
 
 == 2022
 
-=== 08
-
 |===
 |事项 |时间 |状态 |备注
 
-|制作 bash 脚本
-|09
-|TODO
+|https://github.com/peacetrue/peacetrue-shell[制作 shell 脚本^]
+|2022-08-09
+|DONE
 |
 |===

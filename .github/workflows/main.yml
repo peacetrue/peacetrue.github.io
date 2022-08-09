@@ -27,10 +27,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Generate
-      uses: kameshsampath/antora-site-action@v0.2.4
+    - uses: actions/setup-node@v3
       with:
-        antora_playbook: playbook.yml
+        node-version: 16
+    - run: node -v
+    - run: npm i -g @antora/cli@3.0 @antora/site-generator@3.0
+    - run: antora -v
+    - run: antora generate playbook.yml
+#    - name: Generate
+#      uses: kameshsampath/antora-site-action@v0.2.4
+#      with:
+#        antora_playbook: playbook.yml
 #        site_sources_path: docs/antora
     - name: Check
       run: ls -la build/site
