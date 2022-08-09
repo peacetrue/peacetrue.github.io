@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用场景 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/常用场景.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#index.adoc">index.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Git</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git/clear-commit.html">清除提交记录</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="常用场景.html">常用场景</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/常用场景.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">常用场景</h1>
+<div class="sect1">
+<h2 id="_删除_idea_配置文件"><a class="anchor" href="#_删除_idea_配置文件"></a>1. 删除 IDEA 配置文件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>IDEA 的配置文件分为两类：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>目录类：.idea</p>
+</li>
+<li>
+<p>文件类：*.iml、*.ipr、*.iws //TODO 配置文件名称很长需要截图实证</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>之前使用文件类配置比较多，但文件类配置有时候配置文件名称很长，就想改用目录类配置。这样需要把文件类配置都删除，重新以目录类配置创建项目，怎么快捷的删除文件类配置呢？</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">find . -name *.iml -o -name *.ipr -o -name *.iws <i class="conum" data-value="1"></i><b>(1)</b>
+find . -name "*.iml" -o -name "*.ipr" -o -name "*.iws" <i class="conum" data-value="2"></i><b>(2)</b>
+find . \( -name "*.iml" -o -name "*.ipr" -o -name "*.iws" \) <i class="conum" data-value="3"></i><b>(3)</b>
+find . \( -name "*.iml" -o -name "*.ipr" -o -name "*.iws" \) -exec rm -rf {} +; <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>查找名称以 iml、ipr、iws 结尾的文件</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>类似于 &lt;1&gt;，&lt;1&gt; 找不到文件会报错，&lt;2&gt; 不会</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>类似于 &lt;2&gt;，并将找到的所有配置文件作为后续命令的参数，否则只会将 *.iml 作为参数</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>基于 &lt;3&gt; 追加删除操作</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_查找并替换内容"><a class="anchor" href="#_查找并替换内容"></a>2. 查找并替换内容</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>sed -i "" 's|1.0.6.RELEASE|1.0.8.RELEASE|g' `grep '*.gradle' -rl .`</p>
+</li>
+<li>
+<p>sed -i "" 's|1.0.6.RELEASE|1.0.8.RELEASE|g' `find . -name build.gradle`</p>
+</li>
+<li>
+<p>sed -i "" 's|pdftag|confucianism|g' `find . -name build.gradle`</p>
+</li>
+<li>
+<p>sed -i "" 's|pdf-tag|confucianism|g' `find . -name '*.java'`</p>
+</li>
+<li>
+<p>sed -i "" 's|source|source|g' `find . -name '*.adoc'`</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_重命名文件"><a class="anchor" href="#_重命名文件"></a>3. 重命名文件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>基于一个模块开发新模块时，往往需要批量重命名文件。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>rename "s/pdf-tag/confucianism/" `find . -name '*.yml'`</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_删除所有日志目录"><a class="anchor" href="#_删除所有日志目录"></a>4. 删除所有日志目录</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本地项目目录结构如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>peacetrue-microservice
+├── peacetrue-microservice-authorization-server
+│   ├── logs
+├── peacetrue-microservice-client
+│   ├── logs
+├── peacetrue-microservice-client-oauth2login
+│   ├── logs
+├── peacetrue-microservice-client-outer
+│   ├── logs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>删除所有日志命令为：<code>rm -r `find . -name logs`</code></p>
+</div>
+<div class="paragraph">
+<p>同时删除 nohup.out：<code>rm -r `find . -name logs -o -name nohup.out`</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_内存监控"><a class="anchor" href="#_内存监控"></a>5. 内存监控</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>java 应用内存溢出，进程会被系统杀死。</p>
+</div>
+<div class="listingblock">
+<div class="title">查看内存使用情况</div>
+<div class="content">
+<pre>$ top
+$ htop</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_网络相关"><a class="anchor" href="#_网络相关"></a>6. 网络相关</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">静态 IP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>BOOTPROTO="static" #dhcp改为static
+ONBOOT="yes" #开机启用本配置
+IPADDR=10.0.0.128 #静态IP
+GATEWAY=10.0.0.2 #默认网关
+NETMASK=255.255.255.0 #子网掩码
+DNS1=114.114.114.114 #DNS 配置
+DNS2=8.8.8.8 #DNS 配置</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">常用命令</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.0.0.128
+firewall-cmd --state
+systemctl stop firewalld
+systemctl disable firewalld
+netstat -an |grep 'ESTABLISHED' |grep -i '8080' |wc -l
+lsof -i:8080
+tcpdump -nn -i ens33 port 5762
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
+service network restart
+systemctl restart network
+hostnamectl set-hostname node01</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_重命名数据库"><a class="anchor" href="#_重命名数据库"></a>7. 重命名数据库</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">mysql -u root -p 12345678 aum_detection -sNe 'show tables' | while read table; \
+    do mysql -u root -p 12345678 -sNe "rename table aum_detection.$table to aum_detection.$table"; done</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_查看程序占用的端口"><a class="anchor" href="#_查看程序占用的端口"></a>8. 查看程序占用的端口</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ss -tnlp | grep redis</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_杀死查询出的进程"><a class="anchor" href="#_杀死查询出的进程"></a>9. 杀死查询出的进程</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">杀死 Gradle 守护进程</div>
+<p><code>$ ps -ef | grep GradleDaemon | grep -v grep | awk '{ print $2 }' | sudo xargs kill -9</code></p>
+</div>
+<div class="olist arabic">
+<div class="title">分解步骤</div>
+<ol class="arabic">
+<li>
+<p><code>ps -ef</code> ：查询所有进程，并输出详情</p>
+</li>
+<li>
+<p><code>ps -ef | grep GradleDaemon</code> ：在上一步基础上筛选出包含 GradleDaemon 的进程</p>
+</li>
+<li>
+<p><code>$ ps -ef | grep GradleDaemon | grep -v grep</code>：在上一步基础上，排除 grep 进程（自己）</p>
+</li>
+<li>
+<p><code>$ ps -ef | grep GradleDaemon | grep -v grep | awk '{ print $2 }'</code>：在上一步基础上，取出进程号</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_别名"><a class="anchor" href="#_别名"></a>10. 别名</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 使用 IDEA 打开项目，从 IDE 选择项目路径，打开太慢
+alias openidea="open -a 'IntelliJ IDEA'"
+# 使用 gradle 发布
+alias gradlepublish="gradle clean build publishToMavenLocal publish -Psigning.keyId=xxx -Psigning.password=xxx -Psigning.secretKeyRingFile=/Users/xiayx/.gnupg/secring.gpg -PossrhUsername=xxx -PossrhPassword=xxx"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

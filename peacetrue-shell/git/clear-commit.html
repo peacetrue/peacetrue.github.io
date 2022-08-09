@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>清除提交记录 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/git/clear-commit.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#index.adoc">index.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Git</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="clear-commit.html">清除提交记录</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Shell 脚本库</a></li>
+    <li>Git</li>
+    <li><a href="clear-commit.html">清除提交记录</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/git/clear-commit.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">清除提交记录</h1>
+<div class="paragraph">
+<p>在使用 Git 时，我们会多次提交代码并推送到远程分支。
+有时候，为了赶项目进度，提交记录比较混乱，
+希望能够删除分支上所有的提交记录，
+并使用最新代码做初始提交。</p>
+</div>
+<div class="paragraph">
+<p>以 master 分支为例，一种可行的方案 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> 如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 创建一个临时孤儿分支，孤儿分支不包含历史提交记录
+git checkout --orphan tmp-master
+# 添加所有文件
+git add -A
+# 提交所有文件
+git commit -m 'Add files'
+# 删除本地 master 分支
+git branch -D master
+# 将 tmp-master 分支改名为 master
+git branch -m master
+# 强制将本地 master 分支推送到远程
+git push -f origin master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>按上面的实现思路，制作一个 <strong>提交记录清除脚本</strong>：</p>
+</div>
+<div class="listingblock">
+<div class="title">git-clear-commit</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">Unresolved include directive in modules/ROOT/pages/git/clear-commit.adoc - include::attachment$git/git-clear-commit[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以 peacetrue-shell 资源库为例，测试脚本执行效果：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ git-clear-commit
+branch: master, message: init commit.
+Switched to a new branch 'tmp-master'
+[tmp-master (root-commit) 1b56659] init commit.
+ 33 files changed, 922 insertions(+)
+......
+Deleted branch master (was c154cad).
+Enumerating objects: 46, done.
+Counting objects: 100% (46/46), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (39/39), done.
+Writing objects: 100% (46/46), 2.12 MiB | 2.05 MiB/s, done.
+Total 46 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/peacetrue/peacetrue-shell.git
+ + c154cad...1b56659 master -&gt; master (forced update)</code></pre>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. 参考 <a href="https://www.systutorials.com/how-to-clear-git-history-in-local-and-remote-branches/" class="bare">https://www.systutorials.com/how-to-clear-git-history-in-local-and-remote-branches/</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

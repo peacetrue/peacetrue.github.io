@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>版本 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-validation/version.html">
+    <title>安装脚本 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/安装脚本.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,20 +24,26 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="peacetrue-validation" data-version="master">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">验证扩展</a></h3>
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="index.html">简介</a>
+    <a class="nav-link" href="#index.adoc">index.adoc</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="version.html">版本</a>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Git</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git/clear-commit.html">清除提交记录</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -46,15 +52,15 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">验证扩展</span>
+    <span class="title">Shell 脚本库</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../peacetrue-shell/index.html">master</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
         </li>
       </ul>
     </li>
@@ -82,11 +88,11 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">验证扩展</a>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -101,55 +107,70 @@
   <a href="../repository/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">验证扩展</a></li>
-    <li><a href="version.html">版本</a></li>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="安装脚本.html">安装脚本</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-validation/edit/master/docs/antora/modules/ROOT/pages/version.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/安装脚本.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">版本</h1>
-<div class="sect1">
-<h2 id="_1_0_0"><a class="anchor" href="#_1_0_0"></a>1.0.0</h2>
+<h1 class="page">安装脚本</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>基于 <code>validation-api:1.1.0.Final</code> 提供 7 个常用验证注解。</p>
-</div>
-<div class="paragraph">
-<p><code>RequiredWhen</code> 依赖于 <code>spring-expression</code> 做表达式解析。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_0_1"><a class="anchor" href="#_1_0_1"></a>1.0.1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>使用 <code>@Repeatable</code> <code>@List</code>，修复可重复的验证注解。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_1_0"><a class="anchor" href="#_1_1_0"></a>1.1.0</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>添加文件相关校验注解：</p>
+<p>为了方便，编写了一些脚本。希望在任何环境都能快速使用这些脚本，所以提供了一个安装命令 <code>ptinstalls</code>，用于安装这些脚本。<code>ptinstalls</code> 安装的脚本包括：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>AbsolutePath：绝对路径校验规则</p>
+<p>killbp：根据端口杀进程</p>
 </li>
 <li>
-<p>RelativePath：相对路径校验规则</p>
+<p>ptstart：运行 spring-boot 应用</p>
 </li>
 <li>
-<p>FileExistence：文件存在性校验规则</p>
+<p>ptrestart：重新运行 spring-boot 应用。相比于 ptstart，会停止已运行的应用</p>
+</li>
+<li>
+<p>ptuninstalls：卸载命令，用于卸载由 ptinstalls 安装的命令</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_安装"><a class="anchor" href="#_安装"></a>1. 安装</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>为了使用 <code>ptinstalls</code>，需要检出 <a href="https://github.com/peacetrue/peacetrue-shell" target="_blank" rel="noopener">peacetrue-shell</a> 资源库。</p>
+</div>
+<div class="paragraph">
+<p>直接拷贝下面的命令后运行：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/peacetrue/peacetrue-shell.git &amp;&amp; cd peacetrue-shell/docs/antora/modules/ROOT/assets/attachments/peacetrue &amp;&amp; chmod 777 ./ptinstalls &amp;&amp; chmod 777 ./ptinstall &amp;&amp; ./ptinstalls</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_卸载"><a class="anchor" href="#_卸载"></a>2. 卸载</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>卸载直接使用：<code>ptuninstalls</code>，该命令在上一步已经安装好了。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_优化"><a class="anchor" href="#_优化"></a>3. 优化</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>命令单独使用一个资源库，peacetrue-shell 资源库还含有与命令无关的文档信息，不需要检查。</p>
 </div>
 </div>
 </div>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>命令总结 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/命令总结.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#index.adoc">index.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Git</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="git/clear-commit.html">清除提交记录</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="命令总结.html">命令总结</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/命令总结.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">命令总结</h1>
+<div class="sect1">
+<h2 id="_参考资料"><a class="anchor" href="#_参考资料"></a>1. 参考资料</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="_attachments/The_Linux_Command_Line_中文版-10150838.pdf" target="_blank" rel="noopener">The Linux Command Line 中文版-10150838.pdf</a></p>
+</li>
+<li>
+<p><a href="http://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html" target="_blank" rel="noopener">命令行通配符教程</a></p>
+</li>
+<li>
+<p><a href="https://linux.die.net/man/" target="_blank" rel="noopener">man page</a></p>
+</li>
+<li>
+<p><a href="https://man.linuxde.net/" target="_blank" rel="noopener">man page 中文</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_find"><a class="anchor" href="#_find"></a>2. find</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>查找文件，偏向根据文件名称规则匹配。</p>
+</div>
+<div class="sect2">
+<h3 id="_name_参数详解"><a class="anchor" href="#_name_参数详解"></a>2.1. -name 参数详解</h3>
+<div class="paragraph">
+<p>经常这么用：<code>find . -name *.txt</code>，但有一些不明白的地方：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>-name 参数的匹配模式具体是什么名称？</p>
+</li>
+<li>
+<p>* 具体含义是什么？</p>
+</li>
+<li>
+<p>除了 * 还有没有其他通配符？</p>
+</li>
+<li>
+<p>-name "*.txt" 加双引号的作用是什么？</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>-name pattern：</p>
+</div>
+<div class="paragraph">
+<p>用指定的通配符模式匹配的文件和目录</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; 《The Linux Command Line》
+</div>
+</div>
+<div class="paragraph">
+<p>那么通配符模式是什么？阮老师在 <a href="http://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html" target="_blank" rel="noopener">命令行通配符教程</a> 中解释得很详细。</p>
+</div>
+<div class="paragraph">
+<p>学完理论知识，实际运用发现存在问题：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">#目录下存在文件 a.iml、a.ipr、a.iws
+$ ls *.{iml,ipr,iws}  <i class="conum" data-value="1"></i><b>(1)</b>
+a.iml   a.ipr   a.iws
+
+$ find . -name *.{iml,ipr,iws} <i class="conum" data-value="2"></i><b>(2)</b>
+find: a.ipr: unknown primary or operator # mac 上
+find: 路径必须在表达式之前: *.ipr # centos 上</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>ls 命令可行</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>find 命令不行</td>
+</tr>
+</table>
+</div>
+<div class="quoteblock">
+<blockquote>
+']
+</blockquote>
+<div class="attribution">
+&#8212; 'https://linux.die.net/man/1/find[find(1) - Linux man page^
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>-name pattern：</p>
+</div>
+<div class="paragraph">
+<p>Base of file name (the path with the leading directories removed) matches shell pattern pattern.
+The metacharacters ('*', '?', and '[]') match a '.' at the start of the base name (this is a change in findutils-4.2.2; see section STANDARDS CONFORMANCE below).
+To ignore a directory and the files under it, use -prune; see an example in the description of -path.
+Braces are not recognised as being special, despite the fact that some shells including Bash imbue braces with a special meaning in shell patterns.
+The filename matching is performed with the use of the fnmatch(3) library function.
+Don&#8217;t forget to enclose the pattern in quotes in order to protect it from expansion by the shell.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>简单解释就是不支持 <code>{}</code> 模式。</p>
+</div>
+<div class="paragraph">
+<p>如果想要使用 <code>{}</code> 模式，可以通过 -o 参数变通实现：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>find . -name *.{iml,ipr,iws} <i class="conum" data-value="1"></i><b>(1)</b>
+find . -name *.iml -o -name *.ipr -o -name *.iws <i class="conum" data-value="2"></i><b>(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>不支持 <code>{}</code> 模式，无法使用</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>等效于 &lt;1&gt;，可替代 &lt;1&gt;</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grep"><a class="anchor" href="#_grep"></a>3. grep</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>查找文件，偏向根据文件内容规则匹配。</p>
+</div>
+<div class="listingblock">
+<div class="title">mac</div>
+<div class="content">
+<pre class="highlightjs highlight"><code># 在当前目录及子目录下查找包含 static 的文件
+$ grep static -rl . <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>grep '取得WapUserStock'</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sed"><a class="anchor" href="#_sed"></a>4. sed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>替换文件内容。</p>
+</div>
+<div class="listingblock">
+<div class="title">mac 测试</div>
+<div class="content">
+<pre class="highlightjs highlight"><code># 替换文件中所有的 static/ 为 jcjstatic/
+$ sed -i "" 's|static/|jcjstatic/|g' **/*.{js,html,map,css}
+# 替换文件中所有的 "/api 为 "/jcjapi
+$ sed -i "" 's|"/api|"/jcjapi|g' **/*.js</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">linux 测试</div>
+<div class="content">
+<pre class="highlightjs highlight"><code># 替换文件中所有的 static/ 为 jcjstatic/
+$ sed -i 's|static/|jcjstatic/|g' **/*.{js,html,map} <i class="conum" data-value="1"></i><b>(1)</b>
+# 替换文件中所有的 "/api 为 "/jcjapi
+$ sed -i 's|"/api|"/jcjapi|g' **/*.js
+$ sed -i 's|static/|jcjstatic/|g' **/*.{js,html,map}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>**/*.{js,html,map} 能匹配到所有目录下的文件（根据匹配不到文件报错判断），但只会对当前目录下的文件执行替换（根据实际执行效果判断），可使用套接规则优化 //TODO 待核实</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_filename"><a class="anchor" href="#_filename"></a>4.1. filename</h3>
+<div class="paragraph">
+<p>以下均为 mac 系统上的测试结果：</p>
+</div>
+<div class="paragraph">
+<p>名称规则可包含 <a href="http://www.ruanyifeng.com/blog/2018/09/bash-wildcards.html" target="_blank" rel="noopener">通配符</a>。</p>
+</div>
+<div class="ulist">
+<div class="title">通配符层级规则</div>
+<ul>
+<li>
+<p>a.txt：匹配当前目录下 a.txt 文件</p>
+</li>
+<li>
+<p>*/a.txt：匹配子一级目录下 a.txt 文件</p>
+</li>
+<li>
+<p>**/a.txt：匹配当前目录和所有下级目录下 a.txt 文件</p>
+</li>
+<li>
+<p>引号将名称变为字面模式，例如：*.txt 匹配任意 txt 文件，"*.txt" 匹配名称为 * 的 txt 文件</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">套接规则</div>
+<div class="content">
+<pre>sed -i "" "s/static/jcjstatic/g" `grep static -rl .` <i class="conum" data-value="1"></i><b>(1)</b>
+sed -i "" "s/res.retCode/res.result/g" `grep res.retCode -rl .` <i class="conum" data-value="1"></i><b>(1)</b>
+sed -i "" "s|console.info(`invoke ${params.apiName} return(decoded):`, res);|alert(res)|g" `grep res.retCode -rl .` <i class="conum" data-value="1"></i><b>(1)</b>
+
+`grep ', res);' -rl .`</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>grep static -rl .</code> 查询出多个文件作为输入</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tcp_dump"><a class="anchor" href="#_tcp_dump"></a>5. Tcp Dump</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code># 持续监听不断输出
+$ tcpdump
+
+# -D：打印出系统中所有可以用 tcpdump 截包的网络接口
+$ tcpdump -D
+1.en0 [Up, Running]
+2.p2p0 [Up, Running]
+3.awdl0 [Up, Running]
+4.llw0 [Up, Running]
+5.utun0 [Up, Running]
+6.vboxnet0 [Up, Running]
+7.utun1 [Up, Running]
+8.lo0 [Up, Running, Loopback]
+9.en1 [Up, Running]
+10.en2 [Up, Running]
+11.gif0 [none]
+12.stf0 [none]
+13.bridge0 [none]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>01:08:26.672787 IP6 localhost.37450 &gt; localhost.distinct: Flags [S], seq 2691960457, win 43690, options [mss 65476,sackOK,TS val 2722329 ecr 0,nop,wscale 7], length 0
+01:08:26.672837 IP6 localhost.distinct &gt; localhost.37450: Flags [S.], seq 684685777, ack 2691960458, win 43690, options [mss 65476,sackOK,TS val 2722330 ecr 2722329,nop,wscale 7], length 0
+01:08:26.672850 IP6 localhost.37450 &gt; localhost.distinct: Flags [.], ack 1, win 342, options [nop,nop,TS val 2722330 ecr 2722330], length 0</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>tcpdump distinct to port</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
