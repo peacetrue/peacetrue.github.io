@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手册 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/manual.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-template" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">目录模板引擎</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">案例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora-module.html">Antora 模块目录模板</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="manual.html">手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">目录模板引擎</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">目录模板引擎</a></li>
+    <li><a href="manual.html">手册</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/manual.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">手册</h1>
+<div class="sect1">
+<h2 id="_基本工作流程"><a class="anchor" href="#_基本工作流程"></a>1. 基本工作流程</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">目录模板引擎渲染时序图</div>
+<div class="content">
+<pre>@startuml
+autonumber
+客户端 -&gt; 目录模板引擎: 渲染目录模板
+目录模板引擎 -&gt; 资源集合加载器: 获取目录模板下资源集合
+目录模板引擎 &lt;- 资源集合加载器: 返回资源集合
+loop 循环处理资源
+    alt 资源为模板
+        目录模板引擎 -&gt; 模板引擎: 渲染模板
+        模板引擎 -&gt; 模板引擎: 生成结果
+        目录模板引擎 &lt;- 模板引擎: 返回
+    else 资源不为模板
+        目录模板引擎 -&gt; 目录模板引擎: 拷贝资源到结果
+    end
+end
+客户端 &lt;- 目录模板引擎: 返回
+@enduml</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_类库"><a class="anchor" href="#_类库"></a>2. 类库</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>peacetrue-template 中涉及的类库如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">Gradle</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">// 目录模板引擎
+implementation "com.github.peacetrue.template:peacetrue-template-engine:1.0.0"
+// Velocity 模板引擎
+implementation "com.github.peacetrue.template:peacetrue-template-velocity:1.0.0"
+// 命令行工具
+implementation "com.github.peacetrue.template:peacetrue-template-cli:1.0.0"
+// Spring Boot 环境
+implementation "com.github.peacetrue.template:peacetrue-template-spring:1.0.0"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_模板引擎_templateengine"><a class="anchor" href="#_模板引擎_templateengine"></a>3. 模板引擎 <code>TemplateEngine</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>模板引擎是一个接口，用于避免直接依赖具体模板引擎。内置了 1 个实现：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VelocityTemplateEngine</code>：基于 <a href="https://velocity.apache.org/" target="_blank" rel="noopener">Velocity</a> 实现的模板引擎</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>开发者也可自定义其他实现，例如：基于 <a href="https://freemarker.apache.org/" target="_blank" rel="noopener">FreeMark</a> 实现。</p>
+</div>
+<div class="sect2">
+<h3 id="_velocity_模板引擎"><a class="anchor" href="#_velocity_模板引擎"></a>3.1. Velocity 模板引擎</h3>
+<div class="paragraph">
+<p>如果基于 <code>VelocityTemplateEngine</code> 渲染模板，构建目录模板时需要遵循 Velocity 模板的语法。
+<code>VelocityTemplateEngine</code> 默认启用了 <a href="https://velocity.apache.org/tools/3.1/index.html" target="_blank" rel="noopener">Velocity 工具</a> 的支持。
+同时，笔者还扩展了 Velocity 工具，具体功能可参考 <a href="https://www.baidu.com" target="_blank" rel="noopener">待完善</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_资源集合加载器_resourcesloader"><a class="anchor" href="#_资源集合加载器_resourcesloader"></a>4. 资源集合加载器 <code>ResourcesLoader</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>资源集合加载器用于获取目录模板下所有资源。
+区别于 Spring 的 <code>ResourceLoader</code>，它只能获取单个资源。</p>
+</div>
+<div class="paragraph">
+<p>内置了 2 个实现：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FileSystemResourcesLoader</code>：文件系统资源加载器</p>
+</li>
+<li>
+<p><code>ClasspathResourcesLoader</code>：类路径资源加载器</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_目录模板引擎_directorytemplateengine"><a class="anchor" href="#_目录模板引擎_directorytemplateengine"></a>5. 目录模板引擎 <code>DirectoryTemplateEngine</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>目录模板引擎渲染时，接收 4 个参数：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">templateLocation</dt>
+<dd>
+<p>目录模板位置。
+文件路径使用 <code>file:</code> 前缀，例如：file:/path/to/template，
+类路径使用 <code>classpath:</code> 前缀，例如：classpath:/path/to/template。
+当目录模板为文件时，位置可以指定为目录、jar 包（路径以 <strong>.jar</strong> 结尾）或 zip 包（路径以 <strong>.zip</strong> 结尾）。
+不支持其他压缩包格式，因为 Java 原生只提供了 zip 包的解析，如果是其他压缩包格式，请自行转换为 zip 包。
+Java 开发者推荐使用 jar 包，非 Java 开发者推荐使用 zip 包。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

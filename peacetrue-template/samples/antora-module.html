@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Antora 模块目录模板 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/samples/antora-module.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-template" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">目录模板引擎</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../start.html">入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">案例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="antora.html">Antora 目录模板</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="antora-module.html">Antora 模块目录模板</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../manual.html">手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">目录模板引擎</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">目录模板引擎</a></li>
+    <li>案例</li>
+    <li><a href="antora-module.html">Antora 模块目录模板</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/samples/antora-module.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Antora 模块目录模板</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antora 模块目录模板</strong>用于在 <strong>Antora 资源库</strong>中创建一个模块。
+<strong>Antora 资源库</strong>是基于 <a href="antora.html" class="page">Antora 目录模板</a> 创建的资源库。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_目录结构"><a class="anchor" href="#_目录结构"></a>1. 目录结构</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antora 模块目录模板</strong> 的目录结构如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
+├── ${module.directoryName}
+│   ├── build.gradle.vm
+│   ├── gradle
+│   │   └── wrapper
+│   │       ├── gradle-wrapper.jar
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties.vm
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── settings.gradle.vm
+│   └── src
+│       └── test
+│           ├── java
+│           │   └── ${clazz.path(${repository.packageName})}
+│           │       └── ${uc.lu(${module.name})}
+│           └── resources
+│               ├── logback.xml.vm
+│               └── logback.xsd
+└── docs
+    └── antora
+        └── modules
+            └── ROOT
+                ├── assets
+                │   └── images
+                │       └── ${module.directoryName}
+                ├── examples
+                │   └── ${module.directoryName}
+                └── pages
+                    └── ${module.directoryName}.adoc
+
+19 directories, 10 files</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以 <strong>.vm</strong> 结尾的文件为模板，此类文件会被渲染，其他文件直接拷贝。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_变量"><a class="anchor" href="#_变量"></a>2. 变量</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antora 模块目录模板</strong> 中使用到的变量如下：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 根对象</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">repository</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">仓库属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="antora.html#Repository" class="page">Repository</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">模块属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Module">Module</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table id="Module" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Module</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>大写驼峰格式</strong>，例如：Core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directoryName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">目录名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>小写中划线格式</strong>，例如：peacetrue-result-core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_渲染"><a class="anchor" href="#_渲染"></a>3. 渲染</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/samples/antora-module.adoc - include::example$peacetrue-template-engine/src/test/java/com/github/peacetrue/template/DirectoryTemplateEngineImplTest.java[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>结果</strong> 目录结构如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
+├── docs
+│   └── antora
+│       └── modules
+│           └── ROOT
+│               ├── assets
+│               │   └── images
+│               │       └── learn-redis
+│               ├── examples
+│               │   └── learn-redis
+│               └── pages
+│                   └── learn-redis.adoc
+└── learn-redis
+    ├── build.gradle
+    ├── gradle
+    │   └── wrapper
+    │       ├── gradle-wrapper.jar
+    │       └── gradle-wrapper.properties
+    ├── gradle.properties
+    ├── gradlew
+    ├── gradlew.bat
+    ├── settings.gradle
+    └── src
+        └── test
+            ├── java
+            │   └── com
+            │       └── github
+            │           └── peacetrue
+            │               └── learn
+            │                   └── redis
+            └── resources
+                ├── logback.xml
+                └── logback.xsd
+
+22 directories, 10 files</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>示例中，为了方便展示，learn-redis 是单独生成的。
+实际使用时，可以直接生成在 learn 目录下。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_对比"><a class="anchor" href="#_对比"></a>4. 对比</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>对比模板和结果的目录结构：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/antora-module-compare.png" alt="antora module compare">
+</div>
+</div>
+<div class="paragraph">
+<p>在 <a href="antora.html" class="page">Antora 目录模板</a> 的例子中，只渲染了模板内容，模板路径也可以被渲染，如果是路径格式，会创建多个目录。
+文件内容的对比，就不详细说明了。</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

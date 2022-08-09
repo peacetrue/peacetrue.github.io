@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>简介 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/index.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-template" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">目录模板引擎</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">案例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora-module.html">Antora 模块目录模板</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="manual.html">手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">目录模板引擎</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">目录模板引擎</a></li>
+    <li><a href="index.html">简介</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">简介</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>peacetrue-template</strong> 是一个基于 Java 的目录模板引擎组件，用于渲染指定目录下的一套模板。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_缘由"><a class="anchor" href="#_缘由"></a>1. 缘由</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>常规模板引擎（区别于目录模板引擎）只能用于渲染单个模板，在代码生成场景中，需要渲染一套模板，此时需要使用目录模板引擎。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_工作原理"><a class="anchor" href="#_工作原理"></a>2. 工作原理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>模板引擎的工作原理如下：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/TemplateEngineFlow.png" alt="TemplateEngineFlow">
+</div>
+</div>
+<div class="paragraph">
+<p>当模板引擎为常规模板引擎时，模板通常为单个文件，结果也为单个文件；
+当模板引擎为目录模板引擎时，模板会包含多个文件，结果也包含多个文件，此时模板可称为目录模板。
+目录模板引擎会使用常规模板引擎依次渲染目录模板下的文件。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_术语"><a class="anchor" href="#_术语"></a>3. 术语</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">目录模板</dt>
+<dd>
+<p>通常模板为单个文件，目录模板中包含多个文件，可以是文件系统的目录，也可以是压缩包。</p>
+</dd>
+<dt class="hdlist1">目录模板引擎</dt>
+<dd>
+<p>用于渲染目录模板的模板引擎。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特性"><a class="anchor" href="#_特性"></a>4. 特性</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>支持渲染目录模板</p>
+</li>
+<li>
+<p>目录模板可使用文件系统目录或压缩包</p>
+</li>
+<li>
+<p>支持渲染模板路径</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_注意"><a class="anchor" href="#_注意"></a>5. 注意</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本组件遵循<strong>最佳适用原则</strong>，即如果有多种途径可以达到同一效果，则仅实现其中最佳的一种。
+本组件仅处理必要且必须的事项，下面列举了一些反例：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>当使用路径参数时，不会移除路径字符串两端的空格，最终可能导致找不到文件</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
