@@ -10,8 +10,8 @@ content:
   sources:
   - url: ./
     start_path: docs/antora
-#  - url: https://github.com/peacetrue/peacetrue.github.io
-#    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-shell
+    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-template-gradle
 #    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
