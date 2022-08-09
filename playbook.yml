@@ -27,6 +27,9 @@ content:
   - url: https://github.com/peacetrue/peacetrue-validation.git
     branches: master
     start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-template.git
+    branches: master
+    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-result
 #    branches: master
 #    start_path: docs/antora
