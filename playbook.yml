@@ -4,7 +4,7 @@
 site:
   title: 安宁的知识库
   url: https://peacetrue.github.io
-  start_page: repository::index.adoc
+  start_page: overview::index.adoc
 asciidoc:
   extensions:
     - asciidoctor-plantuml

@@ -1,5 +1,5 @@
-name: repository
-title: 知识库
+name: overview
+title: 概述
 version: master
 asciidoc:
   attributes:
