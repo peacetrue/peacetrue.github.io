@@ -33,6 +33,8 @@ jobs:
         node-version: 16
     - name: Antora
       run: npm i -g @antora/cli@3.0 @antora/site-generator@3.0
+    - name: Asciidoctor Diagram
+      run: gem install asciidoctor-diagram
     - name: Generate
       run: antora generate playbook.yml
     - name: Check
