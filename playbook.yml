@@ -5,6 +5,12 @@ site:
   title: 安宁的知识库
   url: https://peacetrue.github.io
   start_page: repository::index.adoc
+asciidoc:
+  extensions:
+    - asciidoctor-plantuml
+  attributes:
+    plantuml-server-url: 'http://www.plantuml.com/plantuml@'
+    numbered: '@'
 content:
   branches: master
   sources:
