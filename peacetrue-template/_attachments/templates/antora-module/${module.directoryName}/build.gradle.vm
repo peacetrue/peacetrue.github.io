@@ -1,0 +1,7 @@
+plugins {
+    id "com.github.peacetrue.gradle.build-convention" version "${esc.d}{peaceGradleVersion}${esc.d}{tailSnapshot}"
+}
+
+group "${repository.packageName}.${uc.lu(${module.name})}"
+version "${esc.d}{${lh.lc(${module.directoryName})}Version}${esc.d}{tailSnapshot}"
+description "${module.description}"

@@ -40,8 +40,14 @@
     <a class="nav-link" href="../start.html">入门</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../develop.html">开发指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">案例</span>
+    <span class="nav-text">示例</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="antora.html">Antora 目录模板</a>
@@ -52,7 +58,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../manual.html">手册</a>
+    <a class="nav-link" href="../case.html">场景</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../version.html">版本</a>
@@ -120,7 +126,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">目录模板引擎</a></li>
-    <li>案例</li>
+    <li>示例</li>
     <li><a href="antora-module.html">Antora 模块目录模板</a></li>
   </ul>
 </nav>
@@ -135,20 +141,20 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Antora 模块目录模板</strong>用于在 <strong>Antora 资源库</strong>中创建一个模块。
-<strong>Antora 资源库</strong>是基于 <a href="antora.html" class="xref page">Antora 目录模板</a> 创建的资源库。</p>
+<p><strong>Antora 模块目录模板</strong> 用于在 <strong>Antora 资源库</strong> 中创建一个模块。
+<strong>Antora 资源库</strong> 是基于 <a href="antora.html" class="xref page">Antora 目录模板</a> 创建的资源库。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_目录结构"><a class="anchor" href="#_目录结构"></a>1. 目录结构</h2>
+<h2 id="_文件结构"><a class="anchor" href="#_文件结构"></a>1. 文件结构</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Antora 模块目录模板</strong> 的目录结构如下：</p>
+<p><strong>Antora 模块目录模板</strong> 文件结构如下：</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
+<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">antora-module
 ├── ${module.directoryName}
 │   ├── build.gradle.vm
 │   ├── gradle
@@ -160,10 +166,13 @@
 │   ├── gradlew.bat
 │   ├── settings.gradle.vm
 │   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── ${clazz.path(${repository.packageName})}
+│       │   │       └── ${uc.lu(${module.name})}
+│       │   └── resources
 │       └── test
 │           ├── java
-│           │   └── ${clazz.path(${repository.packageName})}
-│           │       └── ${uc.lu(${module.name})}
 │           └── resources
 │               ├── logback.xml.vm
 │               └── logback.xsd
@@ -171,35 +180,27 @@
     └── antora
         └── modules
             └── ROOT
-                ├── assets
-                │   └── images
-                │       └── ${module.directoryName}
-                ├── examples
-                │   └── ${module.directoryName}
                 └── pages
-                    └── ${module.directoryName}.adoc
+                    └── ${module.directoryName}.adoc.vm
 
-19 directories, 10 files</code></pre>
+17 directories, 10 files</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>以 <strong>.vm</strong> 结尾的文件为模板，此类文件会被渲染，其他文件直接拷贝。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_变量"><a class="anchor" href="#_变量"></a>2. 变量</h2>
+<h2 id="_变量说明"><a class="anchor" href="#_变量说明"></a>2. 变量说明</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antora 模块目录模板</strong> 中使用到的变量如下：</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all fit-content stretch">
 <caption class="title">Table 1. 根对象</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col>
+<col>
+<col>
+<col>
 </colgroup>
 <thead>
 <tr>
@@ -212,25 +213,25 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">repository</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">仓库属性</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="antora.html#Repository" class="xref page">Repository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">资源库属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="antora.html#Repository" class="xref page">资源库</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">module</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">模块属性</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Module">Module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Module">模块</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
-<table id="Module" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Module</caption>
+<table id="Module" class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table 2. 模块</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col>
+<col>
+<col>
+<col>
 </colgroup>
 <thead>
 <tr>
@@ -245,115 +246,44 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>大写驼峰格式</strong>，例如：Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">约定为 <strong>大写驼峰格式</strong>，例如：Redis</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">directoryName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">目录名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>小写中划线格式</strong>，例如：peacetrue-result-core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例如：学习 Redis</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例如：记录学习 Redis 的过程</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directoryName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">目录名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">约定为 <strong>小写中划线格式</strong>，例如：learn-redis</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_渲染"><a class="anchor" href="#_渲染"></a>3. 渲染</h2>
+<h2 id="_压缩包内容"><a class="anchor" href="#_压缩包内容"></a>3. 压缩包内容</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** Antora 模块目录模板 */
-    @Test
-    void antoraModule() throws IOException {
-        DirectoryTemplateEngineImpl templateEngine = new DirectoryTemplateEngineImpl();
-        templateEngine.setResourcesLoader(ConditionalResourcesLoader.DEFAULT);
-        templateEngine.setTemplatePredicate(VelocityTemplateEngine.VELOCITY_TEMPLATE_PREDICATE);
-        templateEngine.setResultPathResolver(VelocityTemplateEngine.VELOCITY_RESULT_PATH_RESOLVER);
-        templateEngine.setTemplateEngine(new VelocityTemplateEngine(new VelocityEngine()));
-        String projectAbsolutePath = SourcePathUtils.getProjectAbsolutePath();
-        String templateDir = String.format("file:%s/../docs/antora/modules/ROOT/examples/templates/antora-module", projectAbsolutePath);
-        String resultDir = String.format("%s/../docs/antora/modules/ROOT/examples/results/learn-redis", projectAbsolutePath);
-        templateEngine.evaluate(
-                templateDir,
-                ImmutableMap.&lt;String, Object&gt;builder()
-                        .put("repository", ImmutableMap.of("name", "Learn", "directoryName", "learn", "description", "记录学习过程", "packageName", "com.github.peacetrue.learn"))
-                        .put("module", ImmutableMap.of("name", "Redis", "directoryName", "learn-redis", "description", "学习 Redis"))
-                        .build(),
-                Options.builder().evaluateTemplatePath(true).build(),//渲染模板路径
-                resultDir
-        );
-        Assertions.assertTrue(Files.exists(Paths.get(resultDir)));
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">lrwxr-xr-x  1 xiayx  staff   9 Aug 10 17:39 antora-module
+lrwxr-xr-x  1 xiayx  staff  28 Aug 10 17:40 antora-module-options.properties
+lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-module-variable.adoc
+lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-module-variables.properties
+lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>结果</strong> 目录结构如下：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
-├── docs
-│   └── antora
-│       └── modules
-│           └── ROOT
-│               ├── assets
-│               │   └── images
-│               │       └── learn-redis
-│               ├── examples
-│               │   └── learn-redis
-│               └── pages
-│                   └── learn-redis.adoc
-└── learn-redis
-    ├── build.gradle
-    ├── gradle
-    │   └── wrapper
-    │       ├── gradle-wrapper.jar
-    │       └── gradle-wrapper.properties
-    ├── gradle.properties
-    ├── gradlew
-    ├── gradlew.bat
-    ├── settings.gradle
-    └── src
-        └── test
-            ├── java
-            │   └── com
-            │       └── github
-            │           └── peacetrue
-            │               └── learn
-            │                   └── redis
-            └── resources
-                ├── logback.xml
-                └── logback.xsd
-
-22 directories, 10 files</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>示例中，为了方便展示，learn-redis 是单独生成的。
-实际使用时，可以直接生成在 learn 目录下。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_对比"><a class="anchor" href="#_对比"></a>4. 对比</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>对比模板和结果的目录结构：</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/antora-module-compare.png" alt="antora module compare">
-</div>
-</div>
-<div class="paragraph">
-<p>在 <a href="antora.html" class="xref page">Antora 目录模板</a> 的例子中，只渲染了模板内容，模板路径也可以被渲染，如果是路径格式，会创建多个目录。
-文件内容的对比，就不详细说明了。</p>
+<p>下载 <a href="../_attachments/templates/antora-module.zip" target="_blank" rel="noopener">antora-module.zip</a>。</p>
 </div>
 </div>
 </div>

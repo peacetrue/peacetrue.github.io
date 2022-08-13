@@ -40,8 +40,14 @@
     <a class="nav-link" href="../start.html">入门</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../develop.html">开发指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">案例</span>
+    <span class="nav-text">示例</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="antora.html">Antora 目录模板</a>
@@ -52,7 +58,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../manual.html">手册</a>
+    <a class="nav-link" href="../case.html">场景</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../version.html">版本</a>
@@ -120,7 +126,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">目录模板引擎</a></li>
-    <li>案例</li>
+    <li>示例</li>
     <li><a href="antora.html">Antora 目录模板</a></li>
   </ul>
 </nav>
@@ -135,47 +141,43 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Antora 目录模板</strong> 用于创建一个符合 <a href="https://docs.antora.org/antora/latest/standard-directories/" target="_blank" rel="noopener">Antora 标准目录结构</a> 的资源库。</p>
+<p><strong>Antora 目录模板</strong> 用于创建一个符合 <a href="https://docs.antora.org/antora/latest/standard-directories/" target="_blank" rel="noopener">Antora 标准文件结构</a> 的资源库。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_目录结构"><a class="anchor" href="#_目录结构"></a>1. 目录结构</h2>
+<h2 id="_文件结构"><a class="anchor" href="#_文件结构"></a>1. 文件结构</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Antora 目录模板</strong> 的目录结构如下：</p>
+<p><strong>Antora 目录模板</strong> 文件结构如下：</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
-└── antora
-    ├── LICENSE
-    ├── README.adoc.vm
-    └── docs
-        ├── README.graffle
-        └── antora
-            ├── antora.yml.vm
-            └── modules
-                └── ROOT
-                    ├── assets
-                    │   └── images
-                    ├── attachments
-                    ├── examples
-                    ├── nav.adoc
-                    └── pages
-                        ├── branch.adoc
-                        └── index.adoc.vm
+<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">antora
+├── LICENSE
+├── README.adoc.vm
+└── docs
+    ├── README.graffle
+    └── antora
+        ├── antora.yml.vm
+        └── modules
+            └── ROOT
+                ├── assets
+                │   ├── attachments
+                │   └── images
+                ├── examples
+                ├── nav.adoc
+                └── pages
+                    ├── branch.adoc
+                    └── index.adoc.vm
 
-10 directories, 7 files</code></pre>
+9 directories, 7 files</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>以 <strong>.vm</strong> 结尾的文件为模板，此类文件会被渲染，其他文件直接拷贝。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_变量"><a class="anchor" href="#_变量"></a>2. 变量</h2>
+<h2 id="_变量说明"><a class="anchor" href="#_变量说明"></a>2. 变量说明</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antora 目录模板</strong> 中使用到的变量如下：</p>
@@ -199,20 +201,14 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">repository</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">仓库属性</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Repository">Repository</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">antora</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antora 配置属性</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Antora">Antora</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">资源库属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Repository">资源库</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 <table id="Repository" class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 2. Repository</caption>
+<caption class="title">Table 2. 资源库</caption>
 <colgroup>
 <col>
 <col>
@@ -232,155 +228,50 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>大写驼峰格式</strong>，例如：Result</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">directoryName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">目录名称</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">通常是<strong>小写中划线格式</strong>，例如：peacetrue-result</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">packageName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">包名</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">例如：com.github.peacetrue.result</p></td>
-</tr>
-</tbody>
-</table>
-<table id="Antora" class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 3. Antora</caption>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">描述</th>
-<th class="tableblock halign-left valign-top">类型</th>
-<th class="tableblock halign-left valign-top">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">约定为 <strong>大写驼峰格式</strong>，例如：Learn、PeacetrueResult</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例如：学习</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">版本</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例如：记录学习过程。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directoryName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">目录名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">约定为 <strong>小写中划线格式</strong>，例如：learn、peacetrue-result</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">packageName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">包名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符串</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例如：com.github.peacetrue.learn</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_渲染"><a class="anchor" href="#_渲染"></a>3. 渲染</h2>
+<h2 id="_压缩包内容"><a class="anchor" href="#_压缩包内容"></a>3. 压缩包内容</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** Antora 目录模板 */
-    @Test
-    void antora() throws IOException {
-        DirectoryTemplateEngine templateEngine = VelocityTemplateEngine.buildVelocityDirectoryTemplateEngine();
-        String projectAbsolutePath = SourcePathUtils.getProjectAbsolutePath();
-        String templateDir = String.format("file:%s/../docs/antora/modules/ROOT/examples/templates/antora", projectAbsolutePath);
-        String resultDir = String.format("%s/../docs/antora/modules/ROOT/examples/results/learn", projectAbsolutePath);
-        templateEngine.evaluate(
-                templateDir,
-                ImmutableMap.&lt;String, Object&gt;builder()
-                        .put("repository", ImmutableMap.of("name", "learn", "description", "记录学习过程"))
-                        .put("antora", ImmutableMap.of("name", "learn", "title", "记录学习过程", "version", "master"))
-                        .build(),
-                new Options(),
-                resultDir
-        );
-        Assertions.assertTrue(Files.exists(Paths.get(resultDir)));
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">lrwxr-xr-x  1 xiayx  staff   9 Aug 10 17:39 antora
+lrwxr-xr-x  1 xiayx  staff  28 Aug 10 17:40 antora-options.properties
+lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-variable.adoc
+lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-variables.properties
+lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>结果</strong> 目录结构如下：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">.
-└── learn
-    ├── LICENSE
-    ├── README.adoc
-    └── docs
-        ├── README.graffle
-        └── antora
-            ├── antora.yml
-            └── modules
-                └── ROOT
-                    ├── assets
-                    │   └── images
-                    ├── attachments
-                    ├── examples
-                    ├── nav.adoc
-                    └── pages
-                        ├── branch.adoc
-                        └── index.adoc
-
-10 directories, 7 files</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_对比"><a class="anchor" href="#_对比"></a>4. 对比</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>对比模板和结果的目录结构：</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/antora-compare.png" alt="antora compare">
-</div>
-</div>
-<div class="paragraph">
-<p>对比 README.adoc.vm 和 README.adoc：</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/image-2022-08-06-17-36-24-940.png" alt="image 2022 08 06 17 36 24 940">
-</div>
-</div>
-<div class="paragraph">
-<p>对比 antora.yml.vm 和 antora.yml：</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/image-2022-08-06-17-38-05-553.png" alt="image 2022 08 06 17 38 05 553">
-</div>
-</div>
-<div class="paragraph">
-<p>对比 index.adoc.vm 和 index.adoc：</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/image-2022-08-06-17-34-33-330.png" alt="image 2022 08 06 17 34 33 330">
-</div>
+<p>下载 <a href="../_attachments/templates/antora.zip" target="_blank" rel="noopener">antora.zip</a>。</p>
 </div>
 </div>
 </div>

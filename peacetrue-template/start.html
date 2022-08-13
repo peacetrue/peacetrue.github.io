@@ -40,8 +40,14 @@
     <a class="nav-link" href="start.html">入门</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="develop.html">开发指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">案例</span>
+    <span class="nav-text">示例</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
@@ -52,7 +58,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="manual.html">手册</a>
+    <a class="nav-link" href="case.html">场景</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="version.html">版本</a>
@@ -134,83 +140,97 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>本文将指导读者通过命令行使用目录模板引擎。</p>
+<p>本文用于指导读者通过命令行使用 <strong>目录模板引擎</strong>。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_前提条件"><a class="anchor" href="#_前提条件"></a>1. 前提条件</h2>
+<h2 id="_下载"><a class="anchor" href="#_下载"></a>1. 下载</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>目录模板引擎基于 Java 开发，使用时要求系统上具有 Java 运行环境，版本在 1.8 及以上。可使用如下命令检查：</p>
+<p>下载 <a href="_attachments/templates/quick-start.zip" target="_blank" rel="noopener">入门示例</a>，得到 quick-start.zip。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_尝试"><a class="anchor" href="#_尝试"></a>2. 尝试</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>执行以下命令：</p>
 </div>
 <div class="listingblock">
-<div class="title">java</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ java -version
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 解压 quick-start.zip
+$ unzip quick-start.zip
+$ cd quick-start
 
-java version "1.8.0_51"
-Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
-Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_目录模板"><a class="anchor" href="#_目录模板"></a>2. 目录模板</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>读者可直接下载 <a href="_attachments/antora.zip" target="_blank" rel="noopener">Antora 目录模板</a>，做学习之用。
-关于 <strong>Antora 目录模板</strong> 的更多信息，可查看 <a href="samples/antora.html" class="xref page">Antora 目录模板简介</a>；
-如需自定义目录模板，可参考 <a href="template.html" class="xref page">目录模板制作教程</a>。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_命令行渲染"><a class="anchor" href="#_命令行渲染"></a>3. 命令行渲染</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>下载 <a href="_attachments/template-engine.jar" target="_blank" rel="noopener">目录模板引擎类库</a> 和 <a href="_attachments/variables.properties" target="_blank" rel="noopener">变量配置文件</a>。
-将下载的 template-engine.jar、antora.zip、variables.properties 放在同一目录下 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>，
-执行以下命令：</p>
-</div>
-<div class="listingblock">
-<div class="title">渲染</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle"># 启动命令行
+# 查看文件列表
+$ ls -l
+
+lrwxr-xr-x  1 xiayx  staff   9 Aug 10 17:39 antora
+lrwxr-xr-x  1 xiayx  staff  28 Aug 10 17:40 antora-options.properties
+lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-variables.properties
+lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties
+lrwxr-xr-x  1 xiayx  staff  22 Aug 10 17:39 template-engine.jar
+
+# 启动命令行
 $ java -jar template-engine.jar
-# 查看渲染命令
-shell:&gt; help evaluate
-NAME
-        evaluate - 渲染目录模板
 
-SYNOPSYS
-        evaluate [[-t] string]  [[-v] string]  [[-o] string]  [[-r] string]
-
-OPTIONS
-        -t or --templatePath  string
-                目录模板位置。文件路径使用 file:/path/to/template，类路径使用 classpath:/path/to/template
-                [Optional, default = file:template]
-
-        -v or --variablesPath  string
-                变量属性文件路径。路径规则同上
-                [Optional, default = file:variables.properties]
-
-        -o or --optionsPath  string
-                选项属性文件路径
-                [Optional, default = file:options.properties]
-
-        -r or --resultPath  string
-                结果路径
-                [Optional, default = result]
 # 执行渲染命令
-shell:&gt; evaluate -t file:antora.zip -v file:variables.properties -r test
-# 退出命令行
-shell:&gt; quit
-# 查看生成的结果目录结构
-$ tree test
+shell:&gt; evaluate -t file:antora -o file:antora-options.properties -v file:antora-variables.properties -r learn
 
-test
+# 退出命令行
+shell:&gt; quit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>更多详细信息可参考：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="manual.html#cli" class="xref page">渲染命令参数详解</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_对比"><a class="anchor" href="#_对比"></a>3. 对比</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_对比文件结构"><a class="anchor" href="#_对比文件结构"></a>3.1. 对比文件结构</h3>
+<div class="paragraph">
+<p>对比目录模板文件结构和生成结果文件结构，观察两者间的差异：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看目录模板文件结构
+$ tree antora
+antora
+├── LICENSE
+├── README.adoc.vm
+└── docs
+    ├── README.graffle
+    └── antora
+        ├── antora.yml.vm
+        └── modules
+            └── ROOT
+                ├── assets
+                │   ├── attachments
+                │   └── images
+                ├── examples
+                ├── nav.adoc
+                └── pages
+                    ├── branch.adoc
+                    └── index.adoc.vm
+
+9 directories, 7 files
+
+# 查看生成结果文件结构
+$ tree learn
+
+learn
 ├── LICENSE
 ├── README.adoc
 └── docs
@@ -219,20 +239,134 @@ test
         ├── antora.yml
         └── modules
             └── ROOT
+                ├── assets
+                │   ├── attachments
+                │   └── images
+                ├── examples
                 ├── nav.adoc
                 └── pages
                     ├── branch.adoc
                     └── index.adoc
 
-5 directories, 7 files</code></pre>
+9 directories, 7 files</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>README.adoc.vm 变成 README.adoc</p>
+</li>
+<li>
+<p>antora.yml.vm 变成 antora.yml</p>
+</li>
+<li>
+<p>index.adoc.vm 变成 index.adoc</p>
+</li>
+<li>
+<p>local.adoc 在结果中不存在</p>
+</li>
+<li>
+<p>其他文件两者相同</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_对比_readme_adoc_vm"><a class="anchor" href="#_对比_readme_adoc_vm"></a>3.2. 对比 README.adoc.vm</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ cat antora/README.adoc.vm
+
+= 简介
+:app-name: ${repository.directoryName}
+
+${repository.description}
+
+$ cat learn/README.adoc
+
+= 简介
+:app-name: learn
+
+记录学习过程。</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_对比_antora_yml_vm"><a class="anchor" href="#_对比_antora_yml_vm"></a>3.3. 对比 antora.yml.vm</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ cat antora/docs/antora/antora.yml.vm
+
+name: ${repository.directoryName}
+title: ${repository.title}
+version: master
+asciidoc:
+  attributes:
+    numbered: '@'
+    app-name: ${repository.directoryName}
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+
+$ cat learn/docs/antora/antora.yml
+
+name: learn
+title: 学习
+version: master
+asciidoc:
+  attributes:
+    numbered: '@'
+    app-name: learn
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_对比_index_adoc_vm"><a class="anchor" href="#_对比_index_adoc_vm"></a>3.4. 对比 index.adoc.vm</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ cat antora/docs/antora/modules/ROOT/pages/index.adoc.vm
+
+= 简介
+:app-name: ${repository.directoryName}
+
+${repository.description}
+
+$ cat learn/docs/antora/antora.yml
+
+= 简介
+:app-name: learn
+
+记录学习过程。</code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. 执行命令时涉及到路径参数，放在同一目录下，可缩短参数
+</div>
+<div class="sect1">
+<h2 id="_变量"><a class="anchor" href="#_变量"></a>4. 变量</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>模板中占位符的值，都是从变量属性文件中读取的。</p>
+</div>
+<div class="paragraph">
+<p>查看变量属性文件：</p>
+</div>
+<div class="listingblock">
+<div class="title">antora-variables.properties</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ cat antora-variables.properties
+#\u53D8\u91CF\u5C5E\u6027\u6587\u4EF6
+#Sat Aug 13 09:42:47 CST 2022
+repository.title=学习
+repository.directoryName=learn
+repository.description=记录学习过程。
+repository.name=Learn
+repository.packageName=com.github.peacetrue.learn</code></pre>
+</div>
+</div>
 </div>
 </div>
 </article>

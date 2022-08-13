@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>场景 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/case.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-template" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">目录模板引擎</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="develop.html">开发指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">示例</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/antora-module.html">Antora 模块目录模板</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="case.html">场景</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">目录模板引擎</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../repository/index.html">知识库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../repository/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-validation/index.html">验证扩展</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-validation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../repository/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">目录模板引擎</a></li>
+    <li><a href="case.html">场景</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/case.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">场景</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>分析一些典型场景的解决思路。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_复用变量属性文件"><a class="anchor" href="#_复用变量属性文件"></a>1. 复用变量属性文件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>目录模板 A</strong> 使用到 <strong>变量属性文件 A</strong>；
+<strong>目录模板 B</strong> 使用到 <strong>变量属性文件 B</strong>，同时还使用到 <strong>变量属性文件 A</strong>。</p>
+</div>
+<div class="paragraph">
+<p>手工解决办法是：把 <strong>变量属性文件 A</strong> 中的内容都拷贝到 <strong>变量属性文件 B</strong> 中。
+此方案存在以下问题：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>要额外执行一次拷贝操作</p>
+</li>
+<li>
+<p>属性文件内容无法自动同步。<strong>变量属性文件 A</strong> 的内容修改后，<strong>变量属性文件 B</strong> 的内容需要同步修改</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>依赖组件的解决办法是：使用渲染命令的 variablesLocation 参数，传递多个值。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_增量更新"><a class="anchor" href="#_增量更新"></a>2. 增量更新</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用目录模板，生成了结果。
+后续，修改了目录模板，希望变更的内容能够应用到之前生成的结果。
+此时，会出现几种可能性：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>结果尚未被修改，此时可以删除后，重新渲染</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+未完待续。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_符号链接"><a class="anchor" href="#_符号链接"></a>3. 符号链接</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>目录模板中存在符号链接，渲染时能否保持符号链接？</p>
+</div>
+<div class="paragraph">
+<p>目前直接拷贝内容，不能保持符号链接。</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

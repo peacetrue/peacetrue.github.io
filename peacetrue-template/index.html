@@ -40,8 +40,14 @@
     <a class="nav-link" href="start.html">入门</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="develop.html">开发指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">案例</span>
+    <span class="nav-text">示例</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
@@ -52,7 +58,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="manual.html">手册</a>
+    <a class="nav-link" href="case.html">场景</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="version.html">版本</a>
@@ -134,7 +140,14 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>peacetrue-template</strong> 是一个基于 Java 的目录模板引擎组件，用于渲染指定目录下的一套模板。</p>
+<p><span class="image"><a class="image" href="https://lgtm.com/projects/g/peacetrue/peacetrue-template"><img src="https://img.shields.io/lgtm/grade/java/github/peacetrue/peacetrue-template" alt="LGTM Grade"></a></span>
+<span class="image"><a class="image" href="https://app.snyk.io/org/peacetrue"><img src="https://snyk.io/test/github/peacetrue/peacetrue-template/badge.svg" alt="Snyk"></a></span>
+<span class="image"><a class="image" href="https://github.com/peacetrue/peacetrue-template/actions"><img src="https://img.shields.io/github/workflow/status/peacetrue/peacetrue-template/build/master" alt="GitHub Workflow Status"></a></span>
+<span class="image"><a class="image" href="https://foresight.thundra.io/repositories/github/peacetrue/peacetrue-template/test-runs"><img src="https://foresight.service.thundra.io/public/api/v1/badge/success?repoId='1b9d03d7-1643-4809-a42f-60d8d4d69575'" alt="Foresight"></a></span>
+<span class="image"><a class="image" href="https://app.codecov.io/gh/peacetrue/peacetrue-template"><img src="https://img.shields.io/codecov/c/github/peacetrue/peacetrue-template/master" alt="Codecov"></a></span></p>
+</div>
+<div class="paragraph">
+<p><a href="https://peacetrue.github.io/peacetrue-template/">peacetrue-template</a> 是一个基于 Java 的目录模板引擎组件，用于渲染指定目录下的一套模板。</p>
 </div>
 </div>
 </div>
@@ -142,12 +155,12 @@
 <h2 id="_缘由"><a class="anchor" href="#_缘由"></a>1. 缘由</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>常规模板引擎（区别于目录模板引擎）只能用于渲染单个模板，在代码生成场景中，需要渲染一套模板，此时需要使用目录模板引擎。</p>
+<p>常规模板引擎（区别于目录模板引擎）只能渲染单个模板，在代码生成场景中，需要渲染一套模板，此时可以使用目录模板引擎。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_工作原理"><a class="anchor" href="#_工作原理"></a>2. 工作原理</h2>
+<h2 id="_原理"><a class="anchor" href="#_原理"></a>2. 原理</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>模板引擎的工作原理如下：</p>
@@ -160,7 +173,7 @@
 <div class="paragraph">
 <p>当模板引擎为常规模板引擎时，模板通常为单个文件，结果也为单个文件；
 当模板引擎为目录模板引擎时，模板会包含多个文件，结果也包含多个文件，此时模板可称为目录模板。
-目录模板引擎会使用常规模板引擎依次渲染目录模板下的文件。</p>
+目录模板引擎会使用常规模板引擎依次渲染目录模板中的多个文件。</p>
 </div>
 </div>
 </div>
@@ -182,34 +195,42 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_特性"><a class="anchor" href="#_特性"></a>4. 特性</h2>
+<h2 id="_前提"><a class="anchor" href="#_前提"></a>4. 前提</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>目录模板引擎基于 Java 开发，使用时要求系统上具有 Java 运行环境，版本在 1.8 及以上。可使用如下命令检查：</p>
+</div>
+<div class="listingblock">
+<div class="title">java</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ java -version
+
+java version "1.8.0_51"
+Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
+Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特性"><a class="anchor" href="#_特性"></a>5. 特性</h2>
 <div class="sectionbody">
 <div class="ulist">
+<div class="title">已实现</div>
 <ul>
 <li>
 <p>支持渲染目录模板</p>
 </li>
 <li>
-<p>目录模板可使用文件系统目录或压缩包</p>
-</li>
-<li>
-<p>支持渲染模板路径</p>
+<p>支持命令行模式（依赖 JRE）</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_注意"><a class="anchor" href="#_注意"></a>5. 注意</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>本组件遵循<strong>最佳适用原则</strong>，即如果有多种途径可以达到同一效果，则仅实现其中最佳的一种。
-本组件仅处理必要且必须的事项，下面列举了一些反例：</p>
-</div>
 <div class="ulist">
+<div class="title">待实现</div>
 <ul>
 <li>
-<p>当使用路径参数时，不会移除路径字符串两端的空格，最终可能导致找不到文件</p>
+<p>支持基于 <a href="https://www.graalvm.org/22.1/reference-manual/native-image/" target="_blank" rel="noopener">GraalVM</a> 的原生命令行模式（不依赖 JRE）</p>
 </li>
 </ul>
 </div>

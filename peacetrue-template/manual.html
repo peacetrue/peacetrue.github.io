@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>手册 :: 安宁的知识库</title>
+    <title>用户手册 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/manual.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -39,9 +39,15 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="start.html">入门</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="manual.html">用户手册</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="develop.html">开发指南</a>
+  </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">案例</span>
+    <span class="nav-text">示例</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
@@ -51,8 +57,8 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="manual.html">手册</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="case.html">场景</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="version.html">版本</a>
@@ -120,7 +126,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">目录模板引擎</a></li>
-    <li><a href="manual.html">手册</a></li>
+    <li><a href="manual.html">用户手册</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/manual.adoc">Edit this Page</a></div>
@@ -130,120 +136,210 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">手册</h1>
+<h1 class="page">用户手册</h1>
 <div class="sect1">
-<h2 id="_基本工作流程"><a class="anchor" href="#_基本工作流程"></a>1. 基本工作流程</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title">目录模板引擎渲染时序图</div>
-<div class="content">
-<pre>@startuml
-autonumber
-客户端 -&gt; 目录模板引擎: 渲染目录模板
-目录模板引擎 -&gt; 资源集合加载器: 获取目录模板下资源集合
-目录模板引擎 &lt;- 资源集合加载器: 返回资源集合
-loop 循环处理资源
-    alt 资源为模板
-        目录模板引擎 -&gt; 模板引擎: 渲染模板
-        模板引擎 -&gt; 模板引擎: 生成结果
-        目录模板引擎 &lt;- 模板引擎: 返回
-    else 资源不为模板
-        目录模板引擎 -&gt; 目录模板引擎: 拷贝资源到结果
-    end
-end
-客户端 &lt;- 目录模板引擎: 返回
-@enduml</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_类库"><a class="anchor" href="#_类库"></a>2. 类库</h2>
+<h2 id="_了解模板语法"><a class="anchor" href="#_了解模板语法"></a>1. 了解模板语法</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>peacetrue-template 中涉及的类库如下：</p>
+<p>模板引擎不同，编写模板时使用的语法也不同。
+目前组件内置的模板引擎基于 <a href="https://velocity.apache.org" target="_blank" rel="noopener">Velocity</a> 实现。
+文档中涉及的示例，也均使用 Velocity 语法。
+组件默认启用了 <a href="https://velocity.apache.org/tools/3.1/" target="_blank" rel="noopener">Velocity 工具</a> 支持，
+开发者可以使用其中丰富地扩展支持。</p>
 </div>
-<div class="listingblock">
-<div class="title">Gradle</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">// 目录模板引擎
-implementation "com.github.peacetrue.template:peacetrue-template-engine:1.0.0"
-// Velocity 模板引擎
-implementation "com.github.peacetrue.template:peacetrue-template-velocity:1.0.0"
-// 命令行工具
-implementation "com.github.peacetrue.template:peacetrue-template-cli:1.0.0"
-// Spring Boot 环境
-implementation "com.github.peacetrue.template:peacetrue-template-spring:1.0.0"</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_模板引擎_templateengine"><a class="anchor" href="#_模板引擎_templateengine"></a>3. 模板引擎 <code>TemplateEngine</code></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>模板引擎是一个接口，用于避免直接依赖具体模板引擎。内置了 1 个实现：</p>
+<p>模板语法之间虽然有所差异，但最终达成的效果是相同的，都包括：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VelocityTemplateEngine</code>：基于 <a href="https://velocity.apache.org/" target="_blank" rel="noopener">Velocity</a> 实现的模板引擎</p>
+<p>获取/设置变量值</p>
+</li>
+<li>
+<p>判断</p>
+</li>
+<li>
+<p>循环</p>
+</li>
+<li>
+<p>调用方法</p>
+</li>
+<li>
+<p>声明/调用宏</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_制作目录模板"><a class="anchor" href="#_制作目录模板"></a>2. 制作目录模板</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>开发者也可自定义其他实现，例如：基于 <a href="https://freemarker.apache.org/" target="_blank" rel="noopener">FreeMark</a> 实现。</p>
+<p>常用的方式是基于已有代码制作目录模板。</p>
+</div>
+<div class="paragraph">
+<p>开发某个功能时，意识到该功能和之前做过的某些功能，在代码上具有相似性。
+此时可以考虑，基于之前的代码，制作目录模板。</p>
+</div>
+<div class="paragraph">
+<p>浏览代码结构，确定哪些文件被忽略，哪些文件需要渲染，哪些文件直接拷贝。
+需要渲染的模板文件后缀改为 <strong>vm</strong>，例如：<strong>README.adoc</strong> 改为 <strong>README.adoc.vm</strong>。
+默认以 <strong>vm</strong> 结尾的文件会被渲染，其他文件直接拷贝。
+如果默认规则不适用，可以通过选项属性文件更改。</p>
+</div>
+<div class="paragraph">
+<p>使用 <a href="https://velocity.apache.org/engine/2.3/vtl-reference.html" target="_blank" rel="noopener">VTL</a> 语法，
+修改模板文件的内容，同时整理出使用到的变量。
+<strong>变量描述文件</strong> 约定为 <strong>VARIABLE.adoc</strong>，此文件默认被忽略，不会渲染到结果中。</p>
+</div>
+<div class="paragraph">
+<p>在制作过程中，可以执行渲染，验证模板是否编写正确。
+如确认无误，压缩目录和变量描述文件为 zip 包。
+如果更改了选项，压缩时还应该包含 <strong>选项属性文件</strong>。
+为了使用方便，还可以将 <strong>变量属性文件</strong> 也加入压缩包中。</p>
+</div>
+<div class="paragraph">
+<p>以 <a href="samples/antora.html" class="xref page">Antora 目录模板</a> 为例说明：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看已准备文件
+$ ls -l
+drwxr-xr-x   6 xiayx  staff       192 Aug 10 05:39 antora # 目录模板
+-rw-r--r--   1 xiayx  staff       192 Aug 10 05:39 antora-antora-variable.adoc # 变量描述文件
+-rw-r--r--   1 xiayx  staff        78 Aug  9 20:55 antora-options.properties   # 选项属性文件
+-rw-r--r--   1 xiayx  staff       170 Aug 10 17:32 antora-variables.properties # 变量属性文件
+
+# 仅打包目录和变量描述文件
+$ zip -rq antora.zip antora antora-variable.adoc
+# 同时打包选项属性文件
+$ zip -rq antora.zip antora antora-variable.adoc antora-options.properties
+# 同时打包变量属性文件
+$ zip -rq antora.zip antora antora-variable.adoc antora-options.properties antora-variables.properties
+
+# 打 jar 包
+$ jar -cf antora.jar antora antora-variable.adoc options.properties variables.properties</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>目录模板的内容不受限制，可以实现各种各样的功能，满足了业务的复杂性。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_渲染目录模板"><a class="anchor" href="#_渲染目录模板"></a>3. 渲染目录模板</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>有 2 种实现渲染目录模板的方式：编程和命令行。
+以下代码示例均基于 <strong>Antora 目录模板</strong>。</p>
 </div>
 <div class="sect2">
-<h3 id="_velocity_模板引擎"><a class="anchor" href="#_velocity_模板引擎"></a>3.1. Velocity 模板引擎</h3>
+<h3 id="_编程"><a class="anchor" href="#_编程"></a>3.1. 编程</h3>
 <div class="paragraph">
-<p>如果基于 <code>VelocityTemplateEngine</code> 渲染模板，构建目录模板时需要遵循 Velocity 模板的语法。
-<code>VelocityTemplateEngine</code> 默认启用了 <a href="https://velocity.apache.org/tools/3.1/index.html" target="_blank" rel="noopener">Velocity 工具</a> 的支持。
-同时，笔者还扩展了 Velocity 工具，具体功能可参考 <a href="https://www.baidu.com" target="_blank" rel="noopener">待完善</a>。</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_资源集合加载器_resourcesloader"><a class="anchor" href="#_资源集合加载器_resourcesloader"></a>4. 资源集合加载器 <code>ResourcesLoader</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>资源集合加载器用于获取目录模板下所有资源。
-区别于 Spring 的 <code>ResourceLoader</code>，它只能获取单个资源。</p>
+<p>如果是集成到 Java 项目中，可以使用该方式。</p>
 </div>
 <div class="paragraph">
-<p>内置了 2 个实现：</p>
+<p>引用类库：</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>FileSystemResourcesLoader</code>：文件系统资源加载器</p>
-</li>
-<li>
-<p><code>ClasspathResourcesLoader</code>：类路径资源加载器</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">implementation "com.github.peacetrue.template:peacetrue-template-velocity:1.0.0"</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_目录模板引擎_directorytemplateengine"><a class="anchor" href="#_目录模板引擎_directorytemplateengine"></a>5. 目录模板引擎 <code>DirectoryTemplateEngine</code></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>目录模板引擎渲染时，接收 4 个参数：</p>
+<p>调用示例：</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">templateLocation</dt>
-<dd>
-<p>目录模板位置。
-文件路径使用 <code>file:</code> 前缀，例如：file:/path/to/template，
-类路径使用 <code>classpath:</code> 前缀，例如：classpath:/path/to/template。
-当目录模板为文件时，位置可以指定为目录、jar 包（路径以 <strong>.jar</strong> 结尾）或 zip 包（路径以 <strong>.zip</strong> 结尾）。
-不支持其他压缩包格式，因为 Java 原生只提供了 zip 包的解析，如果是其他压缩包格式，请自行转换为 zip 包。
-Java 开发者推荐使用 jar 包，非 Java 开发者推荐使用 zip 包。</p>
-</dd>
-</dl>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** Antora 目录模板 */
+    @Test
+    void antora() throws IOException {
+        String templateLocation = LOCATION_PREFIX_FILE + ResourcesUtilsTest.templatesDirPath + "/antora";
+        String resultPath = ResourcesUtilsTest.templatesDirPath + "/../results/learn";
+        Path resultPathObject = Paths.get(resultPath);
+        if (Files.exists(resultPathObject)) FileUtils.deleteRecursively(resultPathObject);
+        DirectoryTemplateEngine templateEngine = VelocityTemplateEngine.buildVelocityDirectoryTemplateEngine();
+        templateEngine.evaluate(
+                templateLocation,
+                getOptions(),
+                Collections.singletonMap("repository", getRepository()),
+                resultPath
+        );
+    }
+
+    private Options getOptions() {
+        return Options.builder()
+                .resourceActions(
+                        Options.ResourcePathPatterns.builder()
+                                .ignore("antora-variable\\.adoc$")
+                                .build()
+                )
+                .build();
+    }
+
+    private ImmutableMap&lt;String, String&gt; getRepository() {
+        return ImmutableMap.of(
+                "name", "Learn",
+                "title", "学习",
+                "description", "记录学习过程。",
+                "directoryName", "learn",
+                "packageName", "com.github.peacetrue.learn"
+        );
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_命令行"><a class="anchor" href="#_命令行"></a>3.2. 命令行</h3>
+<div class="paragraph">
+<p>下载 <a href="_attachments/templates/template-engine.jar" target="_blank" rel="noopener">目录模板引擎类库</a>（19M），
+得到 template-engine.jar。</p>
+</div>
+<div class="paragraph">
+<p>直接使用压缩包，基于类路径读取：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ls -l
+-rw-r--r--  1 xiayx  staff     16751 Aug  8 13:05 antora.zip
+-rw-r--r--  1 xiayx  staff  20143503 Aug 10 14:48 template-engine.jar
+
+# 启动命令行
+$ java -cp template-engine.jar:antora.zip org.springframework.boot.loader.JarLauncher
+
+# 执行渲染命令
+shell:&gt; evaluate -t classpath:antora -o classpath:antora-options.properties -v classpath:antora-variables.properties -r learn
+
+# 退出命令行
+shell:&gt; quit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>解压压缩包，基于文件路径读取：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 解压
+$ unzip antora.zip
+
+$ ls -l
+drwxr-xr-x  1 xiayx  staff       192 Aug  8 13:05 antora # 目录模板
+-rw-r--r--  1 xiayx  staff       192 Aug 10 05:39 antora-antora-variable.adoc # 变量描述文件
+-rw-r--r--  1 xiayx  staff        78 Aug  9 20:55 antora-options.properties   # 选项属性文件
+-rw-r--r--  1 xiayx  staff       170 Aug 10 17:32 antora-variables.properties # 变量属性文件
+-rw-r--r--  1 xiayx  staff     16751 Aug  8 13:05 antora.zip
+-rw-r--r--  1 xiayx  staff  20143503 Aug 10 14:48 template-engine.jar
+
+# 启动命令行
+$ java -jar template-engine.jar
+
+# 执行渲染命令
+shell:&gt; evaluate -t file:antora -o file:antora-options.properties -v file:antora-variables.properties -r learn
+
+# 退出命令行
+shell:&gt; quit</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

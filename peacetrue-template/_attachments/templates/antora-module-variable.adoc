@@ -1,0 +1,48 @@
+= Antora 模块目录模板变量描述
+
+//tag::content[]
+
+.根对象
+[%autowidth.stretch]
+|===
+|名称 |描述 |类型 |备注
+
+|repository
+|资源库属性
+|xref:samples/antora.adoc#Repository[资源库]
+|
+
+|module
+|模块属性
+|<<Module>>
+|
+|===
+
+[[Module]]
+.模块
+[%autowidth.stretch]
+|===
+|名称 |描述 |类型 |备注
+
+|name
+|名称
+|字符串
+|约定为 **大写驼峰格式**，例如：Redis
+
+|title
+|名称
+|字符串
+|例如：学习 Redis
+
+|description
+|描述
+|字符串
+|例如：记录学习 Redis 的过程
+
+|directoryName
+|目录名称
+|字符串
+|约定为 *小写中划线格式*，例如：learn-redis
+|===
+
+//end::content[]
