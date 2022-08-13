@@ -292,7 +292,7 @@ $ jar -cf antora.zip antora antora-variable.adoc antora-options.properties antor
 <div class="sect2">
 <h3 id="_命令行"><a class="anchor" href="#_命令行"></a>3.2. 命令行</h3>
 <div class="paragraph">
-<p>下载 <a href="_attachments/templates/template-engine.jar" target="_blank" rel="noopener">目录模板引擎类库</a>（19M），
+<p>下载 <a href="_attachments/templates/template-engine.jar" target="_blank" rel="noopener">目录模板引擎类库</a>，
 得到 template-engine.jar。</p>
 </div>
 <div class="paragraph">
@@ -308,7 +308,7 @@ $ jar -cf antora.zip antora antora-variable.adoc antora-options.properties antor
 $ java -cp template-engine.jar:antora.zip org.springframework.boot.loader.JarLauncher
 
 # 执行渲染命令
-shell:&gt; evaluate -t classpath:antora -o classpath:antora-options.properties -v classpath:antora-variables.properties -r learn
+shell:&gt; evaluate -t classpath:quick-start/antora -o classpath:quick-start/antora-options.properties -v classpath:quick-start/antora-variables.properties -r learn
 
 # 退出命令行
 shell:&gt; quit</code></pre>
