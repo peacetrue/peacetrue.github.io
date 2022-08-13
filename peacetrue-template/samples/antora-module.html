@@ -155,33 +155,33 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-tree hljs" data-lang="tree">antora-module
-├── ${module.directoryName}
-│   ├── build.gradle.vm
-│   ├── gradle
-│   │   └── wrapper
-│   │       ├── gradle-wrapper.jar
-│   │       └── gradle-wrapper.properties
-│   ├── gradle.properties.vm
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── settings.gradle.vm
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── ${clazz.path(${repository.packageName})}
-│       │   │       └── ${uc.lu(${module.name})}
-│       │   └── resources
-│       └── test
-│           ├── java
-│           └── resources
-│               ├── logback.xml.vm
-│               └── logback.xsd
-└── docs
-    └── antora
-        └── modules
-            └── ROOT
-                └── pages
-                    └── ${module.directoryName}.adoc.vm
+|-- ${module.directoryName}
+|   |-- build.gradle.vm
+|   |-- gradle
+|   |   `-- wrapper
+|   |       |-- gradle-wrapper.jar
+|   |       `-- gradle-wrapper.properties
+|   |-- gradle.properties.vm
+|   |-- gradlew
+|   |-- gradlew.bat
+|   |-- settings.gradle.vm
+|   `-- src
+|       |-- main
+|       |   |-- java
+|       |   |   `-- ${clazz.path(${repository.packageName})}
+|       |   |       `-- ${uc.lu(${module.name})}
+|       |   `-- resources
+|       `-- test
+|           |-- java
+|           `-- resources
+|               |-- logback.xml.vm
+|               `-- logback.xsd
+`-- docs
+    `-- antora
+        `-- modules
+            `-- ROOT
+                `-- pages
+                    `-- ${module.directoryName}.adoc.vm
 
 17 directories, 10 files</code></pre>
 </div>
@@ -296,36 +296,36 @@ lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties</code></p
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">learn-redis
-├── docs
-│   └── antora
-│       └── modules
-│           └── ROOT
-│               └── pages
-│                   └── learn-redis.adoc
-└── learn-redis
-    ├── build.gradle
-    ├── gradle
-    │   └── wrapper
-    │       ├── gradle-wrapper.jar
-    │       └── gradle-wrapper.properties
-    ├── gradle.properties
-    ├── gradlew
-    ├── gradlew.bat
-    ├── settings.gradle
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── com
-        │   │       └── github
-        │   │           └── peacetrue
-        │   │               └── learn
-        │   │                   └── redis
-        │   └── resources
-        └── test
-            ├── java
-            └── resources
-                ├── logback.xml
-                └── logback.xsd
+|-- docs
+|   `-- antora
+|       `-- modules
+|           `-- ROOT
+|               `-- pages
+|                   `-- learn-redis.adoc
+`-- learn-redis
+    |-- build.gradle
+    |-- gradle
+    |   `-- wrapper
+    |       |-- gradle-wrapper.jar
+    |       `-- gradle-wrapper.properties
+    |-- gradle.properties
+    |-- gradlew
+    |-- gradlew.bat
+    |-- settings.gradle
+    `-- src
+        |-- main
+        |   |-- java
+        |   |   `-- com
+        |   |       `-- github
+        |   |           `-- peacetrue
+        |   |               `-- learn
+        |   |                   `-- redis
+        |   `-- resources
+        `-- test
+            |-- java
+            `-- resources
+                |-- logback.xml
+                `-- logback.xsd
 
 20 directories, 10 files</code></pre>
 </div>

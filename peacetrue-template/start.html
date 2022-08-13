@@ -153,7 +153,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_尝试"><a class="anchor" href="#_尝试"></a>2. 尝试</h2>
+<h2 id="_渲染"><a class="anchor" href="#_渲染"></a>2. 渲染</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>执行以下命令：</p>
@@ -169,6 +169,7 @@ $ ls -l
 
 lrwxr-xr-x  1 xiayx  staff   9 Aug 10 17:39 antora
 lrwxr-xr-x  1 xiayx  staff  28 Aug 10 17:40 antora-options.properties
+lrwxr-xr-x  1 xiayx  staff  23 Aug 13 13:53 antora-variable.adoc
 lrwxr-xr-x  1 xiayx  staff  30 Aug 10 17:40 antora-variables.properties
 lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties
 lrwxr-xr-x  1 xiayx  staff  22 Aug 10 17:39 template-engine.jar
@@ -184,14 +185,7 @@ shell:&gt; quit</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>更多详细信息可参考：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="manual.html#cli" class="xref page">渲染命令参数详解</a></p>
-</li>
-</ul>
+<p>点击查看 <a href="develop.html#_命令行" class="xref page">渲染命令参数详解</a>。</p>
 </div>
 </div>
 </div>
@@ -208,22 +202,22 @@ shell:&gt; quit</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看目录模板文件结构
 $ tree antora
 antora
-├── LICENSE
-├── README.adoc.vm
-└── docs
-    ├── README.graffle
-    └── antora
-        ├── antora.yml.vm
-        └── modules
-            └── ROOT
-                ├── assets
-                │   ├── attachments
-                │   └── images
-                ├── examples
-                ├── nav.adoc
-                └── pages
-                    ├── branch.adoc
-                    └── index.adoc.vm
+|-- LICENSE
+|-- README.adoc.vm
+`-- docs
+    |-- README.graffle
+    `-- antora
+        |-- antora.yml.vm
+        `-- modules
+            `-- ROOT
+                |-- assets
+                |   |-- attachments
+                |   `-- images
+                |-- examples
+                |-- nav.adoc
+                `-- pages
+                    |-- branch.adoc
+                    `-- index.adoc.vm
 
 9 directories, 7 files
 
@@ -231,22 +225,22 @@ antora
 $ tree learn
 
 learn
-├── LICENSE
-├── README.adoc
-└── docs
-    ├── README.graffle
-    └── antora
-        ├── antora.yml
-        └── modules
-            └── ROOT
-                ├── assets
-                │   ├── attachments
-                │   └── images
-                ├── examples
-                ├── nav.adoc
-                └── pages
-                    ├── branch.adoc
-                    └── index.adoc
+|-- LICENSE
+|-- README.adoc
+`-- docs
+    |-- README.graffle
+    `-- antora
+        |-- antora.yml
+        `-- modules
+            `-- ROOT
+                |-- assets
+                |   |-- attachments
+                |   `-- images
+                |-- examples
+                |-- nav.adoc
+                `-- pages
+                    |-- branch.adoc
+                    `-- index.adoc
 
 9 directories, 7 files</code></pre>
 </div>
@@ -359,7 +353,7 @@ $ cat learn/docs/antora/antora.yml
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ cat antora-variables.properties
 #\u53D8\u91CF\u5C5E\u6027\u6587\u4EF6
-#Sat Aug 13 09:42:47 CST 2022
+#Sat Aug 13 13:56:01 CST 2022
 repository.title=学习
 repository.directoryName=learn
 repository.description=记录学习过程。
