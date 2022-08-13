@@ -34,7 +34,7 @@ jobs:
     - name: Antora
       run: npm i -g @antora/cli@3.0 @antora/site-generator@3.0
     - name: Asciidoctor Diagram
-      run: sudo gem install asciidoctor-diagram & bundle
+      run: sudo gem install asciidoctor-diagram && bundle
     - name: Generate
       run: antora generate playbook.yml
     - name: Check
