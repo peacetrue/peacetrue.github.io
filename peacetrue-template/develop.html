@@ -157,7 +157,7 @@ implementation "com.github.peacetrue.template:peacetrue-template-shell:1.0.0"</c
 </div>
 </div>
 <div class="paragraph">
-<p>版本为最新版。</p>
+<p>上述版本为最新版。</p>
 </div>
 </div>
 </div>
@@ -330,53 +330,15 @@ implementation "com.github.peacetrue.template:peacetrue-template-shell:1.0.0"</c
 <p>目录模板引擎的默认实现类为 <code>DirectoryTemplateEngineImpl</code>，
 执行逻辑如下：</p>
 </div>
-<div class="listingblock">
-<div class="title">目录模板引擎渲染时序图</div>
+<div class="imageblock plantuml">
 <div class="content">
-<pre>@startuml
-autonumber
-客户端 -&gt; 目录模板引擎: 渲染目录模板
-目录模板引擎 -&gt; 资源集合加载器: 获取目录模板下资源集合
-目录模板引擎 &lt;- 资源集合加载器: 返回资源集合
-loop 循环处理资源
-    alt 资源路径匹配 ignore
-        目录模板引擎 -&gt; 目录模板引擎: 忽略
-    else 其他
-        alt 资源路径匹配 evaluateResourcePath
-            目录模板引擎 -&gt; 常规模板引擎: 渲染资源路径
-            常规模板引擎 -&gt; 常规模板引擎: 生成结果
-            目录模板引擎 &lt;- 常规模板引擎: 返回
-        end
-        alt 资源路径匹配 evaluateResourceContent
-            目录模板引擎 -&gt; 常规模板引擎: 渲染资源内容
-            常规模板引擎 -&gt; 常规模板引擎: 生成结果
-            目录模板引擎 &lt;- 常规模板引擎: 返回
-        else 资源路径匹配 copyResourceContent
-            目录模板引擎 -&gt; 目录模板引擎: 拷贝资源内容到结果
-        else 其他
-            目录模板引擎 -&gt; 目录模板引擎: 不做处理
-        end
-    end
-    note right
-      使用 Java 正则表达式，
-      根据资源路径，匹配资源，
-      执行不同的操作
-    end note
-end
-
-客户端 &lt;- 目录模板引擎: 返回
-@enduml</pre>
+<img src="http://www.plantuml.com/plantuml/png/pLJBJi905DttA-O7_05Y38axLyO_g3f1ajgICZLnQL98LHvD01C57_W8H2COerA4mi_qpemhVy6M0gaon92uS3PDEkUSUy-vCnDF4radnguYoGRHL6Dt4-iIjAwfrM4FRRIqWbYr1Mw5DklqV0Zz2YqLOeWwp_Io5DsHPc41cR-QzDt-g6R1jk3eYhikd3PZY1SwK3o9KZpdE8eLoIqlpPKRbg5wyOslQ5eAmU2U5TfmQp8x6-vAo5-oGiPAlDE6WGcvxaScZv89LTFn214iiI5H6Z1qMULkHCHA6YF8l7czawdGd79uJrOCcU0DdDOCVGklosHdofdV03WERvYYSKHhV1EQfSmJOkLBQjciLw8NjTzwySSXaWXdCILZTNlH85OrbM2L_44MaCr0g_j_iWWEXo20BIsrlxXvuRqyxl2NywXvi9v-M10TqSMgU4uU3ix2QpKpwCbNrGX6UZAnC_7YkKDMRg8rUKz6zF46h5DUR_B10Fh5ptvk3A9NNPflHJFozyAOmfyHw663rtD1BtQEdPcqbFVSsgI5KNafw2NocFbJ4jaPJodke_rty0i0" alt="DirectoryTemplateEngineFlow">
 </div>
+<div class="title">Figure 1. 目录模板引擎渲染时序图</div>
 </div>
 <div class="paragraph">
-<p>渲染资源路径时，如果变量为路径，会生成多个目录。例如：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-txt hljs" data-lang="txt">└── com
-    └── github
-        └── peacetrue</code></pre>
-</div>
+<p>渲染资源路径时，如果变量为路径，会生成多个目录。
+例如：<a href="samples/antora-module.html#evaluateResourcePath" class="xref page">渲染资源路径</a>。</p>
 </div>
 </div>
 <div class="sect2">

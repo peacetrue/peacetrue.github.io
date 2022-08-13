@@ -287,6 +287,63 @@ lrwxr-xr-x  1 xiayx  staff  29 Aug 12 11:10 default-options.properties</code></p
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_生成结果"><a class="anchor" href="#_生成结果"></a>4. 生成结果</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>生成结果文件结构如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">learn-redis
+├── docs
+│   └── antora
+│       └── modules
+│           └── ROOT
+│               └── pages
+│                   └── learn-redis.adoc
+└── learn-redis
+    ├── build.gradle
+    ├── gradle
+    │   └── wrapper
+    │       ├── gradle-wrapper.jar
+    │       └── gradle-wrapper.properties
+    ├── gradle.properties
+    ├── gradlew
+    ├── gradlew.bat
+    ├── settings.gradle
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── com
+        │   │       └── github
+        │   │           └── peacetrue
+        │   │               └── learn
+        │   │                   └── redis
+        │   └── resources
+        └── test
+            ├── java
+            └── resources
+                ├── logback.xml
+                └── logback.xsd
+
+20 directories, 10 files</code></pre>
+</div>
+</div>
+<div id="evaluateResourcePath" class="paragraph">
+<p>文件名中变量为路径时，会生成多个目录。
+例如：<code>${clazz.path(${repository.packageName})}</code>，生成结果文件结构为：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-log hljs" data-lang="log">└── com
+  └── github
+      └── peacetrue
+          └── learn</code></pre>
+</div>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>

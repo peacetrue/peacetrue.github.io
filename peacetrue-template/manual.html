@@ -206,7 +206,7 @@
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看已准备文件
 $ ls -l
 drwxr-xr-x   6 xiayx  staff       192 Aug 10 05:39 antora # 目录模板
--rw-r--r--   1 xiayx  staff       192 Aug 10 05:39 antora-antora-variable.adoc # 变量描述文件
+-rw-r--r--   1 xiayx  staff       192 Aug 10 05:39 antora-variable.adoc # 变量描述文件
 -rw-r--r--   1 xiayx  staff        78 Aug  9 20:55 antora-options.properties   # 选项属性文件
 -rw-r--r--   1 xiayx  staff       170 Aug 10 17:32 antora-variables.properties # 变量属性文件
 
@@ -218,7 +218,7 @@ $ zip -rq antora.zip antora antora-variable.adoc antora-options.properties
 $ zip -rq antora.zip antora antora-variable.adoc antora-options.properties antora-variables.properties
 
 # 打 jar 包
-$ jar -cf antora.jar antora antora-variable.adoc options.properties variables.properties</code></pre>
+$ jar -cf antora.zip antora antora-variable.adoc antora-options.properties antora-variables.properties</code></pre>
 </div>
 </div>
 <div class="paragraph">
