@@ -308,7 +308,7 @@ $ jar -cf antora.zip antora antora-variable.adoc antora-options.properties antor
 $ java -cp template-engine.jar:antora.zip org.springframework.boot.loader.JarLauncher
 
 # 执行渲染命令
-shell:&gt; evaluate -t classpath:quick-start/antora -o classpath:quick-start/antora-options.properties -v classpath:quick-start/antora-variables.properties -r learn
+shell:&gt; evaluate -t classpath:antora -o classpath:antora-options.properties -v classpath:antora-variables.properties -r learn
 
 # 退出命令行
 shell:&gt; quit</code></pre>
