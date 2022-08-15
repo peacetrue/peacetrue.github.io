@@ -30,7 +30,7 @@ WARNING: 以上未完待续！
 
 资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。
 
-== 内容组织
+== 内容规则
 
 资源库在内容上具有一些相似的规则。
 
@@ -46,6 +46,30 @@ Antora 文档默认存储在资源库的 https://docs.antora.org/antora/latest/s
 [source%nowrap,bash]
 ----
 include::example$antora-structure.txt[]
+----
+
+=== GitHub Workflows
+
+Java 项目使用 Gradle 构建：
+
+[source%nowrap,yml]
+----
+include::example$java-gradle-build.yml[]
+----
+
+所有 Java 项目共享同一份构建脚本：
+
+[source%nowrap,bash]
+----
+# 所有项目放在同一目录下
+$ ls -la
+peacetrue.github.io
+peacetrue-result
+
+$ cd peacetrue-result
+
+# 硬链接 java-gradle-build.yml
+$ ln ../peacetrue.github.io/docs/antora/modules/ROOT/examples/java-gradle-build.yml .github/workflows/main.yml
 ----
 
 === 自述文件同步
@@ -76,6 +100,18 @@ $ ln docs/antora/modules/ROOT/assets/images/antora-compare.png antora-compare.pn
 
 `:imagesdir: docs/antora/modules/ROOT/assets/images`
 
+=== examples
+
+写文档时会引用代码片段，代码需要放在 examples 目录下。
+可以从源码目录下拷贝一份，但不能实现文件同步。
+可以采用软链接的方式：
+
+.链接 src 目录
+[source%nowrap,gradle,subs="specialchars,attributes"]
+----
+$ cd {root-dir}/examples
+$ ln -s {root-dir-reverse}/src src
+----
 
 == 模块组织
 

@@ -1,0 +1,17 @@
+docs
+└── antora
+    ├── antora.yml
+    └── modules
+        └── ROOT
+            ├── examples
+            │   └── antora-structure.txt
+            ├── nav.adoc
+            └── pages
+                ├── author.adoc
+                ├── concept.adoc
+                ├── convention
+                │   └── repository.adoc
+                ├── index.adoc -> ../../../../../README.adoc
+                └── schedule.adoc
+
+6 directories, 9 files

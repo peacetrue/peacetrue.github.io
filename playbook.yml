@@ -12,6 +12,7 @@ asciidoc:
     plantuml-server-url: 'http://www.plantuml.com/plantuml@'
     numbered: '@'
     root-dir: docs/antora/modules/ROOT
+    root-dir-reverse: ../../../..
 content:
   branches: master
   sources:

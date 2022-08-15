@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#tag::content[]
+
+mkdir learn && cd learn
+
+git init
+git branch -a
+echo '' > README.adoc
+git add README.adoc
+git commit -m 'init'
+git branch -a
+
+git checkout -b antora
+echo '' > index.adoc
+git add index.adoc
+git commit -m 'index.adoc'
+git branch -a
+
+git checkout -b java antora
+echo '' > java.adoc
+git add java.adoc
+git commit -m 'java'
+
+git checkout -b redis antora
+echo '' > redis.adoc
+git add redis.adoc
+git commit -m 'redis'
+
+git checkout -b mysql antora
+echo '' > mysql.adoc
+git add mysql.adoc
+git commit -m 'mysql'
+
+git branch -a
+
+git checkout master
+git merge -m 'merge antora' antora
+git merge -m 'merge java' java
+git merge -m 'merge redis' redis
+git merge -m 'merge mysql' mysql
+
+#end::content[]
