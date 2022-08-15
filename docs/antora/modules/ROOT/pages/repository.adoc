@@ -1,0 +1,165 @@
+= 资源库
+
+//@formatter:off
+本文记录知识库中资源库的相关信息。
+
+== 主题划分
+
+根据内容涉及的主题划分资源库：
+
+learn::
+learn 记录学习过程。每个模块对应一块知识。
+samples::
+samples 存储代码样章。每个模块对应一个样章。
+peacetrue-convention::
+peacetrue-convention 存储二方库。
+peacetrue*::
+以 peacetrue 起头的资源库，存储三方库。
+peacetrue::
+peacetrue 存储简单的工具类库。
+peacetrue-result::
+peacetrue 存储响应结果组件。
+peacetrue-spring::
+peacetrue-spring 存储基于 https://spring.io[Spring^] 的扩展组件。
+peacetrue-module-*::
+以 peacetrue-module 起头的资源库，存储模块组件。
+peacetrue-bit::
+peacetrue-bit 存储基于 https://bit.dev[bit^] 实现的 JavaScript 组件。
+
+WARNING: 以上未完待续！
+
+资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。
+
+== 内容组织
+
+资源库在内容上具有一些相似的规则。
+
+=== 文档管理
+
+资源库中的文档统一使用 https://antora.org[Antora^] 管理。
+
+=== 自定义 Antora 存储位置
+
+Antora 文档默认存储在资源库的 https://docs.antora.org/antora/latest/standard-directories/[根目录^] 下，
+这里调整到目录 *docs/antora* 下：
+
+[source%nowrap,bash]
+----
+include::example$antora-structure.txt[]
+----
+
+=== 自述文件同步
+
+Antora 文档以 index.adoc 作为自述文件；
+资源库以 README.adoc 作为自述文件。
+两个自述文件在内容上具有相似性，
+为了避免重复，让 2 个自述文件共享同一内容；
+以 Antora 文档为主，将 README.adoc 软链接到 index.adoc：
+
+[source%nowrap,bash]
+----
+$ ln -s docs/antora/modules/ROOT/pages/index.adoc README.adoc
+----
+
+index.adoc 中尽量避免使用与 Antora 相关的资源，
+因为 README.adoc 无法直接读取那些资源。
+为了保持两者展示效果的一致性，需要做一些额外处理。
+比如：index.adoc 中引用了图片，需要将图片硬链接到根目录下，
+这样 README.adoc 才能引用到：
+
+[source%nowrap,bash]
+----
+$ ln docs/antora/modules/ROOT/assets/images/antora-compare.png antora-compare.png
+----
+
+或者设置 index.adoc 的 *imagesdir* 属性：
+
+`:imagesdir: docs/antora/modules/ROOT/assets/images`
+
+
+== 模块组织
+
+根据资源库中模块的组织方式，可分为以下几类：
+
+[[singleModule]]
+.单模块
+一个资源库中，仅包含一个模块，此模块即为根模块。
+
+[[depMultiModule]]
+.组合式多模块
+一个资源库中，包含多个模块，模块之间相互关联，组成一个整体。
+构建项目时，需要打包所有模块，模块越多构建速度越慢。
+
+[[indepMultiModule]]
+.独立式多模块
+一个资源库中，包含多个模块，模块之间互不关联，自成一体。
+
+=== 独立式多模块
+
+我们可以使用 <<singleModule>> 的方式，存储单个模块，
+当模块内容比较丰富时，这么做是合适的；
+当模块内容比较少时，就不合适了footnote:[具体不合适的地方，会在后续与 *独立式多模块* 的对比中体现出来]。
+
+此时，可以采用 <<indepMultiModule>> 的方式，
+比如：在样章资源库中存储独立的样章，每个样章作为一个模块。
+
+在已经存在的资源库中新增模块，
+比创建一个资源库存储模块，
+显然要更方便，文档组织上也更加紧凑。
+
+通常情况下，分支是基于版本划分的，
+最新版本的分支包含着全部的内容。
+如果只想查看某个模块的代码footnote:[这种需求很常见，因为模块是独立的]，
+在检出分支时，也包含了其他模块。
+是否存在某种方式，检出的分支中，只包含指定的模块呢？
+那就不能按版本划分分支，而需要按模块划分，称为 *模块化分支*。
+
+== 模块化分支
+
+*模块化分支* 区别于主流的 *版本化分支*，
+应用于 <<indepMultiModule>> 资源库中。
+
+以 learn 资源库为例，模块化分支实现思路如下：
+
+. 创建基础分支 antora，存储文档信息
+. 基于基础分支，创建模块分支
+.. 创建 java 模块分支
+.. 创建 redis 模块分支
+.. 创建 mysql 模块分支
+. 基于基础分支，创建汇总分支 master，存储所有信息
+.. 合并 java 模块分支
+.. 合并 redis 模块分支
+.. 合并 mysql 模块分支
+
+最终分支结构图如下：
+
+.分支结构图
+[plantuml,target=module-branch,format=png]
+----
+@startuml
+[antora] <-- [master]
+[antora] <-- [java]
+[antora] <-- [redis]
+[antora] <-- [mysql]
+[antora] <-- [...]
+
+[java]  <-- [master]
+[redis] <-- [master]
+[mysql] <-- [master]
+[...] <-- [master]
+@enduml
+----
+
+基于 Git 实现的示例命令如下：
+
+[source%nowrap,bash]
+----
+include::example$git-indep-multi-module[tag=content]
+----
+
+image::image-2022-08-14-14-45-48-716.png[]
+
+模块分支合并到聚合分支时，
+容易产生冲突，需要想办法规避。
+规避思路为，每个模块都使用各自独立的文件，
+禁止两个模块共用同一个文件。

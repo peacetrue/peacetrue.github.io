@@ -1,4 +1,5 @@
 * xref:index.adoc[]
 * xref:concept.adoc[]
+* xref:repository.adoc[]
 * xref:schedule.adoc[]
 * xref:author.adoc[]

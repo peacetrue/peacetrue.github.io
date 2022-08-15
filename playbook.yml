@@ -11,12 +11,19 @@ asciidoc:
   attributes:
     plantuml-server-url: 'http://www.plantuml.com/plantuml@'
     numbered: '@'
+    root-dir: docs/antora/modules/ROOT
 content:
   branches: master
   sources:
   - url: ./
     start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue.git
+    start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-shell.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-template.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-result.git
     start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-template-gradle
 #    start_path: docs/antora
@@ -30,18 +37,7 @@ content:
 #  - url: https://github.com/peacetrue/peacetrue-template-model-library
 #    branches: snapshot/2.0
 #    start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue-validation.git
-    branches: master
-    start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue-template.git
-    branches: master
-    start_path: docs/antora
-#  - url: https://github.com/peacetrue/peacetrue-result
-#    branches: master
-#    start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue-result.git
-    branches: master
-    start_path: docs/antora
+
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable

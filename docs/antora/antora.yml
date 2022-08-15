@@ -5,6 +5,7 @@ asciidoc:
   attributes:
     numbered: '@'
     app-name: peacetrue.github.io
+    root-dir: docs/antora/modules/ROOT
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
