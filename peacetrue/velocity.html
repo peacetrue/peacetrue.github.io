@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>版本 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-validation/version.html">
+    <title>Velocity 扩展类库 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue/velocity.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,20 +24,23 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="peacetrue-validation" data-version="master">
+<div class="nav-container" data-component="peacetrue" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">验证扩展</a></h3>
+    <h3 class="title"><a href="index.html">基础组件</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">简介</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="branch.html">分支</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="version.html">版本</a>
+    <a class="nav-link" href="velocity.html">Velocity 扩展类库</a>
   </li>
 </ul>
   </li>
@@ -46,7 +49,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">验证扩展</span>
+    <span class="title">基础组件</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -66,6 +69,14 @@
         </li>
       </ul>
     </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">基础组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
     <li class="component">
       <a class="title" href="../overview/index.html">概述</a>
       <ul class="versions">
@@ -82,14 +93,6 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">验证扩展</a>
-      <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -101,57 +104,24 @@
   <a href="../overview/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">验证扩展</a></li>
-    <li><a href="version.html">版本</a></li>
+    <li><a href="index.html">基础组件</a></li>
+    <li><a href="velocity.html">Velocity 扩展类库</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-validation/edit/master/docs/antora/modules/ROOT/pages/version.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue/edit/master/docs/antora/modules/ROOT/pages/velocity.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">版本</h1>
-<div class="sect1">
-<h2 id="_1_0_0"><a class="anchor" href="#_1_0_0"></a>1.0.0</h2>
-<div class="sectionbody">
+<h1 class="page">Velocity 扩展类库</h1>
 <div class="paragraph">
-<p>基于 <code>validation-api:1.1.0.Final</code> 提供 7 个常用验证注解。</p>
+<p>peacetrue-velocity 是一个 <a href="https://velocity.apache.org/" target="_blank" rel="noopener">Velocity</a> 扩展类库，
+用于扩展 Velocity 组件的功能。</p>
 </div>
 <div class="paragraph">
-<p><code>RequiredWhen</code> 依赖于 <code>spring-expression</code> 做表达式解析。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_0_1"><a class="anchor" href="#_1_0_1"></a>1.0.1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>使用 <code>@Repeatable</code> <code>@List</code>，修复可重复的验证注解。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_1_0"><a class="anchor" href="#_1_1_0"></a>1.1.0</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>添加文件相关校验注解：</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>AbsolutePath：绝对路径校验规则</p>
-</li>
-<li>
-<p>RelativePath：相对路径校验规则</p>
-</li>
-<li>
-<p>FileExistence：文件存在性校验规则</p>
-</li>
-</ol>
-</div>
-</div>
+<p>目前主要实现了 <strong>变量格式转换</strong> 的功能。</p>
 </div>
 </article>
   </div>
