@@ -1,0 +1,15 @@
+= 术语
+
+//@formatter:off
+
+== General
+
+model-vs-module::
+https://www.pnnl.gov/projects/earth/module-specifications/model-vs-module[模型与模块^]。
+
+== Java
+
+JCP（Java Community Process）::
+https://jcp.org/en/home/index[Java 社区进程^]。
+JSR（Java Specification Request）::
+https://jcp.org/en/jsr/overview[Java 规范请求^]。

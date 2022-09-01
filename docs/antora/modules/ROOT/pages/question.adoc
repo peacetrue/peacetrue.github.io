@@ -1,0 +1,13 @@
+= 问题
+
+== Java
+
+如何转换耗时为人类可读的字符串？::
+参考 https://stackoverflow.com/questions/3471397/how-can-i-pretty-print-a-duration-in-java[stackoverflow^]。
+
+
+== 统一变量
+
+* 环境变量
+* 内部配置
+* 命令行传入

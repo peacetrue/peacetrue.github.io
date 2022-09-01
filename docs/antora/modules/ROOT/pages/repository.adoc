@@ -3,33 +3,6 @@
 //@formatter:off
 本文记录知识库中资源库的相关信息。
 
-== 主题划分
-
-根据内容涉及的主题划分资源库：
-
-learn::
-learn 记录学习过程。每个模块对应一块知识。
-samples::
-samples 存储代码样章。每个模块对应一个样章。
-peacetrue-convention::
-peacetrue-convention 存储二方库。
-peacetrue*::
-以 peacetrue 起头的资源库，存储三方库。
-peacetrue::
-peacetrue 存储简单的工具类库。
-peacetrue-result::
-peacetrue 存储响应结果组件。
-peacetrue-spring::
-peacetrue-spring 存储基于 https://spring.io[Spring^] 的扩展组件。
-peacetrue-module-*::
-以 peacetrue-module 起头的资源库，存储模块组件。
-peacetrue-bit::
-peacetrue-bit 存储基于 https://bit.dev[bit^] 实现的 JavaScript 组件。
-
-WARNING: 以上未完待续！
-
-资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。
-
 == 内容规则
 
 资源库在内容上具有一些相似的规则。
@@ -47,6 +20,14 @@ Antora 文档默认存储在资源库的 https://docs.antora.org/antora/latest/s
 ----
 include::example$antora-structure.txt[]
 ----
+
+=== .gitignore
+
+[source%nowrap,.gitignore]
+----
+include::example$.gitignore[]
+----
+
 
 === GitHub Workflows
 
@@ -82,7 +63,9 @@ Antora 文档以 index.adoc 作为自述文件；
 
 [source%nowrap,bash]
 ----
+$ ln docs/antora/modules/ROOT/pages/index.adoc README.adoc
 $ ln -s docs/antora/modules/ROOT/pages/index.adoc README.adoc
+$ ln -s docs/antora/modules/ROOT/pages/index.adoc.vm README.adoc.vm
 ----
 
 index.adoc 中尽量避免使用与 Antora 相关的资源，
@@ -112,6 +95,33 @@ $ ln docs/antora/modules/ROOT/assets/images/antora-compare.png antora-compare.pn
 $ cd {root-dir}/examples
 $ ln -s {root-dir-reverse}/src src
 ----
+
+== 主题划分
+
+根据内容涉及的主题划分资源库：
+
+learn::
+learn 记录学习过程。每个模块对应一块知识。
+samples::
+samples 存储代码样章。每个模块对应一个样章。
+peacetrue-convention::
+peacetrue-convention 存储二方库。
+peacetrue*::
+以 peacetrue 起头的资源库，存储三方库。
+peacetrue::
+peacetrue 存储简单的工具类库。
+peacetrue-result::
+peacetrue 存储响应结果组件。
+peacetrue-spring::
+peacetrue-spring 存储基于 https://spring.io[Spring^] 的扩展组件。
+peacetrue-module-*::
+以 peacetrue-module 起头的资源库，存储模块组件。
+peacetrue-bit::
+peacetrue-bit 存储基于 https://bit.dev[bit^] 实现的 JavaScript 组件。
+
+WARNING: 以上未完待续！
+
+资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。
 
 == 模块组织
 

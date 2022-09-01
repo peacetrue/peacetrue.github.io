@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+# idea
+.idea
+*.iws
+*.iml
+*.ipr
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+# Gradle
+.gradle
+!gradle-wrapper.jar
+build
+# Maven
+target
+# npm
+
+## dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+## testing
+/coverage
+
+## production
+/build
+
+## misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+## log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

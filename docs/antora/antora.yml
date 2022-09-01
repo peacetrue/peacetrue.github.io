@@ -4,6 +4,7 @@ version: master
 asciidoc:
   attributes:
     numbered: '@'
+    website: https://peacetrue.github.io
     app-name: peacetrue.github.io
     root-dir: docs/antora/modules/ROOT
     root-dir-reverse: ../../../..

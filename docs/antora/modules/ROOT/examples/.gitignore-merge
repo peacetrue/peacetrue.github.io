@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#tag::content[]
+
+cat gitignore/*.gitignore >.gitignore
+
+#end::content[]

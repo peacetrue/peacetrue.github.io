@@ -11,14 +11,19 @@ asciidoc:
   attributes:
     plantuml-server-url: 'http://www.plantuml.com/plantuml@'
     numbered: '@'
+    website: https://peacetrue.github.io
     root-dir: docs/antora/modules/ROOT
     root-dir-reverse: ../../../..
+    examples-dir: docs/antora/modules/ROOT/examples
+    examples-dir-reverse: ../../../../..
 content:
   branches: master
   sources:
   - url: ./
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-cryptography.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-shell.git
     start_path: docs/antora
