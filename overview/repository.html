@@ -43,6 +43,9 @@
     <a class="nav-link" href="repository.html">资源库</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="term.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="schedule.html">规划</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -80,6 +83,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -130,7 +141,185 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_主题划分"><a class="anchor" href="#_主题划分"></a>1. 主题划分</h2>
+<h2 id="_内容规则"><a class="anchor" href="#_内容规则"></a>1. 内容规则</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>资源库在内容上具有一些相似的规则。</p>
+</div>
+<div class="sect2">
+<h3 id="_文档管理"><a class="anchor" href="#_文档管理"></a>1.1. 文档管理</h3>
+<div class="paragraph">
+<p>资源库中的文档统一使用 <a href="https://antora.org" target="_blank" rel="noopener">Antora</a> 管理。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自定义_antora_存储位置"><a class="anchor" href="#_自定义_antora_存储位置"></a>1.2. 自定义 Antora 存储位置</h3>
+<div class="paragraph">
+<p>Antora 文档默认存储在资源库的 <a href="https://docs.antora.org/antora/latest/standard-directories/" target="_blank" rel="noopener">根目录</a> 下，
+这里调整到目录 <strong>docs/antora</strong> 下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">docs
+└── antora
+    ├── antora.yml
+    └── modules
+        └── ROOT
+            ├── examples
+            │   └── antora-structure.txt
+            ├── nav.adoc
+            └── pages
+                ├── author.adoc
+                ├── concept.adoc
+                ├── convention
+                │   └── repository.adoc
+                ├── index.adoc -&gt; ../../../../../README.adoc
+                └── schedule.adoc
+
+6 directories, 9 files</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gitignore"><a class="anchor" href="#_gitignore"></a>1.3. .gitignore</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-.gitignore hljs" data-lang=".gitignore">Unresolved include directive in modules/ROOT/pages/repository.adoc - include::example$.gitignore[]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github_workflows"><a class="anchor" href="#_github_workflows"></a>1.4. GitHub Workflows</h3>
+<div class="paragraph">
+<p>Java 项目使用 Gradle 构建：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-yml hljs" data-lang="yml">name: build
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # 单元测试前置准备
+    - name: Collect Workflow Telemetry
+      uses: runforesight/foresight-workflow-kit-action@v1
+      with:
+        api_key: 6d66f622-6961-4fff-a0a4-3c46a0ba8aee
+
+    - uses: actions/checkout@v3
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+
+    # 使用 Gradle 构建
+    - name: Build with Gradle
+      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+      with:
+        arguments: build
+
+    # 单元测试
+    - name: Analyze Test and/or Coverage Results
+      uses: runforesight/foresight-test-kit-action@v1
+      if: ${{ always() }}
+      with:
+        api_key: 6d66f622-6961-4fff-a0a4-3c46a0ba8aee
+        test_format: JUNIT
+        test_framework: JUNIT
+        test_path: build/test-results/test
+        coverage_format: JACOCO/XML
+        coverage_path: build/reports/jacoco/test
+
+    # 覆盖率测试
+    - name: Codecov
+      uses: codecov/codecov-action@v3.1.0
+      if: success()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>所有 Java 项目共享同一份构建脚本：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 所有项目放在同一目录下
+$ ls -la
+peacetrue.github.io
+peacetrue-result
+
+$ cd peacetrue-result
+
+# 硬链接 java-gradle-build.yml
+$ ln ../peacetrue.github.io/docs/antora/modules/ROOT/examples/java-gradle-build.yml .github/workflows/main.yml</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自述文件同步"><a class="anchor" href="#_自述文件同步"></a>1.5. 自述文件同步</h3>
+<div class="paragraph">
+<p>Antora 文档以 index.adoc 作为自述文件；
+资源库以 README.adoc 作为自述文件。
+两个自述文件在内容上具有相似性，
+为了避免重复，让 2 个自述文件共享同一内容；
+以 Antora 文档为主，将 README.adoc 软链接到 index.adoc：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ln docs/antora/modules/ROOT/pages/index.adoc README.adoc
+$ ln -s docs/antora/modules/ROOT/pages/index.adoc README.adoc
+$ ln -s docs/antora/modules/ROOT/pages/index.adoc.vm README.adoc.vm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>index.adoc 中尽量避免使用与 Antora 相关的资源，
+因为 README.adoc 无法直接读取那些资源。
+为了保持两者展示效果的一致性，需要做一些额外处理。
+比如：index.adoc 中引用了图片，需要将图片硬链接到根目录下，
+这样 README.adoc 才能引用到：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ln docs/antora/modules/ROOT/assets/images/antora-compare.png antora-compare.png</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者设置 index.adoc 的 <strong>imagesdir</strong> 属性：</p>
+</div>
+<div class="paragraph">
+<p><code>:imagesdir: docs/antora/modules/ROOT/assets/images</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>1.6. examples</h3>
+<div class="paragraph">
+<p>写文档时会引用代码片段，代码需要放在 examples 目录下。
+可以从源码目录下拷贝一份，但不能实现文件同步。
+可以采用软链接的方式：</p>
+</div>
+<div class="listingblock">
+<div class="title">链接 src 目录</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">$ cd docs/antora/modules/ROOT/examples
+$ ln -s ../../../../src src</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_主题划分"><a class="anchor" href="#_主题划分"></a>2. 主题划分</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>根据内容涉及的主题划分资源库：</p>
@@ -189,65 +378,6 @@
 </div>
 <div class="paragraph">
 <p>资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_内容组织"><a class="anchor" href="#_内容组织"></a>2. 内容组织</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>资源库在内容上具有一些相似的规则。</p>
-</div>
-<div class="sect2">
-<h3 id="_文档管理"><a class="anchor" href="#_文档管理"></a>2.1. 文档管理</h3>
-<div class="paragraph">
-<p>资源库中的文档统一使用 <a href="https://antora.org" target="_blank" rel="noopener">Antora</a> 管理。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_自定义_antora_存储位置"><a class="anchor" href="#_自定义_antora_存储位置"></a>2.2. 自定义 Antora 存储位置</h3>
-<div class="paragraph">
-<p>Antora 文档默认存储在资源库的 <a href="https://docs.antora.org/antora/latest/standard-directories/" target="_blank" rel="noopener">根目录</a> 下，
-这里调整到目录 <strong>docs/antora</strong> 下：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">Unresolved include directive in modules/ROOT/pages/repository.adoc - include::example$antora-structure.txt[]</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_自述文件同步"><a class="anchor" href="#_自述文件同步"></a>2.3. 自述文件同步</h3>
-<div class="paragraph">
-<p>Antora 文档以 index.adoc 作为自述文件；
-资源库以 README.adoc 作为自述文件。
-两个自述文件在内容上具有相似性，
-为了避免重复，让 2 个自述文件共享同一内容；
-以 Antora 文档为主，将 README.adoc 软链接到 index.adoc：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ln -s docs/antora/modules/ROOT/pages/index.adoc README.adoc</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>index.adoc 中尽量避免使用与 Antora 相关的资源，
-因为 README.adoc 无法直接读取那些资源。
-为了保持两者展示效果的一致性，需要做一些额外处理。
-比如：index.adoc 中引用了图片，需要将图片硬链接到根目录下，
-这样 README.adoc 才能引用到：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ln docs/antora/modules/ROOT/assets/images/antora-compare.png antora-compare.png</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>或者设置 index.adoc 的 <strong>imagesdir</strong> 属性：</p>
-</div>
-<div class="paragraph">
-<p><code>:imagesdir: docs/antora/modules/ROOT/assets/images</code></p>
-</div>
 </div>
 </div>
 </div>
@@ -360,7 +490,43 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">Unresolved include directive in modules/ROOT/pages/repository.adoc - include::example$git-indep-multi-module[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">mkdir learn &amp;&amp; cd learn
+
+git init
+git branch -a
+echo '' &gt; README.adoc
+git add README.adoc
+git commit -m 'init'
+git branch -a
+
+git checkout -b antora
+echo '' &gt; index.adoc
+git add index.adoc
+git commit -m 'index.adoc'
+git branch -a
+
+git checkout -b java antora
+echo '' &gt; java.adoc
+git add java.adoc
+git commit -m 'java'
+
+git checkout -b redis antora
+echo '' &gt; redis.adoc
+git add redis.adoc
+git commit -m 'redis'
+
+git checkout -b mysql antora
+echo '' &gt; mysql.adoc
+git add mysql.adoc
+git commit -m 'mysql'
+
+git branch -a
+
+git checkout master
+git merge -m 'merge antora' antora
+git merge -m 'merge java' java
+git merge -m 'merge redis' redis
+git merge -m 'merge mysql' mysql</code></pre>
 </div>
 </div>
 <div class="imageblock">

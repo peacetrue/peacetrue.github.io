@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>用户手册 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/user-manual.html">
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-result/manual.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -37,16 +37,16 @@
     <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="quick-start.html">快速上手</a>
+    <a class="nav-link" href="start.html">入门</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="user-manual.html">用户手册</a>
+    <a class="nav-link" href="manual.html">用户手册</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="principle.html">核心原理</a>
+    <a class="nav-link" href="develop.html">开发指南</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="version.html">版本说明</a>
+    <a class="nav-link" href="version.html">版本</a>
   </li>
 </ul>
   </li>
@@ -84,6 +84,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../overview/index.html">概述</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -111,10 +119,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">响应结果组件</a></li>
-    <li><a href="user-manual.html">用户手册</a></li>
+    <li><a href="manual.html">用户手册</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/user-manual.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-result/edit/master/docs/antora/modules/ROOT/pages/manual.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -150,7 +158,10 @@
 <pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    /** 启用成功自动封装 */
     @ResponseBody
     @RequestMapping(value = "/enableSuccessAutowire", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String enableSuccessAutowire(String input) {
+    public Object enableSuccessAutowire(String input) {
+//        return "ResponseEntityOk".equals(input)
+//                ? ResponseEntity.ok(input)
+//                : ("ResponseEntityError".equals(input) ? ResponseEntity.badRequest().body(input) : input);
         return input;
     }</code></pre>
 </div>
@@ -201,10 +212,7 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "resource_not_found",
-  "message" : "找不到请求资源'/resourceNotFound'"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/resourceNotFound.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -228,10 +236,7 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_missing.input",
-  "message" : "缺少必须的请求参数'input'"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/missingServletRequestParameter.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -256,10 +261,7 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "server_error.input",
-  "message" : "缺少路径变量'input'"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/missingPathVariable.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -284,10 +286,7 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "server_error.input",
-  "message" : "参数'input'的值'test'不支持转换为'TestBean'"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/methodArgumentConversionNotSupported.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -311,10 +310,7 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_invalid.input",
-  "message" : "参数'input'的值'test'不是（无法转换为）'整数'类型"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/methodArgumentTypeMismatch.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -386,6 +382,7 @@ public class TestBean {
     private Integer positiveOrZero;
     @Size(max = 1)
     private String size;
+    private List&lt;@Valid TestBean&gt; testBeans;
 }</code></pre>
 </div>
 </div>
@@ -435,77 +432,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "errors",
-  "message" : "共'22'项错误",
-  "data" : [ {
-    "code" : "AssertTrue.assertTrue",
-    "message" : "参数'assertTrue'只能为true"
-  }, {
-    "code" : "Pattern.pattern",
-    "message" : "参数'pattern'需要匹配正则表达式\"\\w\""
-  }, {
-    "code" : "Email.email",
-    "message" : "参数'email'不是一个合法的电子邮件地址"
-  }, {
-    "code" : "Min.min",
-    "message" : "参数'min'最小不能小于0"
-  }, {
-    "code" : "DecimalMax.decimalMax",
-    "message" : "参数'decimalMax'必须小于或等于0.0"
-  }, {
-    "code" : "Null.nulls",
-    "message" : "参数'nulls'必须为null"
-  }, {
-    "code" : "Negative.negative",
-    "message" : "参数'negative'必须是负数"
-  }, {
-    "code" : "Digits.digits",
-    "message" : "参数'digits'数字的值超出了允许范围(只允许在1位整数和1位小数范围内)"
-  }, {
-    "code" : "PositiveOrZero.positiveOrZero",
-    "message" : "参数'positiveOrZero'必须是正数或零"
-  }, {
-    "code" : "Max.max",
-    "message" : "参数'max'最大不能超过0"
-  }, {
-    "code" : "Future.future",
-    "message" : "参数'future'需要是一个将来的时间"
-  }, {
-    "code" : "NotEmpty.notEmpty",
-    "message" : "参数'notEmpty'不能为空"
-  }, {
-    "code" : "Past.past",
-    "message" : "参数'past'需要是一个过去的时间"
-  }, {
-    "code" : "PastOrPresent.pastOrPresent",
-    "message" : "参数'pastOrPresent'需要是一个过去或现在的时间"
-  }, {
-    "code" : "Size.size",
-    "message" : "参数'size'个数必须在0和1之间"
-  }, {
-    "code" : "Positive.positive",
-    "message" : "参数'positive'必须是正数"
-  }, {
-    "code" : "NotNull.notNull",
-    "message" : "参数'notNull'不能为null"
-  }, {
-    "code" : "NegativeOrZero.negativeOrZero",
-    "message" : "参数'negativeOrZero'必须是负数或零"
-  }, {
-    "code" : "FutureOrPresent.futureOrPresent",
-    "message" : "参数'futureOrPresent'需要是一个将来或现在的时间"
-  }, {
-    "code" : "DecimalMin.decimalMin",
-    "message" : "参数'decimalMin'必须大于或等于0.0"
-  }, {
-    "code" : "AssertFalse.assertFalse",
-    "message" : "参数'assertFalse'只能为false"
-  }, {
-    "code" : "NotBlank.notBlank",
-    "message" : "参数'notBlank'不能为空"
-  } ]
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/bind.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -549,10 +476,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_missing",
-  "message" : "缺少必须的请求体"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyMissing.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -607,10 +531,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_invalid",
-  "message" : "请求体不是有效的 JSON 字符串"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyJsonInvalid.json[]</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -665,6 +586,22 @@ public class TestBean {
         Result result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
         generateDocument("requestBodyJsonFormatInvalid", result);
         Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_INVALID.getCode()));
+
+        formatInvalidRequestBody = "{\"testBeans\":[{\"future\": \"?\"}]}";
+        requestEntity = new HttpEntity&lt;&gt;(formatInvalidRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyJsonFormatInvalid", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_INVALID.getCode()));
+
+        formatInvalidRequestBody = "{";
+        requestEntity = new HttpEntity&lt;&gt;(formatInvalidRequestBody, headers(ImmutableMap.of(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+        )));
+        result = this.restTemplate.exchange("/httpMessageNotReadable", HttpMethod.POST, requestEntity, ResultImpl.class).getBody();
+        generateDocument("requestBodyJsonFormatInvalid", result);
+        Assertions.assertTrue(result.getCode().startsWith(ResultTypes.PARAMETER_INVALID.getCode()));
     }</code></pre>
 </div>
 </div>
@@ -674,10 +611,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_invalid.future",
-  "message" : "参数'future'的值'?'不是（无法转换为）'日期'类型"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyJsonFormatInvalid.json[]</code></pre>
 </div>
 </div>
 </div>
@@ -740,10 +674,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "parameter_illegal.TestEntity",
-  "message" : "测试实体'0'不存在"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/entityNotFound.json[]</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -788,7 +719,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">ExceptionConvertTest</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Test
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">//    @Test
     void duplicate() {
         //javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
         //Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
@@ -806,10 +737,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "unique.name",
-  "message" : "参数'name'必须是唯一的，值'test'已存在"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/duplicate.json[]</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -862,10 +790,7 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
-  "code" : "user_disabled",
-  "message" : "用户'1'已被禁用"
-}</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/userDisabled.json[]</code></pre>
 </div>
 </div>
 </div>

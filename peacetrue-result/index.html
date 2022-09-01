@@ -37,16 +37,16 @@
     <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="quick-start.html">快速上手</a>
+    <a class="nav-link" href="start.html">入门</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="user-manual.html">用户手册</a>
+    <a class="nav-link" href="manual.html">用户手册</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="principle.html">核心原理</a>
+    <a class="nav-link" href="develop.html">开发指南</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="version.html">版本说明</a>
+    <a class="nav-link" href="version.html">版本</a>
   </li>
 </ul>
   </li>
@@ -80,6 +80,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -125,8 +133,20 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>peacetrue-result</strong>（响应结果组件）是一个处理接口返回数据的组件。</p>
+<p><span class="image"><a class="image" href="https://lgtm.com/projects/g/peacetrue/peacetrue-result"><img src="https://img.shields.io/lgtm/grade/java/github/peacetrue/peacetrue-result" alt="LGTM Grade"></a></span>
+<span class="image"><a class="image" href="https://app.snyk.io/org/peacetrue"><img src="https://snyk.io/test/github/peacetrue/peacetrue-result/badge.svg" alt="Snyk"></a></span>
+<span class="image"><a class="image" href="https://github.com/peacetrue/peacetrue-result/actions"><img src="https://img.shields.io/github/workflow/status/peacetrue/peacetrue-result/build/master" alt="GitHub Workflow Status"></a></span>
+<span class="image"><a class="image" href="https://foresight.thundra.io/repositories/github/peacetrue/peacetrue-result/test-runs"><img src="https://foresight.service.thundra.io/public/api/v1/badge/success?repoId=876fc1b0-c84e-4df6-b970-5112bf6de4ad" alt="Foresight"></a></span>
+<span class="image"><a class="image" href="https://app.codecov.io/gh/peacetrue/peacetrue-result"><img src="https://img.shields.io/codecov/c/github/peacetrue/peacetrue-result/master" alt="Codecov"></a></span></p>
 </div>
+<div class="paragraph">
+<p><a href="https://peacetrue.github.io/peacetrue-result/">peacetrue-result</a> 是一个响应结果组件，用于统一处理接口返回的数据。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_缘由"><a class="anchor" href="#_缘由"></a>1. 缘由</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>服务端接口返回数据时，往往需要提供一些属性，指示服务端对此次请求的处理状态（响应状态）。
 如果处理成功，客户端可以正常执行接下来的业务；
@@ -183,7 +203,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_特性说明"><a class="anchor" href="#_特性说明"></a>1. 特性说明</h2>
+<h2 id="_特性说明"><a class="anchor" href="#_特性说明"></a>2. 特性说明</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -207,7 +227,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_运行环境"><a class="anchor" href="#_运行环境"></a>2. 运行环境</h2>
+<h2 id="_运行环境"><a class="anchor" href="#_运行环境"></a>3. 运行环境</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -225,7 +245,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_类库说明"><a class="anchor" href="#_类库说明"></a>3. 类库说明</h2>
+<h2 id="_类库说明"><a class="anchor" href="#_类库说明"></a>4. 类库说明</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">核心类库，提供响应结果的数据结构和常用类型。</div>

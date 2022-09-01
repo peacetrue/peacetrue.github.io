@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>版本 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-template/version.html">
+    <title>密码学原理 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-cryptography/principle.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,12 +24,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="peacetrue-template" data-version="master">
+<div class="nav-container" data-component="peacetrue-cryptography" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">目录模板引擎</a></h3>
+    <h3 class="title"><a href="index.html">密码学组件</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -37,30 +37,9 @@
     <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="start.html">入门</a>
+    <a class="nav-link" href="design.html">工作原理</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="manual.html">用户手册</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="develop.html">开发指南</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">示例</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="samples/antora.html">Antora 目录模板</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="samples/antora-module.html">Antora 模块目录模板</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="case.html">场景</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="version.html">版本</a>
   </li>
 </ul>
@@ -70,7 +49,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">目录模板引擎</span>
+    <span class="title">密码学组件</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -98,11 +77,11 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+    <li class="component is-current">
+      <a class="title" href="index.html">密码学组件</a>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../peacetrue-cryptography/index.html">master</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
         </li>
       </ul>
     </li>
@@ -114,11 +93,11 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">目录模板引擎</a>
+    <li class="component">
+      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+        <li class="version is-latest">
+          <a href="../peacetrue-template/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -133,23 +112,57 @@
   <a href="../overview/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">目录模板引擎</a></li>
-    <li><a href="version.html">版本</a></li>
+    <li><a href="index.html">密码学组件</a></li>
+    <li><a href="principle.html">密码学原理</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-template/edit/master/docs/antora/modules/ROOT/pages/version.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-cryptography/edit/master/docs/antora/modules/ROOT/pages/principle.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">版本</h1>
-<div class="sect1">
-<h2 id="_1_0_0"><a class="anchor" href="#_1_0_0"></a>1.0.0</h2>
+<h1 class="page">密码学原理</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>实现基本功能。</p>
+<p>任何加密算法均存在被破解的可能性，只是说这种可能性有多大，
+需要多复杂的操作，花费多长时间才能完成。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_对称加密原理"><a class="anchor" href="#_对称加密原理"></a>1. 对称加密原理</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>你如何设计一个对称加密算法？</p>
+</li>
+<li>
+<p>如何保证对称加密的安全性？</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_aes"><a class="anchor" href="#_aes"></a>1.1. AES</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>AES 使用分块加密，每个块 128 比特，如果明文不是 128 比特的倍数，如何拆分？</p>
+</li>
+<li>
+<p>如果使用末尾补 0 的方式填充对齐明文，那么解密成明文后，如何判断末尾的 0 是原本就有的，还是填充的？</p>
+</li>
+<li>
+<p>随机数的原理？</p>
+</li>
+<li>
+<p>PKCS5Padding 在密码规范中被解释为 PKCS7Padding 的同义词。它只是一个历史产物，Sun 决定简单地假装 PKCS5Padding 的含义与 PKCS7Padding 相同，用于块大小大于 8 字节的块密码，而不是更改它。</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

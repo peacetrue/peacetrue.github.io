@@ -38,6 +38,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Common</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="根据端口杀进程.html">根据端口杀进程</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Git</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
@@ -81,6 +90,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../overview/index.html">概述</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -108,6 +125,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Shell 脚本库</a></li>
+    <li>Common</li>
     <li><a href="根据端口杀进程.html">根据端口杀进程</a></li>
   </ul>
 </nav>
@@ -125,26 +143,20 @@
 <p>以下脚本主要在 mac 上调试，centos7 上测试也可行，其他环境没有试过。</p>
 </div>
 <div class="listingblock">
-<div class="title">kill_by_port.sh</div>
+<div class="title">kill-by-port</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#!/bin/bash
 
-#第 1 个参数为端口，默认为 8761
-port=${1-8761}
+port=${1-8080}
 echo "0.杀掉端口[$port]对应的进程"
 
-#查询端口相关的进程信息，返回字符串
-result=$(lsof -i:"$port") || exit
+result=$(lsof -i:"$port" -sTCP:LISTEN) || exit
 echo "1.根据端口查询进程: $result"
 
-#将字符串转换为数组
 array=($result)
-
-#获取第 10 个参数为进程号
 pid=${array[10]}
 echo "2.根据进程查询结果取得进程号:$pid"
 
-#如果取得进程号则杀掉
 if [ -n "$pid" ]; then
   echo "3.杀掉进程$pid"
   kill -9 $pid
@@ -179,34 +191,16 @@ java    41642 xiayx  149u  IPv6 0x20945d935f296e7b      0t0  TCP localhost:63519
 </div>
 </div>
 <div class="sect1">
-<h2 id="_下载脚本"><a class="anchor" href="#_下载脚本"></a>2. 下载脚本</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="_attachments/kill_by_port.sh" target="_blank" rel="noopener">根据端口杀进程</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_使用示例"><a class="anchor" href="#_使用示例"></a>3. 使用示例</h2>
+<h2 id="_使用示例"><a class="anchor" href="#_使用示例"></a>2. 使用示例</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>下载脚本后，进入脚本所在目录，执行以下命令：</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#赋予执行权限
-$ chmod 777 ./kill_by_port.sh
-#杀掉 8080 对应的进程
-$ ./kill_by_port.sh 8080</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#杀掉 80 对应的进程
+$ kill-by-port 80</code></pre>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_源码地址"><a class="anchor" href="#_源码地址"></a>4. 源码地址</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://github.com/peacetrue/peacetrue-shell" target="_blank" rel="noopener">学习 shell 命令</a></p>
 </div>
 </div>
 </div>

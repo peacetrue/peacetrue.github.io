@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JCE :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-cryptography/java.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-cryptography" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">密码学组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="design.html">工作原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">密码学组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue/index.html">基础组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">密码学组件</a></li>
+    <li><a href="java.html">JCE</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-cryptography/edit/master/docs/antora/modules/ROOT/pages/java.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">JCE</h1>
+<div class="sect1">
+<h2 id="_参考"><a class="anchor" href="#_参考"></a>1. 参考</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/fanxiaobin577328725/article/details/51713624">Java 之 JCE</a></p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/crypto/CryptoSpec.html">JCA</a></p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html">算法名称</a></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/starwolf/p/3365834.html" target="_blank" rel="noopener">AES五种加密模式（CBC、ECB、CTR、OCF、CFB）</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_术语"><a class="anchor" href="#_术语"></a>2. 术语</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Hash function：散列算法、哈希函数</p>
+</li>
+<li>
+<p>Cryptographic hash function：密码散列函数</p>
+</li>
+<li>
+<p>message：消息</p>
+</li>
+<li>
+<p>digest：摘要</p>
+</li>
+<li>
+<p>Message authentication code（MAC）：消息认证码</p>
+</li>
+<li>
+<p>Hash-based Message authentication code（HMAC）：密钥散列消息认证码</p>
+</li>
+<li>
+<p>Cipher：密码</p>
+</li>
+<li>
+<p>Transformation：变化、弯形、变质、转变</p>
+</li>
+<li>
+<p>Crypto：秘密赞同者；秘密党员</p>
+</li>
+<li>
+<p>Cryptography：密码使用法，密码系统；密码术</p>
+</li>
+<li>
+<p>JCA（Java Cryptography Architecture）：Java 密码系统架构</p>
+</li>
+<li>
+<p>JCE（Java Cryptography Extension）：Java 密码系统扩展</p>
+</li>
+<li>
+<p>MD5（Message Digest Algorithm）：消息摘要算法</p>
+</li>
+<li>
+<p>SHA1（Secure Hash Algorithm）：安全哈希算法</p>
+</li>
+<li>
+<p>PKCS（Public Key Cryptography Standards）：公钥加密标准</p>
+</li>
+<li>
+<p>加密模式</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ECB（Electronic Codebook Book）：电码本模式</p>
+</li>
+<li>
+<p>CBC（Cipher Block Chaining）：密码分组链接模式</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>数据填充方式</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PKCS5Padding5：块字节固定为 8</p>
+</li>
+<li>
+<p>PKCS5Padding7：块字节可通过参数控制，在 Java 的实现中 PKCS5Padding5 和 PKCS5Padding7 等效</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IV（Initialization Vector）：初始化向量</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_哈希函数"><a class="anchor" href="#_哈希函数"></a>3. 哈希函数</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>确定性，输入值不变，输出值不变</p>
+</li>
+<li>
+<p>不可逆，无法通过输出的值逆向推测出输入值</p>
+</li>
+<li>
+<p>压缩性，任意长度的输入总是输出一个较小长度的值</p>
+</li>
+<li>
+<p>分散性，输入值的细微变化也会导致输出值的完全不同</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

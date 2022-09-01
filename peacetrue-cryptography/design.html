@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工作原理 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-cryptography/design.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-cryptography" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">密码学组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">简介</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="design.html">工作原理</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">密码学组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue/index.html">基础组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">密码学组件</a></li>
+    <li><a href="design.html">工作原理</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-cryptography/edit/master/docs/antora/modules/ROOT/pages/design.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">工作原理</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>主要解释工作原理，具体用法可参考单元测试。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_编解码codec"><a class="anchor" href="#_编解码codec"></a>1. 编解码（Codec）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>编解码器在二进制数组和人类可读的字符串之间转换，用于避免传输中出现乱码。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>编码：二进制数组转换为字符串；</p>
+</li>
+<li>
+<p>解码：字符串转换为二进制数组。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-30-12-58-13-186.png" alt="image 2022 04 30 12 58 13 186">
+</div>
+<div class="title">Figure 1. Codec</div>
+</div>
+<div class="paragraph">
+<p>已测试实现包括：CHARSET_UTF8、HEX 和 BASE64。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_消息认证码mac"><a class="anchor" href="#_消息认证码mac"></a>2. 消息认证码（MAC）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>因为消息认证码目前主要的实现为哈希消息认证码，所以没有单独抽象该接口，直接将 HMAC 实现到了消息摘要者中。如果认证码还有非哈希的实现方式，则考虑重新规划消息认证码接口。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_消息摘要messagedigest"><a class="anchor" href="#_消息摘要messagedigest"></a>3. 消息摘要（MessageDigest）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>消息摘要者可获取消息的摘要，用于消息验证。输入称为消息，输出称为摘要。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-30-13-04-02-534.png" alt="image 2022 04 30 13 04 02 534">
+</div>
+<div class="title">Figure 2. Digester</div>
+</div>
+<div class="paragraph">
+<p>已测试实现包括：MD5、SHA256、SHA512 和 HmacSHA256。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_加解密encryption"><a class="anchor" href="#_加解密encryption"></a>4. 加解密（Encryption）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>加解密器可加密和解密消息，消息分为明文和密文。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-30-13-09-40-359.png" alt="image 2022 04 30 13 09 40 359">
+</div>
+<div class="title">Figure 3. Encryptor</div>
+</div>
+<div class="paragraph">
+<p>已测试实现包括：AES/ECB/PKCS5Padding、AES/CBC/PKCS5Padding、RSA/ECB/PKCS1Padding。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+在 Padding 方面，PKCS5 和 PKCS7 在规范上有区别，但 Java 实现上是等效的，即使用 PKCS5 实现了 PKCS7。
+在 IV 方面，CBC 模式支持静态 IV 和动态 IV，动态 IV 会将生成的 IV 追加在密钥的末尾。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_签名signature"><a class="anchor" href="#_签名signature"></a>5. 签名（Signature）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>签名者可签名消息，用于消息验证。签名在消息摘要的基础上，使用公私钥加密散列值：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-30-13-23-37-179.png" alt="image 2022 04 30 13 23 37 179">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/image-2022-04-30-13-27-12-978.png" alt="image 2022 04 30 13 27 12 978">
+</div>
+<div class="title">Figure 4. Signer</div>
+</div>
+<div class="paragraph">
+<p>已测试实现包括：SHA256WithRSA、HmacSHA256。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>StandardSigner 是标准签名实现</p>
+</li>
+<li>
+<p>DigestSigner 是基于摘要的扩展实现，主要使用 HMAC。</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_spring_环境支持"><a class="anchor" href="#_spring_环境支持"></a>5.1. Spring 环境支持</h3>
+<div class="paragraph">
+<p>客户端使用 <code>RestTemplate</code> 发送请求时，通过 <code>SignatureClientHttpRequestInterceptor</code> 自动生成签名；
+服务端接收请求时，通过 <code>SignatureHandlerInterceptor</code> 自动验证签名。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_总结"><a class="anchor" href="#_总结"></a>6. 总结</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>编解码器可在字符串和二进制数组之间转换，其他全部在二进制数组之间转换。</p>
+</div>
+<div class="paragraph">
+<p>以加解密流程为例说明：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuG8pkAoUzIrzDcNRquuDpsRqFPlM_dJjzEThbZtPiScQo-hvdcalbYz-lg3nwSmLK0PCzicENKzszRpOF_jfnxPdKpSytzrYpPMNNv9gfV1ixPAdIrgGjJvVlW6e_EcIQKytDY6Blz_JaLzQabhqVaydbzNJhWLFrxSzdT3tTDzqe6E0RA1ZCAn0SHAG3MIWgG7PXF020IUrjM8wAJCl3-AaufBy0Yw7rBmKO6010000" alt="encryption">
+</div>
+<div class="title">Figure 5. 加密一个字符串</div>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuG8pkAoUzIrzDcNRquuDJzUtFPlM_dJjzEThbZtPiScQo-hvdcalbYz-lg3nwSmLK0PCzicENKzszRpOF_jfnxPdKpSytzrYpPMNNv9gfV1ixPAdIrgGjJvVlW6e_6bRwzEDJSZYx_TqPERbfHQztzF9PGKK1JhWwOI-f_kc0ntpR4OVq34OLg0u2SW6Cj3KW6n2U860avPCmtHIVca9n4d59Va5N0wfUId0m080" alt="decryption">
+</div>
+<div class="title">Figure 6. 解密一个字符串</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
