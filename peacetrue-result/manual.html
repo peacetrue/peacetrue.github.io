@@ -212,7 +212,13 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/resourceNotFound.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "resource_not_found",
+  "message" : "找不到请求资源'/resourceNotFound'",
+  "data" : {
+    "uri" : "/resourceNotFound"
+  }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -236,7 +242,15 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/missingServletRequestParameter.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing.input",
+  "message" : "缺少必须的请求参数'input'",
+  "data" : {
+    "name" : "input",
+    "type" : "String",
+    "value" : null
+  }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -261,7 +275,10 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/missingPathVariable.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "server_error.input",
+  "message" : "缺少路径变量'input'"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -286,7 +303,10 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/methodArgumentConversionNotSupported.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "server_error.input",
+  "message" : "参数'input'的值'test'不支持转换为'TestBean'"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -310,7 +330,10 @@
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/methodArgumentTypeMismatch.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid.input",
+  "message" : "参数'input'的值'test'不是（无法转换为）'整数'类型"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -432,7 +455,187 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/bind.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "errors",
+  "message" : "共'22'项错误",
+  "data" : [ {
+    "code" : "NegativeOrZero.negativeOrZero",
+    "message" : "参数'negativeOrZero'必须是负数或零",
+    "data" : {
+      "name" : "negativeOrZero",
+      "type" : null,
+      "value" : 1
+    }
+  }, {
+    "code" : "Null.nulls",
+    "message" : "参数'nulls'必须为null",
+    "data" : {
+      "name" : "nulls",
+      "type" : null,
+      "value" : 0
+    }
+  }, {
+    "code" : "Size.size",
+    "message" : "参数'size'个数必须在0和1之间",
+    "data" : {
+      "name" : "size",
+      "type" : null,
+      "value" : "00"
+    }
+  }, {
+    "code" : "Past.past",
+    "message" : "参数'past'需要是一个过去的时间",
+    "data" : {
+      "name" : "past",
+      "type" : null,
+      "value" : 1660542673278
+    }
+  }, {
+    "code" : "Email.email",
+    "message" : "参数'email'不是一个合法的电子邮件地址",
+    "data" : {
+      "name" : "email",
+      "type" : null,
+      "value" : "test.com"
+    }
+  }, {
+    "code" : "AssertTrue.assertTrue",
+    "message" : "参数'assertTrue'只能为true",
+    "data" : {
+      "name" : "assertTrue",
+      "type" : null,
+      "value" : false
+    }
+  }, {
+    "code" : "DecimalMax.decimalMax",
+    "message" : "参数'decimalMax'必须小于或等于0.0",
+    "data" : {
+      "name" : "decimalMax",
+      "type" : null,
+      "value" : 1.0
+    }
+  }, {
+    "code" : "NotNull.notNull",
+    "message" : "参数'notNull'不能为null",
+    "data" : {
+      "name" : "notNull",
+      "type" : null,
+      "value" : null
+    }
+  }, {
+    "code" : "Negative.negative",
+    "message" : "参数'negative'必须是负数",
+    "data" : {
+      "name" : "negative",
+      "type" : null,
+      "value" : 0
+    }
+  }, {
+    "code" : "Positive.positive",
+    "message" : "参数'positive'必须是正数",
+    "data" : {
+      "name" : "positive",
+      "type" : null,
+      "value" : 0
+    }
+  }, {
+    "code" : "Max.max",
+    "message" : "参数'max'最大不能超过0",
+    "data" : {
+      "name" : "max",
+      "type" : null,
+      "value" : 1
+    }
+  }, {
+    "code" : "Digits.digits",
+    "message" : "参数'digits'数字的值超出了允许范围(只允许在1位整数和1位小数范围内)",
+    "data" : {
+      "name" : "digits",
+      "type" : null,
+      "value" : 10.01
+    }
+  }, {
+    "code" : "AssertFalse.assertFalse",
+    "message" : "参数'assertFalse'只能为false",
+    "data" : {
+      "name" : "assertFalse",
+      "type" : null,
+      "value" : true
+    }
+  }, {
+    "code" : "Min.min",
+    "message" : "参数'min'最小不能小于0",
+    "data" : {
+      "name" : "min",
+      "type" : null,
+      "value" : -1
+    }
+  }, {
+    "code" : "Pattern.pattern",
+    "message" : "参数'pattern'需要匹配正则表达式\"\\w\"",
+    "data" : {
+      "name" : "pattern",
+      "type" : null,
+      "value" : "00"
+    }
+  }, {
+    "code" : "Future.future",
+    "message" : "参数'future'需要是一个将来的时间",
+    "data" : {
+      "name" : "future",
+      "type" : null,
+      "value" : 1660541673278
+    }
+  }, {
+    "code" : "PastOrPresent.pastOrPresent",
+    "message" : "参数'pastOrPresent'需要是一个过去或现在的时间",
+    "data" : {
+      "name" : "pastOrPresent",
+      "type" : null,
+      "value" : 1660542673278
+    }
+  }, {
+    "code" : "NotBlank.notBlank",
+    "message" : "参数'notBlank'不能为空",
+    "data" : {
+      "name" : "notBlank",
+      "type" : null,
+      "value" : " "
+    }
+  }, {
+    "code" : "DecimalMin.decimalMin",
+    "message" : "参数'decimalMin'必须大于或等于0.0",
+    "data" : {
+      "name" : "decimalMin",
+      "type" : null,
+      "value" : -1.0
+    }
+  }, {
+    "code" : "FutureOrPresent.futureOrPresent",
+    "message" : "参数'futureOrPresent'需要是一个将来或现在的时间",
+    "data" : {
+      "name" : "futureOrPresent",
+      "type" : null,
+      "value" : 1660541673277
+    }
+  }, {
+    "code" : "NotEmpty.notEmpty",
+    "message" : "参数'notEmpty'不能为空",
+    "data" : {
+      "name" : "notEmpty",
+      "type" : null,
+      "value" : ""
+    }
+  }, {
+    "code" : "PositiveOrZero.positiveOrZero",
+    "message" : "参数'positiveOrZero'必须是正数或零",
+    "data" : {
+      "name" : "positiveOrZero",
+      "type" : null,
+      "value" : -1
+    }
+  } ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -476,7 +679,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyMissing.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_missing",
+  "message" : "缺少必须的请求体"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -531,7 +737,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyJsonInvalid.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid",
+  "message" : "请求体不是有效的 JSON 字符串"
+}</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -611,7 +820,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/requestBodyJsonFormatInvalid.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_invalid",
+  "message" : "JSON 请求体缺少闭合标记"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -674,7 +886,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/entityNotFound.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "parameter_illegal.TestEntity",
+  "message" : "测试实体'0'不存在"
+}</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -737,7 +952,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/duplicate.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "failure",
+  "message" : "操作失败"
+}</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -790,7 +1008,10 @@ public class TestBean {
 <div class="listingblock">
 <div class="title">响应结果</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$peacetrue-result-exception-support/src/test/resources/com/github/peacetrue/result/exception/userDisabled.json[]</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-json hljs" data-lang="json">{
+  "code" : "user_disabled",
+  "message" : "用户'1'已被禁用"
+}</code></pre>
 </div>
 </div>
 </div>
