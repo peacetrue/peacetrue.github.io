@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>架构 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/Bee/architecture/architecture.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Bee" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者助手</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../requirement/requirement.html">需求</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../requirement/function.html">功能</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../requirement/design.html">设计</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="architecture.html">架构</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="frontend.html">前端项目</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backend.html">后端项目</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">实现</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../implement/api.html">接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../implement/manual.html">用户手册</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">性能</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../test.html">压力测试</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者助手</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue/index.html">基础组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者助手</a></li>
+    <li><a href="architecture.html">架构</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/bee/edit/master/docs/antora/modules/ROOT/pages/architecture/architecture.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">架构</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://zhuanlan.zhihu.com/p/87855907" target="_blank" rel="noopener">前后端分离</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_项目划分"><a class="anchor" href="#_项目划分"></a>1. 项目划分</h2>
+<div class="sectionbody">
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuOf-Eg7l-UhrJtRiVhfholCfAs8LR7HrxHIWmizdJtpMjnmgOwNmVFQE9xiclMoOzMJ_Gkmw5O0wEtk1md0zGF2qT-hJ2HEXsXnIyrA05WC0" alt="structure">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>后端主应用：提供功能接口</p>
+</li>
+<li>
+<p>后端监控应用：监控后端主应用运行状态及异常告警</p>
+</li>
+<li>
+<p>前端应用：提供功能界面展示</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_部署模式"><a class="anchor" href="#_部署模式"></a>2. 部署模式</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_本地"><a class="anchor" href="#_本地"></a>2.1. 本地</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NP5TQeD058NVPnMp0JSWfMG5tKCIDH7KANO2XI8aL3GbnXXg0sr8MoWbGafzAFr1ctOppem-TGkrAjPatkQSS-Uxzqxh1BTrF50Lq4NgCT943SEZdgoT0Y0XHH1rsCUgSWPWVYgX8uhbtG06q10MOGTXZ5I8f2BCbm_0R7LDXoEwi9FuZIsVoVOAb0R77LR1D8p9R56ZoCMKRS9Ts41MX3sSBlVw-8zMc3oajoQ98-RVqR77RioIcxwQDF9AEiXRBgXLGReDiyilwZx-V3h9zuew8-APsNb0nXQRFB7DX0xN_qrvRjrKlYfPQdSnJ3vY4ldC3tPbjfnJTrqv1cZCMnVmaCocn9idyGFpB53hHQfPdy_r4X3BQKGEE6ulahhl-G9BZJeslRT1IzI4_3z_0G00" alt="deployment-local">
+</div>
+<div class="title">Figure 1. 本地部署模式</div>
+</div>
+<div class="ulist">
+<div class="title">应用端口</div>
+<ul>
+<li>
+<p>前端应用：3000</p>
+</li>
+<li>
+<p>后端监控应用：8080</p>
+</li>
+<li>
+<p>后端主应用：8081</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>本地使用地址： <a href="http://bee.peacetrue.local" class="bare">http://bee.peacetrue.local</a> 。</p>
+</div>
+<div class="paragraph">
+<p>添加 hosts 条目：</p>
+</div>
+<div class="listingblock">
+<div class="title">/etc/hosts</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">echo '127.0.0.1 bee.peacetrue.local' &gt;&gt; /etc/hosts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nginx 配置：</p>
+</div>
+<div class="listingblock">
+<div class="title">bee.peacetrue.local</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-conf hljs" data-lang="conf">server {
+    listen       80;
+    server_name  bee.peacetrue.local;
+
+    root html/bee;
+    index index.html;
+
+    location / {
+        proxy_pass http://localhost:3000/;
+    }
+
+    location /api/ {
+       proxy_pass http://localhost:8081/;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_远程"><a class="anchor" href="#_远程"></a>2.2. 远程</h3>
+<div class="paragraph">
+<p>远程指服务端。</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuKhEpot8pqlDAr7mIy_Cg-3YIilFIKajKiWeoSsfvb800gX0KcegX5_BLSkLbr-Igf2KNrAIdwkGdmPMR0KnGE7bt9dF6XgVJMj_idlRyzdhdkwTYguQQ9ALmjFEtkUhrqCKlzZQycpN1AXYY2cwkdPGKr-it_sqVnhSNKydz07rGLm2z49cMc9oYSAJ7RkVxfhoVCeALE7dioS-wriEbQdbGZ8QhW7eaFxUfnCcFjcz-Fc4DYwuE5WLiduhXMURLpnjwq5IOgEhYwRaHTzse5iXOizwsfyjQEToICrB0OOp0000" alt="deployment-remote">
+</div>
+<div class="title">Figure 2. 远程部署模式</div>
+</div>
+<div class="ulist">
+<div class="title">应用端口</div>
+<ul>
+<li>
+<p>后端监控应用：8080</p>
+</li>
+<li>
+<p>后端主应用：8081</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>远程使用地址： <a href="http://bee.peacetrue.cn" class="bare">http://bee.peacetrue.cn</a> 。</p>
+</div>
+<div class="paragraph">
+<p>Nginx 配置：</p>
+</div>
+<div class="listingblock">
+<div class="title">bee.peacetrue.cn</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-conf hljs" data-lang="conf">server {
+    listen       80;
+    server_name  bee.peacetrue.cn;
+
+    root html/bee;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+       proxy_pass http://localhost:8081/;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_技术栈"><a class="anchor" href="#_技术栈"></a>3. 技术栈</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>此处仅描述核心技术，
+其他技术根据实际需要在适当的时机引入。</p>
+</div>
+<div class="ulist">
+<div class="title">前端</div>
+<ul>
+<li>
+<p><a href="https://reactjs.org/" target="_blank" rel="noopener">React</a> 18+</p>
+</li>
+<li>
+<p><a href="https://mui.com/" target="_blank" rel="noopener">MUI</a> 5+</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">后端</div>
+<ul>
+<li>
+<p><a href="https://www.oracle.com/java">Java</a> 8+</p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-boot/" target="_blank" rel="noopener">Spring Boot</a> 2+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>设计 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/Bee/requirement/design.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Bee" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">开发者助手</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">简介</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="requirement.html">需求</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="function.html">功能</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="design.html">设计</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../architecture/architecture.html">架构</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../architecture/frontend.html">前端项目</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../architecture/backend.html">后端项目</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">实现</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../implement/api.html">接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../implement/manual.html">用户手册</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">性能</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../test.html">压力测试</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">开发者助手</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue/index.html">基础组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-template/index.html">目录模板引擎</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-template/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">开发者助手</a></li>
+    <li><a href="requirement.html">需求</a></li>
+    <li><a href="design.html">设计</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/bee/edit/master/docs/antora/modules/ROOT/pages/requirement/design.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">设计</h1>
+<div class="sect1">
+<h2 id="_数据转换"><a class="anchor" href="#_数据转换"></a>1. 数据转换</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以文本表示的不同格式的数据先转换为对象实例，
+再通过对象实例转换为其他格式的数据：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuU9Aoyz9IIrIU3Qj_TcSDIyMhdY-P9T2DPS244H7-Fh4GbXUmVv-K6Qa8roqe2Y_8BMe93Er62eGa5zSafkO5yjL2pVtQLlhqxKpO2O-NR_pnSQ5JzVDUxAl6w8dBxyaLI4flwGaFzTAuSN-cI_RUvxitVzyoefdcsS_xPc6hE7zdfwdlPjVJbdtj64FKFpzdWxVn09Da5rWbohOwEhQeLbXfV1yzeudkoQzsBlcMUyYBeW_Y548zYKn2f72W1Zbi10YGYsNGsfU2Z2A0000" alt="conversion">
+</div>
+<div class="title">Figure 1. 数据转换逻辑</div>
+</div>
+<div class="paragraph">
+<p>数据转换类图如下：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/jPJDIiD04CVl-nHBJYcKFa6HUXK_2bxq66iAbIOfoGgA2bwirJPjGIr8jLOzj0U95GzIZ8yps_RaAxZDXh2n6_1YJZkpl_dO-G_9EKIpoRvHHgXa4jqkQWKTJxzUgFj4xrouVCH72BDlqlLe_vpUZAZhGVKCl758gT1yW45TlFds6wAJzdtmMymfvk3E53eHwt8dD3fmEwJlGwWss25iWDigZvwyVKAlpbAA4IdE2S2iMuLs3K-R7z3gY1TgKBXGrXmdzbZmUfFcAAmuk_RWr8VNSLOCJSUwN8fPlDv_pykqY8vtB48i0rj5IVy8QlVpRC74nFvGE4Jbm2WhQMLhRJNMlfAAW3t7CXcnihcndeGSQa6IxUNaB1NRgkWsAUaE0_EHaOXR3Z6qUTqyF_q6TNCNpr-FK6n3iyUPZ6mCydNw2uspSYPXL_d2HFk2fuDdsckheiR1SiRMWLvSWJjIewX0stWJyquNLP91YqB9g4MjP5IIK59M9XH2EQOK-wVy0000" alt="class-diagram">
+</div>
+<div class="title">Figure 2. 类图</div>
+</div>
+<div class="paragraph">
+<p>转换服务实现逻辑如下：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/bPDHIy9G5CVVzodkys1VG2A4laOlgnO4Ec7UlK-fr7JES1bbMLgXGKmZH2pBBzCvsxv5Ds_6RSv1JuDpplz_VlT_xz9vgXhKp6OarQGvtSpkQ8QaxjASGNntWEK9KVDaAtEWwLJY7w8ecmJ7Jj0lmyKWHG9l7fvxmViJshsmEmwlUz9lby_Upc3cGAt52lWoWECQrzKduBJG7MAju5yU4bd6in7Q7X-NPS5bGr7MkinTQ7SIN7wW5nO2z4Bs1ph-T7vn2gKtT1gVh_VScOiaFKSraj7sAJFxQCBH0zHle5_bCzjwQ5Mm-YZMED6ouxTPeIHs8gdnDNXbmqatHS0v3Qq2hmN32JuN9N4WHi7Z5G6-in52PDciM8XzPj6_mqw3oKINg2nwDyjicInqFR1cC9p6hOgZ5KFvDorMcc2FajOce8gRLvvU17MD9gtfU-m_-W80" alt="sequence-diagram">
+</div>
+<div class="title">Figure 3. 时序图</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
