@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>架构 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/Bee/architecture/architecture.html">
+    <link rel="canonical" href="https://peacetrue.github.io/bee/architecture/architecture.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -24,7 +24,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="Bee" data-version="master">
+<div class="nav-container" data-component="bee" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -258,9 +258,14 @@
         proxy_pass http://localhost:3000/;
     }
 
+    location /monitor/ {
+       proxy_pass http://localhost:8080/;
+    }
+
     location /api/ {
        proxy_pass http://localhost:8081/;
     }
+
 }</code></pre>
 </div>
 </div>
@@ -307,6 +312,10 @@
         try_files $uri $uri/ /index.html;
     }
 
+    location /monitor/ {
+       proxy_pass http://localhost:8080/;
+    }
+
     location /api/ {
        proxy_pass http://localhost:8081/;
     }
@@ -344,6 +353,46 @@
 <p><a href="https://spring.io/projects/spring-boot/" target="_blank" rel="noopener">Spring Boot</a> 2+</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_接口协议"><a class="anchor" href="#_接口协议"></a>4. 接口协议</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>后端接口基于 <a href="https://zh.wikipedia.org/zh-cn/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">HTTP</a> 协议，
+遵循 <a href="https://zh.wikipedia.org/zh-cn/%E8%A1%A8%E7%8E%B0%E5%B1%82%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2">REST API</a> 规范。</p>
+</div>
+<div class="sect2">
+<h3 id="_接口版本规范"><a class="anchor" href="#_接口版本规范"></a>4.1. 接口版本规范</h3>
+<div class="paragraph">
+<p>使用响应 <a href="https://en.wikipedia.org/wiki/Media_type" target="_blank" rel="noopener">媒体类型</a> 定义接口版本，
+格式为 <strong>application/vnd.bee.<em>version</em>+json</strong>。</p>
+</div>
+<div class="paragraph">
+<p><em>version</em> 表示版本号，
+例如：<strong>application/vnd.bee.v1+json</strong>、<strong>application/vnd.bee.v2+json</strong> 。</p>
+</div>
+<div class="paragraph">
+<p>为什么不使用 URI 形式的版本？以及如何简单地在服务端和客户端升级版本？</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.baeldung.com/rest-versioning" class="bare">https://www.baeldung.com/rest-versioning</a></p>
+</li>
+<li>
+<p><a href="https://www.baeldung.com/spring-rest-custom-media-type" class="bare">https://www.baeldung.com/spring-rest-custom-media-type</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_响应结果"><a class="anchor" href="#_响应结果"></a>4.2. 响应结果</h3>
+<div class="paragraph">
+<p>前端根据后端响应状态处理返回数据。
+非 200 状态码，直接提示 <code>statusText</code> 值。</p>
+</div>
 </div>
 </div>
 </div>

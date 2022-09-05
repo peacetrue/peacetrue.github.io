@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>后端项目 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/Bee/architecture/backend.html">
+    <link rel="canonical" href="https://peacetrue.github.io/bee/architecture/backend.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -24,7 +24,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="Bee" data-version="master">
+<div class="nav-container" data-component="bee" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -268,13 +268,15 @@ Gradle 7.4.2 和 spring-boot-gradle-plugin 2.7.0 可正常匹配
     // 在 SBA 中基于 JMX 修改 MBean
     implementation "org.jolokia:jolokia-core"
     // OpenAPI 3 文档支持：https://github.com/springdoc/springdoc-openapi
-    // http://localhost:8081/swagger-ui/index.html
-    implementation "org.springdoc:springdoc-openapi-ui:1.6.9"
-    implementation "org.latencyutils:LatencyUtils:2.0.3"
+    // http://bee.peacetrue.local/api/swagger-ui/index.html /api/v3/api-docs
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.11"
+    // 从 javadoc 读取接口描述：https://springdoc.org/#javadoc-support
+    implementation "org.springdoc:springdoc-openapi-javadoc:1.6.11"
+    annotationProcessor "com.github.therapi:therapi-runtime-javadoc-scribe:0.15.0"
     // Bean 验证
     implementation "org.springframework.boot:spring-boot-starter-validation"
     // 响应结果支持 https://peacetrue.github.io/peacetrue-result/index.html
-    implementation "com.github.peacetrue.result:peacetrue-result-exception-support"</code></pre>
+//    implementation "com.github.peacetrue.result:peacetrue-result-exception-support"</code></pre>
 </div>
 </div>
 </div>

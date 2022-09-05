@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>问题 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/overview/question.html">
+    <title>版本 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/bee/version.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,12 +24,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="overview" data-version="master">
+<div class="nav-container" data-component="bee" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">概述</a></h3>
+    <h3 class="title"><a href="index.html">开发者助手</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -37,19 +37,52 @@
     <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="concept.html">理念</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="requirement/requirement.html">需求</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="requirement/function.html">功能</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="requirement/design.html">设计</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="repository.html">资源库</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="architecture/architecture.html">架构</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="architecture/frontend.html">前端项目</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="architecture/backend.html">后端项目</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="term.html">术语</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">实现</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="implement/api.html">接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="implement/manual.html">用户手册</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="schedule.html">规划</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">性能</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="test.html">压力测试</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="author.html">作者</a>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="version.html">版本</a>
   </li>
 </ul>
   </li>
@@ -58,7 +91,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">概述</span>
+    <span class="title">开发者助手</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -94,19 +127,19 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../bee/index.html">开发者助手</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../bee/index.html">master</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
-      <a class="title" href="index.html">概述</a>
+      <a class="title" href="index.html">开发者助手</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -126,49 +159,38 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../overview/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">概述</a></li>
-    <li><a href="question.html">问题</a></li>
+    <li><a href="index.html">开发者助手</a></li>
+    <li><a href="version.html">版本</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/question.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/bee/edit/master/docs/antora/modules/ROOT/pages/version.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">问题</h1>
+<h1 class="page">版本</h1>
 <div class="sect1">
-<h2 id="_java"><a class="anchor" href="#_java"></a>1. Java</h2>
+<h2 id="_1_0_0"><a class="anchor" href="#_1_0_0"></a>1.0.0</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">如何转换耗时为人类可读的字符串？</dt>
-<dd>
-<p>参考 <a href="https://stackoverflow.com/questions/3471397/how-can-i-pretty-print-a-duration-in-java" target="_blank" rel="noopener">stackoverflow</a>。</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_统一变量"><a class="anchor" href="#_统一变量"></a>2. 统一变量</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>环境变量</p>
+<p>实现基础项目</p>
 </li>
 <li>
-<p>内部配置</p>
+<p>实现数据转换功能</p>
 </li>
-<li>
-<p>命令行传入</p>
-</li>
-</ul>
+</ol>
+</div>
+<div class="paragraph">
+<p>正常来说，
+实现基础项目应该作为一个初始版本，
+但需要通过一个功能验证基础项目是否适用。</p>
 </div>
 </div>
 </div>
