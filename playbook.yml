@@ -21,15 +21,19 @@ content:
   sources:
   - url: ./
     start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue.git
+#  - url: https://github.com/peacetrue/peacetrue.git
+#    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-shell.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-beans.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-common.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-cryptography.git
     start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue-shell.git
+  - url: https://github.com/peacetrue/peacetrue-result.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-template.git
-    start_path: docs/antora
-  - url: https://github.com/peacetrue/peacetrue-result.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/bee.git
     start_path: docs/antora
