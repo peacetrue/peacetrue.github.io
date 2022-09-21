@@ -1,4 +1,7 @@
 = 简历
+:website: htpts://peacetrue.github.io
+:app-name: peacetrue.github.io
+:imagesdir: docs/antora/modules/ROOT/assets/images
 
 //@formatter:off
 
@@ -73,7 +76,7 @@ image::architecture.png["EIAM 架构图",link="{website}/{app-name}/_attachments
 如果遇到问题，可自行对照 Postman 解决。
 
 最后，完善了接口错误提示。
-之前，系统使用手动验证参数，并且发生错误时，只提示参数错误，无法排查问题。
+之前，系统使用手动验证参数，并且发生错误时，只提示参数错误，难以排查问题。
 后来，改用 https://peacetrue.github.io/peacetrue-result/index.html[Bean Validation^] 实现参数验证，
 能准确提示具体是哪个参数出现了什么样的错误。
 
@@ -89,7 +92,7 @@ OIDC 协议已经非常成熟，很多客户都在使用，
 所以开发了 OIDC 应用模板，
 并且无缝支持 `spring-security-oauth2`。
 
-== 期许
+== 贵公司期许
 
 . 支持使用个人电脑；如果必须使用公司电脑，公司需提供 Mac 电脑
 . 技术氛围佳，重视文档，闭环产品
