@@ -297,6 +297,38 @@ path: employee.tags[0], value: good
 path: employee.tags[1], value: better</code></pre>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_bean_对象和查询字符串互转"><a class="anchor" href="#_bean_对象和查询字符串互转"></a>2.1. Bean 对象和查询字符串互转</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>BeanMap：对于类型不确定的 Bean，可以使用 Map 来表示</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TieredBeanMap：层级式的 BeanMap，即对象中嵌套对象</p>
+</li>
+<li>
+<p>FlatBeanMap：扁平式的 BeanMap，值都是原始类型或者原始类型集合</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuR9oIatCKtYwVkUBZGkjkVBoIr8LYZBJCqgi5FoJibAJItmJ2mfIY_IIy_FAKejAmX9pIbEvh48oKujIKq0wWT9GpU_tp09oR89BYZBpqdKWckrGJOHg22t9p2dMIyj9B2b9pUEoSWCoI3OgDCWdi3Irg19gLb5-BjG8BgiN2rSyxPtwjB_fsTGDsCppoImkiO4QYjVKadmmXylgsVobBzOlUhfs-lCrovxis0Gq3cAKDPT3QbuAC1G1" alt="BeanToQueryFlow">
+</div>
+<div class="title">Figure 1. Bean 对象 转 查询字符串</div>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuR9wDd_fY_MBdgwT_dpDiYSxDhtVCokuf2WpBzsQAo-_95MXA3CzeyHA8JJ89x0qjQWoj2GpfrYl8B6eE1NCvx9wiN35qzwfJ_kRdatTy7JzpXSR5mADy4qii84Oe-EJMLnYuv-KbPfSOcU7pz2IVAVKn3oWJYuhjvp44YX70PkPKEDGJODgW1gMcLh4PHK295DJI3O98WXKLP1Qf9USdrUMMbGIbfXJcifb1J8BQf0rbqDgNWem3040" alt="QueryToBeanFlow">
+</div>
+<div class="title">Figure 2. 查询字符串 转 Bean 对象</div>
+</div>
+</div>
 </div>
 </div>
 </article>
