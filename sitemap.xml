@@ -7,7 +7,10 @@
 <loc>https://peacetrue.github.io/sitemap-overview.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://peacetrue.github.io/sitemap-peacetrue.xml</loc>
+<loc>https://peacetrue.github.io/sitemap-peacetrue-beans.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://peacetrue.github.io/sitemap-peacetrue-common.xml</loc>
 </sitemap>
 <sitemap>
 <loc>https://peacetrue.github.io/sitemap-peacetrue-cryptography.xml</loc>

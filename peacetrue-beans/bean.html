@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>分支 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/peacetrue/branch.html">
+    <title>Bean :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-beans/bean.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,23 +24,26 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="peacetrue" data-version="master">
+<div class="nav-container" data-component="peacetrue-beans" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">基础组件</a></h3>
+    <h3 class="title"><a href="index.html">简单 Java 对象</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">简介</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="property.html">属性</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="branch.html">分支</a>
+    <a class="nav-link" href="bean.html">Bean</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="velocity.html">Velocity 扩展类库</a>
+    <a class="nav-link" href="version.html">版本</a>
   </li>
 </ul>
   </li>
@@ -49,7 +52,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">基础组件</span>
+    <span class="title">简单 Java 对象</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -62,18 +65,18 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../peacetrue-result/index.html">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">基础组件</a>
-      <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
         </li>
       </ul>
     </li>
@@ -109,6 +112,14 @@
         </li>
       </ul>
     </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -120,34 +131,63 @@
   <a href="../overview/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">基础组件</a></li>
-    <li><a href="branch.html">分支</a></li>
+    <li><a href="index.html">简单 Java 对象</a></li>
+    <li><a href="bean.html">Bean</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue/edit/master/docs/antora/modules/ROOT/pages/branch.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-beans/edit/master/docs/antora/modules/ROOT/pages/bean.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">分支</h1>
-<div class="sect1">
-<h2 id="_antora"><a class="anchor" href="#_antora"></a>1. antora</h2>
-<div class="sectionbody">
+<h1 class="page">Bean</h1>
 <div class="paragraph">
-<p>基于 Antora 记录文档。</p>
+<p>汇总 4 个常用 Bean，多个属性组成 Bean。</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_velocity"><a class="anchor" href="#_velocity"></a>2. velocity</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>扩展 Velocity 组件的功能。</p>
-</div>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">包含的属性</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creatorId、createdTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifierId、modifiedTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CreateModify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建修改信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creatorId、createdTime、modifierId、modifiedTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">操作信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id、name</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </article>
   </div>
 </main>
@@ -156,7 +196,7 @@
   <p>This page was built using the Antora default UI.</p>
   <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
 </footer>
-<script src="../_/js/site.js"></script>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
 <script async src="../_/js/vendor/highlight.js"></script>
   </body>
 </html>
