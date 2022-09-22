@@ -166,6 +166,9 @@
 <li>
 <p>技术博客： <a href="https://peacetrue.github.io" class="bare">https://peacetrue.github.io</a></p>
 </li>
+<li>
+<p>StackOverflow： <a href="https://stackoverflow.com/users/5969163/peacetrue" class="bare">https://stackoverflow.com/users/5969163/peacetrue</a></p>
+</li>
 </ol>
 </div>
 </div>
@@ -189,7 +192,7 @@
 <h2 id="_工作经历"><a class="anchor" href="#_工作经历"></a>3. 工作经历</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>4 段创业公司工作经历，1 ~ 2 年后均告失败，深感创业公司的不稳定性，遂加入了大公司。</p>
+<p>此处略过数段创业公司工作经历。</p>
 </div>
 <div class="sect2">
 <h3 id="_阿里云_2021_年_06_月_2022_年_7_月"><a class="anchor" href="#_阿里云_2021_年_06_月_2022_年_7_月"></a>3.1. 阿里云( 2021 年 06 月 ~ 2022 年 7 月)</h3>
@@ -217,9 +220,8 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>EIAM 架构如下：</p>
-</div>
+<div class="sect3">
+<h4 id="_软件架构"><a class="anchor" href="#_软件架构"></a>3.1.1. 软件架构</h4>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://peacetrue.github.io/overview}/_attachments/architecture.png"><img src="_images/architecture.png" alt="EIAM 架构图"></a>
@@ -228,19 +230,29 @@
 <div class="paragraph">
 <p>租户的标准实例配置为：3 台 8 核 32 G ECS，每台 ECS 上部署 10 个服务，能支持 2000 以上并发。
 目前最大的租户拥有 700 多万用户，每天登录高峰期集中在 9 ~ 10 点，期间会有 300 多万用户完成登录，
-并发大致为 1200。</p>
+并发大致为 1500。</p>
 </div>
 <div class="paragraph">
 <p>以下描述主要工作内容。</p>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_防护效果"><a class="anchor" href="#_防护效果"></a>3.1.1. 防护效果</h4>
+<h4 id="_产品优化"><a class="anchor" href="#_产品优化"></a>3.1.2. 产品优化</h4>
+<div class="paragraph">
+<p>有个故事叫 <a href="http://www.etudu.com/?id=453" target="_blank" rel="noopener">华佗三兄弟</a>，如果没听过可以了解一下。</p>
+</div>
 <div class="paragraph">
 <p>客户在正常使用系统的过程中，难以感知系统为其抵御的危险。
-我们需要将系统所做的努力，以可视化的方式，呈现给客户。
-系统通过定时分析异常登录日志，
-包括错误密码、错误图形验证码、错误 MFA 码、黑白名单 等维度，
-生成统计报表，实现防护效果。</p>
+我们需要将系统所做的努力，以可视化的方式，呈现给客户，让其能够直观地感受到。
+EIAM 在安全方面做了很多工作，但没有得到客户的重视，所以我们开发了 <strong>防护效果功能</strong>。
+系统从匿名账号、错误密码、错误图形验证码、错误 MFA 码、黑白名单等维度，
+定时分析异常登录日志，生成统计报表，提示系统安全风险（安全评分）。</p>
+</div>
+<div class="paragraph">
+<p>OIDC 协议已经非常成熟，很多客户都在使用，
+但是 EIAM 中只支持 OAuth2 应用模板，
+所以开发了 OIDC 应用模板，
+并且无缝支持 <code>spring-security-oauth2</code>。</p>
 </div>
 <div class="paragraph">
 <p>功能上线后，
@@ -249,7 +261,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_开发者支持"><a class="anchor" href="#_开发者支持"></a>3.1.2. 开发者支持</h4>
+<h4 id="_开发者支持"><a class="anchor" href="#_开发者支持"></a>3.1.3. 开发者支持</h4>
 <div class="paragraph">
 <p>客户通过官网接口文档，对接 EIAM 时，
 会遇到各种由于错误理解或操作导致的奇怪问题，
@@ -258,10 +270,10 @@
 <div class="paragraph">
 <p>因为之前没有提供客户端，
 所以我们使用 <code>openapi-generator</code> 生成了各种语言（主要是 Java、Golang、PHP）的客户端，
-共客户快速完成对接，同时避免了由于客户开发者编程水平导致的各种问题。</p>
+供客户快速完成对接，同时避免了由于客户开发者编程水平导致的各种问题。</p>
 </div>
 <div class="paragraph">
-<p>然后，我们还提供了 Postman Schema。
+<p>然后，提供了 Postman Schema。
 客户在本地导入后，只需要在环境变量中设置好接口地址、用户名和密码，
 就可以从上到下连贯地调通所有接口，
 真真实实地体验到所有接口都是准确无误的，
@@ -276,24 +288,43 @@
 <div class="paragraph">
 <p>之前的支持方式，需要了解客户的具体问题，然后排查原因。
 现在，只需要给他一个文档地址，即可自行核对。
-使用新的支持方式后，平均咨询客户数从 <strong>5/日</strong> 变成了 <strong>5/周</strong>，
-平均耗费时间从 <strong>2小时/日</strong> 变成了 <strong>6小时/周</strong>。</p>
+使用新的支持方式后，平均咨询客户数从 5/日 变成了 5/周，
+平均耗费时间从 2 小时/日变成了 6 小时/周。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_oidc_应用模板"><a class="anchor" href="#_oidc_应用模板"></a>3.1.3. OIDC 应用模板</h4>
+<h4 id="_安全库完善"><a class="anchor" href="#_安全库完善"></a>3.1.4. 安全库完善</h4>
 <div class="paragraph">
-<p>OIDC 协议已经非常成熟，很多客户都在使用，
-但是 EIAM 中只支持 OAuth2 应用模板，
-所以开发了 OIDC 应用模板，
-并且无缝支持 <code>spring-security-oauth2</code>。</p>
+<p>实现 <a href="https://peacetrue.github.io/peacetrue-cryptography/design.html" target="_blank" rel="noopener">密码学组件</a>，
+封装常用的密码学算法，包括编解码、加解密、消息摘要、消息认证码和签名，可满足日常使用场景。</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_贵公司期许"><a class="anchor" href="#_贵公司期许"></a>4. 贵公司期许</h2>
+<h2 id="_个人技能"><a class="anchor" href="#_个人技能"></a>4. 个人技能</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>精通 Java 技术栈</p>
+</li>
+<li>
+<p>熟练掌握 JavaScript 技术栈</p>
+</li>
+<li>
+<p>熟练掌握开发运维监控体系</p>
+</li>
+<li>
+<p>精通常用密码学体系</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_贵公司期许"><a class="anchor" href="#_贵公司期许"></a>5. 贵公司期许</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -304,7 +335,7 @@
 <p>技术氛围佳，重视文档，闭环产品</p>
 </li>
 <li>
-<p>重视代码质量，覆盖率保持在 80% 以上，或者支持本人实施代码质量保障</p>
+<p>重视代码质量，覆盖率保持在 80% 以上，或者支持实施代码质量保障</p>
 </li>
 </ol>
 </div>
