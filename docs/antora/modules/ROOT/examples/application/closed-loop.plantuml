@@ -1,0 +1,13 @@
+@startuml
+start
+:安装插件;
+note: 安装 IntelliJ IDEA Peacetrue Generator 插件
+:创建项目;
+note: 使用 "Generator Project（生成器项目）" 创建项目
+:启用生成器;
+:配置生成规则;
+:执行生成;
+:得到新项目;
+:运行新项目;
+stop
+@enduml

@@ -1,4 +1,4 @@
-= 简历（夏幼学）
+= 简历
 :website: htpts://peacetrue.github.io
 :app-name: peacetrue.github.io
 :imagesdir: ../assets/images
@@ -33,9 +33,9 @@ EIAM 用于为企业内部员工提供身份认证服务，分为共享版和专
 * 共享版：所有租户共用一个集群，适用于用户量较少的客户（10 万内）。
 * 专属版：一个租户使用一个集群，适用于用户量较多的客户，支持扩容。
 
-==== 软件架构
+软件架构如下：
 
-image::architecture.png["EIAM 架构图",link="{website}/{page-component-name}/_attachments/architecture.png"]
+image::architecture.png["EIAM 架构图",width=90%,link="{website}/{page-component-name}/_attachments/architecture.png"]
 
 租户的标准实例配置为：3 台 8 核 32 G ECS，每台 ECS 上部署 10 个服务，能支持 2000 以上并发。
 目前最大的租户拥有 700 多万用户，每天登录高峰期集中在 9 ~ 10 点，期间会有 300 多万用户完成登录，

@@ -3,5 +3,6 @@
 * xref:concept.adoc[]
 * xref:term.adoc[]
 * xref:schedule.adoc[]
-//* xref:author.adoc[]
-* xref:resume.adoc[]
+* xref:application-speech.adoc[]
+* xref:application.adoc[]
+// * xref:resume.adoc[]

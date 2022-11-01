@@ -5,9 +5,27 @@
 如何转换耗时为人类可读的字符串？::
 参考 https://stackoverflow.com/questions/3471397/how-can-i-pretty-print-a-duration-in-java[stackoverflow^]。
 
-
 == 统一变量
 
 * 环境变量
 * 内部配置
 * 命令行传入
+
+== vi
+
+Vim paste from clipboard::
+* https://www.cnblogs.com/Biiigwang/p/12086514.html
+* https://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard
+
+== 配置覆盖
+
+重复配置的处理策略：
+
+. 如果是单个值，后者覆盖前者
+. 如果是集合值，采用覆盖还是合并呢？合并是否去重？
+
+既想支持覆盖又想支持合并，怎么实现？使用 `Map`。
+
+== Why does rm -f ask me for confirmation on zsh?
+
+see https://stackoverflow.com/questions/27988160/why-does-rm-f-ask-me-for-confirmation-on-zsh[Why does rm -f ask me for confirmation on zsh^]。

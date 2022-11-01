@@ -1,0 +1,14 @@
+@startuml
+top to bottom direction
+'left to right direction
+
+folder Tomcat{
+    folder "Spring WebMVC"{
+        folder "其他层级.........."{
+            [其他模块]
+            [用户模块]
+        }
+    }
+}
+note top of Tomcat: 一个 Web 服务可能的构成方式
+@enduml

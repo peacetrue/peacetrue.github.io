@@ -1,0 +1,11 @@
+@startuml
+top to bottom direction
+'left to right direction
+[应用]-->[应用外壳]
+[应用]-->[应用内核]
+[应用外壳]<--[应用构件1]
+[应用内核]<--[应用构件...]
+[应用内核]<--[应用构件n]
+note left of 应用外壳: 应用外壳中仅含一个应用构件
+note right of 应用内核: 应用内核中可以包含多个应用构件
+@enduml

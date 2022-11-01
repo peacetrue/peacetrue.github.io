@@ -18,7 +18,11 @@ https://jcp.org/en/home/index[Java 社区进程^]
 JSR（Java Specification Request）::
 https://jcp.org/en/jsr/overview[Java 规范请求^]
 
+== Net
+
 MST::
 [.underline]##M##aximum [.underline]##s##egment [.underline]##l##ifetime，最大报文生存时间。
 WAN::
 [.underline]##w##ide [.underline]##a##rea [.underline]##n##etwork， https://en.wikipedia.org/wiki/Wide_area_network[广域网^]。
+apt::
+[.underline]##A##dvanced [.underline]##P##ackage [.underline]##T##ool，先进的包管理工具。

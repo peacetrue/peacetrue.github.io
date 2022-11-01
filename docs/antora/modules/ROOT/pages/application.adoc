@@ -1,0 +1,90 @@
+= 应用组装
+
+本文介绍如何基于应用拆分与组装实现代码复用。
+
+// @formatter:off
+
+== 应用构件
+
+// 因为常年开发基于 B/S 架构的 Java Web 应用，所以目前核心关注点在这方面。
+
+一个能够运行的 Java Web 应用，实现代码通常包含以下三部分内容：
+
+. Servlet 容器
+. 框架层代码
+. 业务层代码
+
+[plantuml,target=application-instance,format=png]
+----
+include::example$application/application-instance.plantuml[]
+----
+
+Servlet 容器和框架层代码称为应用外壳，应用外壳本身可以独立运行，但不包含业务功能；
+业务层代码称为应用内核，用于实现具体业务功能。
+应用外壳和应用内核配合运行，成为一个有效的应用；只运行应用外壳则是一个空应用。
+
+当然，不必局限于 Java Web 应用，从更高的层次来看，应该是如下结构：
+
+[plantuml,target=application-abstract,format=png]
+----
+include::example$application/application-abstract.plantuml[]
+----
+
+
+已实现的应用外壳如下::
+
+. {github}/peacetrue-application/[peacetrue-application^]
+
+已实现的应用内核如下::
+
+. {github}/peacetrue-dictionary/[peacetrue-dictionary^]
+
+== 应用组装
+
+在一些资源库中实现应用外壳程序，分版本区别其中的差异；
+在另一些资源库中实现应用内核程序，分版本区别其中的差异；
+最终选择合适版本的应用外壳和应用内核组成新应用：
+
+[plantuml,target=assemble,format=png]
+----
+include::example$application/assemble.plantuml[]
+----
+
+实际的组装过程具体如何操作呢？
+直接在应用外壳中引用应用内核，可以临时使用，如何在新项目中实现组装呢？
+拷贝应用外壳，修改应用名及相关信息，也是一种方式，但会有些繁琐，
+以下介绍基于模板的方式。
+
+== 归纳演绎
+
+将已有应用外壳归纳为 {github}/peacetrue-template/[目录模板^]，
+再通过 {github}/peacetrue-tplngn/[目录模板引擎^] 演绎出（生成）新应用。
+当然，除了应用外壳，其他但凡觉得繁琐的应用构件，都可以归纳成目录模板。
+
+[plantuml,target=induction-deduction,format=png]
+----
+include::example$application/induction-deduction.plantuml[]
+----
+
+== 实现过程
+
+. 实现应用外壳
+. 实现应用内核
+. 应用内核集成应用外壳测试（拷贝或者连接）
+. 发布应用内核
+. 应用外壳集成已发布应用内核测试
+. 应用外壳还原成未集成状态
+. 制作应用外壳目录模板
+. 目录模板引擎 + 外壳目录模板 + 已发布应用内核 + 模板变量 -> 新项目
+
+== 成品展示
+
+[plantuml,target=closed-loop,format=png]
+----
+include::example$application/closed-loop.plantuml[]
+----
+
+== 后续
+
+积累更多的应用外壳和应用内核。
+

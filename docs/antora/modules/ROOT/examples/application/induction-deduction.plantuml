@@ -1,0 +1,21 @@
+@startuml
+top to bottom direction
+'left to right direction
+
+[应用外壳A]-->[目录模板B]: 归纳
+[应用内核D]-->[目录模板E]: 归纳
+[目录模板E]-->[目录模板引擎A]
+[模板变量E]-->[目录模板引擎A]
+[目录模板引擎A]-->[应用内核F]: 演绎
+
+[目录模板B]-->[目录模板引擎C]
+[模板变量B]-->[目录模板引擎C]
+[应用内核F]-->[目录模板引擎C]
+[应用内核D]-->[目录模板引擎C]
+[目录模板引擎C]-->[应用I]: 演绎
+
+'note top of 应用外壳A: 例如：Spring WebMVC
+'note right of 应用内核D: 例如：配置模块
+'note left of 目录模板A: 一个应用内核类目录模模板
+'note top of 目录模板F: 一个应用外壳类目录模模板
+@enduml

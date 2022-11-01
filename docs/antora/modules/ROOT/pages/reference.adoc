@@ -1,3 +1,8 @@
 = 参考
 
 * https://my.oschina.net/greki/blog/336429[Linux Performance Analysis and Tools (Linux 性能分析和工具)^]
+* https://linux.die.net/man[man^]
+* http://linux.51yip.com/[man 中文^]
+* https://kernel.org/doc/man-pages/[man kernel^]
+* https://zh.b-ok.cc/[书籍^]
+* https://plantuml.com/zh/[plantuml^]

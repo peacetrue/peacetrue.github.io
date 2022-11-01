@@ -21,8 +21,6 @@ content:
   sources:
   - url: ./
     start_path: docs/antora
-#  - url: https://github.com/peacetrue/peacetrue.git
-#    start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-shell.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-beans.git
@@ -33,12 +31,12 @@ content:
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-result.git
     start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-tplngn.git
+    start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-template.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/bee.git
     start_path: docs/antora
-#  - url: https://github.com/peacetrue/peacetrue-template-gradle
-#    start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
 #    start_path: docs/antora
 #  - url: https://github.com/peacetrue/learn-antora
