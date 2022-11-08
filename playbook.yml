@@ -35,6 +35,8 @@ content:
     start_path: docs/antora
   - url: https://github.com/peacetrue/peacetrue-template.git
     start_path: docs/antora
+  - url: https://github.com/peacetrue/peacetrue-test.git
+    start_path: docs/antora
   - url: https://github.com/peacetrue/bee.git
     start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
