@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>简介 :: 安宁的知识库</title>
+    <title>概述 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-beans/index.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -34,16 +34,13 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="index.html">简介</a>
+    <a class="nav-link" href="index.html">概述</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="property.html">属性</a>
+    <a class="nav-link" href="reference.html">参考指南</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="bean.html">Bean</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="version.html">版本</a>
+    <a class="nav-link" href="version.html">版本变更</a>
   </li>
 </ul>
   </li>
@@ -105,10 +102,10 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../peacetrue-template/index.html">目录模板引擎</a>
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../peacetrue-template/index.html">master</a>
+          <a href="../peacetrue-test/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -132,7 +129,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">简单 Java 对象</a></li>
-    <li><a href="index.html">简介</a></li>
+    <li><a href="index.html">概述</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-beans/edit/master/docs/antora/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
@@ -142,21 +139,80 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">简介</h1>
+<h1 class="page">概述</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p><span class="image"><a class="image" href="https://lgtm.com/projects/g/peacetrue/peacetrue-beans"><img src="https://img.shields.io/lgtm/grade/java/github/peacetrue/peacetrue-beans" alt="LGTM Grade"></a></span>
+<p><span class="image"><a class="image" href="https://github.com/peacetrue/peacetrue-beans/actions"><img src="https://img.shields.io/github/workflow/status/peacetrue/peacetrue-beans/build/master" alt="GitHub Workflow Status"></a></span>
 <span class="image"><a class="image" href="https://app.snyk.io/org/peacetrue"><img src="https://snyk.io/test/github/peacetrue/peacetrue-beans/badge.svg" alt="Snyk"></a></span>
-<span class="image"><a class="image" href="https://github.com/peacetrue/peacetrue-beans/actions"><img src="https://img.shields.io/github/workflow/status/peacetrue/peacetrue-beans/build/master" alt="GitHub Workflow Status"></a></span>
-<span class="image"><a class="image" href="https://foresight.thundra.io/repositories/github/peacetrue/peacetrue-beans/test-runs"><img src="https://foresight.service.thundra.io/public/api/v1/badge/success?repoId=61960c96-0de4-447b-8ac9-a68a34636e5f" alt="Foresight"></a></span>
-<span class="image"><a class="image" href="https://app.codecov.io/gh/peacetrue/peacetrue-beans"><img src="https://img.shields.io/codecov/c/github/peacetrue/peacetrue-beans/master" alt="Codecov"></a></span></p>
+<span class="image"><a class="image" href="https://foresight.thundra.io/repositories/github/peacetrue/peacetrue-beans/test-runs"><img src="https://api-public.service.runforesight.com/api/v1/badge/success?repoId=61960c96-0de4-447b-8ac9-a68a34636e5f" alt="Foresight"></a></span>
+<span class="image"><a class="image" href="https://app.codecov.io/gh/peacetrue/peacetrue-beans"><img src="https://img.shields.io/codecov/c/github/peacetrue/peacetrue-beans/master" alt="Codecov"></a></span>
+<span class="image"><a class="image" href="https://oss.sonatype.org/index.html#nexus-search;gav<sub>~peacetrue-beans</sub>~~"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-beans?label=peacetrue-beans&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-beans"></a></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_简介what"><a class="anchor" href="#_简介what"></a>1. 简介（What）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://peacetrue.github.io/peacetrue-beans/">peacetrue-beans</a> 是一个封装常用 Bean 属性接口的资源库。
+共提供 23 个常用属性，每个属性涉及 3 个接口：一个读接口、一个写接口和一个读写接口，
+例如：<code>Id</code>、<code>IdCapable</code>、<code>IdAware</code>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_背景why"><a class="anchor" href="#_背景why"></a>2. 背景（Why）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bean 是由属性构成的，属性是 Bean 的基本元素，
+抽象出属性接口可提供最细粒度的复用。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_用法how"><a class="anchor" href="#_用法how"></a>3. 用法（How）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>引用如下 Gradle 依赖：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">implementation "com.github.peacetrue:peacetrue-beans:{latest-version}"</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p><a href="https://peacetrue.github.io/peacetrue-beans/">peacetrue-beans</a> 以接口的形式声明 Bean 涉及的常用属性。
-Bean 特指简单的 Java 对象，完全由属性组成，不含业务逻辑方法。</p>
+<p>如需转换为其他格式的 GAV 坐标，可使用 <a href="http://bee.peacetrue.cn/function/conversion/gav" target="_blank" rel="noopener">坐标转换器</a>。</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参与者who"><a class="anchor" href="#_参与者who"></a>4. 参与者（Who）</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>peace(<a href="mailto:xiayouxue@hotmail.com">xiayouxue@hotmail.com</a>)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_活动when"><a class="anchor" href="#_活动when"></a>5. 活动（When）</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>一个属性会包含 3 个接口：一个读接口、一个写接口和一个读写接口。
-读接口中提供属性名的常量字符串。</p>
+<p>初始提交于 2022-04-30，最近提交于 2022-10-30。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_许可证license"><a class="anchor" href="#_许可证license"></a>6. 许可证（License）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/peacetrue/peacetrue-beans/blob/master/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a></p>
+</div>
+</div>
 </div>
 </article>
   </div>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>参考指南 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-common/reference.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-common" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">公共组件</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="manual.html">用户手册</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="reference.html">参考指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">公共组件</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">概述</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">公共组件</a></li>
+    <li><a href="reference.html">参考指南</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-common/edit/master/docs/antora/modules/ROOT/pages/reference.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">参考指南</h1>
+<div class="sect1">
+<h2 id="_bean_遍历"><a class="anchor" href="#_bean_遍历"></a>1. <a href="https://en.wikipedia.org/wiki/JavaBeans" target="_blank" rel="noopener">Bean</a> 遍历</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>深度遍历 Bean 属性树，可以实现数据转换、深度拷贝等功能。</p>
+</div>
+<div class="sect2">
+<h3 id="bean_structure"><a class="anchor" href="#bean_structure"></a>1.1. Bean 结构</h3>
+<div class="paragraph">
+<p>一个 Bean 会包含多个属性，一个属性通常包含：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>属性名称</p>
+</li>
+<li>
+<p>属性类型</p>
+</li>
+<li>
+<p>属性值读取方法</p>
+</li>
+<li>
+<p>属性值写入方法</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>如果一个属性的读取、写入方法，符合标准命名规范，
+即 get<em>Xxx</em>/set<em>Xxx</em>/is<em>Xxx</em>，
+则称其为标准属性，否则为非标准属性。
+由标准属性组成的 Bean 称其为 <strong>标准 Bean</strong>；
+包含非标准属性的 Bean 称其为 <strong>非标准 Bean</strong>。</p>
+</div>
+<div class="paragraph">
+<p>以下是一个非标准 Bean 的例子：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/XPBFJiCm3CRlUGfpeWZj1Qgf6XSuCcc22-AGjMvhBV_ak1i8yUuqPT1MwhHB3lw-p_x5oIQAPkciKUf6MhG8mMXoIdm0yR3t8jv2HOoba7Vgrc0jIM5gMfa8yK0kQDOM33cKpu3WMLgl5BhEmjP7-dWaWrjaIp7s4LYl8Md8EdM0ee0l1N0FHsqwVAwpdJ2vvYvV2e_6c2qxtjxLjrBa1BdM9OwM1-dxxZl1LyBJUIIZhlxhyuvZUN16b2VsNSY6SziJbXIqwHD7JzMVPSI8sGvblS1NJ2DEMqnJVwzy3JoUgPi1f8_DMGRDdnnoqbuYybmA4xWqym9VebXUMfxFzxLQ5KlhkXIUxsSQdhplGiCy3rTZQeEkwh_p3m00" alt="PosixFileAttributeView">
+</div>
+<div class="title">Figure 1. PosixFileAttributeView</div>
+</div>
+<div class="paragraph">
+<p>从更泛化的角度来说，任何无参有返回值的公开成员方法，都可以视作属性的读取方法。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bean_属性树"><a class="anchor" href="#_bean_属性树"></a>1.2. Bean 属性树</h3>
+<div class="paragraph">
+<p>什么是 Bean 属性树？以用户为例说明：</p>
+</div>
+<div class="paragraph">
+<p>用户数据结构如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">用户</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class User implements Serializable {
+        private Long id;
+        private String name;
+        private String password;
+        private List&lt;Role&gt; roles;
+        private Employee employee;
+    }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">角色</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Role implements Serializable {
+        private Long id;
+        private String name;
+        private List&lt;String&gt; tags;
+    }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">员工</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Employee implements Serializable {
+        private Long id;
+        private String name;
+        private List&lt;String&gt; tags;
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>构造如下用户实例数据：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    public static final User USER = getUser();
+
+    public static User getUser() {
+        return User.builder().id(null).name("admin").password("")
+                .roles(Arrays.asList(
+                        Role.builder().id(1L).name("admin").tags(Arrays.asList("read", "write")).build(),
+                        null,
+                        Role.builder().name("user").build(),
+                        Role.builder().id(3L).build()
+                ))
+                .employee(Employee.builder().id(1L).name("Jone").tags(Arrays.asList("good", "better")).build())
+                .build();
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其 YAML 格式数据如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-yaml hljs" data-lang="yaml">---
+id: null
+name: "admin"
+password: ""
+roles:
+- id: 1
+  name: "admin"
+  tags:
+  - "read"
+  - "write"
+- null
+- id: null
+  name: "user"
+  tags: null
+- id: 3
+  name: null
+  tags: null
+employee:
+  id: 1
+  name: "Jone"
+  tags:
+  - "good"
+  - "better"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>类比于文件系统目录结构，上面由属性路径表示的实例是不是很像一棵树。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_遍历规则"><a class="anchor" href="#_遍历规则"></a>1.3. 遍历规则</h3>
+<div class="paragraph">
+<p>每个属性路径对应属性树上的一个节点。</p>
+</div>
+<div class="paragraph">
+<p>对象节点类型分为以下 3 种：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>叶子节点，不需要遍历对象内部信息，通常包括：原始类型及其包装类型、简单值类型，支持自定义该类型</p>
+</li>
+<li>
+<p>集合节点，需要循环遍历集合内元素信息，通常包括：<code>Iterable</code>、<code>Object[]</code></p>
+</li>
+<li>
+<p>父亲节点，需要通过调用对象的方法遍历其内部信息，通常包括 <code>Map</code> 和自定义复合类型（如上面提及的用户）</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>对象属性路径表示方式：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>节点路径间串联使用点号，例如：user.name</p>
+</li>
+<li>
+<p>集合节点路径使用 [<em>index</em>]，例如：roles[0]</p>
+</li>
+<li>
+<p>组合以上两种方式，例如：user.roles[0].name</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>BeanVisitor 接口定义如下：</p>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/XPFTJXD15CVlvod6Eum-GTDGr2iJZGQ8DyQBAKpfw7PcCnrDY35PiPKIIkk5sAGQ53-24TYsO6nB6tmOzynkhtW5Pvd6BlXrjIVd_7B-_tFEx4nH4QaU5Xo4BgWyBL3iEeHnf8IBbS1PePGeu4KcwO9YWgFY0yPT8aa1EunJjUnIBAJA2uGOLrJco0B5LodXTrYHAI7JyzFuCSBu4duK9sQ5K5EtilTDiuifF3yfNE7BKtDAChwKkOmja8c9p0IvGKdkVymruJZMw8IyRcoHh4FJcUcpcd-2RTkxzywIjucaN9sd_itS96xQVCQYJn3YGb6pKXV5wy6H_ttKy2ElV3AiZfvkGErvC1ZeKXrgRs5d7LhzgBCDnmsejCErFlZDi3E0hVNmjQ_VhThg3sy5dIhZy700bOP-rTU7cr3kwZThGS-BLh-6pHBKL_Hc-sJO3FVsJ3BeVR6Pe7S4dItjxKJT5XoNZ8aOEAh-3e0tH9GlujZ-U0Y7vXGMkUITKwbVzqNWlzULRhZRiZF6BigVeFx16ZHIUl-ZZVN1jZ6RD6B5pmjAjfJ_Yw9vECZgZFTtkfka25HCi6_pTelnjALlyA8MjP-5Bpy7lLgo2jN-gBnXNDkxOjibOMd6XEQ7-Ga0" alt="BeanVisitor">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+集合只支持 <code>Iterable</code> 和 <code>Object[]</code>，不支持 <code>Enumeration</code>，尚未遇到此场景，不过度设计。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+留意规避循环引用问题，否则导致堆栈溢出。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

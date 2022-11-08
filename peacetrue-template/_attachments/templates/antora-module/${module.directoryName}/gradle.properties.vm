@@ -1,6 +1,0 @@
-tailSnapshot=
-springBootDependenciesVersion=2.0.0.RELEASE
-peaceDependenciesVersion=2.0.4
-peaceGradleVersion=1.1.1
-${lh.lc(${module.directoryName})}Version=1.0.0
-
