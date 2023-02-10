@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>版本变更 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/bee/version.html">
+    <title>开发手册 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/bee/developer.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -36,10 +36,10 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">简介</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="developer.html">开发手册</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="version.html">版本变更</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -165,38 +165,105 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">开发者助手</a></li>
-    <li><a href="version.html">版本变更</a></li>
+    <li><a href="developer.html">开发手册</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/bee/edit/master/docs/antora/modules/ROOT/pages/version.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/bee/edit/master/docs/antora/modules/ROOT/pages/developer.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">版本变更</h1>
-<div class="sect1">
-<h2 id="_1_0_0"><a class="anchor" href="#_1_0_0"></a>1.0.0</h2>
+<h1 class="page">开发手册</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>基础框架。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_1_0"><a class="anchor" href="#_1_1_0"></a>1.1.0</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>数据转换。</p>
+<p>本文介绍如何运行 bee 项目。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_1_2_0"><a class="anchor" href="#_1_2_0"></a>1.2.0</h2>
+<h2 id="_效果展示"><a class="anchor" href="#_效果展示"></a>1. 效果展示</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>访问统计。</p>
+<p>访问 <a href="http://bee.peacetrue.cn/function/conversion" target="_blank" rel="noopener">bee</a> 网站查看演示效果。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_运行"><a class="anchor" href="#_运行"></a>2. 运行</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本机需安装 git(2+)、jdk(8+)、node(14+)、npm(8.5+)、nginx(1.18+)，
+同时确保 8080、8081 端口可用。</p>
+</div>
+<div class="paragraph">
+<p>运行环境包括：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>开发环境：在 IDE 中开发，域名为 <a href="http://localhost，允许跨域" class="bare">http://localhost，允许跨域</a></p>
+</li>
+<li>
+<p>本地环境：使用域名 <a href="http://bee.peacetrue.local，通过" class="bare">http://bee.peacetrue.local，通过</a> nginx 配置为同域</p>
+</li>
+<li>
+<p>生产环境：使用域名 <a href="http://bee.peacetrue.cn，通过" class="bare">http://bee.peacetrue.cn，通过</a> nginx 配置为同域</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>开发环境和本地环境为 macOS（12.5.1），生产环境为 Ubuntu Server（11.2.0）。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 检出项目
+git clone https://github.com/peacetrue/bee.git &amp;&amp; cd bee</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">设置环境变量</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">./set-env</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">开发模式</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">./ubuntu-dev-init
+./ubuntu-dev-run-backend
+./ubuntu-dev-run-frontend</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">本地模式</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">./ubuntu-local-init
+./ubuntu-local-run-backend
+./ubuntu-local-run-frontend</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">生产模式</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 服务器上需事先安装 jdk 和 nginx
+# 安装 sshpass 以便登录时设置密码
+sudo apt-get install sshpass -y
+sudo apt-get install jmeter -y
+# 设置远程服务器信息
+cat &lt;&lt;EOF &gt;&gt;~/.bashrc
+export BEE_REMOTE_HOST=root@aliyun
+export BEE_REMOTE_PASSWORD=123456
+export BEE_REMOTE_WORKING_DIR=~/bee
+EOF
+source "$HOME/.bashrc"
+
+./ubuntu-prod-init
+./ubuntu-prod-run-backend
+./ubuntu-prod-run-frontend</code></pre>
+</div>
 </div>
 </div>
 </div>
