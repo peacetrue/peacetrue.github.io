@@ -37,7 +37,7 @@
     <a class="nav-link" href="../../index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../developer.html">开发手册</a>
+    <a class="nav-link" href="../../developer.html">开发者手册</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../version.html">版本变更</a>
@@ -211,51 +211,8 @@ Gradle 7.4.2 和 spring-boot-gradle-plugin 2.7.0 可正常匹配
 <div class="sect1">
 <h2 id="_应用"><a class="anchor" href="#_应用"></a>2. 应用</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">名称</th>
-<th class="tableblock halign-left valign-top">描述</th>
-<th class="tableblock halign-left valign-top">端口</th>
-<th class="tableblock halign-left valign-top">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://peacetrue.cn:8080" target="_blank" rel="noopener">bee-monitor</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">监控应用</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8080</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">监控主应用的运行状态，基于 <a href="https://github.com/codecentric/spring-boot-admin" target="_blank" rel="noopener">SBA</a> 实现</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://peacetrue.cn:8081" target="_blank" rel="noopener">bee-main</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">主应用</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8081</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">实现业务功能</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect2">
-<h3 id="_监控应用"><a class="anchor" href="#_监控应用"></a>2.1. 监控应用</h3>
-<div class="paragraph">
-<p>依赖如下：</p>
-</div>
-<div class="listingblock">
-<div class="title">build.gradle</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">    implementation "org.springframework.boot:spring-boot-starter-web"
-    implementation "de.codecentric:spring-boot-admin-starter-server" // SBA 服务端</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_主应用"><a class="anchor" href="#_主应用"></a>2.2. 主应用</h3>
+<h3 id="_主应用"><a class="anchor" href="#_主应用"></a>2.1. 主应用</h3>
 <div class="paragraph">
 <p>依赖如下：</p>
 </div>
@@ -286,18 +243,31 @@ Gradle 7.4.2 和 spring-boot-gradle-plugin 2.7.0 可正常匹配
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_监控应用"><a class="anchor" href="#_监控应用"></a>2.2. 监控应用</h3>
+<div class="paragraph">
+<p>依赖如下：</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-gradle hljs" data-lang="gradle">    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "de.codecentric:spring-boot-admin-starter-server" // SBA 服务端</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_自动部署"><a class="anchor" href="#_自动部署"></a>3. 自动部署</h2>
+<h2 id="_构建"><a class="anchor" href="#_构建"></a>3. 构建</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>使用 <a href="https://docs.gradle.org/current/userguide/application_plugin.html" target="_blank" rel="noopener">application</a> 插件打包后，
 部署到远程服务。</p>
 </div>
 <div class="paragraph">
-<p>以 <strong>bee-main</strong> 为例说明，
-<strong>bee-monitor</strong> 与此类似。</p>
+<p>以 <strong>main</strong> 为例说明，
+<strong>monitor</strong> 与此类似。</p>
 </div>
 <div class="sect2">
 <h3 id="_部署包结构"><a class="anchor" href="#_部署包结构"></a>3.1. 部署包结构</h3>
@@ -313,14 +283,14 @@ Gradle 7.4.2 和 spring-boot-gradle-plugin 2.7.0 可正常匹配
 │   ├── main
 │   └── main.bat
 └── lib
-    └── main-1.0.0-SNAPSHOT.jar</code></pre>
+    └── main-1.0.0.jar</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_部署脚本"><a class="anchor" href="#_部署脚本"></a>3.2. 部署脚本</h3>
+<h3 id="_运行脚本"><a class="anchor" href="#_运行脚本"></a>3.2. 运行脚本</h3>
 <div class="paragraph">
-<p>部署脚本名称默认与项目名相同。</p>
+<p>运行脚本名称默认与项目名相同。</p>
 </div>
 <div class="paragraph">
 <p>调用脚本，脚本会自动根据上面的目录结构，找到执行的 jar 包：</p>
@@ -352,7 +322,7 @@ $ java $JAVA_OPTS -jar backend-1.0.0-SNAPSHOT.jar
 原因: java.lang.ClassNotFoundException: "-Xmx1G" "-Xms1G"
 
 # 正确的调用方式如下：
-$ eval "java $JAVA_OPTS -jar backend-1.0.0-SNAPSHOT.jar"</code></pre>
+$ eval "java $JAVA_OPTS -jar backend-1.0.0.jar"</code></pre>
 </div>
 </div>
 </div>

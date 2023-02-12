@@ -37,7 +37,7 @@
     <a class="nav-link" href="index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="developer.html">开发手册</a>
+    <a class="nav-link" href="developer.html">开发者手册</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="version.html">版本变更</a>
@@ -300,21 +300,20 @@ $ ssh-copy-id -i ~/.ssh/id_rsa.pub root@aliyun</code></pre>
     }
 
     location /monitor/ {
-       proxy_pass http://localhost:8080/;
-    }
-
-    location /api/ {
        proxy_pass http://localhost:8081/;
     }
 
+    location /api/ {
+       proxy_pass http://localhost:8080/;
+    }
+
     location /swagger-ui/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
 
     location /v3/api-docs/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
-
 }</code></pre>
 </div>
 </div>
@@ -422,9 +421,6 @@ responseTimeout=3000</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">jmeter -n -t test-plan.jmx -q options.properties -l result.csv -e -o report</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>测试报告：</p>
 </div>
 </div>
 </div>

@@ -37,7 +37,7 @@
     <a class="nav-link" href="../../index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../developer.html">开发手册</a>
+    <a class="nav-link" href="../../developer.html">开发者手册</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../version.html">版本变更</a>
@@ -177,35 +177,18 @@
 </aside>
 <article class="doc">
 <h1 class="page">需求</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>用户是开发者，日常工作中会产生很多需求，比如：Base64 编解码、MD5 哈希等等；
-也有很多实现类似需求的网站，比如： <a href="https://the-x.cn" class="bare">https://the-x.cn</a> 。
-笔者仍然创建此网站，是希望能借此项目，记录下软件的开发过程，沉淀出一套实用的技术栈。</p>
-</div>
-<div class="paragraph">
-<p>系统目前没有明确的非功能性需求，这部分内容会在架构中体现，此处仅记录功能性需求。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_数据转换"><a class="anchor" href="#_数据转换"></a>1. 数据转换</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>对于 Java 开发者，在升级 Spring Boot 时，
-会需要将 application.properties 升级为 application.yaml。</p>
+需要将 application.properties 转换为 application.yaml。</p>
 </div>
 <div class="imageblock plantuml">
 <div class="content">
-<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuRBoIYnBL7Ywf-5f_yGN3QrM2hgwTWeQYGK5EPd9YIMP-Nbw1KNv1Qb59PcfnGfFUzkVxrh-PCSk1MG5bOcvEPfS3gbvAK030G00" alt="java-application">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuRBoIYnBL7Ywf-5f_yGN3QrM2hgwTWeQ1KNv1Qb59PcfnGelzgvvrhleoOvT2fM9kJcQN0wfUIb0ZG00" alt="java-application">
 </div>
 <div class="title">Figure 1. 用例</div>
 </div>
 <div class="paragraph">
 <p>如果使用 IntelliJ IDEA 开发，可以安装 <a href="https://github.com/chencn/ConvertYamlAndProperties" target="_blank" rel="noopener">ConvertYamlAndProperties</a> 插件。</p>
-</div>
-</div>
 </div>
 </article>
   </div>

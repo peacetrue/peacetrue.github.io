@@ -37,7 +37,7 @@
     <a class="nav-link" href="../../index.html">简介</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../developer.html">开发手册</a>
+    <a class="nav-link" href="../../developer.html">开发者手册</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../version.html">版本变更</a>
@@ -180,7 +180,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://zhuanlan.zhihu.com/p/87855907" target="_blank" rel="noopener">前后端分离</a>。</p>
+<p>使用 <a href="https://zhuanlan.zhihu.com/p/87855907" target="_blank" rel="noopener">前后端分离</a> 架构。</p>
 </div>
 </div>
 </div>
@@ -195,45 +195,82 @@
 <div class="ulist">
 <ul>
 <li>
+<p>前端应用：提供功能界面展示</p>
+</li>
+<li>
 <p>后端主应用：提供功能接口</p>
 </li>
 <li>
 <p>后端监控应用：监控后端主应用运行状态及异常告警</p>
 </li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">应用端口：</div>
+<ul>
 <li>
-<p>前端应用：提供功能界面展示</p>
+<p>前端应用：3000</p>
+</li>
+<li>
+<p>后端监控应用：8081</p>
+</li>
+<li>
+<p>后端主应用：8080</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_部署模式"><a class="anchor" href="#_部署模式"></a>2. 部署模式</h2>
+<h2 id="_运行环境"><a class="anchor" href="#_运行环境"></a>2. 运行环境</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_本地"><a class="anchor" href="#_本地"></a>2.1. 本地</h3>
+<h3 id="_开发"><a class="anchor" href="#_开发"></a>2.1. 开发</h3>
 <div class="imageblock plantuml">
 <div class="content">
-<img src="http://www.plantuml.com/plantuml/png/NP5TQeD058NVPnMp0JSWfMG5tOCncWZg53k5GX4IAYObnXXg0sr8MoWbGafz2Fr1ctOppem-TGkrAjPatkQSS-Uxzqxh10i6FjLK82Bj6EcIZk5HLz7F092Hsf4CsCEQUWvWVYgXBKdbtGGcq16MO1jXZ3I8v2BCbm_0R7b3-mCw7oRn6rkyaEqrA0sEEwo2QHYJwRn6aSi9MuSxC1M9Whg7CvHk3__H2fE7zCuYSSJyUphosArLSjDNYqPUIGTvomMrAaYtONRrHTsddqyd-LvIPq0yAxi8oCXcusUs7jF-whyfpwsRobUbo8A8OV8HayXdVh0hiyMCkglACK5Zthg0XsGw8TuiYH-PPuDQBrBD-dokJK1ifn4vuBYzIEg-vmiiDUeCwSCGj2Iza__dBm00" alt="deployment-local">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuU82qfbfYSab2ayxUv-lNi_5bPQVav9QfF1qGX-GMysb00HmDKzsx7wwQyhpAIjGXP_FdlYiRpbKffQB2sAKWgwk7KA7bSAB3Sr0-bdVqgVzYz_lwSd9JqxCoSWl1jhSl_x5zXLFvy_dWgi6wqKsrahXsUOLJzjwa9JOwEgYANdHj_rf_pI8sBEUzcSBshaSKlDIWFu40000" alt="deployment-dev">
 </div>
-<div class="title">Figure 1. 本地部署模式</div>
+<div class="title">Figure 1. 开发运行模式</div>
 </div>
 <div class="ulist">
-<div class="title">应用端口</div>
+<div class="title">直接通过 IDE 运行，以 IntelliJ IDEA 为例：</div>
 <ul>
 <li>
-<p>前端应用：3000</p>
-</li>
-<li>
-<p>后端监控应用：8080</p>
-</li>
-<li>
-<p>后端主应用：8081</p>
+<p>链接 Gradle 项目</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>本地使用地址： <a href="http://bee.peacetrue.local" class="bare">http://bee.peacetrue.local</a> 。</p>
+<p><span class="image"><img src="../../_images/manual/link-gradle.png" alt="link gradle"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>运行后端 <code>BeeMainApplication</code>：</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../_images/manual/backend.png" alt="backend" width="50%"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>启动前端 <code>package.json</code>：</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../_images/manual/frontend.png" alt="frontend" width="50%"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_本地"><a class="anchor" href="#_本地"></a>2.2. 本地</h3>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/NP5TQeD058NVPnMp0JSWfMG5tOCncWZg53k5GX4IAYObnXXg0sr8MoWbGafz2Fr1ctOppem-TGkrAjPatkQSS-Uxzqxh10i6FjLK82Bj6EcIZk5HLz7F092Hsf4CsCEQUWvWVYgXBKdbtGGcq16MO1jXZ3I8v2BCbm_0R7b3-mCw7oRn6rkyaEqrA0sEEwo2QHYJwRn6aSi9MuSxC1M9Whg7CvHk3__H2fE7zCuYSSJyUphosArLSjDNYqPUIGTvomMrAaYtONRrHTsddqyd-LvIPq0yAxi8oCXcusUs7jF-whyfpwsRobUbo8A8OV8HayXdVh0hiyMCkglACK5Zthg0XsGw8TuiYH-PPuDQBrBD-dokJK1ifn4vuBYzIEg-vmiiDUeCwSCGj2Iza__dBm00" alt="deployment-local">
+</div>
+<div class="title">Figure 2. 本地部署模式</div>
 </div>
 <div class="paragraph">
 <p>添加 hosts 条目：</p>
@@ -262,49 +299,31 @@
     }
 
     location /monitor/ {
-       proxy_pass http://localhost:8080/;
-    }
-
-    location /api/ {
        proxy_pass http://localhost:8081/;
     }
 
+    location /api/ {
+       proxy_pass http://localhost:8080/;
+    }
+
     location /swagger-ui/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
 
     location /v3/api-docs/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
-
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_远程"><a class="anchor" href="#_远程"></a>2.2. 远程</h3>
-<div class="paragraph">
-<p>远程指服务端。</p>
-</div>
+<h3 id="_生产"><a class="anchor" href="#_生产"></a>2.3. 生产</h3>
 <div class="imageblock plantuml">
 <div class="content">
 <img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuKhEpot8pqlDAr7mIy_Cg-3YIilFIKajKiWeoSsfvb800gX0KcegX5_BLSkLbr-Igf2KNrAIdwkGdmPMR0KnGE7bt9dF6XgVJMj_idlRyzdhdkwTYguQQ9ALmjFEtkUhrqCKlzZQycpN1AXYY2cwkdPGKr-it_sqVnhSNKydz07rGLm2z49cMc9oYSAJ7RkVxfhoVCeALE7dioS-wriEbQdbGZ8QhW7eaFxUfnCcFjcz-Fc4DYwuE5WLiduhXMURLpnjwq5IOgEhYwRaHTzse5iXOizwsfyjQEToICrB0OOp0000" alt="deployment-remote">
 </div>
-<div class="title">Figure 2. 远程部署模式</div>
-</div>
-<div class="ulist">
-<div class="title">应用端口</div>
-<ul>
-<li>
-<p>后端监控应用：8080</p>
-</li>
-<li>
-<p>后端主应用：8081</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>远程使用地址： <a href="http://bee.peacetrue.cn" class="bare">http://bee.peacetrue.cn</a> 。</p>
+<div class="title">Figure 3. 远程部署模式</div>
 </div>
 <div class="paragraph">
 <p>Nginx 配置：</p>
@@ -324,22 +343,25 @@
     }
 
     location /monitor/ {
-       proxy_pass http://localhost:8080/;
-    }
-
-    location /api/ {
        proxy_pass http://localhost:8081/;
     }
 
+    location /api/ {
+       proxy_pass http://localhost:8080/;
+    }
+
     location /swagger-ui/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
 
     location /v3/api-docs/ {
-       proxy_pass http://localhost:8081;
+       proxy_pass http://localhost:8080;
     }
 }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>本地打完包后，上传到服务器，完成上线部署。</p>
 </div>
 </div>
 </div>
