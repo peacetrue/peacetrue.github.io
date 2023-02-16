@@ -1,0 +1,14 @@
+= 书籍
+
+== 电子图书馆
+
+* https://zhuanlan.zhihu.com/p/444880913[9 个免费电子书下载网站，实现电子书自由^]
+** 熊猫搜书： https://xmsoushu.com/ 导航网站
+** 苦瓜书盘：Cann't connect to DB!
+** Lore Free：502 Bad Gateway
+** clibrary： https://clibrary.top/ 网速极慢
+** 书单网： https://www.xianyupai.com/shudan/ 需使用城通网盘，密码为 2021
+** 书舟搜书： https://www.shuzhou.cc/ 需要关注微信号，验证码：2022
+
+.书籍
+. 从零开始学CPLD和VerilogHDL编程技术.pdf

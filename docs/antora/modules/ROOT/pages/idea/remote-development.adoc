@@ -1,0 +1,42 @@
+= 远程开发
+
+参考 https://www.jetbrains.com/help/idea/remote.html[JetBrains 官网^]。
+
+== 是什么
+
+演示一下就清楚了。
+
+环境如下：
+
+* macOS 电脑
+* VirtualBox 虚拟机，安装 Ubuntu 系统
+
+== 为什么
+
+* 虚拟机中运行桌面程序很卡
+* 基于 Linux 服务端编程，开发环境即为生产环境，避免环境差异问题
+* 消除 macOS 和 Linux 在 Shell 命令上的差异，如：netstat、sed、dtruss/strace 等
+* GitHub Action 在 Ubuntu 上执行构建任务
+
+== 怎么用
+
+需要 2022 以上版本。
+
+. 了解工作机制
+. 单独使用
+. 集成使用
+
+== 常见问题
+
+=== 安装失败
+
+首次打开项目时，会在本机下载 JetBrains Client，在远程下载 IDE Backend。
+持续时间比较长，如果过程中出现问题，会导致重头下载 IDE Backend，
+建议提前从 https://www.jetbrains.com/idea/download/#section=linux[官网^] 下载好 IDE Backend 安装包，
+打开项目时使用本地安装模式。
+
+NOTE: 一定要下载 Linux 版本的。
+
+=== 许可证
+
+https://www.ajihuo.com/idea/4222.html

@@ -1,0 +1,47 @@
+= 睡眠
+
+. https://www.bilibili.com/bangumi/play/ep275932[深入大脑^]
+
+.不同的精神/意识状态
+. 清醒
+. 昏睡
+. 催眠
+. 睡眠
+. 梦游
+. 心流
+. 癔症
+. 鬼压床
+
+== 生理时钟
+
+. https://zh.wikipedia.org/zh-cn/%E6%99%82%E9%96%93%E7%94%9F%E7%89%A9%E5%AD%B8[生理时钟^] 维基百科
+
+== 睡眠周期
+
+. https://baike.baidu.com/item/%E7%9D%A1%E7%9C%A0%E5%91%A8%E6%9C%9F/2885666[睡眠周期^] 百度百科
+
+.睡眠周期
+. 非快速眼动睡眠期
+.. 入睡
+.. 浅睡
+.. 熟睡
+.. 深睡
+. 快速眼动睡眠期
+
+== 脑波
+
+. https://zh.m.wikipedia.org/zh-hans/%E8%85%A6%E6%B3%A2[脑波^] 维基百科
+
+== 意识
+
+. https://zh.wikipedia.org/wiki/%E6%84%8F%E8%AF%86[意识^] 维基百科
+
+== 催眠
+
+. https://zh.wikipedia.org/wiki/%E5%82%AC%E7%9C%A0[催眠^] 维基百科
+
+== 空气中有哪些常见的病毒/细菌
+
+. https://zh.m.wikipedia.org/zh-hans/%E6%99%AE%E9%80%9A%E6%84%9F%E5%86%92[普通感冒^]
+. https://zh.m.wikipedia.org/zh-hans/%E9%BC%BB%E7%97%85%E6%AF%92[鼻病毒^]
+. 人体 3D 模型
