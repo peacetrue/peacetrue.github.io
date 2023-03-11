@@ -5,4 +5,4 @@
 * xref:schedule.adoc[]
 * xref:application.adoc[]
 // * xref:computer.adoc[]
-* xref:resume.adoc[]
+* xref:resume-12.adoc[]
