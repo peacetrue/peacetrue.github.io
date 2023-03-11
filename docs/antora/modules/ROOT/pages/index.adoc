@@ -1,21 +1,22 @@
-= 简介
+= 概述
+:website: https://peacetrue.github.io
 :app-name: peacetrue.github.io
 
 image:https://github.com/peacetrue/{app-name}/actions/workflows/main.yml/badge.svg["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions/workflows/main.yml"]
+
 //@formatter:off
 
-https://peacetrue.github.io/[安宁的知识库] 是一个使用 https://antora.org[Antora^] 构建，
+== 简介（What）
+
+{website}/{app-name}/[{app-name}] 是一个使用 https://antora.org[Antora^] 构建，
 基于 https://pages.github.com/[GitHub Pages^] 运行的静态站点，
-汇集了笔者所有 GitHub 仓库中的文档信息。
+汇集了笔者众多 GitHub 仓库中的文档信息。
 
-== 站点分支
+== 背景（Why）
 
-master::
-master 分支存放静态站点构建脚本，用于生成静态站点资源文件。
-gh-pages::
-gh-pages 分支存放静态站点资源文件，用于部署到 GitHub Pages 服务器。
+分门别类梳理总结工作生活中的心得。
 
-== 工作流程
+== 用法（How）
 
 . 本地修改后，推送到远程 master 分支
 . 触发 https://docs.github.com/en/actions[GitHub Actions^]
@@ -27,16 +28,14 @@ gh-pages 分支存放静态站点资源文件，用于部署到 GitHub Pages 服
 * master 分支中，Antora 生成的资源文件所在目录为 build/site（相对于资源库）
 * gh-pages 分支中，资源文件所在目录为 `/`（相对于资源库）
 
-== 切换资源库
+== 参与者（Who）
 
-需要点击左下角的 *master*：
+. peace(xiayouxue@hotmail.com)
 
-image::image-2022-09-21-13-22-35-813.png[]
+== 活动（When）
 
-然后会弹出资源库列表：
+初始提交于 2022-11-01，最近提交于 2023-03-11。
 
-image::image-2022-09-21-13-22-10-468.png[]
+== 许可证（License）
 
-
-
-
+https://github.com/peacetrue/{app-name}/blob/master/LICENSE[Apache License 2.0^]
