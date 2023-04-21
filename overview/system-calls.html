@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>系统调用 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/overview/system-calls.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="overview" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">总览</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="repository.html">资源库</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="concept.html">理念</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="term.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">规划</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="application.html">应用组装</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">问题</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">总览</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">总览</a></li>
+    <li><a href="system-calls.html">系统调用</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/system-calls.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">系统调用</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>系统调用是操作系统提供给用户程序的一种接口，允许用户程序请求操作系统执行特权操作。系统调用的实现原理主要包括以下几个方面：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>系统调用的接口：操作系统会为每个系统调用定义一个唯一的标识符，例如Linux中的系统调用号。用户程序通过系统调用接口向操作系统发起请求，这个接口通常是由一些特殊的指令或者软件中断实现的。</p>
+</li>
+<li>
+<p>切换到内核模式：当用户程序发起系统调用请求时，操作系统需要从用户模式切换到内核模式，这个过程通常由硬件中断或者异常处理机制实现。</p>
+</li>
+<li>
+<p>系统调用处理程序：当操作系统切换到内核模式后，会调用相应的系统调用处理程序来处理用户程序的请求。这个处理程序通常会检查请求的合法性，并且执行请求的操作。</p>
+</li>
+<li>
+<p>返回结果给用户程序：当系统调用处理程序执行完毕后，需要将执行结果返回给用户程序。这个过程通常也需要切换回用户模式，将结果存放在指定的内存地址中。</p>
+</li>
+<li>
+<p>错误处理：如果系统调用处理程序执行过程中发生错误，需要将错误码返回给用户程序，以便用户程序进行相应的处理。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>总体来说，系统调用的实现原理涉及到操作系统的内核代码和硬件机制，其中的细节因不同的操作系统而异。不过，掌握系统调用的实现原理对于深入理解操作系统和编写系统级应用程序是至关重要的。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sendfile"><a class="anchor" href="#_sendfile"></a>1. sendfile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在 Linux/Unix 系统中，sendfile 系统调用可以使用以下方式调用：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-c hljs" data-lang="c">ssize_t sendfile(int out_fd, int in_fd, off_t *offset, size_t count);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其中，各个参数的含义如下：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>out_fd：指定目标文件描述符，表示将数据发送到哪个文件描述符。</p>
+</li>
+<li>
+<p>in_fd：指定源文件描述符，表示从哪个文件描述符中读取数据。</p>
+</li>
+<li>
+<p>offset：指定从源文件的哪个偏移量开始读取数据。如果 offset 为 NULL，则从当前偏移量处开始读取数据。</p>
+</li>
+<li>
+<p>count：指定要传输的数据字节数。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>sendfile</code> 系统调用的返回值为传输的数据字节数，或者 -1 表示出现错误。</p>
+</div>
+<div class="paragraph">
+<p>需要注意的是，<code>sendfile</code> 系统调用有一些限制和要求，例如：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>源文件必须是普通文件，不能是管道、套接字等其他类型的文件。</p>
+</li>
+<li>
+<p>目标文件必须是套接字，不能是普通文件或其他类型的文件。</p>
+</li>
+<li>
+<p>源文件和目标文件必须都支持大文件（64 位偏移量）。</p>
+</li>
+<li>
+<p>在某些系统中，offset 参数必须为 0 或 -1，否则可能会出现错误。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在使用 <code>sendfile</code> 系统调用时，需要仔细阅读文档并注意各种限制和要求，以确保调用正确并避免出现错误。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mmap"><a class="anchor" href="#_mmap"></a>2. mmap</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>mmap</code> 是一种将文件映射到内存中的系统调用，可以将一个文件或者一个设备的地址空间映射到进程的地址空间中，从而实现文件和内存之间的快速数据传输。</p>
+</div>
+<div class="paragraph">
+<p><code>mmap</code> 的函数原型如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-c hljs" data-lang="c">void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>下面是 <code>mmap</code> 函数的各个参数的详细解释：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>addr：映射的起始地址。通常传入 NULL，表示由系统自动分配一个适当的地址。</p>
+</li>
+<li>
+<p>length：映射的长度，以字节为单位。如果文件大小不足这个值，映射将被截断为文件大小。</p>
+</li>
+<li>
+<p>prot：映射区域的保护方式。它是一个位掩码，包含以下几种保护方式：</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>PROT_READ：可读</p>
+</li>
+<li>
+<p>PROT_WRITE：可写</p>
+</li>
+<li>
+<p>PROT_EXEC：可执行
+它们可以组合使用，例如 PROT_READ | PROT_WRITE 表示可读写。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>flags：标志参数，用于指定映射的行为。它可以是以下几种取值的组合：</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>MAP_SHARED：共享映射。多个进程可以访问同一个映射区域，它们之间的修改会相互影响。</p>
+</li>
+<li>
+<p>MAP_PRIVATE：私有映射。多个进程可以访问同一个映射区域，但它们之间的修改互相独立。</p>
+</li>
+<li>
+<p>MAP_FIXED：固定映射。映射的区域必须从指定的地址开始，如果指定的地址已经被占用，则映射失败。</p>
+</li>
+<li>
+<p>MAP_ANONYMOUS：匿名映射。不使用文件进行映射，而是创建一个新的匿名映射区域。</p>
+</li>
+<li>
+<p>MAP_HUGETLB：使用大页面进行映射。可以提高性能，但需要系统支持大页面功能。</p>
+</li>
+<li>
+<p>MAP_LOCKED：锁定映射区域，防止它被交换到磁盘上。</p>
+</li>
+<li>
+<p>MAP_NORESERVE：不预留内存空间。在需要时再分配物理内存。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>fd：文件描述符，用于指定要映射的文件。如果 flags 中包含 MAP_ANONYMOUS 标志，则忽略该参数。</p>
+</li>
+<li>
+<p>offset：映射的起始偏移量，指定从文件的哪个位置开始映射。通常传入 0，表示从文件开头开始映射。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>以上是 mmap 函数的参数解释。使用 mmap 函数可以实现高效的文件 I/O 操作，尤其是在处理大文件时效果更加</p>
+</div>
+<div class="sect2">
+<h3 id="_实现原理"><a class="anchor" href="#_实现原理"></a>2.1. 实现原理</h3>
+<div class="paragraph">
+<p>mmap (memory map) 是一种将文件或设备映射到进程虚拟地址空间的机制。它通过在进程虚拟地址空间中分配一块内存，然后将文件或设备的数据映射到该内存中，实现了文件或设备数据的直接访问。在 Linux 系统中，mmap 是非常常用的系统调用之一。</p>
+</div>
+<div class="paragraph">
+<p>mmap 的实现原理主要涉及到内存管理、文件系统和硬件设备等多个方面。具体来说，mmap 实现的主要步骤如下：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>调用进程通过系统调用 mmap() 向操作系统申请一块虚拟地址空间，操作系统为该进程分配一块未使用的内存区域。</p>
+</li>
+<li>
+<p>mmap() 系统调用会返回映射区的起始地址，进程可以通过该地址访问该映射区。</p>
+</li>
+<li>
+<p>操作系统会在虚拟地址空间和物理内存之间建立映射关系，即将申请的虚拟地址空间映射到实际的物理内存上。</p>
+</li>
+<li>
+<p>如果是将文件映射到内存中，则操作系统会为该文件打开一个文件描述符，并将其关联到映射区。这样，当进程对该映射区进行读写操作时，就相当于对文件进行了读写操作。</p>
+</li>
+<li>
+<p>如果是将设备映射到内存中，则操作系统会为该设备建立一个虚拟设备驱动，并将其与映射区关联。当进程对该映射区进行读写操作时，虚拟设备驱动会将数据传递给实际的硬件设备进行处理。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>需要注意的是，由于操作系统采用了虚拟内存管理技术，因此对于大多数文件和设备，mmap 映射的数据并不是直接从磁盘或设备读取的，而是在需要访问数据时才会从磁盘或设备中读取到内存中。这样可以提高数据访问速度，并减少对物理设备的频繁访问。同时，操作系统还会对映射区进行缓存，从而进一步提高读写操作的效率。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_写入示例"><a class="anchor" href="#_写入示例"></a>2.2. 写入示例</h3>
+<div class="paragraph">
+<p>下面是一个简单的示例，演示如何使用mmap将文件映射到内存中，并将一些数据写入该文件。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-c hljs" data-lang="c">#include &lt;sys/mman.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main(int argc, char *argv[]) {
+int fd;
+struct stat sb;
+char *mapped;
+
+    // 打开文件并获取文件大小
+    fd = open(argv[1], O_RDWR);
+    fstat(fd, &amp;sb);
+
+    // 将文件映射到内存中
+    mapped = mmap(NULL, sb.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+
+    // 向文件写入数据
+    sprintf(mapped, "Hello, world!");
+
+    // 将更改写回磁盘
+    msync(mapped, sb.st_size, MS_SYNC);
+
+    // 取消映射并关闭文件
+    munmap(mapped, sb.st_size);
+    close(fd);
+
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在上面的示例中，我们首先使用open()打开文件，并使用fstat()获取文件的大小。然后，我们使用mmap()将文件映射到内存中，并使用sprintf()向该文件写入数据。最后，我们使用msync()将更改写回磁盘，并使用munmap()取消映射。</p>
+</div>
+<div class="paragraph">
+<p>需要注意的是，由于使用了MAP_SHARED标志，因此其他进程也可以访问该文件的映射，因此需要小心并确保正确同步。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_位掩码"><a class="anchor" href="#_位掩码"></a>3. 位掩码</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>位掩码是计算机编程中的一种常见技术，用于按位存储和表示多个布尔值的状态。位掩码通常使用二进制数值中的每个位来表示一个状态变量，从而能够在单个整数值中存储多个状态变量。</p>
+</div>
+<div class="paragraph">
+<p>位掩码通常使用按位与（AND）和按位或（OR）运算符来设置和检查单个位的值。例如，如果我们有一个八位的位掩码，其中每个位表示一个状态变量，我们可以使用以下代码将第二个和第六个状态变量设置为 true：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-c hljs" data-lang="c">unsigned char mask = 0;
+mask |= (1 &lt;&lt; 1);  // set the second bit to 1
+mask |= (1 &lt;&lt; 5);  // set the sixth bit to 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在这个例子中，我们使用按位或运算符将一个二进制的 1 值左移 1 和 5 位，然后使用位掩码来设置第二个和第六个位为 1。</p>
+</div>
+<div class="paragraph">
+<p>我们还可以使用按位与运算符来检查位掩码中特定位的值。例如，如果我们想检查第四个位是否设置为 1，我们可以使用以下代码：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-c hljs" data-lang="c">if (mask &amp; (1 &lt;&lt; 3)) {
+// the fourth bit is set to 1
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在这个例子中，我们使用按位与运算符来测试掩码中的第四位（1 &lt;&lt; 3），如果该位设置为 1，则条件成立。否则，条件不成立。</p>
+</div>
+<div class="paragraph">
+<p>位掩码是一种非常有效的技术，可以用于存储和检查大量的布尔状态，从而减少内存使用和代码复杂性。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_掩码"><a class="anchor" href="#_掩码"></a>4. 掩码</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>掩码是在计算机领域中经常使用的一种技术，用于将某个数值中的某些位设为 0 或 1，以达到一定的目的。</p>
+</div>
+<div class="paragraph">
+<p>掩码通常使用二进制数表示，其中每一位称为一个二进制位。掩码是一种用来过滤二进制位的技术，通常用于屏蔽二进制位中的一些位，以便对其他位进行操作。</p>
+</div>
+<div class="paragraph">
+<p>掩码通常用于以下两种情况：</p>
+</div>
+<div class="sect2">
+<h3 id="_屏蔽掉不需要的二进制位"><a class="anchor" href="#_屏蔽掉不需要的二进制位"></a>4.1. 屏蔽掉不需要的二进制位</h3>
+<div class="paragraph">
+<p>在计算机网络中，IP 地址通常由 32 位的二进制数表示。但是，通常我们只关心其中的一部分，比如子网掩码中指定的主机地址部分。为了方便进行计算，可以使用一个掩码，将 IP 地址中不需要的部分全部屏蔽掉，只留下需要的部分。</p>
+</div>
+<div class="paragraph">
+<p>例如，如果子网掩码为 255.255.255.0，则可以用二进制数表示为 11111111.11111111.11111111.00000000，其中前 24 位用 1 表示要保留的部分，后 8 位用 0 表示要屏蔽的部分。这个掩码就可以用来屏蔽 IP 地址中的不需要部分。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_提取需要的二进制位"><a class="anchor" href="#_提取需要的二进制位"></a>4.2. 提取需要的二进制位</h3>
+<div class="paragraph">
+<p>在计算机领域中，往往需要从某个数值中提取出一些二进制位，以进行特定的计算或操作。这时可以使用一个掩码，将需要的二进制位全部设为 1，不需要的部分全部设为 0，然后与原数值进行按位与运算，就可以得到需要的二进制位。</p>
+</div>
+<div class="paragraph">
+<p>例如，如果需要从一个 32 位的整数中提取出第 5 到第 10 位（即从右往左数第 26 到第 21 位），可以使用一个掩码 0x0000003F（二进制为 00000000 00000000 00000000 00111111）将这些位全部设为 1，然后与原数值进行按位与运算，即可得到需要的二进制位。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_汇编"><a class="anchor" href="#_汇编"></a>5. 汇编</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-as hljs" data-lang="as">main:
+2 subq $8, %rsp
+3 movl $.LCO, %edi
+4 call puts
+5 movl $0, %eax
+6 addq $8, %rsp
+7 ret</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>x86-64架构中的CPU有多种寄存器，可以按照功能和使用方法进行分类。以下是常见的寄存器分类：</p>
+</div>
+<div class="paragraph">
+<div class="title">通用寄存器：用于存储整数数据，可以用于计算、存储临时变量等。</div>
+<p>%rax、%rbx、%rcx、%rdx、%rsi、%rdi、%r8、%r9、%r10、%r11、%r12、%r13、%r14、%r15</p>
+</div>
+<div class="paragraph">
+<div class="title">浮点寄存器：用于存储浮点数和向量数据。</div>
+<p>%xmm0、%xmm1、%xmm2、%xmm3、%xmm4、%xmm5、%xmm6、%xmm7、%xmm8、%xmm9、%xmm10、%xmm11、%xmm12、%xmm13、%xmm14、%xmm15</p>
+</div>
+<div class="paragraph">
+<div class="title">段寄存器：用于存储段的起始地址和访问权限。</div>
+<p>%cs、%ss、%ds、%es、%fs、%gs</p>
+</div>
+<div class="paragraph">
+<div class="title">控制寄存器：用于管理系统的控制状态。</div>
+<p>%cr0、%cr2、%cr3、%cr4</p>
+</div>
+<div class="paragraph">
+<div class="title">标志寄存器：用于存储CPU的状态标志，如进位标志、零标志、符号标志等。</div>
+<p>%eflags</p>
+</div>
+<div class="paragraph">
+<p>在使用寄存器时，有一些基本的规则需要遵守：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>不同指令可能使用的寄存器不同，需要查阅相关的文档或手册，以确定每个指令的寄存器使用方法。</p>
+</li>
+<li>
+<p>每个寄存器都有固定的位数，例如x86-64中的通用寄存器都是64位。因此，需要确保使用正确的寄存器，否则会导致程序出错或崩溃。</p>
+</li>
+<li>
+<p>寄存器是有限的资源，如果使用不当，可能会导致寄存器耗尽或者造成寄存器冲突等问题。因此，需要尽可能地减少对寄存器的使用，以提高代码的效率和稳定性。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>ah, al, ax, eax 和 rax 都是 x86-64架构中的通用寄存器 %ax 的子集，每个子集代表的字节数不同。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>%ah：高8位寄存器，用于存储字节的高8位。</p>
+</li>
+<li>
+<p>%al：低8位寄存器，用于存储字节的低8位。</p>
+</li>
+<li>
+<p>%ax：16位寄存器，用于存储一个16位的字。</p>
+</li>
+<li>
+<p>%eax：32位寄存器，用于存储一个32位的双字。</p>
+</li>
+<li>
+<p>%rax：64位寄存器，用于存储一个64位的四字。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在使用这些寄存器时，需要根据实际需要选择合适的寄存器，以确保程序的正确性和高效性。例如，如果要存储一个32位的整数，可以使用 %eax 或 %rax，而如果要存储一个16位的整数，可以使用 %ax 或 %eax。当然，这只是一种基本的使用方法，具体取决于编写的代码和上下文。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dma"><a class="anchor" href="#_dma"></a>6. DMA</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_dma_技术"><a class="anchor" href="#_dma_技术"></a>6.1. DMA 技术</h3>
+<div class="paragraph">
+<p>DMA 是“Direct Memory Access”的缩写，意为“直接内存访问”。它是一种计算机数据传输技术，允许外设设备（如硬盘、网卡、显卡等）直接访问系统内存，而无需通过 CPU 参与数据传输。</p>
+</div>
+<div class="paragraph">
+<p>DMA 技术可以提高计算机的数据传输效率，因为它可以在数据传输过程中减少 CPU 的介入，从而释放出 CPU 资源来执行其他任务。同时，DMA 也可以减少数据传输过程中的延迟和瓶颈，提高计算机的响应速度和吞吐量。</p>
+</div>
+<div class="paragraph">
+<p>在现代计算机系统中，DMA 技术已经广泛应用于各种外设设备，包括硬盘、网卡、显卡、声卡等，以提高计算机系统的性能和稳定性。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dma_控制器"><a class="anchor" href="#_dma_控制器"></a>6.2. DMA 控制器</h3>
+<div class="paragraph">
+<p>DMA 控制器是一种硬件设备，它可以控制数据在系统内存和外设之间的传输，而无需 CPU 参与。</p>
+</div>
+<div class="paragraph">
+<p>在 PC 机中，DMA 控制器通常包含在主板上的芯片组中。它可以控制多个 DMA 通道，每个通道都可以连接到一个外设设备。在使用 DMA 进行数据传输时，外设设备会向 DMA 控制器发送请求，请求控制器将数据从外设设备传输到内存或者从内存传输到外设设备。</p>
+</div>
+<div class="paragraph">
+<p>除了 DMA 控制器，外设设备本身也需要支持 DMA 技术。这通常需要外设设备具备 DMA 引擎，以便能够将数据直接传输到内存或从内存直接读取数据。在许多现代计算机系统中，大多数常见的外设设备都支持 DMA 技术。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mmu"><a class="anchor" href="#_mmu"></a>7. MMU</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>虚拟内存是一种计算机内存管理技术，它将磁盘空间用作临时的扩展内存。虚拟内存的实现需要计算机系统中的硬件和软件支持。</p>
+</div>
+<div class="paragraph">
+<p>硬件方面，虚拟内存需要计算机系统中的内存管理单元（MMU）来支持。 MMU 是一种硬件设备，它负责管理计算机系统中的物理内存和虚拟内存之间的映射关系。 MMU 可以将虚拟内存地址转换为物理内存地址，并确保访问物理内存的合法性。</p>
+</div>
+<div class="paragraph">
+<p>此外，虚拟内存还需要计算机系统中的磁盘存储空间来存储页面交换文件或页面文件。页面交换文件或页面文件是虚拟内存中的一部分，用于存储暂时不需要的页面或数据。当需要这些页面或数据时，系统可以将它们从磁盘中读取到物理内存中。</p>
+</div>
+<div class="paragraph">
+<p>软件方面，虚拟内存需要操作系统的支持。操作系统需要提供虚拟内存管理器，用于管理虚拟内存和物理内存之间的映射关系，并进行页面交换和页面置换等操作。常见的操作系统，如 Windows、Mac OS 和 Linux 等，都提供了完善的虚拟内存管理机制。</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

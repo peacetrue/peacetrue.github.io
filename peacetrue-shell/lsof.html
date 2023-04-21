@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>lsof :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/lsof.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="lsof.html">lsof</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/lsof.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">lsof</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>lsof 是 <span class="underline">l</span>i<span class="underline">s</span>t <span class="underline">o</span>pen <span class="underline">f</span>iles 的缩写，
+指列出打开的文件，打开的文件可以是常规文件、目录、块特殊文件、字符特殊文件、执行文本引用、库、流或网络文件（互联网套接字、NFS 文件或 UNIX 域套接字）。
+文件系统中的特定文件或所有文件都可以按路径选择。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>If any list request option is specified, other list requests must be specifically requested - e.g., if -U is specified for the listing of UNIX socket
+files,  NFS files won't be listed unless -N is also specified; or if a user list is specified with the -u option, UNIX domain socket files, belonging
+to users not in the list, won't be listed unless the -U option is also specified.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>如果指定了任何列表请求选项，则必须专门请求其他列表请求 - 例如，如果为 UNIX 套接字的列表指定了 -U
+文件，除非还指定了 -N，否则不会列出 NFS 文件; 或者，如果使用 -u 选项指定用户列表，则 UNIX 域套接字文件属于
+对于不在列表中的用户，将不会列出，除非还指定了 -U 选项。</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Normally list options that are specifically stated are ORed - i.e., specifying the -i option without an address and the -ufoo option produces a list‐
+ing of all network files OR files belonging to processes owned by user ``foo''.  The exceptions are:</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_安装"><a class="anchor" href="#_安装"></a>1. 安装</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">CentOS</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ yum install -y lsof</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_用法"><a class="anchor" href="#_用法"></a>2. 用法</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看当前进程打开的文件
+$ lsof -p $$
+COMMAND   PID USER   FD   TYPE DEVICE  SIZE/OFF     NODE NAME
+bash    25500 root  cwd    DIR  253,0      4096  8409153 /root
+bash    25500 root  rtd    DIR  253,0       224       64 /
+bash    25500 root  txt    REG  253,0    964536 12584511 /usr/bin/bash
+bash    25500 root  mem    REG  253,0     61560   562188 /usr/lib64/libnss_files-2.17.so
+bash    25500 root  mem    REG  253,0 106176928 13012187 /usr/lib/locale/locale-archive
+bash    25500 root  mem    REG  253,0   2156592      624 /usr/lib64/libc-2.17.so
+bash    25500 root  mem    REG  253,0     19248   562162 /usr/lib64/libdl-2.17.so
+bash    25500 root  mem    REG  253,0    174576    38604 /usr/lib64/libtinfo.so.5.9
+bash    25500 root  mem    REG  253,0    163312    15946 /usr/lib64/ld-2.17.so
+bash    25500 root  mem    REG  253,0     26970  4222364 /usr/lib64/gconv/gconv-modules.cache
+bash    25500 root    0u   CHR  136,8       0t0       11 /dev/pts/8
+bash    25500 root    1u   CHR  136,8       0t0       11 /dev/pts/8
+bash    25500 root    2u   CHR  136,8       0t0       11 /dev/pts/8
+bash    25500 root  255u   CHR  136,8       0t0       11 /dev/pts/8</code></pre>
+</div>
+</div>
+<div class="dlist">
+<div class="title">参数说明</div>
+<dl>
+<dt class="hdlist1">-p</dt>
+<dd>
+<p>p 是 process 的缩写，指定查看的进程。</p>
+</dd>
+<dt class="hdlist1">$$</dt>
+<dd>
+<p>当前进程。</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">输出结果说明</div>
+<dl>
+<dt class="hdlist1">COMMAND</dt>
+<dd>
+<p>启动进程使用的命令。</p>
+</dd>
+<dt class="hdlist1">PID</dt>
+<dd>
+<p>PID 是 <span class="underline">p</span>rocess <span class="underline">id</span>entity 的缩写，指进程号。</p>
+</dd>
+<dt class="hdlist1">USER</dt>
+<dd>
+<p>进程所属用户。</p>
+</dd>
+<dt class="hdlist1">FD</dt>
+<dd>
+<p>FD 是 <span class="underline">f</span>ile <span class="underline">d</span>escriptor 的缩写，指进程打开的文件描述符。</p>
+</dd>
+<dt class="hdlist1">TYPE</dt>
+<dd>
+<p>文件描述符类型。</p>
+</dd>
+<dt class="hdlist1">DEVICE</dt>
+<dd>
+<p>设备号。</p>
+</dd>
+<dt class="hdlist1">SIZE/OFF</dt>
+<dd>
+<p>SIZE 指文件大小；OFF(SET) 指读取偏移。</p>
+</dd>
+<dt class="hdlist1">NODE</dt>
+<dd>
+<p>INODE 号。</p>
+</dd>
+<dt class="hdlist1">NAME</dt>
+<dd>
+<p>文件路径。</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">FD 详解</div>
+<dl>
+<dt class="hdlist1">cwd</dt>
+<dd>
+<p>cwd 是 <span class="underline">c</span>urrent <span class="underline">w</span>orking <span class="underline">d</span>irectory 的缩写，指当前工作目录。</p>
+</dd>
+<dt class="hdlist1">rtd</dt>
+<dd>
+<p>rtd 是 <span class="underline">r</span>oo<span class="underline">t</span> <span class="underline">d</span>irectory 的缩写，指根路径。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考"><a class="anchor" href="#_参考"></a>3. 参考</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/512491366" target="_blank" rel="noopener">文件描述符总结</a></p>
+</li>
+<li>
+<p><a href="https://man7.org/linux/man-pages/man8/lsof.8.html" target="_blank" rel="noopener">man-lsof</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>磁盘 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/disk.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="disk.html">磁盘</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/disk.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">磁盘</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>硬盘、软盘。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lsblk"><a class="anchor" href="#_lsblk"></a>1. lsblk</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>lsblk 是 <span class="underline">l</span>i<span class="underline">s</span>t <span class="underline">bl</span>oc<span class="underline">k</span> devices 的缩写，指列出块设备。</p>
+</div>
+<div class="paragraph">
+<p>lsblk 列出了有关所有可用或指定块设备的信息。lsblk 命令读取 <strong>sysfs</strong> 文件系统以收集信息。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，该命令以树状格式打印所有块设备（RAM 除外）。使用 <code>lsblk --help</code> 获取所有可用列的列表。</p>
+</div>
+<div class="listingblock">
+<div class="title">lsblk</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ lsblk
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   30G  0 disk
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0    7G  0 part
+  ├─centos-root 253:0    0  6.2G  0 lvm  /
+  └─centos-swap 253:1    0  820M  0 lvm  [SWAP]
+sr0              11:0    1 1024M  0 rom</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">sda</dt>
+<dd>
+<p>sd 是 <span class="underline">S</span>CSI <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> <span class="underline">d</span>isk 的缩写。
+a 表示系统读取到的第一块硬盘，如果有多块硬盘，则从 a ~ z 依次排列。</p>
+</dd>
+<dt class="hdlist1">sda1</dt>
+<dd>
+<p>1 表示 sda 硬盘下的第一个分区，如果有多个分区，则从 1 ~ 9 依次排列。</p>
+</dd>
+<dt class="hdlist1">sr0</dt>
+<dd>
+<p>sr 是 <span class="underline">S</span>CSI <span class="underline">R</span>OM 的缩写，数字含义同上。</p>
+</dd>
+<dt class="hdlist1">MAJ:MIN</dt>
+<dd>
+<p>设备主次号。</p>
+</dd>
+<dt class="hdlist1">RM</dt>
+<dd>
+<p>RM 是 <span class="underline">r</span>e<span class="underline">m</span>ovable device 的缩写，表示是否可移除设备。</p>
+</dd>
+<dt class="hdlist1">RO</dt>
+<dd>
+<p>是否只读设备。</p>
+</dd>
+<dt class="hdlist1">lvm</dt>
+<dd>
+<p>参考 <a href="#_lvm">lvm</a>。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fdisk"><a class="anchor" href="#_fdisk"></a>2. fdisk</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>fdisk 是 <span class="underline">f</span>ormat <span class="underline">disk</span> 的缩写，指操作磁盘分区表。</p>
+</div>
+<div class="listingblock">
+<div class="title">常用命令如下：</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 列出分区表
+$ fdisk -l
+
+Disk /dev/sda: 32.2 GB, 32212254720 bytes, 62914560 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000bf7e3
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    16777215     7339008   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 6652 MB, 6652166144 bytes, 12992512 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 859 MB, 859832320 bytes, 1679360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+# 更改分区表
+$ fdisk /dev/sda
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition\'s system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Partition type:
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended
+Select (default p): p
+Partition number (3,4, default 3):
+Using default value 3
+First sector (16777216-62914559, default 16777216):
+Using default value 16777216
+Last sector, +sectors or +size{K,M,G} (16777216-62914559, default 62914559):
+Using default value 62914559
+Partition 3 of type Linux and of size 22 GiB is set
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+
+WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
+The kernel still uses the old table. The new table will be used at
+the next reboot or after you run partprobe(8) or kpartx(8)
+Syncing disks.
+
+# 更新内核的硬盘分区表信息
+$ partprobe</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lvm"><a class="anchor" href="#_lvm"></a>3. lvm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)" target="_blank" rel="noopener">lvm</a> 是 <span class="underline">L</span>ogical <span class="underline">V</span>olume <span class="underline">M</span>anager 的缩写。</p>
+</div>
+<div class="listingblock">
+<div class="title">常用命令如下：</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查看物理卷
+$ pvs
+  PV         VG     Fmt  Attr PSize  PFree
+  /dev/sda2  centos lvm2 a--  &lt;7.00g    0
+
+# 查看卷组
+$ vgs
+  VG     #PV #LV #SN Attr   VSize  VFree
+  centos   1   2   0 wz--n- &lt;7.00g    0
+
+# 查看逻辑卷
+$ lvs
+  LV   VG     Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  root centos -wi-ao----  &lt;6.20g
+  swap centos -wi-ao---- 820.00m
+
+# 创建物理卷
+$ pvcreate /dev/sda3
+  Physical volume "/dev/sda3" successfully created.
+
+# 添加物理卷到卷组
+$ vgextend centos /dev/sda3
+  Volume group "centos" successfully extended
+
+# 扩展逻辑卷，使用剩余的空间
+$ lvextend -l +100%FREE /dev/centos/root
+  Size of logical volume centos/root changed from &lt;6.20 GiB (1586 extents) to 28.19 GiB (7217 extents).
+  Logical volume centos/root successfully resized.
+
+# 查看 / 可用空间
+$ df -Th
+文件系统                类型      容量  已用  可用 已用% 挂载点
+devtmpfs                devtmpfs  4.8G     0  4.8G    0% /dev
+tmpfs                   tmpfs     4.9G     0  4.9G    0% /dev/shm
+tmpfs                   tmpfs     4.9G  8.7M  4.8G    1% /run
+tmpfs                   tmpfs     4.9G     0  4.9G    0% /sys/fs/cgroup
+/dev/mapper/centos-root xfs       6.2G  6.0G  193M   97% /
+/dev/sda1               xfs      1014M  181M  834M   18% /boot
+tmpfs                   tmpfs     984M     0  984M    0% /run/user/0
+
+# 扩展文件系统空间，使用剩余空间
+$ xfs_growfs /dev/centos/root
+meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=406016 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=1624064, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 1624064 to 7390208</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_df"><a class="anchor" href="#_df"></a>4. df</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>df 是 <span class="underline">d</span>isk <span class="underline">f</span>ree 的缩写，
+指磁盘文件，用于查看文件系统磁盘空间使用情况。</p>
+</div>
+<div class="paragraph">
+<p>本手册页记录了 df 的 GNU 版本。
+df 显示文件系统上包含每个文件名参数的可用磁盘空间量。
+如果未提供文件名，则会显示所有当前挂载的文件系统上的可用空间。
+默认情况下，磁盘空间以 1K 块显示，除非设置了环境变量 POSIXLY_CORRECT，在这种情况下，将使用 512 字节块。
+如果参数是包含已挂载文件系统的磁盘设备节点的绝对文件名，则 df 显示该文件系统上的可用空间，而不是包含设备节点的文件系统上的可用空间。
+此版本的 df 无法显示未挂载文件系统上的可用空间，因为在大多数类型的系统上，这样做需要非常不可移植的文件系统结构的深入了解。</p>
+</div>
+<div class="listingblock">
+<div class="title">常用命令如下：</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ df -hi
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 4.8G     0  4.8G   0% /dev
+tmpfs                    4.9G     0  4.9G   0% /dev/shm
+tmpfs                    4.9G  8.7M  4.8G   1% /run
+tmpfs                    4.9G     0  4.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root  6.2G  6.2G   49M 100% /
+/dev/sda1               1014M  181M  834M  18% /boot
+tmpfs                    984M     0  984M   0% /run/user/0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_du"><a class="anchor" href="#_du"></a>5. du</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 查询前 10 个，磁盘空间占用最高的文件或目录
+$ du -h / | sort -h -r | head -n 10
+
+35G     /
+28G     /var
+20G     /var/log
+8.4G    /var/lib
+8.1G    /var/lib/docker
+4.8G    /var/lib/docker/containers
+4.7G    /usr
+3.3G    /var/lib/docker/overlay2
+2.3G    /var/lib/docker/containers/4cd6a41874de24ddde8b003b5a1a7f106697e30bc066168ab1085273eee26051
+1.4G    /var/lib/docker/containers/b0dba1e87ee6cd6fbd3b0aaffb437451711aa9113894a4d751c6cebf5fd472f0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考"><a class="anchor" href="#_参考"></a>6. 参考</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/xjp_xujiping/article/details/120076715" target="_blank" rel="noopener">Linux 磁盘与分区命名</a></p>
+</li>
+<li>
+<p><a href="https://unix.stackexchange.com/questions/412731/do-all-disks-devices-in-my-hw-machines-start-with-sd" target="_blank" rel="noopener">Do all disks devices in my HW machines start with - sd?</a></p>
+</li>
+<li>
+<p><a href="https://www.redhat.com/sysadmin/resize-lvm-simple" target="_blank" rel="noopener">How to resize a logical volume with 5 simple LVM commands</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://en.wikipedia.org/wiki/SCSI" target="_blank" rel="noopener">SCSI</a> 是一套用于在计算机和外围设备之间进行物理连接和传输数据的标准。
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

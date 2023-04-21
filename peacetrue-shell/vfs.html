@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>虚拟文件系统 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/vfs.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="peacetrue-shell" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shell 脚本库</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shell 脚本库</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shell 脚本库</a></li>
+    <li><a href="vfs.html">虚拟文件系统</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/vfs.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">虚拟文件系统</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">VFS</dt>
+<dd>
+<p><strong>v</strong>irtual <strong>f</strong>ile <strong>s</strong>ystem，虚拟文件系统。</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vfs.jpeg" alt="vfs">
+</div>
+<div class="title">Figure 1. vfs</div>
+</div>
+<div class="imageblock plantuml">
+<div class="content">
+<img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuKhBpqb9BL9uld3DyzapghaKW00gL9oIQ0GHg4KJDeG9rtBbvPUaAkIaffKevAU1TLWfFEreUzgpwyck7Wn9GxZaZWOkBeVKl1IW2m00" alt="vfs">
+</div>
+<div class="title">Figure 2. 硬盘分区</div>
+</div>
+<div class="listingblock">
+<div class="title">根目录</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">$ ls -lh /
+dr-xr-xr-x.   5 root root 4.0K Sep  9 16:14 boot
+drwxr-xr-x.  20 root root 3.1K Sep 10 00:14 dev
+drwxr-xr-x.  82 root root 8.0K Sep 10 06:19 etc
+drwxr-xr-x.   2 root root    6 Apr 11  2018 home
+lrwxrwxrwx.   1 root root    7 Jan 21  2021 lib -&gt; usr/lib
+lrwxrwxrwx.   1 root root    9 Jan 21  2021 lib64 -&gt; usr/lib64
+drwxr-xr-x.   2 root root    6 Apr 11  2018 media
+drwxr-xr-x.   2 root root    6 Apr 11  2018 mnt
+drwxr-xr-x.   2 root root    6 Apr 11  2018 opt
+dr-xr-xr-x. 111 root root    0 Sep  9 16:14 proc
+dr-xr-x---.  18 root root 4.0K Sep 10 00:03 root
+drwxr-xr-x.  25 root root  720 Sep 10 06:19 run
+lrwxrwxrwx.   1 root root    8 Jan 21  2021 sbin -&gt; usr/sbin
+drwxr-xr-x.   2 root root    6 Apr 11  2018 srv
+dr-xr-xr-x.  13 root root    0 Sep 10 00:14 sys
+drwxrwxrwt.  10 root root  20K Sep 10 05:53 tmp
+drwxr-xr-x.  13 root root  155 Jan 21  2021 usr
+drwxr-xr-x.  19 root root  267 Jan 21  2021 var</code></pre>
+</div>
+</div>
+<div class="dlist">
+<div class="title">文件类型</div>
+<dl>
+<dt class="hdlist1">-</dt>
+<dd>
+<p>普通文件，文本、图片、可执行。</p>
+</dd>
+<dt class="hdlist1">d</dt>
+<dd>
+<p>目录。</p>
+</dd>
+<dt class="hdlist1">c</dt>
+<dd>
+<p>字符设备，当前读取，例如：流、键盘。</p>
+</dd>
+<dt class="hdlist1">b</dt>
+<dd>
+<p>块设备，随机读取，例如：硬盘、内存。</p>
+</dd>
+<dt class="hdlist1">p</dt>
+<dd>
+<p>pipeline，管道。</p>
+</dd>
+<dt class="hdlist1">s</dt>
+<dd>
+<p>socket，套接字。</p>
+</dd>
+<dt class="hdlist1">l</dt>
+<dd>
+<p>链接。</p>
+</dd>
+<dt class="hdlist1">[eventpoll]</dt>
+<dd>
+<p>eventpoll 。</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="title">df</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># disk file，磁盘文件
+$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 1.9G     0  1.9G   0% /dev
+tmpfs                    1.9G     0  1.9G   0% /dev/shm
+tmpfs                    1.9G  8.6M  1.9G   1% /run
+tmpfs                    1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root  6.2G  5.5G  705M  89% /
+/dev/sda1               1014M  181M  834M  18% /boot
+tmpfs                    379M     0  379M   0% /run/user/0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>文件系统名称 <code>/dev/sda1</code> 是怎么来的？</p>
+</div>
+<div class="paragraph">
+<p>参考：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://zh.wikipedia.org/zh-cn/Tmpfs" target="_blank" rel="noopener">tmpfs</a></p>
+</li>
+<li>
+<p><a href="https://zh.wikipedia.org/zh-cn/RAM_disk" target="_blank" rel="noopener">RAM盘</a></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/haoxiaoyu/p/c7f364de3598978b5ab293e8fb0e3cca.html" target="_blank" rel="noopener">/dev/shm</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_手动挂载分区"><a class="anchor" href="#_手动挂载分区"></a>1. 手动挂载分区</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 创建一个被 0 填充的 100M 镜像
+$ dd \<i class="conum" data-value="1"></i><b>(1)</b>
+    if=/dev/zero \<i class="conum" data-value="2"></i><b>(2)</b>
+    of=mydisk.img \<i class="conum" data-value="3"></i><b>(3)</b>
+    bs=1048576 \<i class="conum" data-value="4"></i><b>(4)</b>
+    count=100 <i class="conum" data-value="5"></i><b>(5)</b>
+100+0 records in
+100+0 records out
+104857600 bytes (105 MB) copied, 0.0345331 s, 3.0 GB/s
+
+$ ls -lh mydisk.img
+-rw-r--r--. 1 root root 100M Sep 10 08:53 mydisk.img
+
+# 挂载到环回接口
+$ losetup /dev/loop0 mydisk.img
+$ ls -l /dev/loop0
+brw-rw----. 1 root disk 7, 0 Sep 10 09:00 /dev/loop0
+
+# 格式化磁盘
+$ mke2fs mydisk.img
+
+$ mkdir mydisk
+# 挂载磁盘
+$ mount -t ext2 /dev/loop0 mydisk
+
+$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 1.9G     0  1.9G   0% /dev
+tmpfs                    1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs                    1.9G  8.6M  1.9G   1% /run
+tmpfs                    1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root  6.2G  5.6G  701M  89% /
+tmpfs                    379M     0  379M   0% /run/user/0
+/dev/sda1               1014M  181M  834M  18% /boot
+/dev/loop0                97M  1.6M   91M   2% /root/mydisk</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong>d</strong>evice <strong>d</strong>river，设备驱动</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong>i</strong>nput <strong>f</strong>ile，输入文件，/dev/zero 表示 0</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><strong>o</strong>utput <strong>f</strong>ile，输出文件</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><strong>b</strong>lock <strong>s</strong>ize，块设备</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>数目</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>参考：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.cnblogs.com/kongzhongqijing/articles/9049336.html" target="_blank" rel="noopener">dd</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

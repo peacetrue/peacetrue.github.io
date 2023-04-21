@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>简介 :: 安宁的知识库</title>
+    <title>概述 :: 安宁的知识库</title>
     <link rel="canonical" href="https://peacetrue.github.io/peacetrue-shell/index.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -34,25 +34,13 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="index.html">简介</a>
+    <a class="nav-link" href="index.html">概述</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Common</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="根据端口杀进程.html">根据端口杀进程</a>
-  </li>
-</ul>
+    <a class="nav-link" href="start.html">快速入门</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Git</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="git/clear-commit.html">清除提交记录</a>
-  </li>
-</ul>
+    <a class="nav-link" href="version.html">版本变更</a>
   </li>
 </ul>
   </li>
@@ -90,6 +78,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -106,7 +102,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../overview/index.html">概述</a>
+      <a class="title" href="../overview/index.html">总览</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../overview/index.html">master</a>
@@ -141,7 +137,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Shell 脚本库</a></li>
-    <li><a href="index.html">简介</a></li>
+    <li><a href="index.html">概述</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-shell/edit/master/docs/antora/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
@@ -151,54 +147,65 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">简介</h1>
+<h1 class="page">概述</h1>
+<div class="sect1">
+<h2 id="_简介what"><a class="anchor" href="#_简介what"></a>1. 简介（What）</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://peacetrue.github.io/peacetrue-shell">peacetrue-shell</a> 是一个支持 <a href="https://github.com/basherpm/basher" target="_blank" rel="noopener">basher</a> 的 Shell 脚本库，
+<p><a href="https://peacetrue.github.io/peacetrue-shell/">peacetrue-shell</a> 是一个支持 <a href="https://github.com/basherpm/basher" target="_blank" rel="noopener">basher</a> 的 Shell 脚本库，
 存储一些自定义的 Shell 脚本。</p>
 </div>
-<div class="paragraph">
-<p><strong>basher</strong> 是一个用于 Shell 脚本的包管理器，
-可以使用下面的命令安装 <strong>peacetrue-shell</strong>：</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_背景why"><a class="anchor" href="#_背景why"></a>2. 背景（Why）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>自定义的 Shell 脚本如何简单快速地在不同环境共享呢？</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_用法how"><a class="anchor" href="#_用法how"></a>3. 用法（How）</h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 安装 basher
-$ curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash
-
+curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash
 # 安装 peacetrue-shell
-$ basher install peacetrue/peacetrue-shell
-Cloning into '/Users/xiayx/.basher/cellar/packages/peacetrue/peacetrue-shell'...
-remote: Enumerating objects: 46, done.
-remote: Counting objects: 100% (46/46), done.
-remote: Compressing objects: 100% (37/37), done.
-remote: Total 46 (delta 2), reused 46 (delta 2), pack-reused 0
-Receiving objects: 100% (46/46), 2.12 MiB | 555.00 KiB/s, done.
-Resolving deltas: 100% (2/2), done.
-
-# 查看 basher 支持的命令
-$ basher commands
-commands
-completions
-help
-init
-install
-link
-list
-outdated
-package-path
-uninstall
-upgrade
-
-# 查看已安装的脚本库
-$ basher list
-peacetrue/peacetrue-shell
-
-# 查看已安装的脚本
-$ ls -la ~/.basher/cellar/bin
-lrwxr-xr-x  1 xiayx  staff   83 Aug  9 17:12 git-clear-commit -&gt; /Users/xiayx/.basher/cellar/packages/peacetrue/peacetrue-shell/bin/git-clear-commit
-
-# 更新 peacetrue-shell
-$ basher upgrade peacetrue/peacetrue-shell</code></pre>
+basher install peacetrue/peacetrue-shell
+# 运行自定义命令：清除 Git 仓库中所有的历史提交记录
+git-clear-commit</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参与者who"><a class="anchor" href="#_参与者who"></a>4. 参与者（Who）</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>peace(<a href="mailto:xiayouxue@hotmail.com">xiayouxue@hotmail.com</a>)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_活动when"><a class="anchor" href="#_活动when"></a>5. 活动（When）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>初始提交于 2022-08-14，最近提交于 2023-03-05。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_许可证license"><a class="anchor" href="#_许可证license"></a>6. 许可证（License）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/peacetrue/peacetrue-shell/blob/master/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a></p>
+</div>
 </div>
 </div>
 </article>

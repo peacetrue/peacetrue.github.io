@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>集成绘图 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-asciidoc/diagram.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-asciidoc" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">学习 AsciiDoc</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="diagram.html">集成绘图</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 AsciiDoc</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">学习 AsciiDoc</a></li>
+    <li><a href="diagram.html">集成绘图</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-asciidoc/edit/master/docs/antora/modules/ROOT/pages/diagram.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">集成绘图</h1>
+<div class="sect1">
+<h2 id="_操作流程"><a class="anchor" href="#_操作流程"></a>1. 操作流程</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>确定要绘制的图片，例如：虚拟内存布局图</p>
+</li>
+<li>
+<p>让 ChatGPT 帮你绘图，例如：请使用 Mermaid 绘制虚拟内存布局图</p>
+</li>
+<li>
+<p>粘贴 ChatGPT 的回答到文档中</p>
+</li>
+<li>
+<p>预览编辑调整发布</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>请使用 Mermaid 绘制上述逻辑的流程图：</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diagram-flow-65c08cac9054a05926a616003aa55843877d959b.png" alt="操作流程图">
+</div>
+<div class="title">Figure 1. 操作流程图</div>
+</div>
+<div class="paragraph">
+<p>文本绘图工具是基础，ChatGPT 辅助文本输入，AsciiDoc 展示图片输出。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_文本绘图工具"><a class="anchor" href="#_文本绘图工具"></a>2. 文本绘图工具</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>有一些文本绘图工具可以用于创建图表，以下是其中比较流行的选择：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Mermaid</dt>
+<dd>
+<p>这是一个 JavaScript 库，用于绘制流程图、序列图、类图和甘特图等。它也可以通过在 AsciiDoc 中编写 Mermaid 代码来创建图表。</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://mermaid.js.org/intro/" target="_blank" rel="noopener">官网</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mermaid-js/mermaid" target="_blank" rel="noopener">GitHub</a> 56.8k star</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">PlantUML</dt>
+<dd>
+<p>这是一个基于文本的绘图工具，可以创建各种类型的图表，包括类图、时序图和用例图等。它可以通过在 AsciiDoc 中编写 PlantUML 代码来创建图表。</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://plantuml.com/zh/" target="_blank" rel="noopener">官网</a></p>
+</li>
+<li>
+<p><a href="https://github.com/plantuml/plantuml" target="_blank" rel="noopener">GitHub</a> 7.9K star</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">Graphviz</dt>
+<dd>
+<p>这是一个基于命令行的绘图工具，可以创建各种类型的图表，如流程图、组织结构图和状态转换图等。在 AsciiDoc 中，可以使用 Graphviz 语法来创建图表。</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://graphviz.org" target="_blank" rel="noopener">官网</a></p>
+</li>
+<li>
+<p><a href="https://gitlab.com/graphviz/graphviz" target="_blank" rel="noopener">GitLab</a> 1082 star</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+star 统计日期为 2023-04-21。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>此类文本绘图工具擅长绘制 UML 类软件图。</p>
+</div>
+<div class="sect2">
+<h3 id="_mermaid"><a class="anchor" href="#_mermaid"></a>2.1. Mermaid</h3>
+<div class="paragraph">
+<p>安装 Mermaid 命令行工具。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 安装 mermaid-cli
+npm install -g @mermaid-js/mermaid-cli
+
+# 进入文档目录
+cd docs/antora/modules/ROOT
+
+# 生成操作系统加载 ELF 流程图
+mmdc -i examples/draw/elf.mmd -o assets/images/draw/elf.mmd.svg</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+更多内容请参考 <a href="https://github.com/mermaid-js/mermaid-cli" target="_blank" rel="noopener">mermaid-cli</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>源文件文本内容如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-mmd hljs" data-lang="mmd">graph TB
+    A[操作系统] --&gt; B(加载elf文件)
+    B --&gt; C{检查文件头}
+    C -- 文件头正确 --&gt; D{创建进程}
+    D --&gt; E(加载程序段)
+    E --&gt; F{检查符号表}
+    F -- 符号表正确 --&gt; G(解析符号表)
+    G --&gt; H{重定位代码}
+    H -- 重定位成功 --&gt; I{启动进程}
+    I --&gt; J(程序执行)
+    C -- 文件头错误 --&gt; K(加载失败)
+    F -- 符号表错误 --&gt; K(加载失败)
+    H -- 重定位失败 --&gt; K(加载失败)
+    K --&gt; L[结束进程]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>目标文件图片展示如下：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/draw/elf.mmd.svg" alt="elf.mmd" width="100%">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chatgpt_辅助输入"><a class="anchor" href="#_chatgpt_辅助输入"></a>3. ChatGPT 辅助输入</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ChatGPT 本身不能直接绘图，但 ChatGPT 可以生成一些文本绘图工具要求的源文件内容。源文件内容必须是基于文本的，如果是基于二进制的则不行，例如：ppt、graffle 等。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asciidoc_展示输出"><a class="anchor" href="#_asciidoc_展示输出"></a>4. AsciiDoc 展示输出</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用 <code>image</code> 标签将文本绘图工具生成的图片引入到文档中，例如：<code>image::draw/elf.mmd.svg[width=100%]</code>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_集成到_asciidoctor"><a class="anchor" href="#_集成到_asciidoctor"></a>5. 集成到 Asciidoctor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在 Asciidoctor 生成文档过程中，通过插件调用绘图工具生成图片，然后将图片引用到文档中。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#安装绘图插件
+sudo gem install asciidoctor-diagram
+#    Fetching asciidoctor-diagram-plantuml-1.2023.5.gem
+#    Fetching asciidoctor-diagram-2.2.7.gem
+#    Fetching asciidoctor-diagram-ditaamini-1.0.3.gem
+#    Successfully installed asciidoctor-diagram-ditaamini-1.0.3
+#    Successfully installed asciidoctor-diagram-plantuml-1.2023.5
+#    Successfully installed asciidoctor-diagram-2.2.7
+#    Parsing documentation for asciidoctor-diagram-ditaamini-1.0.3
+#    Installing ri documentation for asciidoctor-diagram-ditaamini-1.0.3
+#    Parsing documentation for asciidoctor-diagram-plantuml-1.2023.5
+#    Installing ri documentation for asciidoctor-diagram-plantuml-1.2023.5
+#    Parsing documentation for asciidoctor-diagram-2.2.7
+#    Installing ri documentation for asciidoctor-diagram-2.2.7
+#    Done installing documentation for asciidoctor-diagram-ditaamini, asciidoctor-diagram-plantuml, asciidoctor-diagram after 0 seconds
+#    3 gems installed
+
+#获取 draw-test.adoc
+wget https://raw.githubusercontent.com/peacetrue/learn-asciidoc/master/docs/antora/modules/ROOT/pages/draw-test.adoc
+#不使用绘图插件，无法生成图片
+asciidoctor draw-test.adoc
+#指定绘图插件，可以自动生成图片
+asciidoctor -r asciidoctor-diagram draw-test.adoc</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+更多内容请参考 <a href="https://docs.asciidoctor.org/diagram-extension/latest/" target="_blank" rel="noopener">Asciidoctor Diagram</a>。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_集成到_antora"><a class="anchor" href="#_集成到_antora"></a>6. 集成到 Antora</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#安装 plantuml 插件
+npm i -g asciidoctor-plantuml
+
+#安装 kroki 插件
+cd /usr/local/lib/node_modules/@antora/site-generator/node_modules/@antora/asciidoc-loader/lib
+npm i asciidoctor-kroki
+
+#切换到 antora 文档目录
+cd docs/antora
+
+#生成文档
+antora generate playbook.yml
+# 如果出现以下提示：在 xxx 目录下找不到 asciidoctor-kroki
+#  [11:04:20.091] FATAL (antora): Cannot find module 'asciidoctor-kroki'
+#  at path xxx/learn-asciidoc/docs/antora
+#  or /usr/local/lib/node_modules/@antora/site-generator/node_modules/@antora/asciidoc-loader/lib
+# 则到 xxx 目录下执行 npm i asciidoctor-kroki
+
+#使用 Chrome 打开站点
+open -a 'Google Chrome' build/site/index.html</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+更多内容请参考 <a href="https://github.com/ggrossetie/asciidoctor-kroki" target="_blank" rel="noopener">asciidoctor-kroki</a>。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

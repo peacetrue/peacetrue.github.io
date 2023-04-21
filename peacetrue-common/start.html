@@ -84,6 +84,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -100,7 +108,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../overview/index.html">概述</a>
+      <a class="title" href="../overview/index.html">总览</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../overview/index.html">master</a>
@@ -247,13 +255,13 @@ owner.hashCode=501
 owner.toString=xiayx
 name=posix
 readAttributes.symbolicLink=false
-readAttributes.permissions[0]=OWNER_WRITE
-readAttributes.permissions[1]=GROUP_EXECUTE
+readAttributes.permissions[0]=OWNER_EXECUTE
+readAttributes.permissions[1]=OTHERS_EXECUTE
 readAttributes.permissions[2]=GROUP_READ
-readAttributes.permissions[3]=OWNER_READ
-readAttributes.permissions[4]=OWNER_EXECUTE
-readAttributes.permissions[5]=OTHERS_READ
-readAttributes.permissions[6]=OTHERS_EXECUTE
+readAttributes.permissions[3]=OTHERS_READ
+readAttributes.permissions[4]=OWNER_WRITE
+readAttributes.permissions[5]=GROUP_EXECUTE
+readAttributes.permissions[6]=OWNER_READ
 readAttributes.group.name=staff
 readAttributes.group.hashCode=20
 readAttributes.group.toString=staff
@@ -320,13 +328,13 @@ readAttributes.regularFile=true</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">owner(User).name(String)=xiayx
 name(String)=posix
 readAttributes(UnixFileAttributes).symbolicLink(Boolean)=false
-readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=OWNER_WRITE
-readAttributes(UnixFileAttributes).permissions(HashSet)[1](PosixFilePermission)=GROUP_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=OWNER_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[1](PosixFilePermission)=OTHERS_EXECUTE
 readAttributes(UnixFileAttributes).permissions(HashSet)[2](PosixFilePermission)=GROUP_READ
-readAttributes(UnixFileAttributes).permissions(HashSet)[3](PosixFilePermission)=OWNER_READ
-readAttributes(UnixFileAttributes).permissions(HashSet)[4](PosixFilePermission)=OWNER_EXECUTE
-readAttributes(UnixFileAttributes).permissions(HashSet)[5](PosixFilePermission)=OTHERS_READ
-readAttributes(UnixFileAttributes).permissions(HashSet)[6](PosixFilePermission)=OTHERS_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[3](PosixFilePermission)=OTHERS_READ
+readAttributes(UnixFileAttributes).permissions(HashSet)[4](PosixFilePermission)=OWNER_WRITE
+readAttributes(UnixFileAttributes).permissions(HashSet)[5](PosixFilePermission)=GROUP_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[6](PosixFilePermission)=OWNER_READ
 readAttributes(UnixFileAttributes).group(Group).name(String)=staff
 readAttributes(UnixFileAttributes).size(Long)=5766
 readAttributes(UnixFileAttributes).other(Boolean)=false

@@ -84,6 +84,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -100,7 +108,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../overview/index.html">概述</a>
+      <a class="title" href="../overview/index.html">总览</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../overview/index.html">master</a>
@@ -190,28 +198,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    public static StringBeanVisitor buildStringBeanVisitor() {
-        return StringBeanVisitor.builder()
-                // 设置 Bean 遍历器，支持无写入方法的属性，然后按代码书写顺序排序属性
-                .beanTraverser(new OrderedBeanTraverser&lt;&gt;(StandardBeanTraverser.NULLABLE_WRITE_METHOD))
-                // 转换叶子节点对象为字符串，null 对象默认输出为 null，这里改为空字符串
-                .toString(object -&gt; Objects.toString(object, ""))
-                .build();
-    }
-
-    public static final JavaPropsSchema SCHEMA = JavaPropsSchema.emptySchema()
-            // 处理数组下标时，使用中括号([])代替点号(.)
-            .withWriteIndexUsingMarkers(true)
-            // 数组下标从 0 开始，默认从 1 开始
-            .withFirstArrayOffset(0);
-
-    public static String writeValueAsPropsString(Object object) throws JsonProcessingException {
-        JavaPropsMapper javaPropsMapper = new JavaPropsMapper();
-        return javaPropsMapper.writer(SCHEMA)
-                .writeValueAsString(object)
-                // 移除尾部的换行
-                .replaceFirst("\n$", "");
-    }
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]
+Unresolved include directive in modules/ROOT/pages/manual.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]
     @Test
     @SneakyThrows
     void visitStandardBean() {

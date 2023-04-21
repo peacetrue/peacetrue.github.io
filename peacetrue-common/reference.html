@@ -84,6 +84,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -100,7 +108,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../overview/index.html">概述</a>
+      <a class="title" href="../overview/index.html">总览</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../overview/index.html">master</a>
@@ -204,45 +212,19 @@
 <div class="listingblock">
 <div class="title">用户</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class User implements Serializable {
-        private Long id;
-        private String name;
-        private String password;
-        private List&lt;Role&gt; roles;
-        private Employee employee;
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/reference.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">角色</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class Role implements Serializable {
-        private Long id;
-        private String name;
-        private List&lt;String&gt; tags;
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/reference.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">员工</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class Employee implements Serializable {
-        private Long id;
-        private String name;
-        private List&lt;String&gt; tags;
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/reference.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -250,19 +232,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">    public static final User USER = getUser();
-
-    public static User getUser() {
-        return User.builder().id(null).name("admin").password("")
-                .roles(Arrays.asList(
-                        Role.builder().id(1L).name("admin").tags(Arrays.asList("read", "write")).build(),
-                        null,
-                        Role.builder().name("user").build(),
-                        Role.builder().id(3L).build()
-                ))
-                .employee(Employee.builder().id(1L).name("Jone").tags(Arrays.asList("good", "better")).build())
-                .build();
-    }</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/ROOT/pages/reference.adoc - include::example$src/test/java/com/github/peacetrue/bean/BeanCommon.java[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
