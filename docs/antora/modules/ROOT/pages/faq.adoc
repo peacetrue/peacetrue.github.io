@@ -26,10 +26,6 @@ Vim paste from clipboard::
 
 既想支持覆盖又想支持合并，怎么实现？使用 `Map`。
 
-== Why does rm -f ask me for confirmation on zsh?
-
-see https://stackoverflow.com/questions/27988160/why-does-rm-f-ask-me-for-confirmation-on-zsh[Why does rm -f ask me for confirmation on zsh^]。
-
 == 如何模拟网络分区？
 
 网络分区是指网络中的一部分节点无法与另一部分节点通信，这种情况可能会在网络中出现。模拟网络分区有助于我们测试系统的鲁棒性，即系统在出现网络分区时的表现。

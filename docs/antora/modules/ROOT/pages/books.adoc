@@ -7,8 +7,28 @@
 ** 苦瓜书盘：Cann't connect to DB!
 ** Lore Free：502 Bad Gateway
 ** clibrary： https://clibrary.top/ 网速极慢
-** 书单网： https://www.xianyupai.com/shudan/ 需使用城通网盘，密码为 2021
-** 书舟搜书： https://www.shuzhou.cc/ 需要关注微信号，验证码：2022
+** 书单网： https://www.xianyupai.com/shudan/ 需使用城通网盘，密码为 2021  ERR_TUNNEL_CONNECTION_FAILED
+** 书舟搜书： https://www.shuzhou.cc/ 需要关注微信号，验证码：2022  ERR_TUNNEL_CONNECTION_FAILED
 
 .书籍
 . 从零开始学CPLD和VerilogHDL编程技术.pdf
+
+== HTTP 协议相关书籍
+
+.  《HTTP 权威指南》(HTTP: The Definitive Guide)，作者：David Gourley、Brian Totty、Marjorie Sayer、Anshu Aggarwal，出版社：O'Reilly Media。
+.  《图解 HTTP》(HTTP: The Protocols)，作者：上野宣，出版社：人民邮电出版社。
+.  《HTTP2 实战》(HTTP/2 in Action)，作者：Barry Pollard，出版社：Manning Publications。
+.  《Web 性能权威指南》(High Performance Web Sites)，作者：Steve Souders，出版社：O'Reilly Media。
+.  《Web 性能优化》(Web Performance Optimization)，作者：Daniel Austin，出版社：O'Reilly Media。
+
+== C++ 书籍
+
+. C++ Primer（《C++ Primer》）：这本书是 C++ 的入门经典，内容全面，结构清晰，适合初学者。
+. Effective C++（《Effective C++》）：这是一本深入讲解 C++ 编程技巧和最佳实践的书籍，适合有一定 C++ 基础的程序员。
+. The C++ Programming Language（《C++ 程序设计语言》）：这本书是由 C++ 之父 Bjarne Stroustrup 编写的，它涵盖了 C++ 的方方面面，适合有一定编程经验的人士。
+. Accelerated C++（《C++ 程序设计：从入门到实践》）：这是一本注重实践的 C++ 入门书籍，适合想要快速掌握 C++ 编程的人士。
+. Effective Modern C++（《Effective Modern C++》）：这本书是一本讲解 C++11 和 C++14 新特性和用法的书籍，适合有 C++11/C++14 基础的程序员。
+
+除了以上这些书籍，还有很多其他的 C++ 书籍值得一读，如《STL 源码剖析》、《深度探索 C++ 对象模型》、《Inside the C++ Object Model》等。
+
+

@@ -36,7 +36,9 @@ jobs:
 #    - name: Asciidoctor Diagram
 #      run: sudo gem install asciidoctor-diagram
     - name: Generate
-      run: antora generate playbook.yml
+      run: |
+        npm i asciidoctor-kroki 
+        antora generate playbook.yml
     - name: Check
       run: "ls -la ${{ github.workspace }}${{ env.SITE_DIR }}"
     - name: Deploy

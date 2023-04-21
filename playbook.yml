@@ -7,8 +7,10 @@ site:
   start_page: overview::index.adoc
 asciidoc:
   extensions:
+    - asciidoctor-kroki
     - asciidoctor-plantuml
   attributes:
+    kroki-fetch-diagram: true
     plantuml-server-url: 'http://www.plantuml.com/plantuml@'
     numbered: '@'
     website: https://peacetrue.github.io
@@ -38,6 +40,8 @@ content:
   - url: https://github.com/peacetrue/peacetrue-test.git
     start_path: docs/antora
   - url: https://github.com/peacetrue/bee.git
+    start_path: docs/antora
+  - url: https://github.com/peacetrue/learn-asciidoc.git
     start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
 #    start_path: docs/antora

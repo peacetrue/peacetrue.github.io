@@ -1,0 +1,34 @@
+= VirtualBox
+
+当前使用的 VirtualBox 版本为 7.0。
+
+== 安装 Ubuntu 22.04 LTS
+
+. 下载 https://ubuntu.com/download/desktop[Ubuntu 22.04.x LTS^]
+. 安装 Ubuntu 22.04.1 LTS
+
+
+== 如何恢复消失的虚拟机管理列表
+
+
+打开虚拟机配置文件::
+macOS 上，配置文件位于 ~/Library/VirtualBox/VirtualBox.xml。 执行以下命令，使用文本编辑器打开配置文件：
+
+[source%nowrap,bash]
+----
+open -a 'TextEdit' ~/Library/VirtualBox/VirtualBox.xml
+----
+
+删除 GUI/SplitterSizes 条目::
+可以直接在编辑器中删除后保存；也可以执行以下命令：
+
+[source%nowrap,bash]
+----
+#VBoxManage setextradata global "GUI/SplitterSizes" "200,700"
+----
+
+// end::VirtualBox[]
+
+
+
+

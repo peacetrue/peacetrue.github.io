@@ -4,5 +4,6 @@
 * xref:term.adoc[]
 * xref:schedule.adoc[]
 * xref:application.adoc[]
+* xref:faq.adoc[]
 // * xref:computer.adoc[]
 // * xref:resume-12.adoc[]
