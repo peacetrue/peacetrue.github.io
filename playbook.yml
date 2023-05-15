@@ -41,6 +41,8 @@ content:
     start_path: docs/antora
   - url: https://github.com/peacetrue/bee.git
     start_path: docs/antora
+  - url: https://github.com/peacetrue/learn-c.git
+    start_path: docs/antora
   - url: https://github.com/peacetrue/learn-asciidoc.git
     start_path: docs/antora
 #  - url: https://github.com/peacetrue/peacetrue-core
