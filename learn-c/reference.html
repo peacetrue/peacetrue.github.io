@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>参考指南 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-c/reference.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-c" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">学习 C 语言</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="builder.html">项目构建</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ide.html">集成开发环境</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="test.html">测试框架</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">相关主题</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/elf.html">ELF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/gas.html">AT&amp;T 汇编语法</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/graffle.html">Graffle 导出图</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="glossary.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 C 语言</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">学习 C 语言</a></li>
+    <li><a href="reference.html">参考指南</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-c/edit/master/docs/antora/modules/ROOT/pages/reference.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">参考指南</h1>
+<div class="sect1">
+<h2 id="_参考"><a class="anchor" href="#_参考"></a>1. 参考</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_术语"><a class="anchor" href="#_术语"></a>2. 术语</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_文件类型"><a class="anchor" href="#_文件类型"></a>3. 文件类型</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>开发过程中，会涉及各种类型的文件。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">C 源文件(c source code file)</dt>
+<dd>
+<p>包含具体实现代码。
+预处理操作包括：引入所有头文件、替换宏、删除注释等等。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>非预处理源文件：以 .c 后缀结尾。</p>
+</li>
+<li>
+<p>预处理后源文件：以 .i 后缀结尾。</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">头文件(head file)</dt>
+<dd>
+<p>以 .h 后缀结尾，包含接口声明代码。</p>
+</dd>
+<dt class="hdlist1">汇编源文件(assembly source code file)</dt>
+<dd>
+<p>C 源文件编译后形成的汇编文件。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>非预处理源文件：以 .S(sx/asm) 后缀结尾，代表仍必须通过预处理器的汇编代码。这意味着它可以具有 #include 和 #define 其他宏。</p>
+</li>
+<li>
+<p>预处理后源文件：以 .s 后缀结尾，纯汇编代码，可以编译成一个对象。</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">对象文件(object file)</dt>
+<dd>
+<p>以 .o 后缀结尾，源文件编译后形成对象文件。</p>
+</dd>
+<dt class="hdlist1">静态库文件</dt>
+<dd>
+<p>以 .a 后缀结尾，一组对象文件的压缩包。</p>
+</dd>
+<dt class="hdlist1">共享库文件</dt>
+<dd>
+<p>以 .so 后缀结尾，ELF 格式文件即 linux 可执行文件，可用于多个进程的共享。
+程序在使用它时，会在运行时把它映射到自己进程空间的某一处，其不在使用它的程序中。</p>
+</dd>
+<dt class="hdlist1">二进制文件(bitcode file)</dt>
+<dd>
+<p>以 .bc 后缀结尾，对象文件编译后形成二进制文件。</p>
+</dd>
+<dt class="hdlist1">可执行文件</dt>
+<dd>
+<p>二进制文件链接后形成可执行文件。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_编译流程"><a class="anchor" href="#_编译流程"></a>4. 编译流程</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">cd $workingDir/learn-c
+# 编译源文件，生成可执行文件，保留中间生成的临时文件
+gcc --save-temps -o main main.c
+# main.c -&gt; main.i -&gt; main.s -&gt; main.o -&gt; main.bc -&gt; main
+
+gcc -E -o main.i main.c
+gcc -S -o main.s main.i
+gcc -c -o main.o main.s
+# 选项 r 表示添加文件，选项 c 表示新建库文件，选项 s 表示创建符号表
+ar rcs main.a main.o
+gcc -o main main.o</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_调试"><a class="anchor" href="#_调试"></a>5. 调试</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 编译出一个调试版本的可执行文件
+gcc -g -o main main.c
+gdb main
+# list break info next print</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_构建项目"><a class="anchor" href="#_构建项目"></a>6. 构建项目</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>手动</p>
+</li>
+<li>
+<p>Make：Makefile</p>
+</li>
+<li>
+<p>CMake：CMakeList.txt</p>
+</li>
+<li>
+<p>Gradle：cpp-library</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_单元测试"><a class="anchor" href="#_单元测试"></a>7. 单元测试</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如何在 CLion 中执行 C 单元测试？
+参考 <a href="https://www.jetbrains.com/zh-cn/clion/features/unit-testing.html" target="_blank" rel="noopener">CLion 单元测试</a>。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/google/googletest" target="_blank" rel="noopener">Google Test</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_附录"><a class="anchor" href="#_附录"></a>8. 附录</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/10285410/what-are-s-files" target="_blank" rel="noopener">What are .S files?</a></p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/gjq_1988/article/details/39520729" target="_blank" rel="noopener">CPU 乱序执行原理</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/422848235" target="_blank" rel="noopener">内存一致性(Memory Consistency)</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/41872203" target="_blank" rel="noopener">X86/GCC memory fence的一些见解</a></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/6ab7c3db13c3" target="_blank" rel="noopener">通过 JVM (HotSpot) 源码和汇编理解 Java volatile 实现原理</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_mfence"><a class="anchor" href="#_mfence"></a>8.1. mfence</h3>
+<div class="paragraph">
+<p>MFENCE 指令对于在该指令前发出的所有从内存加载和存储到内存的指令执行序列化操作。 这种序列化操作确保了在 MFENCE 指令之前以程序顺序排列的每个内存加载和存储指令在 MFENCE 指令之后的任何加载或存储指令之前变得全局可见。MFENCE 指令与所有加载和存储指令，其他 MFENCE 指令，任何 LFENCE 和 SFENCE 指令以及任何序列化指令（如 CPUID 指令）相关。MFENCE 指令不会序列化指令流。</p>
+</div>
+<div class="paragraph">
+<p>弱排序内存类型可以通过一些技术（如乱序发射、预测读取、写组合和写折叠）来实现更高的处理器性能。数据消费者识别或知道数据是弱排序的程度在各种应用程序中不同，并且可能对生产此数据的系统不可知。 MFENCE 指令提供了一种性能高效的方式，可以确保产生弱排序结果的例程与使用该数据的例程之间的加载和存储排序。</p>
+</div>
+<div class="paragraph">
+<p>处理器可以自由地从使用 WB、WC 和 WT 存储类型的系统内存区域中推测地提取和缓存数据。这种推测性提取可以随时发生，并且不与指令执行相关。因此，它与 MFENCE 指令的执行不相关；数据可以在执行 MFENCE 指令之前、期间或之后被推测性地带入缓存中。</p>
+</div>
+<div class="paragraph">
+<p>该指令在非64位模式和64位模式下的操作相同。指令上面的操作码规定了ModR/M字节为F0。对于该指令，处理器忽略ModR/M字节的r/m字段。因此，MFENCE 由任何形如0F AE Fx的操作码编码，其中x在0-7范围内。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lock"><a class="anchor" href="#_lock"></a>8.2. lock</h3>
+<div class="paragraph">
+<p>LOCK 前缀是一种用于将指令转换成原子性操作的 IA-32 和 Intel 64 处理器指令前缀。当处理器执行带有 LOCK 前缀的指令时，会发出 LOCK# 信号，此信号保证当前处理器在访问共享内存时具有独占权，其他处理器需要等待 LOCK# 信号解除后才能访问这块共享内存区域，从而保证操作的原子性和一致性。</p>
+</div>
+<div class="paragraph">
+<p>在大多数 IA-32 和所有 Intel 64 处理器中，即使没有显式使用 LOCK 前缀，也可以实现类似的原子性操作。这是因为内部硬件机制通常会自动检测并保持对共享内存的独占访问权限，从而避免数据竞争和其他线程安全问题。</p>
+</div>
+<div class="paragraph">
+<p>LOCK 前缀只能用于以下一组指令以及对应的内存目的操作数形式：ADD、ADC、AND、BTC、BTR、BTS、CMPXCHG、CMPXCH8B、CMPXCHG16B、DEC、INC、NEG、NOT、OR、SBB、SUB、XOR、XADD 和 XCHG。如果将 LOCK 前缀用于其中的一个指令且源操作数是存储器操作数，则可能会产生未定义的操作码异常（#UD）。如果将 LOCK 前缀用于不在该列表中的任何指令，则也会产生未定义的操作码异常。除此之外，无论是否使用 LOCK 前缀，XCHG 指令总是会发出 LOCK# 信号。</p>
+</div>
+<div class="paragraph">
+<p>LOCK 前缀通常与 BTS 指令一起使用，用于在共享内存环境中执行读取修改写入（read-modify-write）操作。由于 LOCK 前缀和硬件机制保证了内存访问的原子性和一致性，因此可以确保多线程或多进程环境下的数据访问顺序正确。</p>
+</div>
+<div class="paragraph">
+<p>需要注意的是，LOCK 前缀的操作与内存区域的对齐方式无关，即可以对任意不对齐的内存区域进行操作。此外，LOCK 前缀的操作在 IA-32 和 Intel 64 模式下具有相同的行为。</p>
+</div>
+<div class="paragraph">
+<p>从P6系列处理器开始，当 LOCK 前缀被添加到一条指令上，同时该指令要访问的内存区域已经被处理器的内部高速缓存缓存时，通常不会发出 LOCK# 信号。取而代之的是，只有处理器的内部缓存被锁定。在这种情况下，处理器的高速缓存一致性机制会确保操作在内存方面是原子性的。在《Intel® 64 和 IA-32 Architectures 软件开发手册》第3A卷第9章的“锁定操作对内部处理器缓存的影响”一节中可获得更多关于缓存锁定的信息。</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

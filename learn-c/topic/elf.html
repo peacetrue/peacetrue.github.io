@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ELF :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-c/topic/elf.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-c" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">学习 C 语言</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../builder.html">项目构建</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ide.html">集成开发环境</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../test.html">测试框架</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">相关主题</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="elf.html">ELF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gas.html">AT&amp;T 汇编语法</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="graffle.html">Graffle 导出图</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 C 语言</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">学习 C 语言</a></li>
+    <li>相关主题</li>
+    <li><a href="elf.html">ELF</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-c/edit/master/docs/antora/modules/ROOT/pages/topic/elf.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">ELF</h1>
+<div class="sect1">
+<h2 id="_理论"><a class="anchor" href="#_理论"></a>1. 理论</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ELF 规范的最新版本是 ELF64 ABI（Application Binary Interface）标准，它是针对 64 位处理器架构的 ELF 规范。该标准由 System V ABI（System V Application Binary Interface）委员会制定，目前的版本为 1.0。该标准于 2019 年发布。</p>
+</div>
+<div class="paragraph">
+<p>ELF64 ABI 标准主要定义了 64 位 ELF 文件的格式、链接方式、调用约定、符号表和重定位表等方面的规范。该标准包括以下内容：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ELF 文件格式定义，包括文件头、程序头表和节头表等。</p>
+</li>
+<li>
+<p>ELF 文件的链接方式，包括静态链接和动态链接。</p>
+</li>
+<li>
+<p>函数调用约定，包括参数传递和返回值等方面的规范。</p>
+</li>
+<li>
+<p>符号表和重定位表的格式定义和使用规范。</p>
+</li>
+<li>
+<p>异常处理和调试信息的定义。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>ELF64 ABI 标准为开发人员提供了一种标准化的方法来创建和处理 64 位 ELF 文件，这有助于不同操作系统和编译器之间的互操作性和可移植性。</p>
+</div>
+<div class="paragraph">
+<p>以下是 ELF64 ABI 标准的参考地址：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>官方文档： <a href="http://www.sco.com/developers/devspecs/gabi41.pdf" class="bare">http://www.sco.com/developers/devspecs/gabi41.pdf</a></p>
+</li>
+<li>
+<p>ELF 文件格式介绍： <a href="https://refspecs.linuxfoundation.org/elf/" class="bare">https://refspecs.linuxfoundation.org/elf/</a></p>
+</li>
+<li>
+<p>System V ABI： <a href="https://en.wikipedia.org/wiki/System_V_ABI" class="bare">https://en.wikipedia.org/wiki/System_V_ABI</a></p>
+</li>
+<li>
+<p>GNU 工具链对 ELF64 ABI 的支持： <a href="https://sourceware.org/glibc/wiki/Elf64Abi" class="bare">https://sourceware.org/glibc/wiki/Elf64Abi</a></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_虚拟内存空间"><a class="anchor" href="#_虚拟内存空间"></a>1.1. 虚拟内存空间</h3>
+<div class="paragraph">
+<p>在 64 位 Linux 系统中，虚拟内存空间通常被划分为以下几个部分：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>0X0000000000000000 - 0X00007FFFFFFFFFFF：用户空间（128 TB）
+用户空间包括了进程代码、数据和堆栈等。其中，前 128 GB 的地址空间是可以直接映射到物理内存的，而后面的部分则需要通过页表进行虚拟地址到物理地址的映射。</p>
+</li>
+<li>
+<p>0X0800000000000000 - 0X7F7FFFFFFFFF：用户空间保留区域（125 PB）
+这个区域是保留给用户空间的，但目前还没有被使用。</p>
+</li>
+<li>
+<p>0X7F8000000000 - 0X7FFFFFFFFFFF：内核虚拟映射区域（512 GB）
+这个区域是用于内核空间和用户空间之间进行数据传输和通信的。在 64 位 LINUX 中，内核也可以通过虚拟地址来访问物理内存，因此内核的数据结构和代码也可以通过虚拟地址进行访问。</p>
+</li>
+<li>
+<p>0X800000000000 - 0XFFEFFFFFFFFFFFFF：用户空间保留区域（256 PB）
+这个区域也是保留给用户空间的，但目前还没有被使用。</p>
+</li>
+<li>
+<p>0XFF00000000000000 - 0XFFFFFFFFFFFFFFFF：内核空间（128 TB）
+这个区域是保留给内核的，包括了内核代码、数据和堆栈等。和用户空间类似，内核也需要通过页表进行虚拟地址到物理地址的映射。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在虚拟内存布局中，用户空间和内核空间之间通过一条称为“内核虚拟地址映射（Kernel Virtual Address Mapping）”的边界进行分隔。这个边界的位置可以通过配置内核的 KASLR（Kernel Address Space Layout Randomization）选项来随机化，以增加系统的安全性。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://blog.csdn.net/weixin_35523259/article/details/116640533" target="_blank" rel="noopener">linux 64位 虚拟内存空间</a></p>
+</li>
+<li>
+<p><a href="https://www.kernel.org/doc/html/latest/x86/x86_64/mm.html" target="_blank" rel="noopener">Memory Management</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_函数调用规范"><a class="anchor" href="#_函数调用规范"></a>1.2. 函数调用规范</h3>
+<div class="paragraph">
+<p>x86_64架构的函数调用规范是由操作系统规定的，通常称为“System V AMD64 ABI”或“x86_64 ABI”。</p>
+</div>
+<div class="paragraph">
+<p>下面是一些重要的规范：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">参数传递</dt>
+<dd>
+<p>前六个参数按照顺序被存放在寄存器%rdi，%rsi，%rdx，%rcx，%r8和%r9中。如果函数有更多的参数，它们会被依次压入堆栈中。</p>
+</dd>
+<dt class="hdlist1">栈帧</dt>
+<dd>
+<p>当一个函数被调用时，它会使用栈来保存其局部变量和临时变量。在函数开始时，需要先分配一个栈帧，可以使用指令“subq $&lt;size&gt;, %rsp”来实现。其中&lt;size&gt;是需要分配的字节数。</p>
+</dd>
+<dt class="hdlist1">返回值</dt>
+<dd>
+<p>返回值通常通过寄存器%rax来传递。如果返回值超过了64位，则会通过寄存器%rdx和%rax一起传递。</p>
+</dd>
+<dt class="hdlist1">栈对齐</dt>
+<dd>
+<p>栈在调用过程中需要被对齐，以提高访问速度。在x86_64 ABI中，栈的对齐方式为16字节对齐，也就是说，栈指针（%rsp）的值必须是16的倍数。</p>
+</dd>
+<dt class="hdlist1">寄存器保护</dt>
+<dd>
+<p>在函数开始时，所有被调用者保存的寄存器都需要被保存到栈上，包括%rbp，%rbx，%r12，%r13，%r14和%r15。这些寄存器在函数结束时需要被恢复到它们原来的值。</p>
+</dd>
+<dt class="hdlist1">函数调用</dt>
+<dd>
+<p>调用一个函数时，需要将返回地址（即下一条指令的地址）和调用者保存的寄存器的值（如果有的话）压入栈中。然后跳转到函数的入口点。</p>
+</dd>
+<dt class="hdlist1">函数返回</dt>
+<dd>
+<p>函数返回时，需要先将返回值存放在%rax中，然后将调用者保存的寄存器的值从栈中恢复，并将栈帧释放。最后跳转到返回地址。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_实践"><a class="anchor" href="#_实践"></a>2. 实践</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>源代码所在目录 <code>src/elf</code>。</p>
+</div>
+<div class="sect2">
+<h3 id="_环境"><a class="anchor" href="#_环境"></a>2.1. 环境</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>x86_64 macOS 13</p>
+</li>
+<li>
+<p>VirtualBox 7.0.6</p>
+</li>
+<li>
+<p>Ubuntu 22.1</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_elf_文件和虚拟内存映射"><a class="anchor" href="#_elf_文件和虚拟内存映射"></a>2.2. ELF 文件和虚拟内存映射</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/elf/image-2023-04-24-11-05-18-265.png" alt="image 2023 04 24 11 05 18 265">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ELF 文件是否总加载到 0x0000000000400000 处，静态在 0x0000000000400000，动态在 0x555555554000 处，有待进一步验证</p>
+</li>
+<li>
+<p>堆内存的起始地址为：ELF 文件加载的起始地址 + ELF 文件 Program LOAD Data（除去 NOBITS Section） + 4K 对齐的填充</p>
+</li>
+<li>
+<p>栈的起始地址是否总为 0x00007FFFFFFFF000，静态动态都在此处</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_elf_执行过程"><a class="anchor" href="#_elf_执行过程"></a>2.3. ELF 执行过程</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#minibash 小实验：
+make minibash.clean minibash.bin
+build/minibash.bin
+cat /etc/passwd | grep root
+sed -i 's|/bin/bash|/media/sf_learn-c/elf/build/minibash.bin|' /etc/passwd
+sed -i 's|/media/sf_learn-c/elf/build/minibash.bin|/bin/bash|' /etc/passwd
+ssh root@test-node01
+
+# crtmini 小实验：
+make empty-crtnone.clean
+make empty.run SUBDIR=/empty-crtnone CRT=NONE
+make empty-crtmini.clean
+make empty.readobjbin SUBDIR=/empty-crtmini CRT=MINI
+make all-in-one.clean
+make all-in-one.run SUBDIR=/all-in-one
+make singleton-crtmini-static.clean
+make singleton.readobjbin SUBDIR=/singleton-crtmini-static CRT=MINI STATIC=-static
+make singleton.run SUBDIR=/singleton-crtmini-static CRT=MINI
+make singleton-crtmini-dynamic.clean
+make singleton.readobjbin SUBDIR=/singleton-crtmini-dynamic CRT=MINI
+make singleton.run SUBDIR=/singleton-crtmini-dynamic CRT=MINI
+
+# 生命周期小实验：
+make init_fini.o.clean init_fini.o.readobj
+make lifecycle.clean
+make lifecycle.run OBJS=build/init_fini.o SUBDIR=/lifecycle</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_empty_c"><a class="anchor" href="#_empty_c"></a>2.4. empty.c</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">make empty-default-static.clean
+make empty.readobjbin SUBDIR=/empty-default-static STATIC=-static V=-v
+build/empty-default-static/empty.stripped.bin
+
+make empty-default-dynamic.clean
+make empty.readobjbin SUBDIR=/empty-default-dynamic V=-v
+build/empty-default-dynamic/empty.stripped.bin
+
+make empty-main-static.clean
+make empty.readobjbin SUBDIR=/empty-main-static CRT=NONE STATIC=-static V=-v
+build/empty-main-static/empty.stripped.bin
+
+make empty-main-dynamic.clean
+make empty.readobjbin SUBDIR=/empty-main-dynamic CRT=NONE V=-v
+build/empty-main-dynamic/empty.stripped.bin
+
+make build/empty-main-static/empty.o.size
+make build/empty-main-static/empty.stripped.bin.size
+make build/empty-main-static/empty.o.bytes START=0x80 END=0x86
+make build/empty-main-dynamic/empty.stripped.bin.size
+make build/empty-main-dynamic/empty.stripped.bin.bytes START=0x100b END=0x1f20
+make build/empty-main-static/empty.bin.maps
+make build/empty-main-static/empty.stripped.bin.maps
+# ldd build/empty-main-dynamic/empty.bin
+# ldd build/empty-crtmini-dynamic/empty.bin
+# ldd build/empty-default-dynamic/empty.bin
+
+make empty-crtmini-static.clean
+make empty.readobjbin SUBDIR=/empty-crtmini-static CRT=MINI STATIC=-static V=-v
+build/empty-crtmini-static/empty.stripped.bin
+
+make empty-crtmini-dynamic.clean
+make empty.readobjbin SUBDIR=/empty-crtmini-dynamic CRT=MINI V=-v
+build/empty-crtmini-dynamic/empty.stripped.bin</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_singleton_c"><a class="anchor" href="#_singleton_c"></a>2.5. singleton.c</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">make singleton-default-static.clean
+make singleton.readobjbin SUBDIR=/singleton-default-static STATIC=-static V=-v
+build/singleton-default-static/singleton.stripped.bin
+
+make singleton-default-dynamic.clean
+make singleton.readobjbin SUBDIR=/singleton-default-dynamic V=-v
+build/singleton-default-dynamic/singleton.stripped.bin</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_常见问题"><a class="anchor" href="#_常见问题"></a>3. 常见问题</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>64 位系统虚拟内存最初始的位置存放什么？</p>
+</li>
+<li>
+<p>虚拟内存程序头从什么位置开始？</p>
+</li>
+<li>
+<p>虚拟内存程序入口从什么位置开始？</p>
+</li>
+<li>
+<p><a href="https://www.virtualbox.org/ticket/21413" target="_blank" rel="noopener">gdb crashes</a></p>
+</li>
+<li>
+<p>操作系统在加载 ELF 文件时，能否判断出某个标记为可读可写的数据段是只读的？</p>
+</li>
+<li>
+<p>链接时，如何加入 _start 函数？</p>
+</li>
+<li>
+<p>执行时，_start 函数的执行逻辑？</p>
+</li>
+<li>
+<p>动态加载器如何确定共享库实际映射的虚拟内存地址？</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_x86_64_linux_为何从_555555554000_处开始映射虚拟内存地址"><a class="anchor" href="#_x86_64_linux_为何从_555555554000_处开始映射虚拟内存地址"></a>3.1. x86-64 Linux 为何从 555555554000 处开始映射虚拟内存地址？</h3>
+<div class="paragraph">
+<p>x86-64 Linux 程序的默认起始虚拟地址是 0x00005555 54000000，也就是 5 兆 5 百万，这个值是根据内核参数 RANDOMIZE_VA_SPACE 计算得到的。
+如果开启了这个参数，内核会随机化程序的虚拟地址空间的起始位置，这有助于防范一些针对特定地址的攻击，同时也可以增加内核堆栈的随机性。
+但是，在默认情况下，程序的虚拟地址从这个值开始映射，因此可以看到 ELF 文件的虚拟内存地址从 555555554000 处开始。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://blog.csdn.net/Rong_Toa/article/details/118578755" target="_blank" rel="noopener">linux内存布局和地址空间布局随机化（ASLR）下的可分配地址空间</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_附录"><a class="anchor" href="#_附录"></a>4. 附录</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_参考资料"><a class="anchor" href="#_参考资料"></a>4.1. 参考资料</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>《程序员的自我修养》</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format" target="_blank" rel="noopener">elf wiki</a></p>
+</li>
+<li>
+<p><a href="https://www.sco.com/developers/gabi/latest/ch4.intro.html" target="_blank" rel="noopener">elf sco</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ruslashev/elfcat" target="_blank" rel="noopener">ELF visualizer</a></p>
+</li>
+<li>
+<p><a href="https://www.51cto.com/article/743043.html" target="_blank" rel="noopener">程序调试原理</a></p>
+</li>
+<li>
+<p>ida 逆向工程软件，可用于分析和反汇编二进制程序，以便了解程序的内部工作方式和实现细节</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/64424692/how-does-the-address-of-r-x86-64-plt32-computed" target="_blank" rel="noopener">尽管重新定位条目的类型是R_X86_64_PLT32，但链接器仍将使用R_X86_64_PC32</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ld"><a class="anchor" href="#_ld"></a>4.2. ld</h3>
+<div class="listingblock">
+<div class="title">静态链接命令</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">/usr/lib/gcc/x86_64-linux-gnu/11/collect2 \
+-plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so \
+-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper \
+-plugin-opt=-fresolution=/tmp/ccEJtciD.res \
+-plugin-opt=-pass-through=-lgcc \
+-plugin-opt=-pass-through=-lgcc_eh \
+-plugin-opt=-pass-through=-lc \
+--build-id \
+-m elf_x86_64 \
+--hash-style=gnu \
+--as-needed \
+-static \
+-z relro \
+-o build/singleton-crtmini-static/singleton.bin \
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crt1.o \
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o \
+/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginT.o \
+-L/usr/lib/gcc/x86_64-linux-gnu/11 \
+-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu \
+-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib \
+-L/lib/x86_64-linux-gnu \
+-L/lib/../lib \
+-L/usr/lib/x86_64-linux-gnu \
+-L/usr/lib/../lib \
+-L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. \
+build/singleton-crtmini-static/singleton.o \
+--start-group \
+-lgcc \
+-lgcc_eh \
+-lc \
+--end-group \
+/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o \
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">动态链接命令</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">/usr/lib/gcc/x86_64-linux-gnu/11/collect2 \
+  -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so \
+  -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper \
+  -plugin-opt=-fresolution=/tmp/ccOHEHQG.res \
+  -plugin-opt=-pass-through=-lgcc \
+  -plugin-opt=-pass-through=-lgcc_s \
+  -plugin-opt=-pass-through=-lc \
+  -plugin-opt=-pass-through=-lgcc \
+  -plugin-opt=-pass-through=-lgcc_s \
+  --build-id \
+  --eh-frame-hdr \
+  -m elf_x86_64 \
+  --hash-style=gnu \
+  --as-needed \
+  -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+  -pie \
+  -z now \
+  -z relro \
+  -o build/singleton-crtmini-dynamic/singleton.bin \
+  /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o \
+  /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o \
+  /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o \
+  -L/usr/lib/gcc/x86_64-linux-gnu/11 \
+  -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu \
+  -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib \
+  -L/lib/x86_64-linux-gnu \
+  -L/lib/../lib \
+  -L/usr/lib/x86_64-linux-gnu \
+  -L/usr/lib/../lib \
+  -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. \
+  build/singleton-crtmini-dynamic/singleton.o \
+  -lgcc \
+  --push-state \
+  --as-needed \
+  -lgcc_s \
+  --pop-state \
+  -lc \
+  -lgcc \
+  --push-state \
+  --as-needed \
+  -lgcc_s \
+  --pop-state \
+  /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o \
+  /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这个命令是一个用于链接目标文件的命令，将目标文件链接成一个可执行文件。
+该命令的参数非常多，其中包括链接器的选项、链接库的路径、输入文件的路径等等。
+该命令使用的链接器是 collect2，用于将目标文件链接成一个可执行文件。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_readelf"><a class="anchor" href="#_readelf"></a>4.3. readelf</h3>
+<div class="paragraph">
+<p>要读取ELF文件中的所有数据结构，可以使用readelf命令并指定不同的选项来查看不同类型的数据结构。以下是一些常见的选项：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>"-h"：显示ELF文件头（ELF Header）的信息，包括文件类型、机器类型、入口点地址、节头表偏移量等。</p>
+</li>
+<li>
+<p>"-l"：显示ELF文件的段头表（Program Header Table）和节头表（Section Header Table）的信息，包括每个段和节的名称、类型、标志、大小、VMA和LMA等。</p>
+</li>
+<li>
+<p>"-S"：显示ELF文件的节（Section）内容，包括节的名称、类型、大小、偏移量、VMA和LMA等。</p>
+</li>
+<li>
+<p>"-s"：显示ELF文件的符号表（Symbol Table）内容，包括符号的名称、类型、绑定、大小、节名称和值等。</p>
+</li>
+<li>
+<p>"-r"：显示ELF文件的重定位节（Relocation Section）内容，包括需要重定位的符号、类型、偏移量和值等。</p>
+</li>
+<li>
+<p>"-n"：显示ELF文件的笔记（Note）内容，包括笔记的所有者、数据大小和描述信息等。</p>
+</li>
+<li>
+<p>"-d"：显示ELF文件的动态节（Dynamic Section）内容，包括动态链接器所需的信息，如共享对象名称、符号重定位表、初始化函数和终止函数等。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lldb"><a class="anchor" href="#_lldb"></a>4.4. lldb</h3>
+<div class="paragraph">
+<p>lldb 和 gdb 都是调试器，可以用于在开发过程中调试和分析代码中的错误。</p>
+</div>
+<div class="paragraph">
+<p>下面是 lldb 和 gdb 之间的一些区别：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>命令语法：lldb 和 gdb 的命令语法略有不同。lldb 命令更加简洁和现代化，而 gdb 命令则更加冗长和传统。</p>
+</li>
+<li>
+<p>平台支持：lldb 是 LLVM 项目的一部分，因此它的设计更加现代化，支持更多平台（如 macOS、iOS、Linux）。而 gdb 则是 GNU 项目的一部分，主要用于 Linux 和其他类 Unix 系统。</p>
+</li>
+<li>
+<p>功能特性：lldb 比 gdb 提供了一些新的功能，例如 Python 脚本调试、自动化调试等。</p>
+</li>
+<li>
+<p>性能：lldb 比 gdb 更快，并且在大多数情况下占用更少的内存。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>需要注意的是，lldb 和 gdb 之间的差异可能对一些开发者并不重要，因为它们都提供了基本的调试功能。最终的选择取决于开发者的个人喜好和项目需要。</p>
+</div>
+<div class="listingblock">
+<div class="title">基本操作</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#启动 LLDB
+lldb
+#设置要调试的可执行文件
+file build/empty.bin
+#查看源码
+source list -f empty.cpp
+source list --context 10
+#设置断点
+breakpoint set -f main.c -l 1
+b main
+b empty.bin`main
+b empty.s:9
+#查看断点
+breakpoint list
+#删除断点
+breakpoint delete 3
+#保存断点
+breakpoint write -f my_breakpoints.json
+#读取断点
+breakpoint read my_breakpoints.json
+#运行程序
+run
+#查看线程列表
+thread list
+#切换到指定线程
+thread select 1
+#线程回溯。例如 -s 来显示帧的源代码，-f 来显示完整函数名称等
+thread backtrace
+#当前栈帧信息
+frame info
+#查看变量
+print
+#看当前函数的汇编代码
+disassemble
+# 查看指定函数的汇编代码
+dis -n _start
+# 查看符号表信息
+image dump symtab
+# 使用 memory 命令查看栈上的数据。$rsp 表示当前栈顶的地址，x 表示以十六进制格式显示数据，g 表示使用通用寄存器的大小（64 位）
+memory read/xg $rsp
+mem read -f s $rsi
+x/16xg $rsp
+x/g $rsp
+x/g $rsp+8
+p (char*)0x00007fffffffe5e9
+#查看内存区域
+memory read 0x0000000000400000 -c 16
+# 以十六进制格式查看从地址 0x1000 开始的 16 个字节的内容。/16 表示要查看的字节数，xw 表示以十六进制格式输出 32 位的值
+x/16xw 0x0000000000400000
+# 显示当前线程的所有寄存器
+register read
+# 查看特定的寄存器
+register read rax
+#可以使用 expr 命令来执行指令。该命令允许你在调试会话中执行任意的 C/C++ 表达式，包括函数调用、算术运算、逻辑运算等
+# p 命令和 call 命令
+expr a = b + c
+#next 命令可以单步执行程序
+next
+#单步执行
+step
+step-in
+step-out
+#运行程序直到下一个断点
+continue
+#退出 LLDB
+exit</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_在_shell_中执行运算"><a class="anchor" href="#_在_shell_中执行运算"></a>4.5. 在 Shell 中执行运算</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#整数运算
+#10 进制运算，输出 10 进制
+echo $((1+1))
+#16 进制运算，输出 10 进制
+echo $((0xA9+0xB2))
+echo $((0x97000))
+#16 进制运算，输出 16 进制
+printf "%x\n" $((0x00000000004c17b0+0x000000000000b490))
+# 输出 10 进制数的 16 进制表示
+printf "%x\n" 97000;
+# 输出 10 进制数的补码
+printf "%x\n" -87;
+# 输出 16 进制数的补码
+printf "%x\n" -0x87;
+# 输出补码的 10 进制数
+printf "%d\n" $((0xffffffffffffff79));
+# 输出补码的 16 进制数，"--"表示结束选项的标志，否则提示 -%: invalid option
+printf -- "-%x\n" $((-$((0xfffffffffffffffc))));
+
+#小数运算。bc 命令是一个用于进行任意精度数学运算的工具，可以接受数学表达式并计算它们的值，
+# 注意：16 进制数需要使用大写，小写无效，应该是为了区分小写的变量名。
+# 直接执行 bc，在随后的交互式界面中输入指令
+bc
+#10 进制运算，输出 10 进制
+echo "1.5 + 2.5" | bc
+#16 进制运算，输出 16 进制。将 obase 放在 ibase 的前面以避免失效现象
+echo "obase=2; ibase=16; A + 6" | bc
+echo "ibase=16; obase=2; A + 6" | bc
+echo "obase=16; ibase=16; A + 6" | bc # 10
+echo "ibase=16; obase=16; A + 6" | bc # 16
+
+#还原小端序字符串
+echo -n "64656d2f732f6169656c5f662d6e7261" | sed -E 's/(..)/\1 /g' | tac -s ' ' | sed 's/ //g;$a\'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_在_shell_中执行内存换算"><a class="anchor" href="#_在_shell_中执行内存换算"></a>4.6. 在 Shell 中执行内存换算</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 将字节数转换为人类可读的大小
+# 10 进制数
+numfmt --to=iec-i --suffix=B 1024
+numfmt --to=iec-i --suffix=B 900184
+# 16 进制数转 10 进制
+numfmt --to=iec --suffix=B `printf "%d" 0x10000`
+# 16 进制运算后转 10 进制
+numfmt --to=iec --suffix=B `printf "%d" $((0x00000000004C8000-0x0000000000400000))`
+
+# 获取内存映射的区域大小，16 进制字节表示
+cat build/empty.maps \
+| awk '{printf "%s\n", $1}' \
+| awk -F - '{printf "(%s-%s);\n", toupper($2),toupper($1)}' \
+| xargs echo -e 'obase=16;ibase=16;' \
+| bc;
+
+# 获取内存映射的区域大小，10 进制 kb 表示
+cat build/empty.maps \
+| awk '{printf "%s\n", $1}' \
+| awk -F - '{printf "(%s-%s)/400;", toupper($2),toupper($1)}' \
+| xargs echo 'obase=10;ibase=16;' \
+| bc;
+
+# 从反编译文件中，筛选出方法名
+grep '&gt;:' build/empty.bin.objdump &gt; analysis/empty.bin.objdump.function</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

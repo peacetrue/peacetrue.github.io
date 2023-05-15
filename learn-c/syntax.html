@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>关于分手 :: 安宁的知识库</title>
-    <link rel="canonical" href="https://peacetrue.github.io/overview/partner.html">
+    <title>语法 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-c/syntax.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -24,12 +24,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="overview" data-version="master">
+<div class="nav-container" data-component="learn-c" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">总览</a></h3>
+    <h3 class="title"><a href="index.html">学习 C 语言</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -37,22 +37,40 @@
     <a class="nav-link" href="index.html">概述</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="repository.html">资源库</a>
+    <a class="nav-link" href="start.html">快速入门</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="concept.html">理念</a>
+    <a class="nav-link" href="builder.html">项目构建</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="term.html">术语</a>
+    <a class="nav-link" href="ide.html">集成开发环境</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="schedule.html">规划</a>
+    <a class="nav-link" href="test.html">测试框架</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="application.html">应用组装</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">相关主题</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/elf.html">ELF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/gas.html">AT&amp;T 汇编语法</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/graffle.html">Graffle 导出图</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="faq.html">问题</a>
+    <a class="nav-link" href="glossary.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
   </li>
 </ul>
   </li>
@@ -61,7 +79,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">总览</span>
+    <span class="title">学习 C 语言</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -97,6 +115,14 @@
         </li>
       </ul>
     </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
     <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
@@ -113,11 +139,11 @@
         </li>
       </ul>
     </li>
-    <li class="component is-current">
-      <a class="title" href="index.html">总览</a>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
         </li>
       </ul>
     </li>
@@ -145,24 +171,61 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link"></a>
+  <a href="../overview/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">总览</a></li>
-    <li><a href="partner.html">关于分手</a></li>
+    <li><a href="index.html">学习 C 语言</a></li>
+    <li><a href="syntax.html">语法</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/partner.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-c/edit/master/docs/antora/modules/ROOT/pages/syntax.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">关于分手</h1>
+<h1 class="page">语法</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>你心里还有什么想说的吗？心绪是否平静了呢？
-自己很累，对方也很累，分开大家都好。</p>
+<p>对感兴趣的部分编写对应的用例。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_面向对象"><a class="anchor" href="#_面向对象"></a>1. 面向对象</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>面向对象是面向人编程，面向过程是面向 CPU 编程。
+需求是人提出的，面向对象的程序更符合人的活动，更容易实现人的需求，后续增加的需求也更容易在当前程序中实现；
+如果使用面向过程，需要将人的思维转换为 CPU 的思维。</p>
+</div>
+<div class="paragraph">
+<p>对象语法测试案例在 <code>person_test.cpp</code>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pthread"><a class="anchor" href="#_pthread"></a>2. pthread</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在计算机科学中，POSIX Threads，通常称为 pthread，是一种独立于编程语言的执行模型，也是一种并行执行模型。它允许程序控制多个不同的工作流，在时间上有重叠。每个工作流都称为线程，通过对POSIX Threads API进行调用来创建和控制这些线程。简而言之，pthread提供了一套API，用于多线程编程，并且可以由不同的编程语言调用。每个线程共享相同的全局内存（数据和堆段），但每个线程都有自己的堆栈。</p>
+</div>
+<div class="sect2">
+<h3 id="_实现基本测试环境"><a class="anchor" href="#_实现基本测试环境"></a>2.1. 实现基本测试环境</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>目录结构：lib、main、test</p>
+</li>
+<li>
+<p>文件规范：头文件名称+usage，例如：pthread.h &#8594; pthread_usage.h、pthread_usage.cpp、pthread_test.cpp</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>x86 汇编语言 AT&amp;T 语法案例分析 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-c/topic/gas.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-c" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">学习 C 语言</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../start.html">快速入门</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../builder.html">项目构建</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ide.html">集成开发环境</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../test.html">测试框架</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">相关主题</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="elf.html">ELF</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="gas.html">AT&amp;T 汇编语法</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="graffle.html">Graffle 导出图</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 C 语言</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">学习 C 语言</a></li>
+    <li>相关主题</li>
+    <li><a href="gas.html">AT&amp;T 汇编语法</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-c/edit/master/docs/antora/modules/ROOT/pages/topic/gas.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">x86 汇编语言 AT&amp;T 语法案例分析</h1>
+<div class="sect1">
+<h2 id="_理论"><a class="anchor" href="#_理论"></a>1. 理论</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">X86 汇编语言有 2 个主要语法分支：</div>
+<ol class="arabic">
+<li>
+<p>AT&amp;T 语法，应用于 Unix 及其衍生系统。汇编器：GAS</p>
+</li>
+<li>
+<p>Intel 语法，应用于 Windows 系统。汇编器：FASM、MASM、NASM、TASM</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">参考资料</div>
+<ol class="arabic">
+<li>
+<p><a href="https://en.wikipedia.org/wiki/X86_assembly_language" target="_blank" rel="noopener">X86 汇编语言</a></p>
+</li>
+<li>
+<p><a href="https://xiaohanyu.me/posts/2012-03-24-introducing-gas-assembly/" target="_blank" rel="noopener">GAS 汇编</a></p>
+</li>
+<li>
+<p>《Professional Assembly Language》</p>
+</li>
+<li>
+<p>《NASM中文手册》</p>
+</li>
+<li>
+<p><a href="https://sourceware.org/binutils/docs/" class="bare">https://sourceware.org/binutils/docs/</a></p>
+</li>
+<li>
+<p><a href="https://sourceware.org/binutils/docs/as/index.html" target="_blank" rel="noopener">GAS</a></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_cfi"><a class="anchor" href="#_cfi"></a>1.1. cfi</h3>
+<div class="olist arabic">
+<div class="title">参考</div>
+<ol class="arabic">
+<li>
+<p><a href="https://stackoverflow.com/questions/2529185/what-are-cfi-directives-in-gnu-assembler-gas-used-for" class="bare">https://stackoverflow.com/questions/2529185/what-are-cfi-directives-in-gnu-assembler-gas-used-for</a></p>
+</li>
+<li>
+<p><a href="https://sourceware.org/binutils/docs/as/CFI-directives.html#CFI-directives" class="bare">https://sourceware.org/binutils/docs/as/CFI-directives.html#CFI-directives</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/38552116/how-to-remove-noise-from-gcc-clang-assembly-output" target="_blank" rel="noopener">如何移除 GCC/CLANG 输出汇编文件中的噪声</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/7534420/gas-explanation-of-cfi-def-cfa-offset/7535848#7535848" target="_blank" rel="noopener">CFI</a></p>
+</li>
+<li>
+<p><a href="https://dwarfstd.org/doc/DWARF4.pdf" target="_blank" rel="noopener">Debugging With Attributed Record Formats</a></p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_fno_asynchronous_unwind_tables"><a class="anchor" href="#_fno_asynchronous_unwind_tables"></a>1.1.1. -fno-asynchronous-unwind-tables</h4>
+<div class="paragraph">
+<p><code>-fno-asynchronous-unwind-tables</code> 是 GCC（GNU Compiler Collection）编译器的一个选项。该选项用于控制编译器是否为生成调试信息时包括异步取消表（Asynchronous Unwind Tables，AUR）。</p>
+</div>
+<div class="paragraph">
+<p>AUR 是一种机制，用于在程序运行时从函数中取消执行，并在取消发生时正确地恢复栈帧。AUR 由 GCC 和一些调试器使用，如 GDB（GNU Debugger）。AUR 在某些情况下对调试非常有用，但也可能会增加二进制文件的大小。</p>
+</div>
+<div class="paragraph">
+<p>使用 <code>-fno-asynchronous-unwind-tables</code> 选项可以禁用编译器生成 AUR。这样可以减少生成的调试信息的大小，并减小二进制文件的大小。但是，这也会降低程序调试时的精度和可靠性，因为调试器将无法正确地恢复栈帧。</p>
+</div>
+<div class="paragraph">
+<p>总之，使用 <code>-fno-asynchronous-unwind-tables</code> 选项需要权衡二进制文件大小和调试信息的精度和可靠性之间的折衷。在生产环境中编译代码时通常使用此选项来优化代码大小，但在开发和调试时则需要慎重考虑。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

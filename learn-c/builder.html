@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目构建 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-c/builder.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-c" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">学习 C 语言</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="start.html">快速入门</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="builder.html">项目构建</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ide.html">集成开发环境</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="test.html">测试框架</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">相关主题</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/elf.html">ELF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/gas.html">AT&amp;T 汇编语法</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="topic/graffle.html">Graffle 导出图</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="glossary.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 C 语言</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">学习 C 语言</a></li>
+    <li><a href="builder.html">项目构建</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/peacetrue/learn-c/edit/master/docs/antora/modules/ROOT/pages/builder.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">项目构建</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>一个项目中，会包含来自不同开发者的很多源文件，如何高效构建这些源文件呢？</p>
+</div>
+<div class="paragraph">
+<p>这里列举一个简单的例子进行说明：团队A开发类库，团队B开发应用，团队B开发的应用依赖于团队A开发的类库。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_理论"><a class="anchor" href="#_理论"></a>1. 理论</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>摘抄至 《深入理解计算机系统（第三版文字版）》：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/builder/theory-01.png" alt="theory 01">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/builder/theory-02.png" alt="theory 02">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_手动"><a class="anchor" href="#_手动"></a>2. 手动</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 当前在 builder 目录下
+
+#团队A构建目标文件
+gcc -I team-a/src/main/public -c team-a/src/main/cpp/library.cpp
+
+#团队B构建目标文件
+gcc -I team-a/src/main/public -c team-b/src/main/cpp/application.cpp
+#团队B构建可执行文件
+gcc -o application application.o library.o
+
+# 运行程序
+./application
+# 清除生成的文件
+rm -rf *.o application</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+对于分割到多个资源库的项目，团队A和团队B之间如何约定接口？
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_make"><a class="anchor" href="#_make"></a>3. Make</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Makefile</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-Makefile hljs" data-lang="Makefile">library.o: team-a/src/main/cpp/library.cpp
+	gcc -g -I team-a/src/main/public -c team-a/src/main/cpp/library.cpp
+application.o: team-b/src/main/cpp/application.cpp team-a/src/main/public/library.h
+	gcc -g -I team-a/src/main/public -c team-b/src/main/cpp/application.cpp
+application: application.o library.o
+	gcc -g -o application application.o library.o
+clean:
+	rm -rf *.o application
+all: application</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 当前在 builder 目录下
+make application
+./application</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cmake"><a class="anchor" href="#_cmake"></a>4. CMake</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 当前在 builder 目录下
+mkdir build
+cd build
+cmake ..
+make
+./team-b/application</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gradle"><a class="anchor" href="#_gradle"></a>5. Gradle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gradle 遵循约定优先于配置的原则。</p>
+</div>
+<div class="olist arabic">
+<div class="title">参考</div>
+<ol class="arabic">
+<li>
+<p><a href="https://docs.gradle.org/current/userguide/building_cpp_projects.html" target="_blank" rel="noopener">Building C++ projects</a></p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 当前在 builder 目录下
+./gradlew build
+team-b/build/exe/main/debug/team-b</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
