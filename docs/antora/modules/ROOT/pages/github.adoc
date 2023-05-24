@@ -1,0 +1,43 @@
+= GitHub
+
+== 徽章(badge)
+
+. https://shields.io/
+
+构建源码：
+
+----
+image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}/main.yml?branch=master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]
+----
+
+构建效果：
+
+image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}/main.yml?branch=master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]
+
+== Action
+
+=== junit test results
+
+. 测试结果徽章： https://shields.io/category/test-results
+. [.line-through]#https://foresight.thundra.io/# 网站下线
+. [.line-through]#https://ci.appveyor.com/# 构建平台与 GitHub 功能重叠，只需要上传展示测试报告
+. https://help.testspace.com/getting.started test space good
+. https://github.com/testspace-com/hello.publish[demo for testspace^]
+. https://peacetrue.testspace.com/[peacetrue for testspace^]
+
+.github/workflows/main.yml
+[source%nowrap,yml]
+----
+steps:
+  - uses: actions/checkout@v3
+  - uses: testspace-com/setup-testspace@v1
+    with:
+      domain: ${{github.repository_owner}}
+      token: ${{ secrets.TESTSPACE_TOKEN }} # optional, only required for private repos
+  - name: Publish Results to Testspace
+    run: testspace "path/to/*.xml"
+----
+
+测试结果：
+
+image:https://img.shields.io/testspace/tests/peacetrue/peacetrue:peacetrue-common/master["test space",link="https://peacetrue.testspace.com/"]
