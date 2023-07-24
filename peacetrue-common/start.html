@@ -8,7 +8,6 @@
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
-    <script>var uiRootPath = '../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -100,6 +99,14 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../learn-lldb/index.html">学习 LLDB</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-lldb/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -154,8 +161,8 @@
     <li><a href="start.html">快速入门</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-common/edit/master/docs/antora/modules/ROOT/pages/start.adoc">Edit this Page</a></div>
-  </div>
+<div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue-common/edit/master/docs/antora/modules/ROOT/pages/start.adoc">Edit this Page</a></div>
+</div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
@@ -263,13 +270,13 @@ owner.hashCode=501
 owner.toString=xiayx
 name=posix
 readAttributes.symbolicLink=false
-readAttributes.permissions[0]=OWNER_EXECUTE
+readAttributes.permissions[0]=GROUP_EXECUTE
 readAttributes.permissions[1]=OTHERS_EXECUTE
-readAttributes.permissions[2]=GROUP_READ
+readAttributes.permissions[2]=OWNER_READ
 readAttributes.permissions[3]=OTHERS_READ
 readAttributes.permissions[4]=OWNER_WRITE
-readAttributes.permissions[5]=GROUP_EXECUTE
-readAttributes.permissions[6]=OWNER_READ
+readAttributes.permissions[5]=OWNER_EXECUTE
+readAttributes.permissions[6]=GROUP_READ
 readAttributes.group.name=staff
 readAttributes.group.hashCode=20
 readAttributes.group.toString=staff
@@ -288,10 +295,10 @@ readAttributes.fileKey=(dev=1000005,ino=36821797)
 readAttributes.owner.name=xiayx
 readAttributes.owner.hashCode=501
 readAttributes.owner.toString=xiayx
-readAttributes.lastAccessTime.toMillis=1666797095000
-readAttributes.lastAccessTime.hashCode=1666797095
-readAttributes.lastAccessTime.toInstant=2022-10-26T15:11:35Z
-readAttributes.lastAccessTime.toString=2022-10-26T15:11:35Z
+readAttributes.lastAccessTime.toMillis=1678729691000
+readAttributes.lastAccessTime.hashCode=1678729691
+readAttributes.lastAccessTime.toInstant=2023-03-13T17:48:11Z
+readAttributes.lastAccessTime.toString=2023-03-13T17:48:11Z
 readAttributes.regularFile=true</code></pre>
 </div>
 </div>
@@ -336,13 +343,13 @@ readAttributes.regularFile=true</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">owner(User).name(String)=xiayx
 name(String)=posix
 readAttributes(UnixFileAttributes).symbolicLink(Boolean)=false
-readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=OWNER_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=GROUP_EXECUTE
 readAttributes(UnixFileAttributes).permissions(HashSet)[1](PosixFilePermission)=OTHERS_EXECUTE
-readAttributes(UnixFileAttributes).permissions(HashSet)[2](PosixFilePermission)=GROUP_READ
+readAttributes(UnixFileAttributes).permissions(HashSet)[2](PosixFilePermission)=OWNER_READ
 readAttributes(UnixFileAttributes).permissions(HashSet)[3](PosixFilePermission)=OTHERS_READ
 readAttributes(UnixFileAttributes).permissions(HashSet)[4](PosixFilePermission)=OWNER_WRITE
-readAttributes(UnixFileAttributes).permissions(HashSet)[5](PosixFilePermission)=GROUP_EXECUTE
-readAttributes(UnixFileAttributes).permissions(HashSet)[6](PosixFilePermission)=OWNER_READ
+readAttributes(UnixFileAttributes).permissions(HashSet)[5](PosixFilePermission)=OWNER_EXECUTE
+readAttributes(UnixFileAttributes).permissions(HashSet)[6](PosixFilePermission)=GROUP_READ
 readAttributes(UnixFileAttributes).group(Group).name(String)=staff
 readAttributes(UnixFileAttributes).size(Long)=5766
 readAttributes(UnixFileAttributes).other(Boolean)=false
@@ -351,7 +358,7 @@ readAttributes(UnixFileAttributes).lastModifiedTime(FileTime)=2022-05-01T23:41:4
 readAttributes(UnixFileAttributes).creationTime(FileTime)=2022-05-01T23:41:48Z
 readAttributes(UnixFileAttributes).fileKey(UnixFileKey)=(dev=1000005,ino=36821797)
 readAttributes(UnixFileAttributes).owner(User).name(String)=xiayx
-readAttributes(UnixFileAttributes).lastAccessTime(FileTime)=2022-10-26T15:11:35Z
+readAttributes(UnixFileAttributes).lastAccessTime(FileTime)=2023-03-13T17:48:11Z
 readAttributes(UnixFileAttributes).regularFile(Boolean)=true</code></pre>
 </div>
 </div>

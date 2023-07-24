@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>settings-list :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-lldb/key/settings-list.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-lldb" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">学习 LLDB</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><a href="https://lldb.llvm.org/man/lldb.html" target="_blank" rel="noopener">帮助手册</a></span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/apropos.html">apropos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/b.html">b</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/breakpoint-command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-command-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-command-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-modify.html">modify</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/breakpoint-name.html">name</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-name-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-name-configure.html">configure</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-name-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/breakpoint-name-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-set.html">set</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/breakpoint-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/bt.html">bt</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/c.html">c</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/call.html">call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/command-alias.html">alias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/command-container.html">container</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-container-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-container-delete.html">delete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/command-regex.html">regex</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/command-script.html">script</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-script-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-script-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-script-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-script-import.html">import</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/command-script-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/command-source.html">source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/command-unalias.html">unalias</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/detach.html">detach</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/di.html">di</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/dis.html">dis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/disassemble.html">disassemble</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/display.html">display</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/down.html">down</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/env.html">env</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/exit.html">exit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/expression.html">expression</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/f.html">f</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/file.html">file</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/finish.html">finish</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/frame.html">frame</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/frame-diagnose.html">diagnose</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/frame-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/frame-recognizer.html">recognizer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/frame-recognizer-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/frame-recognizer-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/frame-recognizer-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/frame-recognizer-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/frame-recognizer-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/frame-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/frame-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/gui.html">gui</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/help.html">help</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/index.html">index</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/j.html">j</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/jump.html">jump</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/kill.html">kill</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/l.html">l</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language.html">language</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-cplusplus.html">cplusplus</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/language-cplusplus-demangle.html">demangle</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/language-objc.html">objc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript.html">renderscript</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-allocation.html">allocation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-allocation-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-allocation-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-allocation-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-allocation-refresh.html">refresh</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-allocation-save.html">save</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-context.html">context</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-context-dump.html">dump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-kernel.html">kernel</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-kernel-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="../man/language-renderscript-kernel-breakpoint-all.html">all</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="../man/language-renderscript-kernel-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-kernel-coordinate.html">coordinate</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-kernel-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-module.html">module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-module-dump.html">dump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-reduction.html">reduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-reduction-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="../man/language-renderscript-reduction-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-scriptgroup.html">scriptgroup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-renderscript-scriptgroup-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="../man/language-renderscript-scriptgroup-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/language-renderscript-scriptgroup-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/language-renderscript-status.html">status</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/language-swift.html">swift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/language-swift-demangle.html">demangle</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/language-swift-refcount.html">refcount</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/log.html">log</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/log-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/log-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/log-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/log-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/log-timers.html">timers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/log-timers-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/log-timers-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/log-timers-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/log-timers-increment.html">increment</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/log-timers-reset.html">reset</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/memory.html">memory</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/memory-find.html">find</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/memory-history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/memory-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/memory-region.html">region</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/memory-tag.html">tag</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/memory-tag-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/memory-tag-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/memory-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/n.html">n</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/next.html">next</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/nexti.html">nexti</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/ni.html">ni</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/p.html">p</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/parray.html">parray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/platform.html">platform</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-connect.html">connect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-disconnect.html">disconnect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/platform-file.html">file</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-file-close.html">close</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-file-open.html">open</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-file-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-file-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-mkdir.html">mkdir</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/platform-process.html">process</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-process-attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-process-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-process-launch.html">launch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/platform-process-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-settings.html">settings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-shell.html">shell</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/platform-status.html">status</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/plugin.html">plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/plugin-load.html">load</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/po.html">po</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/poarray.html">poarray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/print.html">print</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/process.html">process</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-connect.html">connect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-detach.html">detach</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-handle.html">handle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-interrupt.html">interrupt</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-kill.html">kill</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-launch.html">launch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-plugin.html">plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-signal.html">signal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-status.html">status</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/process-trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/process-trace-save.html">save</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/process-trace-start.html">start</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/process-trace-stop.html">stop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/process-unload.html">unload</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/q.html">q</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/quit.html">quit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/r.html">r</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/rbreak.html">rbreak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/re.html">re</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/register.html">register</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/register-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/register-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/repl.html">repl</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/reproducer.html">reproducer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/reproducer-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/reproducer-generate.html">generate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/reproducer-status.html">status</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/reproducer-xcrash.html">xcrash</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/run.html">run</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/s.html">s</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/script.html">script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/session.html">session</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/session-history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/session-save.html">save</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/settings.html">settings</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-append.html">append</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-remove.html">remove</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-replace.html">replace</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-set.html">set</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-show.html">show</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/settings-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/shell.html">shell</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/si.html">si</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/sif.html">sif</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/source.html">source</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/source-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/source-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/statistics.html">statistics</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/statistics-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/statistics-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/statistics-enable.html">enable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/step.html">step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/stepi.html">stepi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/t.html">t</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/target.html">target</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/target-create.html">create</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/target-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/target-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-dump-typesystem.html">typesystem</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/target-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/target-modules.html">modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-modules-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/target-modules-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/target-modules-dump-ast.html">ast</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/target-modules-dump-objfile.html">objfile</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/target-modules-dump-sections.html">sections</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/target-modules-dump-symfile.html">symfile</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/target-modules-dump-symtab.html">symtab</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-modules-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-modules-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-modules-lookup.html">lookup</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/target-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/target-symbols.html">symbols</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/target-symbols-add.html">add</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/target-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/tbreak.html">tbreak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/thread.html">thread</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-backtrace.html">backtrace</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-exception.html">exception</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-jump.html">jump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/thread-plan.html">plan</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/thread-plan-discard.html">discard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/thread-plan-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/thread-plan-prune.html">prune</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-return.html">return</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-siginfo.html">siginfo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/thread-trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/thread-trace-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/thread-trace-dump-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/thread-trace-dump-instructions.html">instructions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/thread-trace-export.html">export</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../man/thread-trace-export-ctf.html">ctf</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/thread-trace-start.html">start</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/thread-trace-stop.html">stop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/thread-until.html">until</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/trace-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/trace-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/trace-schema.html">schema</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type.html">type</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type-category.html">category</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-category-define.html">define</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-category-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-category-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-category-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-category-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type-filter.html">filter</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-filter-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-filter-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-filter-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-filter-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type-format.html">format</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-format-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-format-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-format-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-format-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-format-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/type-lookup.html">lookup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type-summary.html">summary</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-summary-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-summary-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-summary-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-summary-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-summary-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/type-synthetic.html">synthetic</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-synthetic-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-synthetic-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-synthetic-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-synthetic-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/type-synthetic-list.html">list</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/undisplay.html">undisplay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/up.html">up</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/v.html">v</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/var.html">var</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/version.html">version</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/vo.html">vo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/watchpoint.html">watchpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/watchpoint-command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/watchpoint-command-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/watchpoint-command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/watchpoint-command-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-ignore.html">ignore</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../man/watchpoint-modify.html">modify</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../man/watchpoint-set.html">set</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/watchpoint-set-expression.html">expression</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../man/watchpoint-set-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../man/x.html">x</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">帮助选项</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="log-list.html">log-list</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="settings-list.html">settings-list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../reference.html">参考指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 LLDB</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-c/index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-c/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">学习 LLDB</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">学习 LLDB</a></li>
+    <li>帮助选项</li>
+    <li><a href="settings-list.html">settings-list</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/peacetrue/learn-lldb/edit/master/docs/antora/modules/ROOT/pages/key/settings-list.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">settings-list</h1>
+<div class="listingblock">
+<div class="content">
+<pre>Top level variables:
+
+  auto-confirm                    -- If true all confirmation prompts will receive their default reply.
+  auto-indent                     -- If true, LLDB will auto indent/outdent code. Currently only supported in the REPL (default: true).
+  auto-one-line-summaries         -- If true, LLDB will automatically display small structs in one-liner format (default: true).
+  disassembly-format              -- The default disassembly format string to use when disassembling instruction sequences.
+  escape-non-printables           -- If true, LLDB will automatically escape non-printable and escape characters when formatting strings.
+  frame-format                    -- The default frame format string to use when displaying stack frame information for threads.
+  frame-format-unique             -- The default frame format string to use when displaying stack frameinformation for threads from thread backtrace
+                                     unique.
+  highlight-source                -- If true, LLDB will highlight the displayed source code.
+  notify-void                     -- Notify the user explicitly if an expression returns void (default: false).
+  print-decls                     -- If true, LLDB will print the values of variables declared in an expression. Currently only supported in the REPL
+                                     (default: true).
+  prompt                          -- The debugger command line prompt displayed for the user.
+  repl-lang                       -- The language to use for the REPL.
+  script-lang                     -- The script language to be used for evaluating user-written scripts.
+  show-autosuggestion             -- If true, LLDB will show suggestions to complete the command the user typed. Suggestions may be accepted using
+                                     Ctrl-F.
+  show-autosuggestion-ansi-prefix -- When displaying suggestion in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately before the suggestion.
+  show-autosuggestion-ansi-suffix -- When displaying suggestion in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately after the suggestion.
+  show-progress                   -- Whether to show progress or not if the debugger's output is an interactive color-enabled terminal.
+  show-progress-ansi-prefix       -- When displaying progress in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately before the progress message.
+  show-progress-ansi-suffix       -- When displaying progress in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately after the progress message.
+  stop-disassembly-count          -- The number of disassembly lines to show when displaying a stopped context.
+  stop-disassembly-display        -- Control when to display disassembly when displaying a stopped context.
+  stop-disassembly-max-size       -- The size limit to use when disassembling large functions (default: 32KB).
+  stop-line-count-after           -- The number of sources lines to display that come after the current source line when displaying a stopped context.
+  stop-line-count-before          -- The number of sources lines to display that come before the current source line when displaying a stopped context.
+  stop-show-column                -- If true, LLDB will use the column information from the debug info to mark the current position when displaying a
+                                     stopped context.
+  stop-show-column-ansi-prefix    -- When displaying the column marker in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     at the immediately before the column to be marked.
+  stop-show-column-ansi-suffix    -- When displaying the column marker in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately after the column to be marked.
+  stop-show-line-ansi-prefix      -- When displaying the line marker in a color-enabled terminal, use the ANSI terminal code specified in this format at
+                                     the immediately before the line to be marked.
+  stop-show-line-ansi-suffix      -- When displaying the line marker in a color-enabled terminal, use the ANSI terminal code specified in this format
+                                     immediately after the line to be marked.
+  tab-size                        -- The tab size to use when indenting code in multi-line input mode (default: 4).
+  term-width                      -- The maximum number of columns to use for displaying text.
+  thread-format                   -- The default thread format string to use when displaying thread information.
+  thread-stop-format              -- The default thread format  string to use when displaying thread information as part of the stop display.
+  use-color                       -- Whether to use Ansi color codes or not.
+  use-external-editor             -- Whether to use an external editor or not.
+  use-source-cache                -- Whether to cache source files in memory or not.
+
+'target' variables:
+
+  arg0                                -- The first argument passed to the program in the argument array which can be different from the executable
+                                         itself.
+  auto-apply-fixits                   -- Automatically apply fix-it hints to expressions.
+  auto-import-clang-modules           -- Automatically load Clang modules referred to by the program.
+  auto-install-main-executable        -- Always install the main executable when connected to a remote platform.
+  breakpoints-use-platform-avoid-list -- Consult the platform module avoid list when setting non-module specific breakpoints.
+  clang-module-search-paths           -- List of directories to be searched when locating modules for Clang.
+  debug-file-search-paths             -- List of directories to be searched when locating debug symbol files. See also symbols.enable-external-lookup.
+  debug-utility-expression            -- Enable debugging of LLDB-internal utility expressions.
+  default-arch                        -- Default architecture to choose, when there's a choice.
+  detach-on-error                     -- debugserver will detach (rather than killing) a process if it loses connection with lldb.
+  disable-aslr                        -- Disable Address Space Layout Randomization (ASLR)
+  disable-stdio                       -- Disable stdin/stdout for process (e.g. for a GUI application)
+  x86-disassembly-flavor              -- The default disassembly flavor to use for x86 or x86-64 targets.
+  display-expression-in-crashlogs     -- Expressions that crash will show up in crash logs if the host system supports executable specific crash log
+                                         strings and this setting is set to true.
+  display-recognized-arguments        -- Show recognized arguments in variable listings by default.
+  display-runtime-support-values      -- If true, LLDB will show variables that are meant to support the operation of a language's runtime support.
+  objc-dynamic-class-extractor        -- Configure how LLDB parses dynamic Objective-C class metadata. By default LLDB will choose the most appropriate
+                                         method for the target OS.
+  enable-synthetic-value              -- Should synthetic values be used by default whenever available.
+  env-vars                            -- A list of user provided environment variables to be passed to the executable's environment, and their values.
+  error-path                          -- The file/path to be used by the executable program for writing its standard error.
+  exec-search-paths                   -- Executable search paths to use when locating executable files whose paths don't match the local file system.
+  expr-error-limit                    -- The maximum amount of errors to emit while parsing an expression. A value of 0 means to always continue parsing
+                                         if possible.
+  expr-prefix                         -- Path to a file containing expressions to be prepended to all expressions.
+  hex-immediate-style                 -- Which style to use for printing hexadecimal disassembly values.
+  import-std-module                   -- Import the 'std' C++ module to improve expression parsing involving  C++ standard library types.
+  inherit-env                         -- Inherit the environment from the process that is running LLDB.
+  inherit-tcc                         -- Inherit the TCC permissions from the inferior's parent instead of making the process itself responsible.
+  inline-breakpoint-strategy          -- The strategy to use when settings breakpoints by file and line. Breakpoint locations can end up being inlined
+                                         by the compiler, so that a compile unit 'a.c' might contain an inlined function from another source file.
+                                         Usually this is limited to breakpoint locations from inlined functions from header or other include files, or
+                                         more accurately non-implementation source files. Sometimes code might #include implementation files and cause
+                                         inlined breakpoint locations in inlined implementation files. Always checking for inlined breakpoint locations
+                                         can be expensive (memory and time), so if you have a project with many headers and find that setting
+                                         breakpoints is slow, then you can change this setting to headers. This setting allows you to control exactly
+                                         which strategy is used when setting file and line breakpoints.
+  input-path                          -- The file/path to be used by the executable program for reading its standard input.
+  language                            -- The language to use when interpreting expressions entered in commands.
+  load-cwd-lldbinit                   -- Allow LLDB to .lldbinit files from the current directory automatically.
+  load-script-from-symbol-file        -- Allow LLDB to load scripting resources embedded in symbol files when available.
+  max-children-count                  -- Maximum number of children to expand in any level of depth.
+  max-children-depth                  -- Maximum depth to expand children.
+  max-memory-read-size                -- Maximum number of bytes that 'memory read' will fetch before --force must be specified.
+  max-string-summary-length           -- Maximum number of characters to show when using %s in summary strings.
+  max-zero-padding-in-float-format    -- The maximum number of zeroes to insert when displaying a very small float before falling back to scientific
+                                         notation.
+  memory-module-load-level            -- Loading modules from memory can be slow as reading the symbol tables and other data can take a long time
+                                         depending on your connection to the debug target. This setting helps users control how much information gets
+                                         loaded when loading modules from memory.'complete' is the default value for this setting which will load all
+                                         sections and symbols by reading them from memory (slowest, most accurate). 'partial' will load sections and
+                                         attempt to find function bounds without downloading the symbol table (faster, still accurate, missing symbol
+                                         names). 'minimal' is the fastest setting and will load section data with no symbols, but should rarely be used
+                                         as stack frames in these memory regions will be inaccurate and not provide any context (fastest).
+  move-to-nearest-code                -- Move breakpoints to nearest code.
+  notify-about-fixits                 -- Print the fixed expression text.
+  output-path                         -- The file/path to be used by the executable program for writing its standard output.
+  prefer-dynamic-value                -- Should printed values be shown as their dynamic value.
+  preload-symbols                     -- Enable loading of symbol tables before they are needed.
+  require-hardware-breakpoint         -- Require all breakpoints to be hardware breakpoints.
+  retries-with-fixits                 -- Maximum number of attempts to fix an expression with Fix-Its
+  run-args                            -- A list containing all the arguments to be passed to the executable when it is run. Note that this does NOT
+                                         include the argv[0] which is in target.arg0.
+  sdk-path                            -- The path to the SDK used to build the current target.
+  save-jit-objects-dir                -- If specified, the directory to save intermediate object files generated by the LLVM JIT
+  skip-prologue                       -- Skip function prologues when setting breakpoints by name.
+  source-map                          -- Source path remappings apply substitutions to the paths of source files, typically needed to debug from a
+                                         different host than the one that built the target.  The source-map property consists of an array of pairs, the
+                                         first element is a path prefix, and the second is its replacement.  The syntax is `prefix1 replacement1 prefix2
+                                         replacement2...`.  The pairs are checked in order, the first prefix that matches is used, and that prefix is
+                                         substituted with the replacement.  A common pattern is to use source-map in conjunction with the clang
+                                         -fdebug-prefix-map flag.  In the build, use `-fdebug-prefix-map=/path/to/build_dir=.` to rewrite the host
+                                         specific build directory to `.`.  Then for debugging, use `settings set target.source-map . /path/to/local_dir`
+                                         to convert `.` to a valid local path.
+  swift-auto-import-frameworks        -- Automatically import all frameworks and dynamic libraries that are autolinked by Swift modules in the target.
+  swift-extra-clang-flags             -- Additional -Xcc flags to be passed to the Swift ClangImporter.
+  swift-framework-search-paths        -- List of directories to be searched when locating frameworks for Swift.
+  swift-module-search-paths           -- List of directories to be searched when locating modules for Swift.
+  trap-handler-names                  -- A list of trap handler function names, e.g. a common Unix user process one is _sigtramp.
+  unset-env-vars                      -- A list of environment variable names to be unset in the inferior's environment. This is most useful to unset
+                                         some host environment variables when target.inherit-env is true. target.env-vars takes precedence over
+                                         target.unset-env-vars.
+  use-all-compiler-flags              -- Try to use compiler flags for all modules when setting up the Swift expression parser, not just the main
+                                         executable.
+  use-fast-stepping                   -- Use a fast stepping algorithm based on running from branch to branch rather than instruction single-stepping.
+  use-hex-immediates                  -- Show immediates in disassembly as hexadecimal.
+
+'target.experimental' variables:
+
+  inject-local-vars                    -- If true, inject local variables explicitly into the expression text. This will fix symbol resolution when
+                                          there are name collisions between ivars and local variables. But it can make expressions run much more slowly.
+  ptrauth-jit-codgen                   -- If true, jit codegen on arm64e targets will have pointer authentication enabled
+  swift-discover-implicit-search-paths -- Discover implicit search paths from all implicitly imported Swift modules and make them available to the
+                                          expression context. A Swift module built with -serialize-debugging-options can contain additional search paths
+                                          which are discovered as the module is imported. This optiondoes an eager import of all modules first to make
+                                          sure all implicit search paths are availableto the expression evaluator. If the build system registers all
+                                          Swift modules with the linker (Darwin: via -add_ast_path, Other platforms: -module-wrap), turning this on is
+                                          not necessary.
+  swift-enable-bare-slash-regex        -- Passes the -enable-bare-slash-regex compiler flag to the swift compiler.
+  swift-enable-cxx-interop             -- Passes the -enable-cxx-interop flag to the swift compiler.
+  swift-read-metadata-from-dsym        -- Read Swift reflection metadata from the dsym instead of the process when possible
+  swift-read-metadata-from-file-cache  -- Read Swift reflection metadata from the file cache instead of the process when possible
+  swift-use-reflection-symbols         -- if true, optimize the loading of Swift reflection metadata by making use of available symbols.
+
+'target.process' variables:
+
+  detach-keeps-stopped                 -- If true, detach will attempt to keep the process stopped.
+  disable-language-runtime-unwindplans -- If true, LanguageRuntime plugins' UnwindPlans will not be used when backtracing.
+  disable-memory-cache                 -- Disable reading and caching of memory in fixed-size units.
+  extra-startup-command                -- A list containing extra commands understood by the particular process plugin used.  For instance, to turn on
+                                          debugserver logging set this to 'QSetLogging:bitmask=LOG_DEFAULT;'
+  follow-fork-mode                     -- Debugger's behavior upon fork or vfork.
+  ignore-breakpoints-in-expressions    -- If true, breakpoints will be ignored during expression evaluation.
+  interrupt-timeout                    -- The time in seconds to wait for an interrupt succeed in stopping the target.
+  memory-cache-line-size               -- The memory cache line size
+  python-os-plugin-path                -- A path to a python OS plug-in module file that contains a OperatingSystemPlugIn class.
+  run-all-threads                      -- If true, stepping operations will run all threads.  This is equivalent to setting the run-mode option to
+                                          'all-threads'.
+  stop-on-exec                         -- If true, stop when a shared library is loaded or unloaded.
+  stop-on-sharedlibrary-events         -- If true, stop when a shared library is loaded or unloaded.
+  unwind-on-error-in-expressions       -- If true, errors in expression evaluation will unwind the stack back to the state before the call.
+  utility-expression-timeout           -- The time in seconds to wait for LLDB-internal utility expressions.
+  virtual-addressable-bits             -- The number of bits used for addressing. If the value is 39, then bits 0..38 are used for addressing. The
+                                          default value of 0 means unspecified.
+  optimization-warnings                -- If true, warn when stopped in code that is optimized where stepping and variable availability may not behave
+                                          as expected.
+  toolchain-mismatch-warnings          -- If true, warn when stopped in code that was compiled by a Swift compiler different from the one embedded in
+                                          LLDB.
+  unsupported-language-warnings        -- If true, warn when stopped in code that is written in a source language that LLDB does not support.
+
+'target.process.thread' variables:
+
+  trace-thread           -- If true, this thread will single-step and log execution.
+  max-backtrace-depth    -- Maximum number of frames to backtrace.
+  step-avoid-libraries   -- A list of libraries that source stepping won't stop in.
+  step-avoid-regexp      -- A regular expression defining functions step-in won't stop in.
+  step-in-avoid-nodebug  -- If true, step-in will not stop in functions with no debug information.
+  step-out-avoid-nodebug -- If true, when step-in/step-out/step-over leave the current frame, they will continue to step out till they come to a
+                            function with debug information. Passing a frame argument to step-out will override this option.
+
+'target.process.experimental' variables:
+
+  os-plugin-reports-all-threads -- Set to False if your OS Plugins doesn't report all threads on each stop.
+
+'platform' variables:
+
+  module-cache-directory -- Root directory for cached modules.
+  use-module-cache       -- Use module cache.
+
+'platform.plugin' variables:
+
+
+'platform.plugin.darwin' variables:
+
+  ignored-exceptions -- List the mach exceptions to ignore, separated by '|' (e.g. 'EXC_BAD_ACCESS|EXC_BAD_INSTRUCTION'). lldb will instead stop on the
+                        BSD signal the exception was converted into, if there is one.
+
+'platform.plugin.darwin-kernel' variables:
+
+  kext-directories -- Directories/KDKs to search for kexts in when starting a kernel debug session.
+
+'platform.plugin.qemu-user' variables:
+
+  architecture      -- Architecture to emulate.
+  emulator-args     -- Extra arguments to pass to the emulator.
+  emulator-env-vars -- Extra variables to add to the emulator environment.
+  emulator-path     -- Path to the emulator binary. If the path does not contain a directory separator, the filename is looked up in the PATH
+                       environment variable. If empty, the filename is derived from the architecture setting.
+  target-env-vars   -- Extra variables to add to emulated target environment.
+
+'symbols' variables:
+
+  clang-modules-cache-path             -- The path to the clang modules cache directory (-fmodules-cache-path).
+  enable-background-lookup             -- On macOS, enable calling dsymForUUID (or an equivalent script/binary) in the background to locate symbol files
+                                          that weren't found.
+  enable-external-lookup               -- Control the use of external tools and repositories to locate symbol files. Directories listed in
+                                          target.debug-file-search-paths and directory of the executable are always checked first for separate debug
+                                          info files. Then depending on this setting: On macOS, Spotlight would be also used to locate a matching .dSYM
+                                          bundle based on the UUID of the executable. On NetBSD, directory /usr/libdata/debug would be also searched. On
+                                          platforms other than NetBSD directory /usr/lib/debug would be also searched.
+  enable-lldb-index-cache              -- Enable caching for debug sessions in LLDB. LLDB can cache data for each module for improved performance in
+                                          subsequent debug sessions.
+  enable-swift-metadata-cache          -- Enable caching for Swift reflection metadata in LLDB.
+  lldb-index-cache-expiration-days     -- The expiration time in days for a file. When a file hasn't been accessed for the specified amount of days, it
+                                          is removed from the cache. A value of 0 disables the expiration-based pruning.
+  lldb-index-cache-max-byte-size       -- The maximum size for the LLDB index cache directory in bytes. A value over the amount of available space on
+                                          the disk will be reduced to the amount of available space. A value of 0 disables the absolute size-based
+                                          pruning.
+  lldb-index-cache-max-percent         -- The maximum size for the cache directory in terms of percentage of the available space on the disk. Set to 100
+                                          to indicate no limit, 50 to indicate that the cache size will not be left over half the available disk space.
+                                          A value over 100 will be reduced to 100. A value of 0 disables the percentage size-based pruning.
+  lldb-index-cache-path                -- The path to the LLDB index cache directory.
+  swift-metadata-cache-expiration-days -- The expiration time in days for a Swift reflection cache file. When a file hasn't been accessed for the
+                                          specified amount of days, it is removed from the cache. A value of 0 disables the expiration-based pruning.
+  swift-metadata-cache-max-byte-size   -- The maximum size for LLDB's Swift reflection cache directory in bytes. A value over the amount of available
+                                          space on the disk will be reduced to the amount of available space. A value of 0 disables the absolute
+                                          size-based pruning.
+  swift-metadata-cache-path            -- The path to LLDB's Swift reflection cache directory.
+  swift-module-loading-mode            -- The module loading mode to use when loading modules for Swift.
+  swift-validate-typesystem            -- Validate all Swift typesystem queries. Used for testing an asserts-enabled LLDB only.
+  debug-info-symlink-paths             -- Debug info path which should be resolved while parsing, relative to the host filesystem.
+  use-swift-clangimporter              -- Reconstruct Clang module dependencies from headers when debugging Swift code
+  use-swift-dwarfimporter              -- Reconstruct Clang module dependencies from DWARF when debugging Swift code
+  use-swift-typeref-typesystem         -- Prefer Swift Remote Mirrors over Remote AST
+
+'interpreter' variables:
+
+  echo-commands                -- If true, commands will be echoed before they are evaluated.
+  echo-comment-commands        -- If true, commands will be echoed even if they are pure comment lines.
+  expand-regex-aliases         -- If true, regular expression alias commands will show the expanded command that will be executed. This can be used to
+                                  debug new regular expression alias commands.
+  open-transcript-in-editor    -- If true, LLDB will open the saved session's transcripts in the external editor.
+  prompt-on-quit               -- If true, LLDB will prompt you before quitting if there are any live processes being debugged. If false, LLDB will quit
+                                  without asking in any case.
+  repeat-previous-command      -- If true, LLDB will repeat the previous command if no command was passed to the interpreter. If false, LLDB won't
+                                  repeat the previous command but only return a new prompt.
+  require-overwrite            -- If true, require --overwrite in 'command script add' before overwriting existing user commands.
+  save-session-directory       -- A path where LLDB will save the session's transcripts. This is particularly useful when you can't set the session
+                                  file, for example when using `save-session-on-quit`.
+  save-session-on-quit         -- If true, LLDB will save the session's transcripts before quitting.
+  space-repl-prompts           -- If true, blank lines will be printed between between REPL submissions.
+  stop-command-source-on-error -- If true, LLDB will stop running a 'command source' script upon encountering an error.
+
+'plugin' variables:
+
+
+'plugin.dynamic-loader' variables:
+
+
+'plugin.dynamic-loader.darwin-kernel' variables:
+
+  load-kexts -- Automatically loads kext images when attaching to a kernel.
+  scan-type  -- Control how many reads lldb will make while searching for a Darwin kernel on attach.
+
+'plugin.jit-loader' variables:
+
+
+'plugin.jit-loader.gdb' variables:
+
+  enable -- Enable GDB's JIT compilation interface (default: enabled on all platforms except macOS)
+
+'plugin.process' variables:
+
+
+'plugin.process.kdp-remote' variables:
+
+  packet-timeout -- Specify the default packet timeout in seconds.
+
+'plugin.process.gdb-remote' variables:
+
+  packet-timeout           -- Specify the default packet timeout in seconds.
+  target-definition-file   -- The file that provides the description for remote target registers.
+  use-g-packet-for-reading -- Specify if the server should use 'g' packets to read registers.
+  use-libraries-svr4       -- If true, the libraries-svr4 feature will be used to get a hold of the process's loaded modules. This setting is only
+                              effective if lldb was build with xml support.
+
+'plugin.symbol-file' variables:
+
+
+'plugin.symbol-file.dwarf' variables:
+
+  ignore-file-indexes -- Ignore indexes present in the object files and always index DWARF manually.
+
+'plugin.structured-data' variables:
+
+
+'plugin.structured-data.darwin-log' variables:
+
+  auto-enable-options -- Specify the options to 'plugin structured-data darwin-log enable' that should be applied when automatically enabling logging on
+                         startup/attach.
+  enable-on-startup   -- Enable Darwin os_log collection when debugged process is launched or attached.</pre>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

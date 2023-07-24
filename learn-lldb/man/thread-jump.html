@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>thread-jump :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/learn-lldb/man/thread-jump.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="learn-lldb" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">学习 LLDB</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text"><a href="https://lldb.llvm.org/man/lldb.html" target="_blank" rel="noopener">帮助手册</a></span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apropos.html">apropos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="b.html">b</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="breakpoint-command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-command-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-command-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-modify.html">modify</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="breakpoint-name.html">name</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-name-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-name-configure.html">configure</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-name-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="breakpoint-name-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-set.html">set</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="breakpoint-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bt.html">bt</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="c.html">c</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="call.html">call</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="command-alias.html">alias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="command-container.html">container</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-container-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-container-delete.html">delete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="command-regex.html">regex</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="command-script.html">script</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-script-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-script-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-script-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-script-import.html">import</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="command-script-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="command-source.html">source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="command-unalias.html">unalias</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="detach.html">detach</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="di.html">di</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dis.html">dis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="disassemble.html">disassemble</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="display.html">display</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="down.html">down</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="env.html">env</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="exit.html">exit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="expression.html">expression</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="f.html">f</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="file.html">file</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="finish.html">finish</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="frame.html">frame</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frame-diagnose.html">diagnose</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frame-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="frame-recognizer.html">recognizer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="frame-recognizer-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="frame-recognizer-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="frame-recognizer-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="frame-recognizer-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="frame-recognizer-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frame-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frame-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gui.html">gui</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="help.html">help</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="image.html">image</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html">index</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="j.html">j</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jump.html">jump</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="kill.html">kill</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="l.html">l</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language.html">language</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-cplusplus.html">cplusplus</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="language-cplusplus-demangle.html">demangle</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="language-objc.html">objc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript.html">renderscript</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-allocation.html">allocation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-allocation-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-allocation-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-allocation-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-allocation-refresh.html">refresh</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-allocation-save.html">save</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-context.html">context</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-context-dump.html">dump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-kernel.html">kernel</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-kernel-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="language-renderscript-kernel-breakpoint-all.html">all</a>
+  </li>
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="language-renderscript-kernel-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-kernel-coordinate.html">coordinate</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-kernel-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-module.html">module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-module-dump.html">dump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-reduction.html">reduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-reduction-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="language-renderscript-reduction-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-scriptgroup.html">scriptgroup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-renderscript-scriptgroup-breakpoint.html">breakpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="6">
+    <a class="nav-link" href="language-renderscript-scriptgroup-breakpoint-set.html">set</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="language-renderscript-scriptgroup-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="language-renderscript-status.html">status</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="language-swift.html">swift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="language-swift-demangle.html">demangle</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="language-swift-refcount.html">refcount</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="log.html">log</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="log-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="log-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="log-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="log-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="log-timers.html">timers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="log-timers-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="log-timers-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="log-timers-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="log-timers-increment.html">increment</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="log-timers-reset.html">reset</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="memory.html">memory</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="memory-find.html">find</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="memory-history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="memory-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="memory-region.html">region</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="memory-tag.html">tag</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="memory-tag-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="memory-tag-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="memory-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="n.html">n</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="next.html">next</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="nexti.html">nexti</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ni.html">ni</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="p.html">p</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="parray.html">parray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="platform.html">platform</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-connect.html">connect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-disconnect.html">disconnect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="platform-file.html">file</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-file-close.html">close</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-file-open.html">open</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-file-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-file-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-mkdir.html">mkdir</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="platform-process.html">process</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-process-attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-process-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-process-launch.html">launch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="platform-process-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-settings.html">settings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-shell.html">shell</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="platform-status.html">status</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="plugin.html">plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="plugin-load.html">load</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="po.html">po</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="poarray.html">poarray</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="print.html">print</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="process.html">process</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-attach.html">attach</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-connect.html">connect</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-detach.html">detach</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-handle.html">handle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-interrupt.html">interrupt</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-kill.html">kill</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-launch.html">launch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-plugin.html">plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-signal.html">signal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-status.html">status</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="process-trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="process-trace-save.html">save</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="process-trace-start.html">start</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="process-trace-stop.html">stop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="process-unload.html">unload</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="q.html">q</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="quit.html">quit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="r.html">r</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rbreak.html">rbreak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="re.html">re</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="register.html">register</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="register-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="register-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repl.html">repl</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="reproducer.html">reproducer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reproducer-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reproducer-generate.html">generate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reproducer-status.html">status</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reproducer-xcrash.html">xcrash</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="run.html">run</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s.html">s</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">script</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="session.html">session</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="session-history.html">history</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="session-save.html">save</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="settings.html">settings</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-append.html">append</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-read.html">read</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-remove.html">remove</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-replace.html">replace</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-set.html">set</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-show.html">show</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="settings-write.html">write</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="shell.html">shell</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="si.html">si</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sif.html">sif</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="source.html">source</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="source-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="source-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="statistics.html">statistics</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="statistics-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="statistics-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="statistics-enable.html">enable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="step.html">step</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stepi.html">stepi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="t.html">t</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="target.html">target</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="target-create.html">create</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="target-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="target-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-dump-typesystem.html">typesystem</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="target-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="target-modules.html">modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-modules-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="target-modules-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="target-modules-dump-ast.html">ast</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="target-modules-dump-objfile.html">objfile</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="target-modules-dump-sections.html">sections</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="target-modules-dump-symfile.html">symfile</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="target-modules-dump-symtab.html">symtab</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-modules-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-modules-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-modules-lookup.html">lookup</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="target-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="target-symbols.html">symbols</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="target-symbols-add.html">add</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="target-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tbreak.html">tbreak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="thread.html">thread</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-backtrace.html">backtrace</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-continue.html">continue</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-exception.html">exception</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-info.html">info</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="thread-jump.html">jump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="thread-plan.html">plan</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="thread-plan-discard.html">discard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="thread-plan-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="thread-plan-prune.html">prune</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-return.html">return</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-select.html">select</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-siginfo.html">siginfo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="thread-trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="thread-trace-dump.html">dump</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="thread-trace-dump-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="thread-trace-dump-instructions.html">instructions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="thread-trace-export.html">export</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="thread-trace-export-ctf.html">ctf</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="thread-trace-start.html">start</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="thread-trace-stop.html">stop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="thread-until.html">until</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="trace.html">trace</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="trace-dump.html">dump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="trace-load.html">load</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="trace-schema.html">schema</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type.html">type</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type-category.html">category</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-category-define.html">define</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-category-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-category-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-category-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-category-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type-filter.html">filter</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-filter-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-filter-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-filter-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-filter-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type-format.html">format</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-format-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-format-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-format-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-format-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-format-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="type-lookup.html">lookup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type-summary.html">summary</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-summary-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-summary-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-summary-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-summary-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-summary-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="type-synthetic.html">synthetic</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-synthetic-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-synthetic-clear.html">clear</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-synthetic-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-synthetic-info.html">info</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="type-synthetic-list.html">list</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="undisplay.html">undisplay</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="up.html">up</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="v.html">v</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="var.html">var</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="version.html">version</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vo.html">vo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="watchpoint.html">watchpoint</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="watchpoint-command.html">command</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="watchpoint-command-add.html">add</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="watchpoint-command-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="watchpoint-command-list.html">list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-delete.html">delete</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-disable.html">disable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-enable.html">enable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-ignore.html">ignore</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-list.html">list</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="watchpoint-modify.html">modify</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="watchpoint-set.html">set</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="watchpoint-set-expression.html">expression</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="watchpoint-set-variable.html">variable</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="x.html">x</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">帮助选项</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../key/log-list.html">log-list</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../key/settings-list.html">settings-list</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../reference.html">参考指南</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../faq.html">常见问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../version.html">版本变更</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">学习 LLDB</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../learn-c/index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../learn-c/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">学习 LLDB</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../overview/index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../overview/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../overview/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">学习 LLDB</a></li>
+    <li><a href="https://lldb.llvm.org/man/lldb.html" target="_blank" rel="noopener">帮助手册</a></li>
+    <li><a href="thread.html">thread</a></li>
+    <li><a href="thread-jump.html">jump</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/peacetrue/learn-lldb/edit/master/docs/antora/modules/ROOT/pages/man/thread-jump.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">thread-jump</h1>
+<div class="listingblock">
+<div class="content">
+<pre>Sets the program counter to a new address.
+
+Syntax: thread jump
+
+Command Options Usage:
+  thread jump [-r] -l &lt;linenum&gt; [-f &lt;filename&gt;]
+  thread jump [-r] -b &lt;offset&gt;
+  thread jump [-r] -a &lt;address-expression&gt;
+
+       -a &lt;address-expression&gt; ( --address &lt;address-expression&gt; )
+            Jumps to a specific address.
+
+       -b &lt;offset&gt; ( --by &lt;offset&gt; )
+            Jumps by a relative line offset from the current line.
+
+       -f &lt;filename&gt; ( --file &lt;filename&gt; )
+            Specifies the source file to jump to.
+
+       -l &lt;linenum&gt; ( --line &lt;linenum&gt; )
+            Specifies the line number to jump to.
+
+       -r ( --force )
+            Allows the PC to leave the current function.</pre>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
