@@ -1,9 +1,24 @@
 = 问题
 
+== 杂项
+
+* 如何快速分析"多模块 Maven 项目"中模块之间的依赖关系。
+
 == Java
 
 如何转换耗时为人类可读的字符串？::
 参考 https://stackoverflow.com/questions/3471397/how-can-i-pretty-print-a-duration-in-java[stackoverflow^]。
+
+构造方法继承父类方法的注释？::
+peacetrue-common/src/main/java/com/github/peacetrue/range/LocalDateTimeRange.java:29: 警告: 没有注释
+public LocalDateTimeRange(LocalDateTime lowerBound, LocalDateTime upperBound, Boolean lowerInclusive, Boolean upperInclusive)
+
+see https://stackoverflow.com/questions/14402275/javadoc-inheriting-parent-constructors-documentation
+
+Lombok 项目支持 Java 9 吗？::
+. https://stackoverflow.com/questions/41520511/does-project-lombok-support-java-9
+. https://projectlombok.org/features/configuration
+
 
 == 统一变量
 
@@ -38,3 +53,27 @@ Vim paste from clipboard::
 . 网络模拟器：网络模拟器是一种软件，可以模拟不同类型的网络，包括网络分区。网络模拟器可以模拟各种网络条件，如带宽、延迟、丢包率等，从而模拟网络分区的不同情况。
 
 需要注意的是，在模拟网络分区时，需要仔细考虑网络拓扑结构、节点之间的通信方式、网络流量等因素，以确保模拟的真实性和准确性。
+
+== GitHub
+
+=== without `workflow` scope
+
+.Question：
+* !	refs/heads/master:refs/heads/master	[remote rejected] (refusing to allow an OAuth App to create or update workflow `.github/workflows/main.yml` without `workflow` scope)
+
+.See：
+* https://stackoverflow.com/questions/64059610/how-to-resolve-refusing-to-allow-an-oauth-app-to-create-or-update-workflow-on
+* https://stackoverflow.com/questions/16052602/how-to-disable-osxkeychain-as-credential-helper-in-git-config/16052884#16052884
+
+[source%nowrap]
+----
+git config --local --unset credential.helper
+git config --global --unset credential.helper
+git config --system --unset credential.helper
+----
+
+
+=== 使用多个版本的 JDK 测试代码
+
+.See
+* https://github.com/actions/setup-java/issues/44

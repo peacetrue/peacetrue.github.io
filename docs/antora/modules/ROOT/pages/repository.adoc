@@ -148,6 +148,8 @@ learn::
 learn 记录学习过程。每个模块对应一块知识。
 samples::
 samples 存储代码样章。每个模块对应一个样章。
+cases::
+cases 存储案例。
 peacetrue-convention::
 peacetrue-convention 存储二方库。
 peacetrue*::
@@ -166,6 +168,44 @@ peacetrue-bit 存储基于 https://bit.dev[bit^] 实现的 JavaScript 组件。
 WARNING: 以上未完待续！
 
 资源库涉及的编程语言，包括：Java、JavaScript、Shell，以 Java 主。
+
+== 数据库版本
+
+每个模块都是一个单独的组件，将所有模块组合起来，创建一个示例应用。
+
+|===
+|模块 |版本 |备注
+
+|用户
+|V1_1_0__user.sql
+|
+
+|参数配置
+|V1_10_0__configuration.sql
+|？
+
+|数据字典
+|V1_20_0__dictionary.sql
+|
+
+|分类
+|V1_30_0__classify.sql
+|
+
+|日志
+|V1_40_0__log.sql
+|
+
+|附件
+|V1_50_0__attachment.sql
+|
+
+|区域
+|V1_60_0__region.sql
+|
+|===
+
+
 
 == 模块组织
 
@@ -253,3 +293,20 @@ image::image-2022-08-14-14-45-48-716.png[]
 容易产生冲突，需要想办法规避。
 规避思路为，每个模块都使用各自独立的文件，
 禁止两个模块共用同一个文件。
+
+
+== 仓库版本
+
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.gradle/peacetrue-gradle-plugin?label=peacetrue-gradle&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-gradle",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.gradle"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-dependencies?label=peacetrue-dependencies&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-dependencies",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-common?label=peacetrue-common&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-common",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-beans?label=peacetrue-beans&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-beans",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-test?label=peacetrue-test&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-test",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-cryptography?label=peacetrue-cryptography&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-cryptography",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-validation?label=peacetrue-validation&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-validation",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-servlet?label=peacetrue-servlet&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-servlet",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.result/peacetrue-result-core?label=peacetrue-result&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-result",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.result"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.spring/peacetrue-spring-beans?label=peacetrue-spring&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-spring",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.spring"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.tplngn/peacetrue-tplngn-core?label=peacetrue-tplngn&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-tplngn",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.tplngn"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.template/peacetrue-template-antora?label=peacetrue-template&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-template",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.template"]
+* image:https://img.shields.io/nexus/r/com.github.peacetrue.file/peacetrue-file-service-api?label=peacetrue-file&server=https%3A%2F%2Foss.sonatype.org%2F["peacetrue-file",link="https://central.sonatype.com/search?smo=true&q=com.github.peacetrue.file"]

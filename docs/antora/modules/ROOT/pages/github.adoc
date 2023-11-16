@@ -6,6 +6,7 @@
 
 构建源码：
 
+[source%nowrap,adoc]
 ----
 image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}/main.yml?branch=master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]
 ----
@@ -21,8 +22,7 @@ image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}
 . 测试结果徽章： https://shields.io/category/test-results
 . [.line-through]#https://foresight.thundra.io/# 网站下线
 . [.line-through]#https://ci.appveyor.com/# 构建平台与 GitHub 功能重叠，只需要上传展示测试报告
-. https://help.testspace.com/getting.started test space good
-. https://github.com/testspace-com/hello.publish[demo for testspace^]
+. https://help.testspace.com/getting.started good
 . https://peacetrue.testspace.com/[peacetrue for testspace^]
 
 .github/workflows/main.yml

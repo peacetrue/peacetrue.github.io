@@ -1,0 +1,1121 @@
+= 用户接口文档
+xiayouxue@hotmail.com
+1.0.0-SNAPSHOT
+:toc: left
+:numbered:
+:toclevels: 4
+:source-highlighter: highlightjs
+:keywords: openapi, rest, 用户接口文档
+:specDir: 
+:snippetDir: /Users/xiayx/Documents/Projects/peacetrue-user/peacetrue-user-controller/build/generated-snippets/
+:generator-template: v1 2019-12-20
+:info-url: https://peacetrue.github.io
+:app-name: 用户接口文档
+
+== 概述
+++++
+<p><p>本文档包含用户管理相关接口。</p>
+
+<p>身份认证和权限认证可通过 OIDC 元信息端点查看。</p>
+
+<p>
+    原始数据类型可参考 <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.0.1.md#data-types">OpenAPI-Specification Data Types</a>。
+    数组（集合）使用 <code>通用名称[]</code> 表示，复合数据类型使用 <code>通用名称</code> 引用原始数据类型，这里避免使用编程语言特定类型以保持通用性。
+</p>
+<table>
+    <caption style="text-align: left;padding-bottom: 1em">摘录的原始数据类型如下：</caption>
+    <thead>
+    <tr>
+        <th style="width: 12%">通用名称</th>
+        <th style="width: 12%">类型</th>
+        <th style="width: 12%">格式</th>
+        <th>注释</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>integer</td>
+        <td>integer</td>
+        <td>int32</td>
+        <td>有符号 32 位整数</td>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>integer</td>
+        <td>int64</td>
+        <td>有符号 64 位整数</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>number</td>
+        <td>float</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>double</td>
+        <td>number</td>
+        <td>double</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>byte</td>
+        <td>string</td>
+        <td>byte</td>
+        <td>Base64 编码字符</td>
+    </tr>
+    <tr>
+        <td>binary</td>
+        <td>string</td>
+        <td>binary</td>
+        <td>任意字节序列</td>
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>boolean</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td>string</td>
+        <td>date</td>
+        <td>参见 <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6" target="_blank">RFC3339 <code>full-date</code></a>，例如：2011-12-03</td>
+    </tr>
+    <tr>
+        <td>dateTime</td>
+        <td>string</td>
+        <td>date-time</td>
+        <td>参见 <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6" target="_blank">RFC3339 <code>date-time</code></a>，例如：2011-12-03T10:15:30[.000000001]+03:00</td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>password</td>
+        <td>用于 UI 遮蔽输入的提示</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>请求体/响应体媒体类型为：<code>application/json</code>。</p>
+
+<p>
+    响应状态码约定：
+</p>
+<ul>
+    <li>2xx 正常状态直接返回数据；</li>
+    <li>非 2xx 异常状态返回 <a href="#ErrorResponseBody">ErrorResponseBody</a></li>
+    <li>4xx 客户端错误，用户可通过返回的消息自行排查问题；</li>
+    <li>5xx 服务端错误，用户可提供 <code>ErrorResponseBody.requestId</code> 到客服解答（如果没有严格检查客户端输入，那么最终可能引发服务端错误）；</li>
+    <li>其他状态码（如 401、403 等）遵循 HTTP 语义。</li>
+</ul>
+<p>
+    样例数据仅供参考，请求和响应间无实际逻辑关系。
+</p></p>
+++++
+
+
+// markup not found, no include::{specDir}intro.adoc[opts=optional]
+
+
+== 访问控制
+
+* https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[*OIDC*^]  元信息端点: _http://127.0.0.1:8510/.well-known/openid-configuration_
+
+
+
+
+== 接口
+
+
+[.Class00User]
+=== 用户管理
+
+
+[.000Add]
+==== 新增用户  
+
+`POST /users`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用请求体参数新增用户。  </p></p>
+++++
+
+
+// markup not found, no include::{specDir}users/POST/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_write 
+
+===== 参数
+
+
+====== 请求体参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| 
+| 新增参数| <<UserAdd>>
+| 是
+| 
+| 
+
+|===
+
+
+
+
+
+===== 内容类型
+
+* application/json
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| 用户信息
+| <<UserVO>>
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/POST/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/POST/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/POST/POST.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/POST/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.010Query]
+==== 分页查询用户信息  
+
+`GET /users`
+
+
+===== 描述
+
+++++
+<p>  <p>  可用于排序的列：<code>username</code>、<code>createdTime</code>，  默认按创建时间倒序（<code>createdTime,desc</code>）排列；  默认不抓取总记录数，如需总记录数，设置 <code>fetchTotal</code> 为 <code>true</code>。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/GET/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_read 
+
+===== 参数
+
+
+
+
+
+====== 查询参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| params
+| 查询参数| <<UserQuery>>
+| 是
+| 
+| 
+
+| pageable
+| 分页参数| <<Pageable>>
+| 是
+| 
+| 
+
+| fetchTotal
+| 是否抓取总记录数| `boolean`
+| 否
+| 
+| 
+
+|===
+
+
+===== 内容类型
+
+* application/json
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| 分页用户信息
+| <<PageUserVO>>
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/GET/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/GET/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/GET/GET.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/GET/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.020Get]
+==== 获取用户信息  
+
+`GET /users/{id}`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用路径参数获取用户信息。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/\{id\}/GET/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_read 
+
+===== 参数
+
+====== 路径参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| id
+| 唯一标志| `long`
+| 是
+| 
+| int64
+
+|===
+
+
+
+
+
+
+===== 内容类型
+
+* application/json
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| 用户信息
+| <<UserVO>>
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/\{id\}/GET/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/\{id\}/GET/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/{id}/GET/GET.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/\{id\}/GET/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.030Exists]
+==== 查询用户是否存在  
+
+`GET /users/{username}/exists`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用路径参数查询用户是否存在。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/\{username\}/exists/GET/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_read 
+
+===== 参数
+
+====== 路径参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| username
+| 用户名| `string`
+| 是
+| 
+| 
+
+|===
+
+
+
+
+
+
+===== 内容类型
+
+* application/json
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| 用户是否存在
+| `boolean`
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/\{username\}/exists/GET/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/\{username\}/exists/GET/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/{username}/exists/GET/GET.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/\{username\}/exists/GET/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.040Modify]
+==== 修改用户信息  
+
+`PATCH /users`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用请求体参数修改用户基本信息。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/PATCH/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_write 
+
+===== 参数
+
+
+====== 请求体参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| 
+| 修改参数| <<UserModify>>
+| 是
+| 
+| 
+
+|===
+
+
+
+
+
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| OK
+| 
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/PATCH/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/PATCH/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/PATCH/PATCH.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/PATCH/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.040Modify1]
+==== 修改用户信息  
+
+`PATCH /users/{id}`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用请求体参数修改用户基本信息。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/\{id\}/PATCH/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_write 
+
+===== 参数
+
+====== 路径参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| id
+| 唯一标志| `long`
+| 是
+| 
+| int64
+
+|===
+
+====== 请求体参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| 
+| 修改参数| <<UserModify>>
+| 是
+| 
+| 
+
+|===
+
+
+
+
+
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| OK
+| 
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/\{id\}/PATCH/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/\{id\}/PATCH/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/{id}/PATCH/PATCH.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/\{id\}/PATCH/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.050ResetPassword]
+==== 重置密码  
+
+`POST /users/{id}/password`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用请求体参数重置密码。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/\{id\}/password/POST/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_write 
+
+===== 参数
+
+====== 路径参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| id
+| 唯一标志| `long`
+| 是
+| 
+| int64
+
+|===
+
+
+
+
+
+
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| OK
+| 
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/\{id\}/password/POST/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/\{id\}/password/POST/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/{id}/password/POST/POST.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/\{id\}/password/POST/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[.060Delete]
+==== 删除用户  
+
+`DELETE /users/{id}`
+
+
+===== 描述
+
+++++
+<p>  <p>  使用路径参数删除用户。多个 id 使用 <code>,</code> 分割，例如：users/1,2,3。</p>
+++++
+
+
+// markup not found, no include::{specDir}users/\{id\}/DELETE/spec.adoc[opts=optional]
+
+
+
+===== 权限
+users_write 
+
+===== 参数
+
+====== 路径参数
+
+[cols="2,3,1,1,1,2"]
+|===
+|名称|描述|类型|必须|默认|规则
+
+| id
+| 唯一标志集合| `long`[]
+| 是
+| 
+| int64
+
+|===
+
+
+
+
+
+
+
+===== 响应
+
+.HTTP 响应码
+[cols="2,3,1"]
+|===
+|响应码|消息|数据类型
+
+
+| 200
+| OK
+| 
+
+|===
+
+===== 样例
+
+
+include::{snippetDir}users/\{id\}/DELETE/http-request.adoc[opts=optional]
+
+
+include::{snippetDir}users/\{id\}/DELETE/http-response.adoc[opts=optional]
+
+
+
+// file not found, no * wiremock data link :users/{id}/DELETE/DELETE.json[]
+
+
+ifdef::internal-generation[]
+===== 实现
+
+// markup not found, no include::{specDir}users/\{id\}/DELETE/implementation.adoc[opts=optional]
+
+
+endif::internal-generation[]
+
+
+[#models]
+== 模型
+
+
+[#ErrorResponseBody]
+=== _ErrorResponseBody_ 
+
+++++
+<p>错误响应体结构。
+ <p>
+ 例如：
+ <pre>
+ {
+   "timestamp": "2023-11-14T13:04:40.177",
+   "status": 500,
+   "error": "Internal Server Error",
+   "path": "/users",
+   "requestId": "7fac2557bca548cb9af4e6507b7d70f4"
+ }
+ </pre></p>
+++++
+
+[.fields-ErrorResponseBody]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| requestId
+| 是
+| `string`
+| 请求标识。出示此标识排查问题
+|  字符长度: 32 ~ 32
+
+| path
+| 是
+| `string`
+| 请求路径
+|  字符长度: 1 ~ 255
+
+| status
+| 是
+| `integer`
+| HTTP 状态码
+| int32 
+
+| error
+| 是
+| `string`
+| 错误描述
+|  字符长度: 0 ~ 255
+
+| timestamp
+| 是
+| `dateTime`
+| 错误发生时间戳
+| date-time 
+
+|===
+
+
+[#LocalDateRange]
+=== _LocalDateRange_ 
+
+++++
+<p>本地日期范围。</p>
+++++
+
+[.fields-LocalDateRange]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| lowerBound
+| 否
+| `date`
+| 下边界
+| date 
+
+| upperBound
+| 否
+| `date`
+| 上边界
+| date 
+
+| lowerInclusive
+| 否
+| `boolean`
+| 是否包含下边界
+|  
+
+| upperInclusive
+| 否
+| `boolean`
+| 是否包含上边界
+|  
+
+|===
+
+
+[#PageUserVO]
+=== _PageUserVO_ 
+
+++++
+<p>分页结果。</p>
+++++
+
+[.fields-PageUserVO]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| totalElements
+| 是
+| `long`
+| 总记录数
+| int64 
+
+| totalPages
+| 是
+| `integer`
+| 总页数
+| int32 
+
+| content
+| 是
+| <<UserVO>>[]
+| 数据列表
+|  
+
+|===
+
+
+[#Pageable]
+=== _Pageable_ 
+
+++++
+<p>分页参数。以 0 为起始页码；排序格式为：<code>property,(asc/desc)</code>，接口需指示具体可用于排序的属性。</p>
+++++
+
+[.fields-Pageable]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| page
+| 是
+| `integer`
+| 页码
+| int32 
+
+| size
+| 是
+| `integer`
+| 每页记录数
+| int32 
+
+| sort
+| 是
+| `string`[]
+| 排序
+|  
+
+|===
+
+
+[#UserAdd]
+=== _UserAdd_ 
+
+++++
+<p>用户新增参数。</p>
+++++
+
+[.fields-UserAdd]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| username
+| 是
+| `string`
+| 用户名，不能重复
+|  字符长度: 6 ~ 32，格式：/[0-9a-zA-Z@.]+/
+
+| password
+| 是
+| `string`
+| 密码
+|  字符长度: 6 ~ 32
+
+|===
+
+
+[#UserModify]
+=== _UserModify_ 
+
+++++
+<p>用户修改参数。</p>
+++++
+
+[.fields-UserModify]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| id
+| 是
+| `long`
+| 唯一标志
+| int64 
+
+| remark
+| 否
+| `string`
+| 备注
+|  字符长度: 0 ~ 255
+
+|===
+
+
+[#UserQuery]
+=== _UserQuery_ 
+
+++++
+<p>用户查询参数。</p>
+++++
+
+[.fields-UserQuery]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| id
+| 否
+| `long`[]
+| 唯一标志集合
+| int64 
+
+| username
+| 否
+| `string`
+| 用户名
+|  字符长度: 0 ~ 32
+
+| creatorId
+| 否
+| `long`
+| 创建者唯一标志
+| int64 
+
+| createdTime
+| 否
+| <<LocalDateRange>>
+| 
+|  
+
+| modifierId
+| 否
+| `long`
+| 修改者唯一标志
+| int64 
+
+| modifiedTime
+| 否
+| <<LocalDateRange>>
+| 
+|  
+
+|===
+
+
+[#UserVO]
+=== _UserVO_ 
+
+++++
+<p>用户信息。</p>
+++++
+
+[.fields-UserVO]
+[cols="2,1,2,3,3"]
+|===
+|字段名称|必须|类型|描述|格式
+
+| id
+| 是
+| `long`
+| 唯一标志
+| int64 
+
+| username
+| 是
+| `string`
+| 用户名
+|  字符长度: 6 ~ 32
+
+| creatorId
+| 是
+| `long`
+| 创建者唯一标志
+| int64 
+
+| createdTime
+| 是
+| `dateTime`
+| 创建时间
+| date-time 
+
+| modifierId
+| 是
+| `long`
+| 修改者唯一标志
+| int64 
+
+| modifiedTime
+| 是
+| `dateTime`
+| 修改时间
+| date-time 
+
+|===
+
+
