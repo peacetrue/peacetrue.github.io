@@ -28,6 +28,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="index.html">总览</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -50,8 +51,14 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="application.html">应用组装</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-openapi.html">用户接口文档</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="faq.html">问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#version.adoc">version.adoc</a>
   </li>
 </ul>
   </li>
@@ -176,7 +183,19 @@
 <article class="doc">
 <h1 class="page">问题</h1>
 <div class="sect1">
-<h2 id="_java"><a class="anchor" href="#_java"></a>1. Java</h2>
+<h2 id="_杂项"><a class="anchor" href="#_杂项"></a>1. 杂项</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>如何快速分析"多模块 Maven 项目"中模块之间的依赖关系。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_java"><a class="anchor" href="#_java"></a>2. Java</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -184,12 +203,37 @@
 <dd>
 <p>参考 <a href="https://stackoverflow.com/questions/3471397/how-can-i-pretty-print-a-duration-in-java" target="_blank" rel="noopener">stackoverflow</a>。</p>
 </dd>
+<dt class="hdlist1">构造方法继承父类方法的注释？</dt>
+<dd>
+<p>peacetrue-common/src/main/java/com/github/peacetrue/range/LocalDateTimeRange.java:29: 警告: 没有注释
+public LocalDateTimeRange(LocalDateTime lowerBound, LocalDateTime upperBound, Boolean lowerInclusive, Boolean upperInclusive)</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>see <a href="https://stackoverflow.com/questions/14402275/javadoc-inheriting-parent-constructors-documentation" class="bare">https://stackoverflow.com/questions/14402275/javadoc-inheriting-parent-constructors-documentation</a></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Lombok 项目支持 Java 9 吗？</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://stackoverflow.com/questions/41520511/does-project-lombok-support-java-9" class="bare">https://stackoverflow.com/questions/41520511/does-project-lombok-support-java-9</a></p>
+</li>
+<li>
+<p><a href="https://projectlombok.org/features/configuration" class="bare">https://projectlombok.org/features/configuration</a></p>
+</li>
+</ol>
+</div>
+</dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_统一变量"><a class="anchor" href="#_统一变量"></a>2. 统一变量</h2>
+<h2 id="_统一变量"><a class="anchor" href="#_统一变量"></a>3. 统一变量</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -207,7 +251,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vi"><a class="anchor" href="#_vi"></a>3. vi</h2>
+<h2 id="_vi"><a class="anchor" href="#_vi"></a>4. vi</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -229,7 +273,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_配置覆盖"><a class="anchor" href="#_配置覆盖"></a>4. 配置覆盖</h2>
+<h2 id="_配置覆盖"><a class="anchor" href="#_配置覆盖"></a>5. 配置覆盖</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>重复配置的处理策略：</p>
@@ -250,7 +294,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_如何模拟网络分区"><a class="anchor" href="#_如何模拟网络分区"></a>5. 如何模拟网络分区？</h2>
+<h2 id="_如何模拟网络分区"><a class="anchor" href="#_如何模拟网络分区"></a>6. 如何模拟网络分区？</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>网络分区是指网络中的一部分节点无法与另一部分节点通信，这种情况可能会在网络中出现。模拟网络分区有助于我们测试系统的鲁棒性，即系统在出现网络分区时的表现。</p>
@@ -276,6 +320,51 @@
 </div>
 <div class="paragraph">
 <p>需要注意的是，在模拟网络分区时，需要仔细考虑网络拓扑结构、节点之间的通信方式、网络流量等因素，以确保模拟的真实性和准确性。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_github"><a class="anchor" href="#_github"></a>7. GitHub</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_without_workflow_scope"><a class="anchor" href="#_without_workflow_scope"></a>7.1. without <code>workflow</code> scope</h3>
+<div class="ulist">
+<div class="title">Question：</div>
+<ul>
+<li>
+<p>!	refs/heads/master:refs/heads/master	[remote rejected] (refusing to allow an OAuth App to create or update workflow <code>.github/workflows/main.yml</code> without <code>workflow</code> scope)</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">See：</div>
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/64059610/how-to-resolve-refusing-to-allow-an-oauth-app-to-create-or-update-workflow-on" class="bare">https://stackoverflow.com/questions/64059610/how-to-resolve-refusing-to-allow-an-oauth-app-to-create-or-update-workflow-on</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/16052602/how-to-disable-osxkeychain-as-credential-helper-in-git-config/16052884#16052884" class="bare">https://stackoverflow.com/questions/16052602/how-to-disable-osxkeychain-as-credential-helper-in-git-config/16052884#16052884</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-none hljs">git config --local --unset credential.helper
+git config --global --unset credential.helper
+git config --system --unset credential.helper</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用多个版本的_jdk_测试代码"><a class="anchor" href="#_使用多个版本的_jdk_测试代码"></a>7.2. 使用多个版本的 JDK 测试代码</h3>
+<div class="ulist">
+<div class="title">See</div>
+<ul>
+<li>
+<p><a href="https://github.com/actions/setup-java/issues/44" class="bare">https://github.com/actions/setup-java/issues/44</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

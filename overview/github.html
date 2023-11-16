@@ -28,6 +28,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="index.html">总览</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -51,7 +52,13 @@
     <a class="nav-link" href="application.html">应用组装</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-openapi.html">用户接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="faq.html">问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#version.adoc">version.adoc</a>
   </li>
 </ul>
   </li>
@@ -190,7 +197,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}/main.yml?branch=master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]</pre>
+<pre class="highlightjs highlight nowrap"><code class="language-adoc hljs" data-lang="adoc">image:https://img.shields.io/github/actions/workflow/status/peacetrue/{app-name}/main.yml?branch=master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -218,10 +225,7 @@
 <p><span class="line-through"><a href="https://ci.appveyor.com/" class="bare">https://ci.appveyor.com/</a></span> 构建平台与 GitHub 功能重叠，只需要上传展示测试报告</p>
 </li>
 <li>
-<p><a href="https://help.testspace.com/getting.started" class="bare">https://help.testspace.com/getting.started</a> test space good</p>
-</li>
-<li>
-<p><a href="https://github.com/testspace-com/hello.publish" target="_blank" rel="noopener">demo for testspace</a></p>
+<p><a href="https://help.testspace.com/getting.started" class="bare">https://help.testspace.com/getting.started</a> good</p>
 </li>
 <li>
 <p><a href="https://peacetrue.testspace.com/" target="_blank" rel="noopener">peacetrue for testspace</a></p>

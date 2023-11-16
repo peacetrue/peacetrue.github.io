@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用户接口文档 :: 安宁的知识库</title>
+    <link rel="canonical" href="https://peacetrue.github.io/overview/user-openapi.html">
+    <meta name="keywords" content="openapi, rest, 用户接口文档">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://peacetrue.github.io">安宁的知识库</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="overview" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
+    <h3 class="title"><a href="index.html">总览</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">概述</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="repository.html">资源库</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="concept.html">理念</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="term.html">术语</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="schedule.html">规划</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="application.html">应用组装</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="user-openapi.html">用户接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#version.adoc">version.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">总览</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../peacetrue-shell/index.html">Shell 脚本库</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-shell/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-common/index.html">公共组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-common/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-result/index.html">响应结果组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-result/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-asciidoc/index.html">学习 AsciiDoc</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-asciidoc/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-c/index.html">学习 C 语言</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-c/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../learn-lldb/index.html">学习 LLDB</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../learn-lldb/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-cryptography/index.html">密码学组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-cryptography/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../bee/index.html">开发者助手</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../bee/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">总览</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-test/index.html">测试组件</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-test/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../peacetrue-beans/index.html">简单 Java 对象</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../peacetrue-beans/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">总览</a></li>
+    <li><a href="user-openapi.html">用户接口文档</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/peacetrue/peacetrue.github.io/edit/master/docs/antora/modules/ROOT/pages/user-openapi.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">用户接口文档</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_概述">1. 概述</a></li>
+<li><a href="#_访问控制">2. 访问控制</a></li>
+<li><a href="#_接口">3. 接口</a>
+<ul class="sectlevel2">
+<li><a href="#_用户管理">3.1. 用户管理</a>
+<ul class="sectlevel3">
+<li><a href="#_新增用户">3.1.1. 新增用户</a>
+<ul class="sectlevel4">
+<li><a href="#_描述">描述</a></li>
+<li><a href="#_权限">权限</a></li>
+<li><a href="#_参数">参数</a></li>
+<li><a href="#_内容类型">内容类型</a></li>
+<li><a href="#_响应">响应</a></li>
+<li><a href="#_样例">样例</a></li>
+</ul>
+</li>
+<li><a href="#_分页查询用户信息">3.1.2. 分页查询用户信息</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_2">描述</a></li>
+<li><a href="#_权限_2">权限</a></li>
+<li><a href="#_参数_2">参数</a></li>
+<li><a href="#_内容类型_2">内容类型</a></li>
+<li><a href="#_响应_2">响应</a></li>
+<li><a href="#_样例_2">样例</a></li>
+</ul>
+</li>
+<li><a href="#_获取用户信息">3.1.3. 获取用户信息</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_3">描述</a></li>
+<li><a href="#_权限_3">权限</a></li>
+<li><a href="#_参数_3">参数</a></li>
+<li><a href="#_内容类型_3">内容类型</a></li>
+<li><a href="#_响应_3">响应</a></li>
+<li><a href="#_样例_3">样例</a></li>
+</ul>
+</li>
+<li><a href="#_查询用户是否存在">3.1.4. 查询用户是否存在</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_4">描述</a></li>
+<li><a href="#_权限_4">权限</a></li>
+<li><a href="#_参数_4">参数</a></li>
+<li><a href="#_内容类型_4">内容类型</a></li>
+<li><a href="#_响应_4">响应</a></li>
+<li><a href="#_样例_4">样例</a></li>
+</ul>
+</li>
+<li><a href="#_修改用户信息">3.1.5. 修改用户信息</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_5">描述</a></li>
+<li><a href="#_权限_5">权限</a></li>
+<li><a href="#_参数_5">参数</a></li>
+<li><a href="#_响应_5">响应</a></li>
+<li><a href="#_样例_5">样例</a></li>
+</ul>
+</li>
+<li><a href="#_修改用户信息_2">3.1.6. 修改用户信息</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_6">描述</a></li>
+<li><a href="#_权限_6">权限</a></li>
+<li><a href="#_参数_6">参数</a></li>
+<li><a href="#_响应_6">响应</a></li>
+<li><a href="#_样例_6">样例</a></li>
+</ul>
+</li>
+<li><a href="#_重置密码">3.1.7. 重置密码</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_7">描述</a></li>
+<li><a href="#_权限_7">权限</a></li>
+<li><a href="#_参数_7">参数</a></li>
+<li><a href="#_响应_7">响应</a></li>
+<li><a href="#_样例_7">样例</a></li>
+</ul>
+</li>
+<li><a href="#_删除用户">3.1.8. 删除用户</a>
+<ul class="sectlevel4">
+<li><a href="#_描述_8">描述</a></li>
+<li><a href="#_权限_8">权限</a></li>
+<li><a href="#_参数_8">参数</a></li>
+<li><a href="#_响应_8">响应</a></li>
+<li><a href="#_样例_8">样例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#models">4. 模型</a>
+<ul class="sectlevel2">
+<li><a href="#ErrorResponseBody">4.1. <em>ErrorResponseBody</em></a></li>
+<li><a href="#LocalDateRange">4.2. <em>LocalDateRange</em></a></li>
+<li><a href="#PageUserVO">4.3. <em>PageUserVO</em></a></li>
+<li><a href="#Pageable">4.4. <em>Pageable</em></a></li>
+<li><a href="#UserAdd">4.5. <em>UserAdd</em></a></li>
+<li><a href="#UserModify">4.6. <em>UserModify</em></a></li>
+<li><a href="#UserQuery">4.7. <em>UserQuery</em></a></li>
+<li><a href="#UserVO">4.8. <em>UserVO</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_概述"><a class="anchor" href="#_概述"></a>1. 概述</h2>
+<div class="sectionbody">
+<p><p>本文档包含用户管理相关接口。</p>
+
+<p>身份认证和权限认证可通过 OIDC 元信息端点查看。</p>
+
+<p>
+    原始数据类型可参考 <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.0.1.md#data-types">OpenAPI-Specification Data Types</a>。
+    数组（集合）使用 <code>通用名称[]</code> 表示，复合数据类型使用 <code>通用名称</code> 引用原始数据类型，这里避免使用编程语言特定类型以保持通用性。
+</p>
+<table>
+    <caption style="text-align: left;padding-bottom: 1em">摘录的原始数据类型如下：</caption>
+    <thead>
+    <tr>
+        <th style="width: 12%">通用名称</th>
+        <th style="width: 12%">类型</th>
+        <th style="width: 12%">格式</th>
+        <th>注释</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>integer</td>
+        <td>integer</td>
+        <td>int32</td>
+        <td>有符号 32 位整数</td>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>integer</td>
+        <td>int64</td>
+        <td>有符号 64 位整数</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>number</td>
+        <td>float</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>double</td>
+        <td>number</td>
+        <td>double</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>byte</td>
+        <td>string</td>
+        <td>byte</td>
+        <td>Base64 编码字符</td>
+    </tr>
+    <tr>
+        <td>binary</td>
+        <td>string</td>
+        <td>binary</td>
+        <td>任意字节序列</td>
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>boolean</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td>string</td>
+        <td>date</td>
+        <td>参见 <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6" target="_blank">RFC3339 <code>full-date</code></a>，例如：2011-12-03</td>
+    </tr>
+    <tr>
+        <td>dateTime</td>
+        <td>string</td>
+        <td>date-time</td>
+        <td>参见 <a href="https://datatracker.ietf.org/doc/html/rfc3339#section-5.6" target="_blank">RFC3339 <code>date-time</code></a>，例如：2011-12-03T10:15:30[.000000001]+03:00</td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>password</td>
+        <td>用于 UI 遮蔽输入的提示</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>请求体/响应体媒体类型为：<code>application/json</code>。</p>
+
+<p>
+    响应状态码约定：
+</p>
+<ul>
+    <li>2xx 正常状态直接返回数据；</li>
+    <li>非 2xx 异常状态返回 <a href="#ErrorResponseBody">ErrorResponseBody</a></li>
+    <li>4xx 客户端错误，用户可通过返回的消息自行排查问题；</li>
+    <li>5xx 服务端错误，用户可提供 <code>ErrorResponseBody.requestId</code> 到客服解答（如果没有严格检查客户端输入，那么最终可能引发服务端错误）；</li>
+    <li>其他状态码（如 401、403 等）遵循 HTTP 语义。</li>
+</ul>
+<p>
+    样例数据仅供参考，请求和响应间无实际逻辑关系。
+</p></p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_访问控制"><a class="anchor" href="#_访问控制"></a>2. 访问控制</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth" target="_blank" rel="noopener"><strong>OIDC</strong></a>  元信息端点: <em><a href="http://127.0.0.1:8510/.well-known/openid-configuration" class="bare">http://127.0.0.1:8510/.well-known/openid-configuration</a></em></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_接口"><a class="anchor" href="#_接口"></a>3. 接口</h2>
+<div class="sectionbody">
+<div class="sect2 Class00User">
+<h3 id="_用户管理"><a class="anchor" href="#_用户管理"></a>3.1. 用户管理</h3>
+<div class="sect3 000Add">
+<h4 id="_新增用户"><a class="anchor" href="#_新增用户"></a>3.1.1. 新增用户</h4>
+<div class="paragraph">
+<p><code>POST /users</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述"><a class="anchor" href="#_描述"></a>描述</h5>
+<p>  <p>  使用请求体参数新增用户。  </p></p>
+</div>
+<div class="sect4">
+<h5 id="_权限"><a class="anchor" href="#_权限"></a>权限</h5>
+<div class="paragraph">
+<p>users_write</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数"><a class="anchor" href="#_参数"></a>参数</h5>
+<div class="sect5">
+<h6 id="_请求体参数"><a class="anchor" href="#_请求体参数"></a>请求体参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新增参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserAdd"><em>UserAdd</em></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_内容类型"><a class="anchor" href="#_内容类型"></a>内容类型</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>application/json</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应"><a class="anchor" href="#_响应"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserVO"><em>UserVO</em></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例"><a class="anchor" href="#_样例"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 010Query">
+<h4 id="_分页查询用户信息"><a class="anchor" href="#_分页查询用户信息"></a>3.1.2. 分页查询用户信息</h4>
+<div class="paragraph">
+<p><code>GET /users</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_2"><a class="anchor" href="#_描述_2"></a>描述</h5>
+<p>  <p>  可用于排序的列：<code>username</code>、<code>createdTime</code>，  默认按创建时间倒序（<code>createdTime,desc</code>）排列；  默认不抓取总记录数，如需总记录数，设置 <code>fetchTotal</code> 为 <code>true</code>。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_2"><a class="anchor" href="#_权限_2"></a>权限</h5>
+<div class="paragraph">
+<p>users_read</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_2"><a class="anchor" href="#_参数_2"></a>参数</h5>
+<div class="sect5">
+<h6 id="_查询参数"><a class="anchor" href="#_查询参数"></a>查询参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">params</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">查询参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserQuery"><em>UserQuery</em></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">分页参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Pageable"><em>Pageable</em></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fetchTotal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否抓取总记录数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_内容类型_2"><a class="anchor" href="#_内容类型_2"></a>内容类型</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>application/json</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_2"><a class="anchor" href="#_响应_2"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">分页用户信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#PageUserVO"><em>PageUserVO</em></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_2"><a class="anchor" href="#_样例_2"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 020Get">
+<h4 id="_获取用户信息"><a class="anchor" href="#_获取用户信息"></a>3.1.3. 获取用户信息</h4>
+<div class="paragraph">
+<p><code>GET /users/{id}</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_3"><a class="anchor" href="#_描述_3"></a>描述</h5>
+<p>  <p>  使用路径参数获取用户信息。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_3"><a class="anchor" href="#_权限_3"></a>权限</h5>
+<div class="paragraph">
+<p>users_read</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_3"><a class="anchor" href="#_参数_3"></a>参数</h5>
+<div class="sect5">
+<h6 id="_路径参数"><a class="anchor" href="#_路径参数"></a>路径参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_内容类型_3"><a class="anchor" href="#_内容类型_3"></a>内容类型</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>application/json</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_3"><a class="anchor" href="#_响应_3"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户信息</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserVO"><em>UserVO</em></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_3"><a class="anchor" href="#_样例_3"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 030Exists">
+<h4 id="_查询用户是否存在"><a class="anchor" href="#_查询用户是否存在"></a>3.1.4. 查询用户是否存在</h4>
+<div class="paragraph">
+<p><code>GET /users/{username}/exists</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_4"><a class="anchor" href="#_描述_4"></a>描述</h5>
+<p>  <p>  使用路径参数查询用户是否存在。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_4"><a class="anchor" href="#_权限_4"></a>权限</h5>
+<div class="paragraph">
+<p>users_read</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_4"><a class="anchor" href="#_参数_4"></a>参数</h5>
+<div class="sect5">
+<h6 id="_路径参数_2"><a class="anchor" href="#_路径参数_2"></a>路径参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_内容类型_4"><a class="anchor" href="#_内容类型_4"></a>内容类型</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>application/json</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_4"><a class="anchor" href="#_响应_4"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户是否存在</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_4"><a class="anchor" href="#_样例_4"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 040Modify">
+<h4 id="_修改用户信息"><a class="anchor" href="#_修改用户信息"></a>3.1.5. 修改用户信息</h4>
+<div class="paragraph">
+<p><code>PATCH /users</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_5"><a class="anchor" href="#_描述_5"></a>描述</h5>
+<p>  <p>  使用请求体参数修改用户基本信息。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_5"><a class="anchor" href="#_权限_5"></a>权限</h5>
+<div class="paragraph">
+<p>users_write</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_5"><a class="anchor" href="#_参数_5"></a>参数</h5>
+<div class="sect5">
+<h6 id="_请求体参数_2"><a class="anchor" href="#_请求体参数_2"></a>请求体参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserModify"><em>UserModify</em></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_5"><a class="anchor" href="#_响应_5"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_5"><a class="anchor" href="#_样例_5"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 040Modify1">
+<h4 id="_修改用户信息_2"><a class="anchor" href="#_修改用户信息_2"></a>3.1.6. 修改用户信息</h4>
+<div class="paragraph">
+<p><code>PATCH /users/{id}</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_6"><a class="anchor" href="#_描述_6"></a>描述</h5>
+<p>  <p>  使用请求体参数修改用户基本信息。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_6"><a class="anchor" href="#_权限_6"></a>权限</h5>
+<div class="paragraph">
+<p>users_write</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_6"><a class="anchor" href="#_参数_6"></a>参数</h5>
+<div class="sect5">
+<h6 id="_路径参数_3"><a class="anchor" href="#_路径参数_3"></a>路径参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_请求体参数_3"><a class="anchor" href="#_请求体参数_3"></a>请求体参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改参数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserModify"><em>UserModify</em></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_6"><a class="anchor" href="#_响应_6"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_6"><a class="anchor" href="#_样例_6"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 050ResetPassword">
+<h4 id="_重置密码"><a class="anchor" href="#_重置密码"></a>3.1.7. 重置密码</h4>
+<div class="paragraph">
+<p><code>POST /users/{id}/password</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_7"><a class="anchor" href="#_描述_7"></a>描述</h5>
+<p>  <p>  使用请求体参数重置密码。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_7"><a class="anchor" href="#_权限_7"></a>权限</h5>
+<div class="paragraph">
+<p>users_write</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_7"><a class="anchor" href="#_参数_7"></a>参数</h5>
+<div class="sect5">
+<h6 id="_路径参数_4"><a class="anchor" href="#_路径参数_4"></a>路径参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_7"><a class="anchor" href="#_响应_7"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_7"><a class="anchor" href="#_样例_7"></a>样例</h5>
+
+</div>
+</div>
+<div class="sect3 060Delete">
+<h4 id="_删除用户"><a class="anchor" href="#_删除用户"></a>3.1.8. 删除用户</h4>
+<div class="paragraph">
+<p><code>DELETE /users/{id}</code></p>
+</div>
+<div class="sect4">
+<h5 id="_描述_8"><a class="anchor" href="#_描述_8"></a>描述</h5>
+<p>  <p>  使用路径参数删除用户。多个 id 使用 <code>,</code> 分割，例如：users/1,2,3。</p>
+</div>
+<div class="sect4">
+<h5 id="_权限_8"><a class="anchor" href="#_权限_8"></a>权限</h5>
+<div class="paragraph">
+<p>users_write</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_参数_8"><a class="anchor" href="#_参数_8"></a>参数</h5>
+<div class="sect5">
+<h6 id="_路径参数_5"><a class="anchor" href="#_路径参数_5"></a>路径参数</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">默认</th>
+<th class="tableblock halign-left valign-top">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志集合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code>[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_响应_8"><a class="anchor" href="#_响应_8"></a>响应</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. HTTP 响应码</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 50%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">响应码</th>
+<th class="tableblock halign-left valign-top">消息</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_样例_8"><a class="anchor" href="#_样例_8"></a>样例</h5>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="models"><a class="anchor" href="#models"></a>4. 模型</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="ErrorResponseBody"><a class="anchor" href="#ErrorResponseBody"></a>4.1. <em>ErrorResponseBody</em></h3>
+<p>错误响应体结构。
+ <p>
+ 例如：
+ <pre>
+ {
+   "timestamp": "2023-11-14T13:04:40.177",
+   "status": 500,
+   "error": "Internal Server Error",
+   "path": "/users",
+   "requestId": "7fac2557bca548cb9af4e6507b7d70f4"
+ }
+ </pre></p>
+<table class="tableblock frame-all grid-all stretch fields-ErrorResponseBody">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求标识。出示此标识排查问题</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 32 ~ 32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求路径</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 1 ~ 255</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP 状态码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">错误描述</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 0 ~ 255</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">错误发生时间戳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date-time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="LocalDateRange"><a class="anchor" href="#LocalDateRange"></a>4.2. <em>LocalDateRange</em></h3>
+<p>本地日期范围。</p>
+<table class="tableblock frame-all grid-all stretch fields-LocalDateRange">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lowerBound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">下边界</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">upperBound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上边界</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lowerInclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否包含下边界</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">upperInclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否包含上边界</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="PageUserVO"><a class="anchor" href="#PageUserVO"></a>4.3. <em>PageUserVO</em></h3>
+<p>分页结果。</p>
+<table class="tableblock frame-all grid-all stretch fields-PageUserVO">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalElements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">总记录数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalPages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">总页数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#UserVO"><em>UserVO</em></a>[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据列表</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Pageable"><a class="anchor" href="#Pageable"></a>4.4. <em>Pageable</em></h3>
+<p>分页参数。以 0 为起始页码；排序格式为：<code>property,(asc/desc)</code>，接口需指示具体可用于排序的属性。</p>
+<table class="tableblock frame-all grid-all stretch fields-Pageable">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">页码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">每页记录数</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code>[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">排序</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="UserAdd"><a class="anchor" href="#UserAdd"></a>4.5. <em>UserAdd</em></h3>
+<p>用户新增参数。</p>
+<table class="tableblock frame-all grid-all stretch fields-UserAdd">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户名，不能重复</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 6 ~ 32，格式：/[0-9a-zA-Z@.]+/</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">密码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 6 ~ 32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="UserModify"><a class="anchor" href="#UserModify"></a>4.6. <em>UserModify</em></h3>
+<p>用户修改参数。</p>
+<table class="tableblock frame-all grid-all stretch fields-UserModify">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">备注</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 0 ~ 255</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="UserQuery"><a class="anchor" href="#UserQuery"></a>4.7. <em>UserQuery</em></h3>
+<p>用户查询参数。</p>
+<table class="tableblock frame-all grid-all stretch fields-UserQuery">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code>[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志集合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 0 ~ 32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creatorId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建者唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LocalDateRange"><em>LocalDateRange</em></a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifierId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改者唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifiedTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LocalDateRange"><em>LocalDateRange</em></a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="UserVO"><a class="anchor" href="#UserVO"></a>4.8. <em>UserVO</em></h3>
+<p>用户信息。</p>
+<table class="tableblock frame-all grid-all stretch fields-UserVO">
+<colgroup>
+<col style="width: 18.1818%;">
+<col style="width: 9.0909%;">
+<col style="width: 18.1818%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">字段名称</th>
+<th class="tableblock halign-left valign-top">必须</th>
+<th class="tableblock halign-left valign-top">类型</th>
+<th class="tableblock halign-left valign-top">描述</th>
+<th class="tableblock halign-left valign-top">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">字符长度: 6 ~ 32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creatorId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建者唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">创建时间</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date-time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifierId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改者唯一标志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modifiedTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修改时间</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date-time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

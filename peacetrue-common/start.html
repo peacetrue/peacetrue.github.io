@@ -28,6 +28,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="index.html">公共组件</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -270,11 +271,11 @@ owner.hashCode=501
 owner.toString=xiayx
 name=posix
 readAttributes.symbolicLink=false
-readAttributes.permissions[0]=GROUP_EXECUTE
-readAttributes.permissions[1]=OTHERS_EXECUTE
-readAttributes.permissions[2]=OWNER_READ
+readAttributes.permissions[0]=OWNER_READ
+readAttributes.permissions[1]=OWNER_WRITE
+readAttributes.permissions[2]=GROUP_EXECUTE
 readAttributes.permissions[3]=OTHERS_READ
-readAttributes.permissions[4]=OWNER_WRITE
+readAttributes.permissions[4]=OTHERS_EXECUTE
 readAttributes.permissions[5]=OWNER_EXECUTE
 readAttributes.permissions[6]=GROUP_READ
 readAttributes.group.name=staff
@@ -295,10 +296,10 @@ readAttributes.fileKey=(dev=1000005,ino=36821797)
 readAttributes.owner.name=xiayx
 readAttributes.owner.hashCode=501
 readAttributes.owner.toString=xiayx
-readAttributes.lastAccessTime.toMillis=1678729691000
-readAttributes.lastAccessTime.hashCode=1678729691
-readAttributes.lastAccessTime.toInstant=2023-03-13T17:48:11Z
-readAttributes.lastAccessTime.toString=2023-03-13T17:48:11Z
+readAttributes.lastAccessTime.toMillis=1696216132000
+readAttributes.lastAccessTime.hashCode=1696216132
+readAttributes.lastAccessTime.toInstant=2023-10-02T03:08:52Z
+readAttributes.lastAccessTime.toString=2023-10-02T03:08:52Z
 readAttributes.regularFile=true</code></pre>
 </div>
 </div>
@@ -343,11 +344,11 @@ readAttributes.regularFile=true</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-properties hljs" data-lang="properties">owner(User).name(String)=xiayx
 name(String)=posix
 readAttributes(UnixFileAttributes).symbolicLink(Boolean)=false
-readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=GROUP_EXECUTE
-readAttributes(UnixFileAttributes).permissions(HashSet)[1](PosixFilePermission)=OTHERS_EXECUTE
-readAttributes(UnixFileAttributes).permissions(HashSet)[2](PosixFilePermission)=OWNER_READ
+readAttributes(UnixFileAttributes).permissions(HashSet)[0](PosixFilePermission)=OWNER_READ
+readAttributes(UnixFileAttributes).permissions(HashSet)[1](PosixFilePermission)=OWNER_WRITE
+readAttributes(UnixFileAttributes).permissions(HashSet)[2](PosixFilePermission)=GROUP_EXECUTE
 readAttributes(UnixFileAttributes).permissions(HashSet)[3](PosixFilePermission)=OTHERS_READ
-readAttributes(UnixFileAttributes).permissions(HashSet)[4](PosixFilePermission)=OWNER_WRITE
+readAttributes(UnixFileAttributes).permissions(HashSet)[4](PosixFilePermission)=OTHERS_EXECUTE
 readAttributes(UnixFileAttributes).permissions(HashSet)[5](PosixFilePermission)=OWNER_EXECUTE
 readAttributes(UnixFileAttributes).permissions(HashSet)[6](PosixFilePermission)=GROUP_READ
 readAttributes(UnixFileAttributes).group(Group).name(String)=staff
@@ -358,7 +359,7 @@ readAttributes(UnixFileAttributes).lastModifiedTime(FileTime)=2022-05-01T23:41:4
 readAttributes(UnixFileAttributes).creationTime(FileTime)=2022-05-01T23:41:48Z
 readAttributes(UnixFileAttributes).fileKey(UnixFileKey)=(dev=1000005,ino=36821797)
 readAttributes(UnixFileAttributes).owner(User).name(String)=xiayx
-readAttributes(UnixFileAttributes).lastAccessTime(FileTime)=2023-03-13T17:48:11Z
+readAttributes(UnixFileAttributes).lastAccessTime(FileTime)=2023-10-02T03:08:52Z
 readAttributes(UnixFileAttributes).regularFile(Boolean)=true</code></pre>
 </div>
 </div>

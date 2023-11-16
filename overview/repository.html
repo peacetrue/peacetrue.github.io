@@ -28,6 +28,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="index.html">总览</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -51,7 +52,13 @@
     <a class="nav-link" href="application.html">应用组装</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-openapi.html">用户接口文档</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="faq.html">问题</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#version.adoc">version.adoc</a>
   </li>
 </ul>
   </li>
@@ -419,6 +426,10 @@ $ ln -s ../../../../src src</code></pre>
 <dd>
 <p>samples 存储代码样章。每个模块对应一个样章。</p>
 </dd>
+<dt class="hdlist1">cases</dt>
+<dd>
+<p>cases 存储案例。</p>
+</dd>
 <dt class="hdlist1">peacetrue-convention</dt>
 <dd>
 <p>peacetrue-convention 存储二方库。</p>
@@ -467,7 +478,66 @@ $ ln -s ../../../../src src</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_模块组织"><a class="anchor" href="#_模块组织"></a>3. 模块组织</h2>
+<h2 id="_数据库版本"><a class="anchor" href="#_数据库版本"></a>3. 数据库版本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>每个模块都是一个单独的组件，将所有模块组合起来，创建一个示例应用。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">模块</th>
+<th class="tableblock halign-left valign-top">版本</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_1_0__user.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参数配置</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_10_0__configuration.sql</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">？</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">数据字典</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_20_0__dictionary.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">分类</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_30_0__classify.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日志</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_40_0__log.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">附件</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_50_0__attachment.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">区域</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V1_60_0__region.sql</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_模块组织"><a class="anchor" href="#_模块组织"></a>4. 模块组织</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>根据资源库中模块的组织方式，可分为以下几类：</p>
@@ -486,7 +556,7 @@ $ ln -s ../../../../src src</code></pre>
 <p>一个资源库中，包含多个模块，模块之间互不关联，自成一体。</p>
 </div>
 <div class="sect2">
-<h3 id="_独立式多模块"><a class="anchor" href="#_独立式多模块"></a>3.1. 独立式多模块</h3>
+<h3 id="_独立式多模块"><a class="anchor" href="#_独立式多模块"></a>4.1. 独立式多模块</h3>
 <div class="paragraph">
 <p>我们可以使用 <a href="#singleModule">单模块</a> 的方式，存储单个模块，
 当模块内容比较丰富时，这么做是合适的；
@@ -513,7 +583,7 @@ $ ln -s ../../../../src src</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_模块化分支"><a class="anchor" href="#_模块化分支"></a>4. 模块化分支</h2>
+<h2 id="_模块化分支"><a class="anchor" href="#_模块化分支"></a>5. 模块化分支</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>模块化分支</strong> 区别于主流的 <strong>版本化分支</strong>，
@@ -624,6 +694,54 @@ git merge -m 'merge mysql' mysql</code></pre>
 容易产生冲突，需要想办法规避。
 规避思路为，每个模块都使用各自独立的文件，
 禁止两个模块共用同一个文件。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_仓库版本"><a class="anchor" href="#_仓库版本"></a>6. 仓库版本</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.gradle"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.gradle/peacetrue-gradle-plugin?label=peacetrue-gradle&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-gradle"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-dependencies?label=peacetrue-dependencies&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-dependencies"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-common?label=peacetrue-common&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-common"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-beans?label=peacetrue-beans&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-beans"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-test?label=peacetrue-test&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-test"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-cryptography?label=peacetrue-cryptography&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-cryptography"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-validation?label=peacetrue-validation&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-validation"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue"><img src="https://img.shields.io/nexus/r/com.github.peacetrue/peacetrue-servlet?label=peacetrue-servlet&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-servlet"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.result"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.result/peacetrue-result-core?label=peacetrue-result&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-result"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.spring"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.spring/peacetrue-spring-beans?label=peacetrue-spring&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-spring"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.tplngn"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.tplngn/peacetrue-tplngn-core?label=peacetrue-tplngn&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-tplngn"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.template"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.template/peacetrue-template-antora?label=peacetrue-template&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-template"></a></span></p>
+</li>
+<li>
+<p><span class="image"><a class="image" href="https://central.sonatype.com/search?smo=true&amp;q=com.github.peacetrue.file"><img src="https://img.shields.io/nexus/r/com.github.peacetrue.file/peacetrue-file-service-api?label=peacetrue-file&amp;server=https%3A%2F%2Foss.sonatype.org%2F" alt="peacetrue-file"></a></span></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

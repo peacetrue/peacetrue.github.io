@@ -28,6 +28,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
     <h3 class="title"><a href="index.html">学习 AsciiDoc</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -169,22 +170,9 @@
 <div class="sect1">
 <h2 id="_mermaid"><a class="anchor" href="#_mermaid"></a>1. mermaid</h2>
 <div class="sectionbody">
-<div class="listingblock kroki-error">
+<div class="imageblock kroki">
 <div class="content">
-<pre>graph TB
-    A[操作系统] --&gt; B(加载elf文件)
-    B --&gt; C{检查文件头}
-    C -- 文件头正确 --&gt; D{创建进程}
-    D --&gt; E(加载程序段)
-    E --&gt; F{检查符号表}
-    F -- 符号表正确 --&gt; G(解析符号表)
-    G --&gt; H{重定位代码}
-    H -- 重定位成功 --&gt; I{启动进程}
-    I --&gt; J(程序执行)
-    C -- 文件头错误 --&gt; K(加载失败)
-    F -- 符号表错误 --&gt; K(加载失败)
-    H -- 重定位失败 --&gt; K(加载失败)
-    K --&gt; L[结束进程]</pre>
+<img src="_images/elf-7bd1090fbea855d274545270661402beacca170a.png" alt="elf">
 </div>
 </div>
 </div>
